@@ -86,4 +86,8 @@ Rails.application.configure do
   config.after_initialize do
     Prosopite.rails_logger = true
   end
+
+  # Lookbook Previews
+  config.lookbook.preview_paths << "app/previews"
+  config.lookbook.preview_layout = "lookbook"
 end
