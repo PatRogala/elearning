@@ -16,6 +16,5 @@
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
   %body.bg-white.text-black
     = render HeaderComponent.new(current_user: current_user)
-    %p.notice= notice
-    %p.alert= alert
+    = render(Misc::FlashMessagesComponent.new(flash: flash))
     = yield
