@@ -1,0 +1,20 @@
+.min-h-screen.flex.items-center.justify-center.bg-white.px-4
+  .w-full.max-w-md
+    .text-center.mb-12
+      %h1.text-4xl.font-bold.text-black.tracking-tight.mb-4.uppercase
+        = t('.password_reset')
+      %p.text-lg.text-gray-600.font-light
+        = t('.enter_your_email_to_receive_reset_instructions')
+
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-8" }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .space-y-6
+        .field
+          = f.label :email, class: "block text-sm font-medium text-black mb-2 uppercase tracking-wide"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full px-0 py-3 text-lg border-0 border-b-2 border-gray-200 focus:border-black focus:outline-none bg-transparent placeholder-gray-400"
+
+      .pt-4
+        = f.submit t('.send_me_reset_password_instructions'), class: "w-full bg-black text-white py-4 text-lg font-medium uppercase tracking-wide hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+
+    .mt-12.text-center
+      = render "devise/shared/links"

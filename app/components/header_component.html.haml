@@ -1,0 +1,34 @@
+%header{class: "bg-white border-b border-gray-200", data: { controller: "mobile-menu" }}
+  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .flex.justify-between.items-center.h-16
+      .flex.items-center
+        = link_to root_path, class: "text-xl font-bold text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50" do
+          = Constants::APPLICATION_NAME
+
+      .hidden.md:flex.items-center.space-x-8
+        - if user_signed_in?
+          = link_to t(".links.dashboard"), "#", class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
+          = link_to t(".links.courses"), "#", class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
+          = link_to t(".links.profile"), "#", class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
+          = button_to t(".links.sign_out"), destroy_user_session_path, method: :delete, class: "text-sm font-medium cursor-pointer text-red-600 uppercase tracking-wide hover:text-red-800 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-red-50 border border-red-200 hover:border-red-300"
+        - else
+          = link_to t(".links.sign_in"), new_user_session_path, class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
+          = link_to t(".links.sign_up"), new_user_registration_path, class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
+        = locale_selector
+
+      .md:hidden
+        %button{class: "text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 transition-colors duration-200", "aria-label" => "Open menu", "data-action" => "click->mobile-menu#toggle"}
+          = lucide_icon("menu", class: "h-6 w-6")
+
+  .md:hidden{"data-mobile-menu-target" => "menu"}
+    .px-2.pt-2.pb-3.space-y-1.sm:px-3.bg-white.border-b.border-gray-200
+      .px-3.py-2.border-b.border-gray-100
+        = mobile_locale_selector
+      - if user_signed_in?
+        = link_to t(".links.dashboard"), "#", class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
+        = link_to t(".links.courses"), "#", class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
+        = link_to t(".links.profile"), "#", class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
+        = link_to t(".links.sign_out"), destroy_user_session_path, method: :delete, class: "block px-3 py-2 text-sm font-medium text-red-600 uppercase tracking-wide hover:text-red-800 hover:bg-red-50 hover:underline transition-all duration-200 rounded-sm border border-red-200 hover:border-red-300"
+      - else
+        = link_to t(".links.sign_in"), new_user_session_path, class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
+        = link_to t(".links.sign_up"), new_user_registration_path, class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
