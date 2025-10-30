@@ -22,5 +22,10 @@ Rails.application.routes.draw do
 
   # Sidekiq web interface
   mount Sidekiq::Web, at: "sidekiq"
+
+  # PgHero for database insights
   mount PgHero::Engine, at: "pghero"
+
+  # Lookbook for UI development
+  mount Lookbook::Engine, at: "/lookbook" if Rails.env.development?
 end
