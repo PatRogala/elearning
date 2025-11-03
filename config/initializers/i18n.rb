@@ -1,1 +1,1 @@
-I18n.load_path += Dir[Rails.root.join("app/components/**/*.{yml,yaml}")]
+I18n.load_path += Rails.root.glob("app/components/**/*.{yml,yaml}")
