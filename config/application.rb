@@ -46,6 +46,7 @@ module Elearning
     # Use Polish as the default locale
     config.i18n.default_locale = :pl
     config.i18n.available_locales = %i[pl en]
+    config.i18n.load_path += Dir[Rails.root.join("app/components/**/*.yml")]
 
     # Enable query log tags to check SQL source in logs
     config.active_record.query_log_tags_enabled = true

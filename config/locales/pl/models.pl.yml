@@ -1,8 +1,9 @@
+---
 pl:
   activerecord:
     models:
       user:
-        one: Użytkownik
         few: Użytkownicy
         many: Użytkownicy
+        one: Użytkownik
         other: Użytkownicy
