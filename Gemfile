@@ -118,7 +118,7 @@ group :development, :test do
   gem "byebug"
 
   # Authorization framework
-  gem "action_policy"
+  gem "pundit"
 
   # I18n tasks for translations management
   gem "i18n-tasks"

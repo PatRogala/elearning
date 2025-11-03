@@ -1,8 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    action_policy (0.7.5)
-      ruby-next-core (>= 1.0)
     action_text-trix (2.1.15)
       railties
     actioncable (8.1.1)
@@ -380,6 +378,8 @@ GEM
     public_suffix (6.0.2)
     puma (7.1.0)
       nio4r (~> 2.0)
+    pundit (2.5.2)
+      activesupport (>= 3.0.0)
     racc (1.8.1)
     rack (3.2.3)
     rack-session (2.1.1)
@@ -500,7 +500,6 @@ GEM
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
       rubocop-rspec (~> 3.5)
-    ruby-next-core (1.1.2)
     ruby-progressbar (1.13.0)
     ruby_parser (3.21.1)
       racc (~> 1.5)
@@ -598,7 +597,6 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  action_policy
   active_record_doctor
   bootsnap
   brakeman
@@ -632,6 +630,7 @@ DEPENDENCIES
   propshaft
   prosopite
   puma
+  pundit
   rails
   rails-i18n
   rspec-rails
