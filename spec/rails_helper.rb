@@ -15,6 +15,7 @@ require "capybara/rails"
 require "capybara/rspec"
 require "view_component/test_helpers"
 require "webmock/rspec"
+require "pundit/rspec"
 
 # Check shared examples for easy to use common testing patterns for various Rails features
 Rails.root.glob("spec/support/**/*.rb").sort_by(&:to_s).each { |f| require f }
