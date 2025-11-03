@@ -150,4 +150,7 @@ group :test do
 
   # Mock HTTP requests
   gem "webmock"
+
+  # Record and replay HTTP requests
+  gem "vcr"
 end
