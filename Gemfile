@@ -147,4 +147,7 @@ group :test do
 
   # Cucumber for acceptance tests
   gem "cucumber-rails", require: false
+
+  # Mock HTTP requests
+  gem "webmock"
 end
