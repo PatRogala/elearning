@@ -119,6 +119,9 @@ group :development, :test do
 
   # Authorization framework
   gem "action_policy"
+
+  # I18n tasks for translations management
+  gem "i18n-tasks"
 end
 
 group :development do

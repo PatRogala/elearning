@@ -1,2 +1,5 @@
+---
 en:
-  language: Language
+  misc:
+    locale_selector_component:
+      language: Language

@@ -1,8 +1,10 @@
+---
 pl:
-  links:
-    sign_out: Wyloguj się
-    sign_in: Zaloguj się
-    sign_up: Zarejestruj się
-    dashboard: Dashboard
-    courses: Kursy
-    profile: Profil
+  header_component:
+    links:
+      courses: Kursy
+      dashboard: Dashboard
+      profile: Profil
+      sign_in: Zaloguj się
+      sign_out: Wyloguj się
+      sign_up: Zarejestruj się
