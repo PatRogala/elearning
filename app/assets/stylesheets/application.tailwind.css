@@ -4,3 +4,9 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+/* Images should be responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
