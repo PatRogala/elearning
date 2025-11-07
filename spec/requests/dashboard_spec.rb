@@ -13,7 +13,7 @@ RSpec.describe "Dashboard", type: :request do
     end
 
     context "when user is signed in" do
-      let(:user) { create(:user) }
+      let(:user) { build(:user) }
 
       before do
         sign_in user
