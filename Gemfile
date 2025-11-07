@@ -153,4 +153,7 @@ group :test do
 
   # Record and replay HTTP requests
   gem "vcr"
+
+  # W3C HTML validation
+  gem "w3c_validators"
 end

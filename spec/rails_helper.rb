@@ -47,6 +47,7 @@ RSpec.configure do |config|
   config.include ViewComponent::SystemSpecHelpers, type: :system
   config.include Capybara::RSpecMatchers, type: :component
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::IntegrationHelpers, type: :request
 end
 
 RSpec::Sidekiq.configure do |config|

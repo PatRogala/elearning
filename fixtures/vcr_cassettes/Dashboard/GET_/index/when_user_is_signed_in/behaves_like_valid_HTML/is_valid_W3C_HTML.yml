@@ -1,0 +1,132 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://validator.w3.org/nu/?out=json&parser=html&showsource=yes
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\n<html>\n<head>\n<meta content='text/html; charset=UTF-8'
+        http-equiv='Content-Type'>\n<title>Elearning</title>\n<meta content='width=device-width,initial-scale=1'
+        name='viewport'>\n<meta content='yes' name='apple-mobile-web-app-capable'>\n<meta
+        content='yes' name='mobile-web-app-capable'>\n\n\n\n<link href='/icon.png'
+        rel='icon' type='image/png'>\n<link href='/icon.svg' rel='icon' type='image/svg+xml'>\n<link
+        href='/icon.png' rel='apple-touch-icon'>\n<link rel=\"stylesheet\" href=\"/assets/application-60f2de20.css\"
+        data-turbo-track=\"reload\" />\n<link rel=\"stylesheet\" href=\"/assets/application.tailwind-eb1e850e.css\"
+        data-turbo-track=\"reload\" />\n<script src=\"/assets/application-7879935a.js\"
+        data-turbo-track=\"reload\" type=\"module\"></script>\n</head>\n<body class='bg-white
+        text-black'>\n<header class='bg-white border-b border-gray-200' data-controller='mobile-menu'>\n<div
+        class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>\n<div class='flex justify-between
+        items-center h-16'>\n<div class='flex items-center'>\n<a class=\"text-xl font-bold
+        text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all
+        duration-200 px-2 py-1 rounded-sm hover:bg-gray-50\" href=\"/en\">Szkoleo\n</a></div>\n<div
+        class='hidden md:flex items-center space-x-8'>\n<a class=\"text-sm font-medium
+        text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all
+        duration-200 px-2 py-1 rounded-sm hover:bg-gray-50\" href=\"#\">Dashboard</a>\n<a
+        class=\"text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600
+        hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50\"
+        href=\"#\">Courses</a>\n<a class=\"text-sm font-medium text-black uppercase
+        tracking-wide hover:text-gray-600 hover:underline transition-all duration-200
+        px-2 py-1 rounded-sm hover:bg-gray-50\" href=\"#\">Profile</a>\n<form class=\"button_to\"
+        method=\"post\" action=\"/en/users/sign_out\"><input type=\"hidden\" name=\"_method\"
+        value=\"delete\" /><button class=\"text-sm font-medium cursor-pointer text-red-600
+        uppercase tracking-wide hover:text-red-800 hover:underline transition-all
+        duration-200 px-2 py-1 rounded-sm hover:bg-red-50 border border-red-200 hover:border-red-300\"
+        type=\"submit\">Sign out</button></form>\n<div class='locale-selector relative'
+        data-controller='locale-dropdown'>\n<button class='flex items-center space-x-2
+        text-sm font-medium text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md
+        hover:bg-gray-50 transition-colors duration-200 border border-gray-200 hover:border-gray-300'
+        data-action='click-&gt;locale-dropdown#toggle' data-locale-dropdown-target='button'>\n<span
+        class='text-lg'>\n\U0001F1FA\U0001F1F8\n</span>\n<span>\nEnglish\n</span>\n<svg
+        class='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>\n<path
+        d='M19 9l-7 7-7-7' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'></path>\n</svg>\n</button>\n<div
+        class='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200
+        z-50 hidden' data-locale-dropdown-target='menu'>\n<div class='py-1'>\n<a class=\"flex
+        items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900
+        transition-colors duration-200\" href=\"/pl\"><span class='text-lg'>\n\U0001F1F5\U0001F1F1\n</span>\n<span>\nPolski\n</span>\n</a></div>\n</div>\n</div>\n\n</div>\n<div
+        class='md:hidden'>\n<button aria-label='Open menu' class='text-black hover:text-gray-600
+        focus:outline-none focus:text-gray-600 transition-colors duration-200' data-action='click-&gt;mobile-menu#toggle'>\n<svg
+        aria-hidden=\"true\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"
+        stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"
+        class=\"h-6 w-6\"><path d=\"M4 12h16\"></path><path d=\"M4 18h16\"></path><path
+        d=\"M4 6h16\"></path></svg>\n</button>\n</div>\n</div>\n</div>\n<div class='md:hidden'
+        data-mobile-menu-target='menu'>\n<div class='px-2 pt-2 pb-3 space-y-1 sm:px-3
+        bg-white border-b border-gray-200'>\n<div class='px-3 py-2 border-b border-gray-100'>\n<div
+        class='locale-selector-mobile'>\n<div class='text-xs font-medium text-gray-500
+        uppercase tracking-wide mb-2'>\nLanguage\n</div>\n<div class='space-y-1'>\n<a
+        class=\"flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-600
+        hover:text-gray-900 hover:bg-gray-50 rounded transition-colors duration-200\"
+        href=\"/pl\"><span class='text-lg'>\n\U0001F1F5\U0001F1F1\n</span>\n<span>\nPolski\n</span>\n</a><div
+        class='flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-900
+        bg-gray-100 rounded'>\n<span class='text-lg'>\n\U0001F1FA\U0001F1F8\n</span>\n<span>\nEnglish\n</span>\n</div>\n</div>\n</div>\n\n</div>\n<a
+        class=\"block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide
+        hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200
+        rounded-sm\" href=\"#\">Dashboard</a>\n<a class=\"block px-3 py-2 text-sm
+        font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50
+        hover:underline transition-all duration-200 rounded-sm\" href=\"#\">Courses</a>\n<a
+        class=\"block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide
+        hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200
+        rounded-sm\" href=\"#\">Profile</a>\n<a class=\"block px-3 py-2 text-sm font-medium
+        text-red-600 uppercase tracking-wide hover:text-red-800 hover:bg-red-50 hover:underline
+        transition-all duration-200 rounded-sm border border-red-200 hover:border-red-300\"
+        rel=\"nofollow\" data-method=\"delete\" href=\"/en/users/sign_out\">Sign out</a>\n</div>\n</div>\n</header>\n\n<div
+        class='fixed top-4 right-4 z-50 space-y-2'>\n</div>\n\n<h1>Dashboard#index</h1>\n<p>Find
+        me in app/views/dashboard/index.html.haml</p>\n\n</body>\n</html>\n"
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 99ad106c3eca7fba-WAW
+      Accept-Encoding:
+      - gzip
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - content-type
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Cache-Control:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 validator.w3.org
+      Strict-Transport-Security:
+      - max-age=15552015; preload
+      Public-Key-Pins:
+      - pin-sha256="cN0QSpPIkuwpT6iP2YjEo1bEwGpH/yiUn6yhdy+HNto="; pin-sha256="WGJkyYjx1QMdMe0UqlyOKXtydPDVrk7sl2fV+nNm1r4=";
+        pin-sha256="LrKdTxZLRTvyHM4/atX2nquX9BeHRZMCxg3cf4rhc2I="; max-age=864000
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 99ad106c3eca7fba
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=9yINrCWMump2ytDcV6huN0BVGMWMipBrQiAw185qlUw-1762520957-1.0.1.1-XeRtq3ocPB25ykz1PmOOY6KSMbb_9DM1Ep0r0INXOhWz0EeuiA.c2EyNGhgM9L2Ymg7dt9vyTS4DeQ3VENRBa6OLY1VuTkB7W56QFy5tnfY;
+        path=/; expires=Fri, 07-Nov-25 13:39:17 GMT; domain=.w3.org; HttpOnly; Secure;
+        SameSite=None
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ2ZXJzaW9uIjoiMjUuMTEuNiIsIm1lc3NhZ2VzIjpbeyJ0eXBlIjoiaW5mbyIsImxhc3RMaW5lIjoxNSwibGFzdENvbHVtbiI6OTEsImZpcnN0Q29sdW1uIjoxLCJtZXNzYWdlIjoiVHJhaWxpbmcgc2xhc2ggb24gdm9pZCBlbGVtZW50cyBoYXMgbm8gZWZmZWN0IGFuZCBpbnRlcmFjdHMgYmFkbHkgd2l0aCB1bnF1b3RlZCBhdHRyaWJ1dGUgdmFsdWVzLiIsImV4dHJhY3QiOiJjaC1pY29uJz5cbjxsaW5rIHJlbD1cInN0eWxlc2hlZXRcIiBocmVmPVwiL2Fzc2V0cy9hcHBsaWNhdGlvbi02MGYyZGUyMC5jc3NcIiBkYXRhLXR1cmJvLXRyYWNrPVwicmVsb2FkXCIgLz5cbjxsaW5rIiwiaGlsaXRlU3RhcnQiOjEwLCJoaWxpdGVMZW5ndGgiOjkxfSx7InR5cGUiOiJpbmZvIiwibGFzdExpbmUiOjE2LCJsYXN0Q29sdW1uIjoxMDAsImZpcnN0Q29sdW1uIjoxLCJtZXNzYWdlIjoiVHJhaWxpbmcgc2xhc2ggb24gdm9pZCBlbGVtZW50cyBoYXMgbm8gZWZmZWN0IGFuZCBpbnRlcmFjdHMgYmFkbHkgd2l0aCB1bnF1b3RlZCBhdHRyaWJ1dGUgdmFsdWVzLiIsImV4dHJhY3QiOiJlbG9hZFwiIC8+XG48bGluayByZWw9XCJzdHlsZXNoZWV0XCIgaHJlZj1cIi9hc3NldHMvYXBwbGljYXRpb24udGFpbHdpbmQtZWIxZTg1MGUuY3NzXCIgZGF0YS10dXJiby10cmFjaz1cInJlbG9hZFwiIC8+XG48c2NyaSIsImhpbGl0ZVN0YXJ0IjoxMCwiaGlsaXRlTGVuZ3RoIjoxMDB9LHsidHlwZSI6ImluZm8iLCJsYXN0TGluZSI6MzAsImxhc3RDb2x1bW4iOjExOSwiZmlyc3RDb2x1bW4iOjY3LCJtZXNzYWdlIjoiVHJhaWxpbmcgc2xhc2ggb24gdm9pZCBlbGVtZW50cyBoYXMgbm8gZWZmZWN0IGFuZCBpbnRlcmFjdHMgYmFkbHkgd2l0aCB1bnF1b3RlZCBhdHRyaWJ1dGUgdmFsdWVzLiIsImV4dHJhY3QiOiJzaWduX291dFwiPjxpbnB1dCB0eXBlPVwiaGlkZGVuXCIgbmFtZT1cIl9tZXRob2RcIiB2YWx1ZT1cImRlbGV0ZVwiIC8+PGJ1dHRvIiwiaGlsaXRlU3RhcnQiOjEwLCJoaWxpdGVMZW5ndGgiOjUzfV0sInNvdXJjZSI6eyJ0eXBlIjoidGV4dC9odG1sIiwiZW5jb2RpbmciOiJVVEYtOCIsImNvZGUiOiI8IURPQ1RZUEUgaHRtbD5cbjxodG1sPlxuPGhlYWQ+XG48bWV0YSBjb250ZW50PSd0ZXh0L2h0bWw7IGNoYXJzZXQ9VVRGLTgnIGh0dHAtZXF1aXY9J0NvbnRlbnQtVHlwZSc+XG48dGl0bGU+RWxlYXJuaW5nPC90aXRsZT5cbjxtZXRhIGNvbnRlbnQ9J3dpZHRoPWRldmljZS13aWR0aCxpbml0aWFsLXNjYWxlPTEnIG5hbWU9J3ZpZXdwb3J0Jz5cbjxtZXRhIGNvbnRlbnQ9J3llcycgbmFtZT0nYXBwbGUtbW9iaWxlLXdlYi1hcHAtY2FwYWJsZSc+XG48bWV0YSBjb250ZW50PSd5ZXMnIG5hbWU9J21vYmlsZS13ZWItYXBwLWNhcGFibGUnPlxuXG5cblxuPGxpbmsgaHJlZj0nL2ljb24ucG5nJyByZWw9J2ljb24nIHR5cGU9J2ltYWdlL3BuZyc+XG48bGluayBocmVmPScvaWNvbi5zdmcnIHJlbD0naWNvbicgdHlwZT0naW1hZ2Uvc3ZnK3htbCc+XG48bGluayBocmVmPScvaWNvbi5wbmcnIHJlbD0nYXBwbGUtdG91Y2gtaWNvbic+XG48bGluayByZWw9XCJzdHlsZXNoZWV0XCIgaHJlZj1cIi9hc3NldHMvYXBwbGljYXRpb24tNjBmMmRlMjAuY3NzXCIgZGF0YS10dXJiby10cmFjaz1cInJlbG9hZFwiIC8+XG48bGluayByZWw9XCJzdHlsZXNoZWV0XCIgaHJlZj1cIi9hc3NldHMvYXBwbGljYXRpb24udGFpbHdpbmQtZWIxZTg1MGUuY3NzXCIgZGF0YS10dXJiby10cmFjaz1cInJlbG9hZFwiIC8+XG48c2NyaXB0IHNyYz1cIi9hc3NldHMvYXBwbGljYXRpb24tNzg3OTkzNWEuanNcIiBkYXRhLXR1cmJvLXRyYWNrPVwicmVsb2FkXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuPC9oZWFkPlxuPGJvZHkgY2xhc3M9J2JnLXdoaXRlIHRleHQtYmxhY2snPlxuPGhlYWRlciBjbGFzcz0nYmctd2hpdGUgYm9yZGVyLWIgYm9yZGVyLWdyYXktMjAwJyBkYXRhLWNvbnRyb2xsZXI9J21vYmlsZS1tZW51Jz5cbjxkaXYgY2xhc3M9J21heC13LTd4bCBteC1hdXRvIHB4LTQgc206cHgtNiBsZzpweC04Jz5cbjxkaXYgY2xhc3M9J2ZsZXgganVzdGlmeS1iZXR3ZWVuIGl0ZW1zLWNlbnRlciBoLTE2Jz5cbjxkaXYgY2xhc3M9J2ZsZXggaXRlbXMtY2VudGVyJz5cbjxhIGNsYXNzPVwidGV4dC14bCBmb250LWJvbGQgdGV4dC1ibGFjayB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSBob3Zlcjp0ZXh0LWdyYXktNjAwIGhvdmVyOnVuZGVybGluZSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAgcHgtMiBweS0xIHJvdW5kZWQtc20gaG92ZXI6YmctZ3JheS01MFwiIGhyZWY9XCIvZW5cIj5TemtvbGVvXG48L2E+PC9kaXY+XG48ZGl2IGNsYXNzPSdoaWRkZW4gbWQ6ZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC04Jz5cbjxhIGNsYXNzPVwidGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LWJsYWNrIHVwcGVyY2FzZSB0cmFja2luZy13aWRlIGhvdmVyOnRleHQtZ3JheS02MDAgaG92ZXI6dW5kZXJsaW5lIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCBweC0yIHB5LTEgcm91bmRlZC1zbSBob3ZlcjpiZy1ncmF5LTUwXCIgaHJlZj1cIiNcIj5EYXNoYm9hcmQ8L2E+XG48YSBjbGFzcz1cInRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1ibGFjayB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSBob3Zlcjp0ZXh0LWdyYXktNjAwIGhvdmVyOnVuZGVybGluZSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAgcHgtMiBweS0xIHJvdW5kZWQtc20gaG92ZXI6YmctZ3JheS01MFwiIGhyZWY9XCIjXCI+Q291cnNlczwvYT5cbjxhIGNsYXNzPVwidGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LWJsYWNrIHVwcGVyY2FzZSB0cmFja2luZy13aWRlIGhvdmVyOnRleHQtZ3JheS02MDAgaG92ZXI6dW5kZXJsaW5lIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCBweC0yIHB5LTEgcm91bmRlZC1zbSBob3ZlcjpiZy1ncmF5LTUwXCIgaHJlZj1cIiNcIj5Qcm9maWxlPC9hPlxuPGZvcm0gY2xhc3M9XCJidXR0b25fdG9cIiBtZXRob2Q9XCJwb3N0XCIgYWN0aW9uPVwiL2VuL3VzZXJzL3NpZ25fb3V0XCI+PGlucHV0IHR5cGU9XCJoaWRkZW5cIiBuYW1lPVwiX21ldGhvZFwiIHZhbHVlPVwiZGVsZXRlXCIgLz48YnV0dG9uIGNsYXNzPVwidGV4dC1zbSBmb250LW1lZGl1bSBjdXJzb3ItcG9pbnRlciB0ZXh0LXJlZC02MDAgdXBwZXJjYXNlIHRyYWNraW5nLXdpZGUgaG92ZXI6dGV4dC1yZWQtODAwIGhvdmVyOnVuZGVybGluZSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAgcHgtMiBweS0xIHJvdW5kZWQtc20gaG92ZXI6YmctcmVkLTUwIGJvcmRlciBib3JkZXItcmVkLTIwMCBob3Zlcjpib3JkZXItcmVkLTMwMFwiIHR5cGU9XCJzdWJtaXRcIj5TaWduIG91dDwvYnV0dG9uPjwvZm9ybT5cbjxkaXYgY2xhc3M9J2xvY2FsZS1zZWxlY3RvciByZWxhdGl2ZScgZGF0YS1jb250cm9sbGVyPSdsb2NhbGUtZHJvcGRvd24nPlxuPGJ1dHRvbiBjbGFzcz0nZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC0yIHRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1ncmF5LTcwMCBob3Zlcjp0ZXh0LWdyYXktOTAwIHB4LTMgcHktMiByb3VuZGVkLW1kIGhvdmVyOmJnLWdyYXktNTAgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMjAwIGJvcmRlciBib3JkZXItZ3JheS0yMDAgaG92ZXI6Ym9yZGVyLWdyYXktMzAwJyBkYXRhLWFjdGlvbj0nY2xpY2stJmd0O2xvY2FsZS1kcm9wZG93biN0b2dnbGUnIGRhdGEtbG9jYWxlLWRyb3Bkb3duLXRhcmdldD0nYnV0dG9uJz5cbjxzcGFuIGNsYXNzPSd0ZXh0LWxnJz5cbvCfh7rwn4e4XG48L3NwYW4+XG48c3Bhbj5cbkVuZ2xpc2hcbjwvc3Bhbj5cbjxzdmcgY2xhc3M9J3ctNCBoLTQnIGZpbGw9J25vbmUnIHN0cm9rZT0nY3VycmVudENvbG9yJyB2aWV3Qm94PScwIDAgMjQgMjQnPlxuPHBhdGggZD0nTTE5IDlsLTcgNy03LTcnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgc3Ryb2tlLXdpZHRoPScyJz48L3BhdGg+XG48L3N2Zz5cbjwvYnV0dG9uPlxuPGRpdiBjbGFzcz0nYWJzb2x1dGUgcmlnaHQtMCBtdC0yIHctNDggYmctd2hpdGUgcm91bmRlZC1tZCBzaGFkb3ctbGcgYm9yZGVyIGJvcmRlci1ncmF5LTIwMCB6LTUwIGhpZGRlbicgZGF0YS1sb2NhbGUtZHJvcGRvd24tdGFyZ2V0PSdtZW51Jz5cbjxkaXYgY2xhc3M9J3B5LTEnPlxuPGEgY2xhc3M9XCJmbGV4IGl0ZW1zLWNlbnRlciBzcGFjZS14LTMgcHgtNCBweS0yIHRleHQtc20gdGV4dC1ncmF5LTcwMCBob3ZlcjpiZy1ncmF5LTUwIGhvdmVyOnRleHQtZ3JheS05MDAgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMjAwXCIgaHJlZj1cIi9wbFwiPjxzcGFuIGNsYXNzPSd0ZXh0LWxnJz5cbvCfh7Xwn4exXG48L3NwYW4+XG48c3Bhbj5cblBvbHNraVxuPC9zcGFuPlxuPC9hPjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cblxuPC9kaXY+XG48ZGl2IGNsYXNzPSdtZDpoaWRkZW4nPlxuPGJ1dHRvbiBhcmlhLWxhYmVsPSdPcGVuIG1lbnUnIGNsYXNzPSd0ZXh0LWJsYWNrIGhvdmVyOnRleHQtZ3JheS02MDAgZm9jdXM6b3V0bGluZS1ub25lIGZvY3VzOnRleHQtZ3JheS02MDAgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMjAwJyBkYXRhLWFjdGlvbj0nY2xpY2stJmd0O21vYmlsZS1tZW51I3RvZ2dsZSc+XG48c3ZnIGFyaWEtaGlkZGVuPVwidHJ1ZVwiIHdpZHRoPVwiMjRcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZS13aWR0aD1cIjJcIiBzdHJva2UtbGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlLWxpbmVqb2luPVwicm91bmRcIiBjbGFzcz1cImgtNiB3LTZcIj48cGF0aCBkPVwiTTQgMTJoMTZcIj48L3BhdGg+PHBhdGggZD1cIk00IDE4aDE2XCI+PC9wYXRoPjxwYXRoIGQ9XCJNNCA2aDE2XCI+PC9wYXRoPjwvc3ZnPlxuPC9idXR0b24+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG48ZGl2IGNsYXNzPSdtZDpoaWRkZW4nIGRhdGEtbW9iaWxlLW1lbnUtdGFyZ2V0PSdtZW51Jz5cbjxkaXYgY2xhc3M9J3B4LTIgcHQtMiBwYi0zIHNwYWNlLXktMSBzbTpweC0zIGJnLXdoaXRlIGJvcmRlci1iIGJvcmRlci1ncmF5LTIwMCc+XG48ZGl2IGNsYXNzPSdweC0zIHB5LTIgYm9yZGVyLWIgYm9yZGVyLWdyYXktMTAwJz5cbjxkaXYgY2xhc3M9J2xvY2FsZS1zZWxlY3Rvci1tb2JpbGUnPlxuPGRpdiBjbGFzcz0ndGV4dC14cyBmb250LW1lZGl1bSB0ZXh0LWdyYXktNTAwIHVwcGVyY2FzZSB0cmFja2luZy13aWRlIG1iLTInPlxuTGFuZ3VhZ2VcbjwvZGl2PlxuPGRpdiBjbGFzcz0nc3BhY2UteS0xJz5cbjxhIGNsYXNzPVwiZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC0zIHB4LTMgcHktMiB0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtZ3JheS02MDAgaG92ZXI6dGV4dC1ncmF5LTkwMCBob3ZlcjpiZy1ncmF5LTUwIHJvdW5kZWQgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMjAwXCIgaHJlZj1cIi9wbFwiPjxzcGFuIGNsYXNzPSd0ZXh0LWxnJz5cbvCfh7Xwn4exXG48L3NwYW4+XG48c3Bhbj5cblBvbHNraVxuPC9zcGFuPlxuPC9hPjxkaXYgY2xhc3M9J2ZsZXggaXRlbXMtY2VudGVyIHNwYWNlLXgtMyBweC0zIHB5LTIgdGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LWdyYXktOTAwIGJnLWdyYXktMTAwIHJvdW5kZWQnPlxuPHNwYW4gY2xhc3M9J3RleHQtbGcnPlxu8J+HuvCfh7hcbjwvc3Bhbj5cbjxzcGFuPlxuRW5nbGlzaFxuPC9zcGFuPlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PlxuXG48L2Rpdj5cbjxhIGNsYXNzPVwiYmxvY2sgcHgtMyBweS0yIHRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1ibGFjayB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSBob3Zlcjp0ZXh0LWdyYXktNjAwIGhvdmVyOmJnLWdyYXktNTAgaG92ZXI6dW5kZXJsaW5lIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCByb3VuZGVkLXNtXCIgaHJlZj1cIiNcIj5EYXNoYm9hcmQ8L2E+XG48YSBjbGFzcz1cImJsb2NrIHB4LTMgcHktMiB0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtYmxhY2sgdXBwZXJjYXNlIHRyYWNraW5nLXdpZGUgaG92ZXI6dGV4dC1ncmF5LTYwMCBob3ZlcjpiZy1ncmF5LTUwIGhvdmVyOnVuZGVybGluZSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAgcm91bmRlZC1zbVwiIGhyZWY9XCIjXCI+Q291cnNlczwvYT5cbjxhIGNsYXNzPVwiYmxvY2sgcHgtMyBweS0yIHRleHQtc20gZm9udC1tZWRpdW0gdGV4dC1ibGFjayB1cHBlcmNhc2UgdHJhY2tpbmctd2lkZSBob3Zlcjp0ZXh0LWdyYXktNjAwIGhvdmVyOmJnLWdyYXktNTAgaG92ZXI6dW5kZXJsaW5lIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCByb3VuZGVkLXNtXCIgaHJlZj1cIiNcIj5Qcm9maWxlPC9hPlxuPGEgY2xhc3M9XCJibG9jayBweC0zIHB5LTIgdGV4dC1zbSBmb250LW1lZGl1bSB0ZXh0LXJlZC02MDAgdXBwZXJjYXNlIHRyYWNraW5nLXdpZGUgaG92ZXI6dGV4dC1yZWQtODAwIGhvdmVyOmJnLXJlZC01MCBob3Zlcjp1bmRlcmxpbmUgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMjAwIHJvdW5kZWQtc20gYm9yZGVyIGJvcmRlci1yZWQtMjAwIGhvdmVyOmJvcmRlci1yZWQtMzAwXCIgcmVsPVwibm9mb2xsb3dcIiBkYXRhLW1ldGhvZD1cImRlbGV0ZVwiIGhyZWY9XCIvZW4vdXNlcnMvc2lnbl9vdXRcIj5TaWduIG91dDwvYT5cbjwvZGl2PlxuPC9kaXY+XG48L2hlYWRlcj5cblxuPGRpdiBjbGFzcz0nZml4ZWQgdG9wLTQgcmlnaHQtNCB6LTUwIHNwYWNlLXktMic+XG48L2Rpdj5cblxuPGgxPkRhc2hib2FyZCNpbmRleDwvaDE+XG48cD5GaW5kIG1lIGluIGFwcC92aWV3cy9kYXNoYm9hcmQvaW5kZXguaHRtbC5oYW1sPC9wPlxuXG48L2JvZHk+XG48L2h0bWw+In19Cg==
+  recorded_at: Fri, 07 Nov 2025 13:09:17 GMT
+recorded_with: VCR 6.3.1

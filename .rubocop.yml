@@ -6,6 +6,9 @@ plugins:
   - rubocop-capybara
   - rubocop-factory_bot
 
+inherit_gem:
+  pundit: config/rubocop-rspec.yml
+
 AllCops:
   TargetRailsVersion: 8.0
   TargetRubyVersion: 3.4
