@@ -1,6 +1,8 @@
 # Shared examples for common Rails model testing patterns
 RSpec.shared_examples "a valid factory" do |factory_name = nil|
-  factory_name ||= described_class.name.underscore.to_sym
+  before do
+    factory_name ||= described_class.name.underscore.to_sym
+  end
 
   it "has a valid factory" do
     expect(build(factory_name)).to be_valid

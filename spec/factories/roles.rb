@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :role do
-    name { Faker::Lorem.word }
+    name { Faker::Lorem.unique.word }
 
     trait :admin do
       name { "Admin" }
