@@ -18,6 +18,10 @@ require "action_view/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+ActiveSupport.on_load(:active_record_postgresqladapter) do
+  self.datetime_type = :timestamptz
+end
+
 module Elearning
   # Modern eLearning platform
   class Application < Rails::Application
