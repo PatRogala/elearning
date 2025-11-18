@@ -10,20 +10,6 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
---
--- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS pg_stat_statements WITH SCHEMA public;
-
-
---
--- Name: EXTENSION pg_stat_statements; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION pg_stat_statements IS 'track planning and execution statistics of all SQL statements executed';
-
-
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -35,8 +21,8 @@ SET default_table_access_method = heap;
 CREATE TABLE public.ar_internal_metadata (
     key character varying NOT NULL,
     value character varying,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone NOT NULL
 );
 
 
@@ -47,8 +33,8 @@ CREATE TABLE public.ar_internal_metadata (
 CREATE TABLE public.roles (
     id bigint NOT NULL,
     name character varying NOT NULL,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone NOT NULL
 );
 
 
@@ -88,8 +74,8 @@ CREATE TABLE public.user_roles (
     id bigint NOT NULL,
     user_id bigint NOT NULL,
     role_id bigint NOT NULL,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone NOT NULL
 );
 
 
@@ -121,15 +107,15 @@ CREATE TABLE public.users (
     email character varying DEFAULT ''::character varying NOT NULL,
     encrypted_password character varying DEFAULT ''::character varying NOT NULL,
     reset_password_token character varying,
-    reset_password_sent_at timestamp(6) without time zone,
-    remember_created_at timestamp(6) without time zone,
+    reset_password_sent_at timestamp(6) with time zone,
+    remember_created_at timestamp(6) with time zone,
     sign_in_count integer DEFAULT 0 NOT NULL,
-    current_sign_in_at timestamp(6) without time zone,
-    last_sign_in_at timestamp(6) without time zone,
+    current_sign_in_at timestamp(6) with time zone,
+    last_sign_in_at timestamp(6) with time zone,
     current_sign_in_ip character varying,
     last_sign_in_ip character varying,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone NOT NULL
 );
 
 
