@@ -1,34 +1,58 @@
-%header{class: "bg-white border-b border-gray-200", data: { controller: "mobile-menu" }}
+-# Outer Container: Sticky, White, Sharp Black Border Bottom
+%header{class: "bg-white border-b border-neutral-900 z-50 #{sticky ? 'sticky top-0' : ''}", data: { controller: "mobile-menu" }}
   .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
-    .flex.justify-between.items-center.h-16
+    .flex.justify-between.items-center.h-20
+
+      -# --- LEFT: LOGO ---
       .flex.items-center
-        = link_to root_path, class: "text-xl font-bold text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50" do
-          = Constants::APPLICATION_NAME
+        = link_to root_path, class: "group flex items-center gap-2" do
+          -# Typography Logo: Heavy weight, tight tracking to contrast the wide navigation
+          %span.text-xl.font-black.tracking-tighter.text-neutral-900.uppercase.group-hover:text-neutral-600.transition-colors
+            = app_name
 
-      .hidden.md:flex.items-center.space-x-8
-        - if user_signed_in?
-          = link_to t(".links.dashboard"), "#", class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
-          = link_to t(".links.courses"), "#", class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
-          = link_to t(".links.profile"), "#", class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
-          = button_to t(".links.sign_out"), destroy_user_session_path, method: :delete, class: "text-sm font-medium cursor-pointer text-red-600 uppercase tracking-wide hover:text-red-800 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-red-50 border border-red-200 hover:border-red-300"
+      -# --- CENTER/RIGHT: DESKTOP ---
+      .hidden.md:flex.items-center.gap-8
+        - if user
+          %nav.flex.gap-6.items-center
+            = render Ui::NavLinkComponent.new(label: t(".dashboard"), href: "#")
+            = render Ui::NavLinkComponent.new(label: t(".courses"), href: "#")
+            = render Ui::NavLinkComponent.new(label: t(".profile"), href: "#")
+
+          -# Minimalist vertical divider
+          .h-5.w-px.bg-neutral-200
+
+          .flex.gap-4.items-center
+            = render Ui::ButtonComponent.new(label: t(".sign_out"), href: destroy_user_session_path, method: :delete, scheme: :danger)
+
         - else
-          = link_to t(".links.sign_in"), new_user_session_path, class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
-          = link_to t(".links.sign_up"), new_user_registration_path, class: "text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:underline transition-all duration-200 px-2 py-1 rounded-sm hover:bg-gray-50"
-        = locale_selector
+          %nav.flex.gap-6.items-center
+            = render Ui::NavLinkComponent.new(label: t(".sign_in"), href: new_user_session_path)
+            = render Ui::ButtonComponent.new(label: t(".sign_up"), href: new_user_registration_path)
 
+        -# Locale Selector (Assuming you have a partial)
+        .pl-4.border-l.border-neutral-200
+          = render "shared/locale_selector" rescue nil
+
+      -# --- RIGHT: MOBILE HAMBURGER ---
       .md:hidden
-        %button{class: "text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 transition-colors duration-200", "aria-label" => "Open menu", "data-action" => "click->mobile-menu#toggle"}
-          = lucide_icon("menu", class: "h-6 w-6")
+        %button.p-2.text-neutral-900.hover:bg-neutral-100.transition-colors{"aria-label" => "Open menu", "data-action" => "click->mobile-menu#toggle"}
+          -# Using a thinner stroke width (1.5) for a cleaner look
+          = lucide_icon("menu", class: "h-6 w-6 stroke-[1.5]")
 
-  .md:hidden{"data-mobile-menu-target" => "menu"}
-    .px-2.pt-2.pb-3.space-y-1.sm:px-3.bg-white.border-b.border-gray-200
-      .px-3.py-2.border-b.border-gray-100
-        = mobile_locale_selector
-      - if user_signed_in?
-        = link_to t(".links.dashboard"), "#", class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
-        = link_to t(".links.courses"), "#", class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
-        = link_to t(".links.profile"), "#", class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
-        = link_to t(".links.sign_out"), destroy_user_session_path, method: :delete, class: "block px-3 py-2 text-sm font-medium text-red-600 uppercase tracking-wide hover:text-red-800 hover:bg-red-50 hover:underline transition-all duration-200 rounded-sm border border-red-200 hover:border-red-300"
+  -# --- MOBILE MENU DRAWER ---
+  .hidden.bg-white.border-b.border-neutral-900.md:hidden{"data-mobile-menu-target" => "menu"}
+    .px-4.pt-2.pb-6
+      -# Mobile Locale Selector
+      .py-3.border-b.border-neutral-100.mb-2
+        = render "shared/mobile_locale_selector" rescue nil
+
+      - if user
+        = render Ui::NavLinkComponent.new(label: t(".dashboard"), href: "#", mobile: true)
+        = render Ui::NavLinkComponent.new(label: t(".courses"), href: "#", mobile: true)
+        = render Ui::NavLinkComponent.new(label: t(".profile"), href: "#", mobile: true)
+        .pt-6
+          = render Ui::ButtonComponent.new(label: t(".sign_out"), href: destroy_user_session_path, method: :delete, mobile: true, scheme: :danger)
       - else
-        = link_to t(".links.sign_in"), new_user_session_path, class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
-        = link_to t(".links.sign_up"), new_user_registration_path, class: "block px-3 py-2 text-sm font-medium text-black uppercase tracking-wide hover:text-gray-600 hover:bg-gray-50 hover:underline transition-all duration-200 rounded-sm"
+        = render Ui::NavLinkComponent.new(label: t(".sign_in"), href: new_user_session_path, mobile: true)
+        .pt-6
+          = render Ui::ButtonComponent.new(label: t(".sign_up"), href: new_user_registration_path, mobile: true)
