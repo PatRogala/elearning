@@ -15,6 +15,6 @@
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
   %body.bg-white.text-black
-    = render HeaderComponent.new(user: current_user)
+    = render Layout::HeaderComponent.new(user: current_user)
     = render(Misc::FlashMessagesComponent.new(flash: flash))
     = yield

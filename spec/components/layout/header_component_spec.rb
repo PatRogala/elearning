@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe HeaderComponent, type: :component do
+RSpec.describe Layout::HeaderComponent, type: :component do
   context "when user is signed in" do
     let(:current_user) { build(:user) }
 
