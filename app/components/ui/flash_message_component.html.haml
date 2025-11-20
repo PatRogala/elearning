@@ -1,0 +1,12 @@
+%div{class: container_classes, data: { controller: "flash" }, role: "alert"}
+  .shrink-0
+    = lucide_icon(icon_name, class: "h-5 w-5 stroke-[1.5] #{icon_classes}")
+
+  .flex-1.min-w-0
+    %p.font-bold.uppercase.tracking-widest.text-neutral-500.mb-0.5{class: "text-[10px]"}
+      = scheme
+    %p.text-sm.font-medium.text-neutral-900.leading-snug
+      = message
+
+  %button.shrink-0.text-neutral-400.hover:text-neutral-900.transition-colors{type: "button", "aria-label" => "Dismiss", "data-action" => "click->flash#dismiss"}
+    = lucide_icon("x", class: "h-4 w-4")
