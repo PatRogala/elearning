@@ -1,9 +1,9 @@
 ---
 pl:
   header_component:
-    sign_in: Zaloguj się
     courses: Kursy
     dashboard: Dashboard
     profile: Profil
+    sign_in: Zaloguj się
     sign_out: Wyloguj się
     sign_up: Zarejestruj się
