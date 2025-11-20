@@ -27,7 +27,8 @@ module Ui
     end
 
     def container_classes
-      base = "w-80 max-w-sm bg-white border border-neutral-900 border-l-4 flex items-start gap-4 px-4 py-4 transition-all duration-300 ease-out opacity-0 translate-y-2 shadow-none"
+      base = "w-80 max-w-sm bg-white border border-neutral-900 border-l-4 flex items-start gap-4 px-4 py-4"
+      base += " transition-all duration-300 ease-out opacity-0 translate-y-2 shadow-none"
 
       color_class = case scheme
                     when :error   then "border-l-red-600"
