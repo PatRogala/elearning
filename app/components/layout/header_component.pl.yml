@@ -1,7 +1,7 @@
 ---
 pl:
-  header_component:
-    links:
+  layout:
+    header_component:
       courses: Kursy
       dashboard: Dashboard
       profile: Profil
