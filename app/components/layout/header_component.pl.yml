@@ -1,0 +1,10 @@
+---
+pl:
+  layout:
+    header_component:
+      courses: Kursy
+      dashboard: Dashboard
+      profile: Profil
+      sign_in: Zaloguj się
+      sign_out: Wyloguj się
+      sign_up: Zarejestruj się
