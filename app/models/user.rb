@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :user_roles, dependent: :delete_all
   has_many :roles, through: :user_roles
+  has_many :created_courses, class_name: "Course", foreign_key: "instructor_id", dependent: :delete_all,
+                             inverse_of: :instructor
 
   validates :email, presence: true, uniqueness: true
   validates :reset_password_token, uniqueness: true, allow_nil: true

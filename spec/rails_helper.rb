@@ -1,6 +1,14 @@
 # Check code coverage for tests
 require "simplecov"
-SimpleCov.start "rails"
+SimpleCov.start "rails" do
+  add_filter "app/previews"
+  add_filter "app/avo"
+  add_filter "app/controllers/avo"
+
+  add_group "Interactors", "app/interactors"
+  add_group "Policies", "app/policies"
+  add_group "Components", "app/components"
+end
 
 require "spec_helper"
 ENV["RAILS_ENV"] = "test"
