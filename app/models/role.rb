@@ -4,7 +4,7 @@ class Role < ApplicationRecord
   TEACHER_ID = 2
   DEVELOPER_ID = 3
 
-  has_many :user_roles, dependent: :destroy
+  has_many :user_roles, dependent: :delete_all
   has_many :users, through: :user_roles
 
   validates :name, presence: true, uniqueness: true

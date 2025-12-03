@@ -4,7 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :trackable
 
-  has_many :user_roles, dependent: :destroy
+  has_many :user_roles, dependent: :delete_all
   has_many :roles, through: :user_roles
 
   validates :email, presence: true, uniqueness: true
