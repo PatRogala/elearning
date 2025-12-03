@@ -32,7 +32,7 @@ end
 
 RSpec.shared_examples "a model with uniqueness validation" do |attribute|
   it "validates uniqueness of #{attribute}" do
-    expect(subject).to validate_uniqueness_of(attribute)
+    expect(subject).to validate_uniqueness_of(attribute).case_insensitive
   end
 end
 
@@ -45,4 +45,8 @@ end
 
 RSpec.shared_examples "a model with belongs_to association" do |association|
   it { expect(subject).to belong_to(association) }
+end
+
+RSpec.shared_examples "a model with has_many association" do |association|
+  it { expect(subject).to have_many(association) }
 end
