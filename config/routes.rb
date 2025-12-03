@@ -20,11 +20,16 @@ Rails.application.routes.draw do
     devise_for :users
   end
 
-  # Sidekiq web interface
-  mount Sidekiq::Web, at: "sidekiq"
+  authenticate :user, ->(user) { user.admin? } do
+    # Sidekiq web interface
+    mount Sidekiq::Web, at: "sidekiq"
 
-  # PgHero for database insights
-  mount PgHero::Engine, at: "pghero"
+    # PgHero for database insights
+    mount PgHero::Engine, at: "pghero"
+
+    # Avo for admin interface
+    mount_avo at: "/avo"
+  end
 
   # Lookbook for UI development
   mount Lookbook::Engine, at: "/lookbook" if Rails.env.development?

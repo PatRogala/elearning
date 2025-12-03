@@ -2,6 +2,10 @@
 class Role < ApplicationRecord
   ADMIN_ID = 1
   TEACHER_ID = 2
+  DEVELOPER_ID = 3
+
+  has_many :user_roles, dependent: :delete_all
+  has_many :users, through: :user_roles
 
   validates :name, presence: true, uniqueness: true
 
@@ -11,5 +15,9 @@ class Role < ApplicationRecord
 
   def self.teacher
     find(TEACHER_ID)
+  end
+
+  def self.developer
+    find(DEVELOPER_ID)
   end
 end
