@@ -254,10 +254,10 @@ CREATE UNIQUE INDEX index_courses_on_instructor_id_and_title ON public.courses U
 
 
 --
--- Name: index_roles_on_name; Type: INDEX; Schema: public; Owner: -
+-- Name: index_roles_lower_name_; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE UNIQUE INDEX index_roles_on_name ON public.roles USING btree (name);
+CREATE UNIQUE INDEX index_roles_lower_name_ ON public.roles USING btree (lower((name)::text));
 
 
 --
@@ -293,7 +293,7 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING bt
 --
 
 ALTER TABLE ONLY public.courses
-    ADD CONSTRAINT fk_rails_2ab3132eb0 FOREIGN KEY (instructor_id) REFERENCES public.users(id);
+    ADD CONSTRAINT fk_rails_2ab3132eb0 FOREIGN KEY (instructor_id) REFERENCES public.users(id) ON DELETE CASCADE;
 
 
 --
@@ -319,6 +319,8 @@ ALTER TABLE ONLY public.user_roles
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251203142929'),
+('20251203142819'),
 ('20251203142306'),
 ('20251203142305'),
 ('20251203140433'),
