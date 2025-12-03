@@ -32,7 +32,7 @@ CREATE TABLE public.ar_internal_metadata (
 
 CREATE TABLE public.courses (
     id bigint NOT NULL,
-    title character varying,
+    title character varying NOT NULL,
     instructor_id bigint NOT NULL,
     created_at timestamp(6) with time zone NOT NULL,
     updated_at timestamp(6) with time zone NOT NULL
@@ -247,13 +247,6 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: index_courses_on_instructor_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_courses_on_instructor_id ON public.courses USING btree (instructor_id);
-
-
---
 -- Name: index_courses_on_instructor_id_and_title; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -326,6 +319,8 @@ ALTER TABLE ONLY public.user_roles
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251203142306'),
+('20251203142305'),
 ('20251203140433'),
 ('20251203091344'),
 ('20251026085440'),
