@@ -1,0 +1,13 @@
+---
+pl:
+  instructor:
+    dashboard_component:
+      courses: Twoje kursy
+      links:
+        create_course: Stwórz nowy kurs
+      overview: Przegląd
+      stats:
+        active_students: Łącznie studentów
+        revenue_ytd: Całkowite wynagrodzenie
+        total_courses: Stworzonych kursów
+      welcome_back: Witaj ponownie,

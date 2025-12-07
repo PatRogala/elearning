@@ -50,3 +50,8 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+# Cucumber needed data
+Role.find_or_create_by!(name: "Admin", id: Role::ADMIN_ID)
+Role.find_or_create_by!(name: "Teacher", id: Role::TEACHER_ID)
+Role.find_or_create_by!(name: "Developer", id: Role::DEVELOPER_ID)
