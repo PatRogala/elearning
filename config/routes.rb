@@ -18,6 +18,11 @@ Rails.application.routes.draw do
 
     # Devise routes for user authentication
     devise_for :users
+
+    # Teach routes
+    namespace :teach do
+      get "dashboard", to: "dashboard#index"
+    end
   end
 
   authenticate :user, ->(user) { user.admin? } do
