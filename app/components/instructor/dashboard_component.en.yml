@@ -1,0 +1,13 @@
+---
+en:
+  instructor:
+    dashboard_component:
+      courses: Your Courses
+      links:
+        create_course: Create New Course
+      overview: Overview
+      stats:
+        active_students: Active Students
+        revenue_ytd: Total Revenue
+        total_courses: Total Courses
+      welcome_back: Welcome back,
