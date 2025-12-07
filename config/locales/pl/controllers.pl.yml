@@ -1,0 +1,4 @@
+---
+pl:
+  flash:
+    unauthorized: "Nie masz uprawnień do wykonania tej akcji."
