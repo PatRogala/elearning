@@ -3,6 +3,9 @@ pl:
   instructor:
     dashboard_component:
       courses: Twoje kursy
+      empty_state:
+        headline: Utwórz swój pierwszy kurs
+        subtext: Twój profil jest gotowy do tworzenia kursów. Utwórz swój pierwszy kurs i rozpocznij generowanie dochodów.
       links:
         create_course: Stwórz nowy kurs
         create_course_now: Stwórz pierwszy kurs
@@ -12,7 +15,3 @@ pl:
         revenue_ytd: Całkowite wynagrodzenie
         total_courses: Stworzonych kursów
       welcome_back: Witaj ponownie,
-      no_courses: Brak kursów
-      empty_state:
-        headline: Utwórz swój pierwszy kurs
-        subtext: Twój profil jest gotowy do tworzenia kursów. Utwórz swój pierwszy kurs i rozpocznij generowanie dochodów.
