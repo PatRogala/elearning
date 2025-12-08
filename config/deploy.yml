@@ -52,6 +52,7 @@ env:
     DB_HOST: elearning-db
     POSTGRES_USER: szkoleo
     POSTGRES_DB: szkoleo_production
+    RAILS_ENV: production
 
     # Log everything from Rails
     # RAILS_LOG_LEVEL: debug
