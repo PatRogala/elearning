@@ -7,8 +7,7 @@
       %h1.text-4xl.md:text-5xl.font-black.text-neutral-900.uppercase.tracking-tight.leading-none
         = t(".welcome_back")
         %br
-        =# TODO: Get current user name
-        Professor Smith
+        = user.full_name
 
     -# Primary Action Button (Sharp, Black, Bold)
     %a.inline-flex.items-center.justify-center.bg-neutral-900.text-white.px-8.py-4.text-xs.font-bold.uppercase.hover:bg-neutral-700.transition-colors.border.border-neutral-900{href: "#", class: "tracking-[0.15em]"}
