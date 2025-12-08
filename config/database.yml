@@ -35,12 +35,18 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    url: <%= ENV.fetch("DATABASE_URL") %>
+    host: <%= ENV.fetch("DB_HOST") %>
+    username: <%= ENV.fetch("POSTGRES_USER") %>
+    password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+    database: <%= ENV.fetch("POSTGRES_DB") %>
     connect_timeout: 5
     variables:
       statement_timeout: 15s
       lock_timeout: 10s
   cache:
     <<: *primary_production
-    url: <%= ENV.fetch("CACHE_DATABASE_URL") %>
+    host: <%= ENV.fetch("DB_HOST") %>
+    username: <%= ENV.fetch("POSTGRES_USER") %>
+    password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+    database: <%= ENV.fetch("POSTGRES_DB") %>_cache
     migrations_paths: db/cache_migrate
