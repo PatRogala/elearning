@@ -54,3 +54,7 @@ spec/examples.txt
 
 # Database consistency
 database_consistency*.txt
+
+# Ignore key files for decrypting credentials and more.
+/config/*.key
+
