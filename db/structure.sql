@@ -147,7 +147,9 @@ CREATE TABLE public.users (
     current_sign_in_ip character varying,
     last_sign_in_ip character varying,
     created_at timestamp(6) with time zone NOT NULL,
-    updated_at timestamp(6) with time zone NOT NULL
+    updated_at timestamp(6) with time zone NOT NULL,
+    first_name character varying DEFAULT ''::character varying NOT NULL,
+    last_name character varying DEFAULT ''::character varying NOT NULL
 );
 
 
@@ -319,6 +321,7 @@ ALTER TABLE ONLY public.user_roles
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251208000051'),
 ('20251203142929'),
 ('20251203142819'),
 ('20251203142306'),
