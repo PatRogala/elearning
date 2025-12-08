@@ -45,6 +45,7 @@ gem "view_component"
 # Dry family
 gem "dry-initializer" # A simple way to create initializer methods
 gem "dry-types" # Type system for Ruby
+gem "dry-validation" # Validation for Ruby (ReForm)
 
 # Lograge for 1 line logging
 gem "lograge"
@@ -73,6 +74,9 @@ gem "lucide-rails"
 
 # Avo as admin framework
 gem "avo"
+
+# Reform for form objects
+gem "reform-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
