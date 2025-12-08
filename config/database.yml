@@ -23,30 +23,30 @@ default: &default
 
 development:
   <<: *default
-  url: <%= ENV.fetch("DATABASE_URL") { "postgres://none" } %>
+  url: <%= ENV["DATABASE_URL"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  url: <%= ENV.fetch("DATABASE_URL") { "postgres://none" } %>
+  url: <%= ENV["DATABASE_URL"] %>
 
 production:
   primary: &primary_production
     <<: *default
-    host: <%= ENV.fetch("DB_HOST") %>
-    username: <%= ENV.fetch("POSTGRES_USER") %>
-    password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
-    database: <%= ENV.fetch("POSTGRES_DB") %>
+    host: <%= ENV["DB_HOST"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    database: <%= ENV["POSTGRES_DB"] %>
     connect_timeout: 5
     variables:
       statement_timeout: 15s
       lock_timeout: 10s
   cache:
     <<: *primary_production
-    host: <%= ENV.fetch("DB_HOST") %>
-    username: <%= ENV.fetch("POSTGRES_USER") %>
-    password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
-    database: <%= ENV.fetch("POSTGRES_DB") %>_cache
+    host: <%= ENV["DB_HOST"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    database: <%= ENV["POSTGRES_DB"] %>_cache
     migrations_paths: db/cache_migrate
