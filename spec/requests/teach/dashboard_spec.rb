@@ -24,7 +24,7 @@ RSpec.describe "Teach::Dashboards", type: :request do
     end
 
     context "when user is a teacher" do
-      let(:user) { build(:user) }
+      let(:user) { build(:user, first_name: "John", last_name: "Doe") }
 
       before do
         sign_in user
