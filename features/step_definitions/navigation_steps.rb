@@ -5,6 +5,8 @@ module NavigationHelpers
     case page_name
     when "the teacher dashboard page"
       teach_dashboard_path(locale: :en)
+    when "the new course page"
+      new_teach_course_path(locale: :en)
     when "the root page"
       root_path(locale: :en)
     when "the login page"
