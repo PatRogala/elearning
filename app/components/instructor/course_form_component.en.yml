@@ -2,10 +2,10 @@
 en:
   instructor:
     course_form_component:
-      back_to_dashboard: "Back to Dashboard"
-      name_your_course: "Name your course"
+      back_to_dashboard: Back to Dashboard
+      course_placeholder: e.g. Advanced System Architecture
+      course_title: Course Title
+      create_and_continue: Create & Continue
       give_your_new_course_a_working_title: Give your new course a working title. It represents the first step in your curriculum.
-      course_title: "Course Title"
-      course_placeholder: "e.g. Advanced System Architecture"
-      helper_text: "This doesn't have to be perfect. You can change the title and add a subtitle later in the course settings menu."
-      create_and_continue: "Create & Continue"
+      helper_text: This doesn't have to be perfect. You can change the title and add a subtitle later in the course settings menu.
+      name_your_course: Name your course
