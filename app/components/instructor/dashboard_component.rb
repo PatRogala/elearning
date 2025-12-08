@@ -18,5 +18,9 @@ module Instructor
     def total_revenue
       8450 # TODO: Get total revenue
     end
+
+    def courses
+      user.created_courses
+    end
   end
 end
