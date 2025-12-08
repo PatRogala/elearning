@@ -1,0 +1,11 @@
+---
+pl:
+  instructor:
+    course_form_component:
+      back_to_dashboard: Wróć do panelu
+      course_placeholder: np. Systemy operacyjne
+      course_title: Tytuł kursu
+      create_and_continue: Stwórz i kontynuuj
+      give_your_new_course_a_working_title: Daj nowemu kursowi tytuł. Reprezentuje to pierwszy krok w twoim programie.
+      helper_text: Tytuł nie musi być idealny. Możesz go zmienić w każdej chwili w menu ustawień kursu.
+      name_your_course: Nazwij swój kurs

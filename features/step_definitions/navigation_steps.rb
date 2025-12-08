@@ -1,10 +1,12 @@
 # Allow us to avoid using raw paths in feature files
 # and to make it more readable for non-technical people
 module NavigationHelpers
-  def path_to(page_name)
+  def path_to(page_name) # rubocop:disable Metrics/MethodLength
     case page_name
     when "the teacher dashboard page"
       teach_dashboard_path(locale: :en)
+    when "the new course page"
+      new_teach_course_path(locale: :en)
     when "the root page"
       root_path(locale: :en)
     when "the login page"
