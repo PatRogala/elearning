@@ -14,9 +14,11 @@
       .hidden.md:flex.items-center.gap-8
         - if user
           %nav.flex.gap-6.items-center
-            = render Ui::NavLinkComponent.new(label: t(".dashboard"), href: "#")
             = render Ui::NavLinkComponent.new(label: t(".courses"), href: "#")
             = render Ui::NavLinkComponent.new(label: t(".profile"), href: "#")
+
+          - if user.teacher?
+            = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path)
 
           -# Minimalist vertical divider
           .h-5.w-px.bg-neutral-200
@@ -47,9 +49,10 @@
         = render "shared/mobile_locale_selector" rescue nil
 
       - if user
-        = render Ui::NavLinkComponent.new(label: t(".dashboard"), href: "#", mobile: true)
         = render Ui::NavLinkComponent.new(label: t(".courses"), href: "#", mobile: true)
         = render Ui::NavLinkComponent.new(label: t(".profile"), href: "#", mobile: true)
+        - if user.teacher?
+          = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path, mobile: true)
         .pt-6
           = render Ui::ButtonComponent.new(label: t(".sign_out"), href: destroy_user_session_path, method: :delete, mobile: true, scheme: :danger)
       - else
