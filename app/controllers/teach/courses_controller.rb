@@ -7,5 +7,9 @@ module Teach
       @course = Course.new
       authorize([:instructor, @course])
     end
+
+    def create
+      # TODO: Implement
+    end
   end
 end
