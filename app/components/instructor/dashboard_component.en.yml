@@ -3,8 +3,12 @@ en:
   instructor:
     dashboard_component:
       courses: Your Courses
+      empty_state:
+        headline: Create your first course
+        subtext: Your profile is ready to create courses. Create your first course and start generating revenue.
       links:
         create_course: Create New Course
+        create_course_now: Create your first course
       overview: Overview
       stats:
         active_students: Active Students

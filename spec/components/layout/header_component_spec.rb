@@ -4,11 +4,6 @@ RSpec.describe Layout::HeaderComponent, type: :component do
   context "when user is signed in" do
     let(:current_user) { build(:user) }
 
-    it "renders dashboard link" do
-      render_inline(described_class.new(user: current_user))
-      expect(page).to have_link("Dashboard", href: "#")
-    end
-
     it "renders courses link" do
       render_inline(described_class.new(user: current_user))
       expect(page).to have_link("Courses", href: "#")

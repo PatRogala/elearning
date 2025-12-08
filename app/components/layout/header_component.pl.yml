@@ -3,7 +3,7 @@ pl:
   layout:
     header_component:
       courses: Kursy
-      dashboard: Dashboard
+      instructor_dashboard: Nauczaj
       profile: Profil
       sign_in: Zaloguj się
       sign_out: Wyloguj się

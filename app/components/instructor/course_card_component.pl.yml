@@ -1,0 +1,8 @@
+---
+pl:
+  instructor:
+    course_card_component:
+      draft: Draft
+      manage: Zarządzaj
+      not_yet_published: Jeszcze nie opublikowany
+      published: Opublikowany
