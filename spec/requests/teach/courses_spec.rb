@@ -22,12 +22,15 @@ RSpec.describe "Teach::Courses", type: :request do
     context "when user is teacher" do
       let(:user) { create(:user) }
 
-      it_behaves_like "valid HTML"
-
-      it "returns http success" do
+      before do
         allow(user).to receive(:teacher?).and_return(true)
         sign_in(user)
         get new_teach_course_path
+      end
+
+      it_behaves_like "valid HTML"
+
+      it "returns http success" do
         expect(response).to have_http_status(:success)
       end
     end
