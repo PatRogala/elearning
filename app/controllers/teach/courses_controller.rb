@@ -10,13 +10,23 @@ module Teach
     end
 
     def create
-      # TODO: Implement
+      course = Course.new(instructor: current_user)
+      @form = Teach::CourseForm.new(course)
+      authorize([:instructor, course])
+
+      if @form.validate(course_params)
+        @form.save
+        redirect_to teach_dashboard_path, notice: t("flash.course.created")
+      else
+        flash[:alert] = @form.errors.full_messages.join(", ")
+        redirect_to new_teach_course_path
+      end
     end
 
     private
 
     def course_params
-      params.expect(course: %i[title])
+      params.expect(teach_course: %i[title])
     end
   end
 end

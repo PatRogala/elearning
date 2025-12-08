@@ -41,3 +41,9 @@ RSpecRails/InferredSpecType:
 
 RSpec/ExampleLength:
   CountAsOne: ['array', 'hash', 'heredoc', 'method_call']
+
+RSpec/NestedGroups:
+  Max: 4
+
+Metrics/AbcSize:
+  Max: 20

@@ -20,7 +20,7 @@
 
       -# Input Group
       .relative.group.mb-6
-        %label.block.text-xs.font-bold.uppercase.text-neutral-900.mb-3{for: "course_title", class: "tracking-[0.15em]"}
+        = f.label :title, class: "block text-xs font-bold uppercase text-neutral-900 mb-3 tracking-[0.15em]" do
           = t(".course_title")
 
         -# The Input: Large, flat, no rounded corners, heavy focus state
