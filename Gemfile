@@ -78,6 +78,9 @@ gem "avo"
 # Reform for form objects
 gem "reform-rails"
 
+# Authorization framework
+gem "pundit"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
@@ -123,9 +126,6 @@ group :development, :test do
 
   # Debugger for Ruby
   gem "byebug"
-
-  # Authorization framework
-  gem "pundit"
 
   # I18n tasks for translations management
   gem "i18n-tasks"

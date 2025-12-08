@@ -48,8 +48,8 @@ env:
     # WEB_CONCURRENCY: 2
 
     # Match this to any external database server to configure Active Record correctly
-    # Use elearning-db for a db accessory server on same machine via local kamal docker network.
-    DB_HOST: elearning-db
+    # Use szkoleo-db for a db accessory server on same machine via local kamal docker network.
+    DB_HOST: szkoleo-db
     POSTGRES_USER: szkoleo
     POSTGRES_DB: szkoleo_production
     RAILS_ENV: production
