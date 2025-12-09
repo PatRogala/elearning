@@ -1,0 +1,120 @@
+-# --- STICKY ACTION BAR ---
+.sticky.top-0.z-40.bg-white.border-b.border-neutral-900
+  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .h-20.flex.items-center.justify-between
+      -# Back Link
+      %a.inline-flex.items-center.text-xs.font-bold.uppercase.text-neutral-500.hover:text-neutral-900.transition-colors{href: "#", class: "tracking-[0.15em]"}
+        %svg.w-4.h-4.mr-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+          %path{d: "M19 12H5M12 19l-7-7 7-7"}
+        Dashboard
+
+      -# Primary Actions
+      .flex.items-center.gap-4
+        %button.px-6.py-2.text-xs.font-bold.uppercase.text-neutral-900.hover:text-neutral-500.transition-colors{type: "button", class: "tracking-[0.15em]"}
+          Save Draft
+
+        -# Publish Button (High Contrast)
+        %button.inline-flex.items-center.bg-neutral-900.text-white.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-700.transition-colors.border.border-neutral-900{type: "button", class: "tracking-[0.15em]"}
+          Publish Course
+          %svg.w-4.h-4.ml-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+            %path{d: "M5 12h14M12 5l7 7-7 7"}
+
+-# --- MAIN FORM CONTAINER ---
+.max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-12
+  %form.grid.grid-cols-1.lg:grid-cols-12.gap-12{action: "#", method: "post"}
+
+    -# --- LEFT COLUMN (CONTENT) - Spans 8 cols ---
+    .lg:col-span-8.space-y-12
+
+      -# 1. Title Section (Document Style)
+      .space-y-6
+        .group
+          %label.block.text-xs.font-bold.uppercase.text-neutral-500.mb-2{for: "course_title", class: "tracking-[0.15em]"}
+            Course Title
+          %input#course_title.block.w-full.bg-transparent.text-4xl.md:text-5xl.font-black.text-neutral-900.uppercase.tracking-tight.border-b-2.border-neutral-200.focus:border-neutral-900.focus:outline-none.placeholder-neutral-300.py-2.transition-colors.rounded-none{type: "text", name: "course[title]", value: "Typography in Modern Web Design", placeholder: "ENTER COURSE TITLE", class: "tracking-[0.15em]"}
+
+        .group
+          %label.block.text-xs.font-bold.uppercase.text-neutral-500.mb-2{for: "course_subtitle", class: "tracking-[0.15em]"}
+            Subtitle / Tagline
+          %input#course_subtitle.block.w-full.bg-transparent.text-xl.font-medium.text-neutral-600.border-b.border-neutral-200.focus:border-neutral-900.focus:outline-none.placeholder-neutral-300.py-2.transition-colors.rounded-none{type: "text", name: "course[subtitle]", value: "Master the art of vertical rhythm, modular scales, and fluid typography.", placeholder: "Enter a short catchy summary", class: "tracking-[0.15em]"}
+
+      -# 2. Description (Rich Text Simulator)
+      .space-y-4
+        %label.block.text-xs.font-bold.uppercase.text-neutral-900{for: "course_description", class: "tracking-[0.15em]"}
+          About this Course
+
+        .border.border-neutral-300.focus-within:border-neutral-900.transition-colors
+          -# Fake Toolbar
+          .flex.items-center.gap-1.p-2.border-b.border-neutral-200.bg-neutral-50
+            %button.p-2.hover:bg-neutral-200.text-neutral-700{type: "button"}
+              %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+                %path{d: "M6 4v6a6 6 0 0 0 12 0V4"}
+            %button.p-2.hover:bg-neutral-200.text-neutral-700{type: "button"}
+              %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+                %path{d: "M4 12h16M4 18h16M4 6h16"}
+            %span.w-px.h-4.bg-neutral-300.mx-1
+            %button.p-2.hover:bg-neutral-200.text-neutral-700{type: "button"}
+              %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+                %path{d: "M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"}
+
+          -# Text Area
+          %textarea#course_description.w-full.p-6.bg-white.border-none.focus:ring-0.text-neutral-700.leading-relaxed.resize-y{name: "course[description]", class: "min-h-[400px]"}
+            Typography is 95% of the web. In this course, we will explore the foundations of type on screens. We will cover selecting typefaces, pairing fonts, and setting up a modular scale system.
+
+    -# --- RIGHT COLUMN (SIDEBAR / SETTINGS) - Spans 4 cols ---
+    .lg:col-span-4.space-y-10
+
+      -# 1. Course Cover Image
+      .space-y-4
+        %label.block.text-xs.font-bold.uppercase.text-neutral-900{class: "tracking-[0.15em]"}
+          Course Cover
+
+        .relative.group.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[16/9]"}
+          -# Preview Image
+          %img.object-cover.w-full.h-full{src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop", alt: "Current cover"}
+
+          -# Upload Overlay (Hidden by default, visible on hover)
+          .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/50"}
+            %button.px-4.py-2.bg-white.text-neutral-900.text-xs.font-bold.uppercase.tracking-widest{type: "button"}
+              Replace Image
+
+        %p.text-neutral-500.uppercase.tracking-wide{class: "text-[10px]"}
+          Recommended: 1280x720px JPG or PNG
+
+      -# 2. Status Card
+      .border.border-neutral-900.p-6.bg-neutral-50
+        .flex.items-center.justify-between.mb-4
+          %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-[0.15em]"} Status
+          %span.flex.items-center.gap-2
+            %span.w-2.h-2.rounded-full.bg-yellow-500
+            %span.text-xs.font-bold.uppercase.tracking-widest.text-neutral-900 Draft
+
+        %p.text-xs.text-neutral-500.mb-6
+          This course is hidden from students. Publish it to make it visible.
+
+        %button.w-full.border.border-neutral-300.bg-white.text-neutral-900.py-3.text-xs.font-bold.uppercase.tracking-widest.hover:bg-neutral-900.hover:text-white.transition-colors{type: "button"}
+          Preview Course
+
+      -# 3. Course Details
+      .space-y-6
+        -# Price
+        .space-y-2
+          %label.block.text-xs.font-bold.uppercase.text-neutral-900{for: "course_price", class: "tracking-[0.15em]"}
+            Price (USD)
+          .relative
+            %span.absolute.left-4.text-neutral-500.font-serif.italic{class: "top-1/2 -translate-y-1/2"} $
+            %input#course_price.block.w-full.bg-white.border.border-neutral-300.text-neutral-900.text-sm.font-bold.py-3.pl-8.pr-4.focus:border-neutral-900.focus:ring-1.focus:ring-neutral-900.focus:outline-none.rounded-none{type: "number", value: "49.00"}
+
+        -# Level
+        .space-y-2
+          %label.block.text-xs.font-bold.uppercase.text-neutral-900{for: "course_level", class: "tracking-[0.15em]"}
+            Difficulty Level
+          .relative
+            %select#course_level.block.w-full.appearance-none.bg-white.border.border-neutral-300.text-neutral-900.text-sm.font-bold.py-3.px-4.focus:border-neutral-900.focus:ring-1.focus:ring-neutral-900.focus:outline-none.rounded-none
+              %option{value: "beginner"} Beginner
+              %option{value: "intermediate", selected: true} Intermediate
+              %option{value: "advanced"} Advanced
+            -# Custom Select Arrow
+            .absolute.right-4.pointer-events-none{class: "top-1/2 -translate-y-1/2"}
+              %svg.w-4.h-4.text-neutral-500{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+                %path{d: "M6 9l6 6 6-6"}

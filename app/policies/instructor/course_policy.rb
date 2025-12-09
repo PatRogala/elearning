@@ -13,11 +13,15 @@ module Instructor
       teacher?
     end
 
+    def edit?
+      teacher?
+    end
+
+    # Instructor can only see their own courses
     class Scope < ApplicationPolicy::Scope
-      # NOTE: Be explicit about which records you allow access to!
-      # def resolve
-      #   scope.all
-      # end
+      def resolve
+        scope.where(instructor: user)
+      end
     end
   end
 end
