@@ -1,5 +1,5 @@
 -# --- STICKY ACTION BAR ---
-.sticky.z-40.bg-white.border-b.border-neutral-900
+.sticky.z-40.bg-white.border-b.border-neutral-900.top-20
   .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
     .h-20.flex.items-center.justify-between
       -# Back Link
@@ -10,6 +10,7 @@
 
       -# Primary Actions
       .flex.items-center.gap-4
+
         -# Publish Button (High Contrast)
         %button.inline-flex.items-center.bg-neutral-900.text-white.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-700.transition-colors.border.border-neutral-900{type: "button", class: "tracking-[0.15em]"}
           Publish Course
@@ -52,20 +53,6 @@
 
         %p.text-neutral-500.uppercase.tracking-wide{class: "text-[10px]"}
           Recommended: 1280x720px JPG or PNG
-
-      -# 2. Status Card
-      .border.border-neutral-900.p-6.bg-neutral-50
-        .flex.items-center.justify-between.mb-4
-          %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-[0.15em]"} Status
-          %span.flex.items-center.gap-2
-            %span.w-2.h-2.rounded-full.bg-yellow-500
-            %span.text-xs.font-bold.uppercase.tracking-widest.text-neutral-900 Draft
-
-        %p.text-xs.text-neutral-500.mb-6
-          This course is hidden from students. Publish it to make it visible.
-
-        %button.w-full.border.border-neutral-300.bg-white.text-neutral-900.py-3.text-xs.font-bold.uppercase.tracking-widest.hover:bg-neutral-900.hover:text-white.transition-colors{type: "button"}
-          Preview Course
 
       -# 3. Course Details
       .space-y-6
