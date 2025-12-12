@@ -1,18 +1,15 @@
 -# --- STICKY ACTION BAR ---
-.sticky.top-0.z-40.bg-white.border-b.border-neutral-900
+.sticky.z-40.bg-white.border-b.border-neutral-900
   .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
     .h-20.flex.items-center.justify-between
       -# Back Link
-      %a.inline-flex.items-center.text-xs.font-bold.uppercase.text-neutral-500.hover:text-neutral-900.transition-colors{href: "#", class: "tracking-[0.15em]"}
+      = link_to teach_dashboard_path, class: "inline-flex items-center text-xs font-bold uppercase text-neutral-500 hover:text-neutral-900 transition-colors tracking-[0.15em]" do
         %svg.w-4.h-4.mr-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
           %path{d: "M19 12H5M12 19l-7-7 7-7"}
         Dashboard
 
       -# Primary Actions
       .flex.items-center.gap-4
-        %button.px-6.py-2.text-xs.font-bold.uppercase.text-neutral-900.hover:text-neutral-500.transition-colors{type: "button", class: "tracking-[0.15em]"}
-          Save Draft
-
         -# Publish Button (High Contrast)
         %button.inline-flex.items-center.bg-neutral-900.text-white.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-700.transition-colors.border.border-neutral-900{type: "button", class: "tracking-[0.15em]"}
           Publish Course
@@ -21,28 +18,19 @@
 
 -# --- MAIN FORM CONTAINER ---
 .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-12
-  %form.grid.grid-cols-1.lg:grid-cols-12.gap-12{action: "#", method: "post"}
-
+  = form_with(model: @form, url: teach_course_path(@form.model), class: "grid grid-cols-1 lg:grid-cols-12 gap-12") do |f|
     -# --- LEFT COLUMN (CONTENT) - Spans 8 cols ---
     .lg:col-span-8.space-y-12
 
       -# 1. Title Section (Document Style)
       .space-y-6
         .group
-          %label.block.text-xs.font-bold.uppercase.text-neutral-500.mb-2{for: "course_title", class: "tracking-[0.15em]"}
-            Course Title
-          %input#course_title.block.w-full.bg-transparent.text-4xl.md:text-5xl.font-black.text-neutral-900.uppercase.tracking-tight.border-b-2.border-neutral-200.focus:border-neutral-900.focus:outline-none.placeholder-neutral-300.py-2.transition-colors.rounded-none{type: "text", name: "course[title]", value: "Typography in Modern Web Design", placeholder: "ENTER COURSE TITLE", class: "tracking-[0.15em]"}
-
-        .group
-          %label.block.text-xs.font-bold.uppercase.text-neutral-500.mb-2{for: "course_subtitle", class: "tracking-[0.15em]"}
-            Subtitle / Tagline
-          %input#course_subtitle.block.w-full.bg-transparent.text-xl.font-medium.text-neutral-600.border-b.border-neutral-200.focus:border-neutral-900.focus:outline-none.placeholder-neutral-300.py-2.transition-colors.rounded-none{type: "text", name: "course[subtitle]", value: "Master the art of vertical rhythm, modular scales, and fluid typography.", placeholder: "Enter a short catchy summary", class: "tracking-[0.15em]"}
+          = f.label :title, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
+          = f.text_field :title, class: "block w-full bg-transparent text-4xl md:text-5xl font-black text-neutral-900 tracking-tight border-b-2 border-neutral-200 focus:border-neutral-900 focus:outline-none placeholder-neutral-300 py-2 transition-colors rounded-none tracking-[0.15em]"
 
       -# 2. Description (Rich Text Simulator)
       .space-y-4
-        %label.block.text-xs.font-bold.uppercase.text-neutral-900{for: "course_description", class: "tracking-[0.15em]"}
-          About this Course
-
+        = f.label :description, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
         .border.border-neutral-300.focus-within:border-neutral-900.transition-colors
           -# Fake Toolbar
           .flex.items-center.gap-1.p-2.border-b.border-neutral-200.bg-neutral-50
