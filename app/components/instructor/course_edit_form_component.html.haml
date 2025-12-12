@@ -1,0 +1,79 @@
+-# --- STICKY ACTION BAR ---
+.sticky.z-40.bg-white.border-b.border-neutral-900.top-20
+  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .h-20.flex.items-center.justify-between
+      -# Back Link
+      = link_to teach_dashboard_path, class: "inline-flex items-center text-xs font-bold uppercase text-neutral-500 hover:text-neutral-900 transition-colors tracking-[0.15em]" do
+        %svg.w-4.h-4.mr-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+          %path{d: "M19 12H5M12 19l-7-7 7-7"}
+        Dashboard
+
+      -# Primary Actions
+      .flex.items-center.gap-4
+
+        -# Publish Button (High Contrast)
+        %button.inline-flex.items-center.bg-neutral-900.text-white.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-700.transition-colors.border.border-neutral-900{type: "button", class: "tracking-[0.15em]"}
+          Publish Course
+          %svg.w-4.h-4.ml-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+            %path{d: "M5 12h14M12 5l7 7-7 7"}
+
+-# --- MAIN FORM CONTAINER ---
+.max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-12
+  = form_with(model: @form, url: teach_course_path(@form.model), class: "grid grid-cols-1 lg:grid-cols-12 gap-12") do |f|
+    -# --- LEFT COLUMN (CONTENT) - Spans 8 cols ---
+    .lg:col-span-8.space-y-12
+
+      -# 1. Title Section (Document Style)
+      .space-y-6
+        .group
+          = f.label :title, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
+          = f.text_field :title, class: "block w-full bg-transparent text-4xl md:text-5xl font-black text-neutral-900 tracking-tight border-b-2 border-neutral-200 focus:border-neutral-900 focus:outline-none placeholder-neutral-300 py-2 transition-colors rounded-none tracking-[0.15em]"
+
+      -# 2. Description (Rich Text Simulator)
+      .space-y-4
+        = f.label :description, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
+        = f.rich_text_area :description
+
+    -# --- RIGHT COLUMN (SIDEBAR / SETTINGS) - Spans 4 cols ---
+    .lg:col-span-4.space-y-10
+
+      -# 1. Course Cover Image
+      .space-y-4
+        %label.block.text-xs.font-bold.uppercase.text-neutral-900{class: "tracking-[0.15em]"}
+          Course Cover
+
+        .relative.group.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[16/9]"}
+          -# Preview Image
+          %img.object-cover.w-full.h-full{src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop", alt: "Current cover"}
+
+          -# Upload Overlay (Hidden by default, visible on hover)
+          .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/50"}
+            %button.px-4.py-2.bg-white.text-neutral-900.text-xs.font-bold.uppercase.tracking-widest{type: "button"}
+              Replace Image
+
+        %p.text-neutral-500.uppercase.tracking-wide{class: "text-[10px]"}
+          Recommended: 1280x720px JPG or PNG
+
+      -# 3. Course Details
+      .space-y-6
+        -# Price
+        .space-y-2
+          %label.block.text-xs.font-bold.uppercase.text-neutral-900{for: "course_price", class: "tracking-[0.15em]"}
+            Price (USD)
+          .relative
+            %span.absolute.left-4.text-neutral-500.font-serif.italic{class: "top-1/2 -translate-y-1/2"} $
+            %input#course_price.block.w-full.bg-white.border.border-neutral-300.text-neutral-900.text-sm.font-bold.py-3.pl-8.pr-4.focus:border-neutral-900.focus:ring-1.focus:ring-neutral-900.focus:outline-none.rounded-none{type: "number", value: "49.00"}
+
+        -# Level
+        .space-y-2
+          %label.block.text-xs.font-bold.uppercase.text-neutral-900{for: "course_level", class: "tracking-[0.15em]"}
+            Difficulty Level
+          .relative
+            %select#course_level.block.w-full.appearance-none.bg-white.border.border-neutral-300.text-neutral-900.text-sm.font-bold.py-3.px-4.focus:border-neutral-900.focus:ring-1.focus:ring-neutral-900.focus:outline-none.rounded-none
+              %option{value: "beginner"} Beginner
+              %option{value: "intermediate", selected: true} Intermediate
+              %option{value: "advanced"} Advanced
+            -# Custom Select Arrow
+            .absolute.right-4.pointer-events-none{class: "top-1/2 -translate-y-1/2"}
+              %svg.w-4.h-4.text-neutral-500{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+                %path{d: "M6 9l6 6 6-6"}

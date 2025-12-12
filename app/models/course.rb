@@ -4,4 +4,6 @@ class Course < ApplicationRecord
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :instructor_id }
+
+  has_rich_text :description
 end
