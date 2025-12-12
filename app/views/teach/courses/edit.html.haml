@@ -31,23 +31,7 @@
       -# 2. Description (Rich Text Simulator)
       .space-y-4
         = f.label :description, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
-        .border.border-neutral-300.focus-within:border-neutral-900.transition-colors
-          -# Fake Toolbar
-          .flex.items-center.gap-1.p-2.border-b.border-neutral-200.bg-neutral-50
-            %button.p-2.hover:bg-neutral-200.text-neutral-700{type: "button"}
-              %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
-                %path{d: "M6 4v6a6 6 0 0 0 12 0V4"}
-            %button.p-2.hover:bg-neutral-200.text-neutral-700{type: "button"}
-              %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
-                %path{d: "M4 12h16M4 18h16M4 6h16"}
-            %span.w-px.h-4.bg-neutral-300.mx-1
-            %button.p-2.hover:bg-neutral-200.text-neutral-700{type: "button"}
-              %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
-                %path{d: "M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"}
-
-          -# Text Area
-          %textarea#course_description.w-full.p-6.bg-white.border-none.focus:ring-0.text-neutral-700.leading-relaxed.resize-y{name: "course[description]", class: "min-h-[400px]"}
-            Typography is 95% of the web. In this course, we will explore the foundations of type on screens. We will cover selecting typefaces, pairing fonts, and setting up a modular scale system.
+        = f.rich_text_area :description
 
     -# --- RIGHT COLUMN (SIDEBAR / SETTINGS) - Spans 4 cols ---
     .lg:col-span-4.space-y-10

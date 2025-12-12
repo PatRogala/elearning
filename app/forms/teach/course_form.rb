@@ -4,6 +4,7 @@ module Teach
     model :course
 
     property :title
+    property :description
 
     validates :title, presence: true
   end
