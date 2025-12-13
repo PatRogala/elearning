@@ -10,6 +10,9 @@
 
       -# Primary Actions
       .flex.items-center.gap-4
+        -# Save Button
+        %button.inline-flex.items-center.bg-white.text-neutral-900.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-50.transition-colors.border.border-neutral-200{type: "submit", form: "course-edit-form", class: "tracking-[0.15em]"}
+          Save Changes
 
         -# Publish Button (High Contrast)
         %button.inline-flex.items-center.bg-neutral-900.text-white.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-700.transition-colors.border.border-neutral-900{type: "button", class: "tracking-[0.15em]"}
@@ -19,7 +22,7 @@
 
 -# --- MAIN FORM CONTAINER ---
 .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-12
-  = form_with(model: @form, url: teach_course_path(@form.model), class: "grid grid-cols-1 lg:grid-cols-12 gap-12") do |f|
+  = form_with(model: @form, url: teach_course_path(@form.model), id: "course-edit-form", class: "grid grid-cols-1 lg:grid-cols-12 gap-12") do |f|
     -# --- LEFT COLUMN (CONTENT) - Spans 8 cols ---
     .lg:col-span-8.space-y-12
 
