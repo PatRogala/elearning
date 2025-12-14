@@ -1,12 +1,16 @@
 require "rails_helper"
 
 RSpec.describe Instructor::CoursePolicy, type: :policy do
-  subject { described_class }
+  subject(:policy) { described_class }
 
+  let(:scope) { Instructor::CoursePolicy::Scope.new(user, Course).resolve }
   let(:user) { create(:user) }
 
   permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it "returns all courses created by user" do
+      course = create(:course, instructor: user)
+      expect(scope).to contain_exactly(course)
+    end
   end
 
   permissions :index?, :create?, :new? do

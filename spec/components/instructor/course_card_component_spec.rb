@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Instructor::CourseCardComponent, type: :component do
-  let(:course) { build(:course) }
+  let(:course) { build(:course, id: 1) }
 
   it "renders course card" do
     render_inline(described_class.new(course))
