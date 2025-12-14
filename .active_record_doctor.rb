@@ -5,7 +5,8 @@ ActiveRecordDoctor.configure do
     "schema_migrations",
     "active_storage_blobs",
     "active_storage_attachments",
-    "action_text_rich_texts"
+    "action_text_rich_texts",
+    "active_storage_variant_records"
   ]
 
   global :ignore_models, [

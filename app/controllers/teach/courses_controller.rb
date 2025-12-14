@@ -9,6 +9,12 @@ module Teach
       authorize([:instructor, course])
     end
 
+    def edit
+      course = policy_scope([:instructor, Course]).find(params[:id])
+      @form = Teach::CourseForm.new(course)
+      authorize([:instructor, course])
+    end
+
     def create
       course = Course.new(instructor: current_user)
       @form = Teach::CourseForm.new(course)
@@ -26,7 +32,7 @@ module Teach
     private
 
     def course_params
-      params.expect(teach_course: %i[title])
+      params.expect(course: %i[title])
     end
   end
 end

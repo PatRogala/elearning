@@ -60,4 +60,7 @@ Rails.application.configure do
 
   # Test locale is English
   config.i18n.default_locale = :en
+
+  # Active Storage service for tests
+  config.active_storage.service = :test
 end
