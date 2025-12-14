@@ -64,7 +64,7 @@ RSpec.describe "Teach::Courses", type: :request do
 
       context "when course is valid" do
         before do
-          post teach_courses_path, params: { teach_course: { title: "Test Course" } }
+          post teach_courses_path, params: { course: { title: "Test Course" } }
         end
 
         it "redirects to dashboard" do
