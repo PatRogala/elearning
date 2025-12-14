@@ -32,7 +32,7 @@ module Teach
     private
 
     def course_params
-      params.expect(teach_course: %i[title])
+      params.expect(course: %i[title])
     end
   end
 end
