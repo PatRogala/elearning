@@ -6,10 +6,11 @@
     "build:css": "bunx @tailwindcss/cli -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   },
   "dependencies": {
+    "@37signals/lexxy": "^0.1.24-beta",
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.20",
     "@rails/actiontext": "^8.1.100",
-    "trix": "^2.1.15",
+    "@rails/activestorage": "^8.1.100",
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
   }
