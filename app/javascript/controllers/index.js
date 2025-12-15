@@ -4,8 +4,8 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
 
 import LocaleDropdownController from "./locale_dropdown_controller"
 application.register("locale-dropdown", LocaleDropdownController)
@@ -13,5 +13,5 @@ application.register("locale-dropdown", LocaleDropdownController)
 import MobileMenuController from "./mobile_menu_controller"
 application.register("mobile-menu", MobileMenuController)
 
-import FlashController from "./flash_controller"
-application.register("flash", FlashController)
+import SyntaxHighlightController from "./syntax_highlight_controller"
+application.register("syntax-highlight", SyntaxHighlightController)

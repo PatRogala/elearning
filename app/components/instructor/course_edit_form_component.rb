@@ -5,7 +5,7 @@ module Instructor
 
     option :user, Types::Instance(User)
 
-    delegate :rich_textarea_tag, to: :helpers
+    delegate :lexxy_rich_textarea_tag, to: :helpers
 
     def render?
       user.teacher?

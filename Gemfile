@@ -81,6 +81,9 @@ gem "reform-rails"
 # Authorization framework
 gem "pundit"
 
+# Lexxy as new editor for action text
+gem "lexxy", "~> 0.1.23.beta"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
