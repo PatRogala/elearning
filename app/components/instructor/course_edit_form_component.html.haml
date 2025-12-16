@@ -47,7 +47,7 @@
 
         .relative.group.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[16/9]"}
           -# Preview Image
-          %img.object-cover.w-full.h-full{src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop", alt: "Current cover"}
+          = image_tag image_cover, class: "object-cover w-full h-full "
 
           -# Upload Overlay (Hidden by default, visible on hover)
           .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/50"}

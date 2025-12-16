@@ -10,5 +10,9 @@ module Instructor
     def render?
       user.teacher?
     end
+
+    def image_cover
+      form.model.image_cover
+    end
   end
 end

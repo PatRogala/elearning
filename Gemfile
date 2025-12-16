@@ -84,6 +84,10 @@ gem "pundit"
 # Lexxy as new editor for action text
 gem "lexxy", "~> 0.1.23.beta"
 
+# Validations for storage objects
+gem "active_storage_validations"
+gem "ruby-vips"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
