@@ -29,10 +29,24 @@ module Teach
       end
     end
 
+    def update
+      course = policy_scope([:instructor, Course]).find(params[:id])
+      @form = Teach::CourseForm.new(course)
+      authorize([:instructor, course])
+
+      if @form.validate(course_params)
+        @form.save
+        redirect_to edit_teach_course_path(course), notice: t("flash.course.updated")
+      else
+        flash[:alert] = @form.errors.full_messages.join(", ")
+        redirect_to edit_teach_course_path(course)
+      end
+    end
+
     private
 
     def course_params
-      params.expect(course: %i[title])
+      params.expect(course: %i[title image description])
     end
   end
 end

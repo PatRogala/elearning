@@ -14,7 +14,11 @@ module Instructor
     end
 
     def edit?
-      teacher?
+      teacher? && record.instructor == user
+    end
+
+    def update?
+      teacher? && record.instructor == user
     end
 
     # Instructor can only see their own courses

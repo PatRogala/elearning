@@ -86,6 +86,7 @@ gem "lexxy", "~> 0.1.23.beta"
 
 # Validations for storage objects
 gem "active_storage_validations"
+gem "image_processing"
 gem "ruby-vips"
 
 group :development, :test do

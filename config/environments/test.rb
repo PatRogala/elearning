@@ -63,4 +63,5 @@ Rails.application.configure do
 
   # Active Storage service for tests
   config.active_storage.service = :test
+  config.active_storage.variant_processor = :vips
 end

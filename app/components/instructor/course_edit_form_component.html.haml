@@ -45,13 +45,16 @@
         %label.block.text-xs.font-bold.uppercase.text-neutral-900{class: "tracking-[0.15em]"}
           Course Cover
 
-        .relative.group.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[16/9]"}
+        .relative.group.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[16/9]", "data-controller" => "image-preview"}
+          -# File Input (Hidden)
+          = f.file_field :image, class: "hidden", data: { "image-preview-target" => "input", action: "change->image-preview#preview" }, accept: "image/*"
+
           -# Preview Image
-          = image_tag image_cover, class: "object-cover w-full h-full "
+          = image_tag image_cover, class: "object-cover w-full h-full", data: { "image-preview-target" => "preview" }
 
           -# Upload Overlay (Hidden by default, visible on hover)
           .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/50"}
-            %button.px-4.py-2.bg-white.text-neutral-900.text-xs.font-bold.uppercase.tracking-widest{type: "button"}
+            %button.px-4.py-2.bg-white.text-neutral-900.text-xs.font-bold.uppercase.tracking-widest.cursor-pointer{type: "button", data: { action: "click->image-preview#trigger" }}
               Replace Image
 
         %p.text-neutral-500.uppercase.tracking-wide{class: "text-[10px]"}
