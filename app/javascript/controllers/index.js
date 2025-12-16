@@ -15,3 +15,7 @@ application.register("mobile-menu", MobileMenuController)
 
 import SyntaxHighlightController from "./syntax_highlight_controller"
 application.register("syntax-highlight", SyntaxHighlightController)
+
+import ImagePreviewController from "./image_preview_controller"
+application.register("image-preview", ImagePreviewController)
+
