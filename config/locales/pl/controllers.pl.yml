@@ -3,4 +3,5 @@ pl:
   flash:
     course:
       created: Kurs został utworzony.
+      updated: Kurs został zaktualizowany.
     unauthorized: Nie masz uprawnień do wykonania tej akcji.

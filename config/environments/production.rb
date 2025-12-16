@@ -89,4 +89,8 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  # Active Storage service for tests
+  config.active_storage.service = :test # TODO: change to :s3
+  config.active_storage.variant_processor = :vips
 end

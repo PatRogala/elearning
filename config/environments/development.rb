@@ -96,4 +96,5 @@ Rails.application.configure do
 
   # Active Storage
   config.active_storage.service = :local
+  config.active_storage.variant_processor = :vips
 end
