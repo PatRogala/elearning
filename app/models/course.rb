@@ -14,6 +14,7 @@ class Course < ApplicationRecord
     attachable.variant :cover, resize_to_limit: [1280, 720]
     attachable.variant :thumb, resize_to_limit: [400, 225]
   end
+  monetize :price_cents, numericality: { greater_than_or_equal_to: 0 }
 
   def image_cover
     return image.variant(:cover) if image.attached?
