@@ -10,11 +10,9 @@ module Teach
     validates :title, presence: true
 
     def image=(file)
-      if file.present?
-        model.image.attach(file)
-      elsif file == ""
-        model.image.purge_later
-      end
+      return if file.blank?
+
+      model.image.attach(file)
     end
   end
 end
