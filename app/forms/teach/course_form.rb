@@ -5,6 +5,7 @@ module Teach
 
     property :title
     property :description
+    property :image
 
     validates :title, presence: true
   end
