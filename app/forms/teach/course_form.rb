@@ -5,8 +5,16 @@ module Teach
 
     property :title
     property :description
-    property :image
+    property :image, virtual: true
 
     validates :title, presence: true
+
+    def image=(file)
+      if file.present?
+        model.image.attach(file)
+      elsif file == ""
+        model.image.purge_later
+      end
+    end
   end
 end
