@@ -3,4 +3,5 @@ en:
   flash:
     course:
       created: Course created successfully.
+      updated: Course updated successfully.
     unauthorized: You are not authorized to perform this action.
