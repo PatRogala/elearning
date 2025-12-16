@@ -52,6 +52,12 @@ GEM
       addressable
     active_record_doctor (2.0.1)
       activerecord (>= 7.0.0)
+    active_storage_validations (3.0.3)
+      activejob (>= 6.1.4)
+      activemodel (>= 6.1.4)
+      activestorage (>= 6.1.4)
+      activesupport (>= 6.1.4)
+      marcel (>= 1.0.3)
     activejob (8.1.1)
       activesupport (= 8.1.1)
       globalid (>= 0.3.6)
@@ -544,6 +550,9 @@ GEM
       rubocop (~> 1.72, >= 1.72.1)
       rubocop-rspec (~> 3.5)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.3.0)
+      ffi (~> 1.12)
+      logger
     ruby_parser (3.21.1)
       racc (~> 1.5)
       sexp_processor (~> 4.16)
@@ -644,6 +653,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_record_doctor
+  active_storage_validations
   avo
   bootsnap
   brakeman
@@ -692,6 +702,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   rubocop-rspec_rails
+  ruby-vips
   shoulda-matchers
   sidekiq
   simplecov

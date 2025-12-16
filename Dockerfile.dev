@@ -7,7 +7,7 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client wget && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client wget libvips-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set development environment
@@ -17,17 +17,6 @@ ENV RAILS_ENV="development"
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev pkg-config unzip && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
-# Install GitHub CLI
-RUN (type -p wget >/dev/null || (apt update && apt install wget -y)) \
-    && mkdir -p -m 755 /etc/apt/keyrings \
-    && out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-    && cat $out | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-    && chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-    && mkdir -p -m 755 /etc/apt/sources.list.d \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-    && apt update \
-    && apt install gh -y
 
 ENV BUN_INSTALL=/usr/local/bun
 ENV PATH=/usr/local/bun/bin:$PATH
