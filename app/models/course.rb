@@ -8,6 +8,8 @@ class Course < ApplicationRecord
   validates :title, uniqueness: { scope: :instructor_id }
   validates :image, content_type: ACCEPTED_IMAGE_CONTENT_TYPES
   validates :image, size: { less_than_or_equal_to: 5.megabytes }
+  validates :price_cents, presence: true
+  validates :price_currency, presence: true
 
   has_rich_text :description
   has_one_attached :image do |attachable|
