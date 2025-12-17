@@ -9,6 +9,6 @@ en:
     label:
       course:
         description: Description
-        image: Course cover
+        image: Course Cover
         price: Price
         title: Title
