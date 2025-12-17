@@ -50,7 +50,7 @@
           = f.file_field :image, class: "hidden", data: { "image-preview-target" => "input", action: "change->image-preview#preview" }, accept: "image/*"
 
           -# Preview Image
-          = image_tag image_cover, class: "object-cover w-full h-full", data: { "image-preview-target" => "preview" }
+          = image_tag image_cover, class: "object-cover w-full h-full", data: { "image-preview-target" => "preview" }, alt: "#{form.model.title}"
 
           -# Upload Overlay (Hidden by default, visible on hover)
           .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/50"}
