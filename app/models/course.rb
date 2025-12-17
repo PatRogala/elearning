@@ -8,12 +8,15 @@ class Course < ApplicationRecord
   validates :title, uniqueness: { scope: :instructor_id }
   validates :image, content_type: ACCEPTED_IMAGE_CONTENT_TYPES
   validates :image, size: { less_than_or_equal_to: 5.megabytes }
+  validates :price_cents, presence: true
+  validates :price_currency, presence: true
 
   has_rich_text :description
   has_one_attached :image do |attachable|
     attachable.variant :cover, resize_to_limit: [1280, 720]
     attachable.variant :thumb, resize_to_limit: [400, 225]
   end
+  monetize :price_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }
 
   def image_cover
     return image.variant(:cover) if image.attached?

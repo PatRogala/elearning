@@ -89,6 +89,9 @@ gem "active_storage_validations"
 gem "image_processing"
 gem "ruby-vips"
 
+# Money for handling currency
+gem "money-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
