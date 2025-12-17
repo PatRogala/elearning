@@ -46,7 +46,7 @@ module Teach
     private
 
     def course_params
-      params.expect(course: %i[title image description])
+      params.expect(course: %i[title image description price])
     end
   end
 end

@@ -149,6 +149,7 @@ ignore_unused:
   - '{devise}.*'
   - 'errors.messages.*'
   - 'activerecord.models.user.*'
+  - 'helpers.label.*'
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
 
