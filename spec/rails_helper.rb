@@ -8,6 +8,7 @@ SimpleCov.start "rails" do
   add_group "Interactors", "app/interactors"
   add_group "Policies", "app/policies"
   add_group "Components", "app/components"
+  add_group "Forms", "app/forms"
 end
 
 require "spec_helper"
