@@ -5,3 +5,10 @@ en:
       user:
         one: User
         other: Users
+  helpers:
+    label:
+      course:
+        description: Description
+        image: Course cover
+        price: Price
+        title: Title

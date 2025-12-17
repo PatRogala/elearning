@@ -2,8 +2,8 @@
 pl:
   instructor:
     course_edit_form_component:
-      dashboard: "Tablica"
-      save_changes: "Zapisz zmiany"
-      publish_course: "Opublikuj kurs"
-      replace_image: "Zmień obraz"
-      recommended_size: "Rekomendowany rozmiar: 1280x720px JPG lub PNG"
+      dashboard: Tablica
+      publish_course: Opublikuj kurs
+      recommended_size: 'Rekomendowany rozmiar: 1280x720px JPG lub PNG'
+      replace_image: Zmień obraz
+      save_changes: Zapisz zmiany

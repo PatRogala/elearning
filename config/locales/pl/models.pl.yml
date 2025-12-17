@@ -10,7 +10,7 @@ pl:
   helpers:
     label:
       course:
-        title: Tytuł
         description: Opis
         image: Okładka kursu
         price: Cena
+        title: Tytuł
