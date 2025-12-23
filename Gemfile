@@ -47,7 +47,7 @@ gem "dry-initializer" # A simple way to create initializer methods
 gem "dry-types" # Type system for Ruby
 gem "dry-validation" # Validation for Ruby (ReForm)
 
-# Lograge for 1 line logging
+# Lograge for 1-line logging
 gem "lograge"
 
 # Interactor for business logic
@@ -81,7 +81,7 @@ gem "reform-rails"
 # Authorization framework
 gem "pundit"
 
-# Lexxy as new editor for action text
+# Lexxy as a new editor for action text
 gem "lexxy", "~> 0.1.23.beta"
 
 # Validations for storage objects
@@ -105,6 +105,9 @@ group :development, :test do
   # Load environment variables from .env file
   gem "dotenv-rails"
 
+  # Audit ruby vulnerabilities
+  gem "ruby_audit", require: false
+
   # Rubocop for code style
   gem "rubocop", require: false
   gem "rubocop-capybara", require: false
@@ -120,7 +123,7 @@ group :development, :test do
   # Detect inconsistencies between a database schema and application models
   gem "active_record_doctor"
 
-  # Rspec as testing framework
+  # Rspec as a testing framework
   gem "rspec-rails"
 
   # Capybara for feature and system tests

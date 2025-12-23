@@ -58,3 +58,5 @@ database_consistency*.txt
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+# Rubymine
+.idea
