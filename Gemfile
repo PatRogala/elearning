@@ -82,7 +82,7 @@ gem "reform-rails"
 gem "pundit"
 
 # Lexxy as a new editor for action text
-gem "lexxy", "~> 0.1.23.beta"
+gem "lexxy", "~> 0.1.24.beta"
 
 # Validations for storage objects
 gem "active_storage_validations"

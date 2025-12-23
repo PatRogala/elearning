@@ -6,6 +6,7 @@ module Teach
     property :title
     property :description
     property :image, virtual: true
+    property :price, virtual: true
 
     validates :title, presence: true
 
@@ -13,6 +14,14 @@ module Teach
       return if file.blank?
 
       model.image.attach(file)
+    end
+
+    def price=(value)
+      model.price_cents = value.to_d * 100
+    end
+
+    def price
+      model.price.amount
     end
   end
 end

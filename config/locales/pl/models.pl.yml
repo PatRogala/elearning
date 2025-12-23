@@ -7,3 +7,10 @@ pl:
         many: Użytkownicy
         one: Użytkownik
         other: Użytkownicy
+  helpers:
+    label:
+      course:
+        description: Opis
+        image: Okładka kursu
+        price: Cena
+        title: Tytuł
