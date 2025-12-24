@@ -20,4 +20,14 @@ RSpec.describe Instructor::CoursePolicy, type: :policy do
 
     it { is_expected.to permit(user, Course) }
   end
+
+  permissions :edit?, :publish?, :update? do
+    let(:course) { create(:course, instructor: user) }
+
+    before do
+      allow(user).to receive(:teacher?).and_return(true)
+    end
+
+    it { is_expected.to permit(user, course) }
+  end
 end

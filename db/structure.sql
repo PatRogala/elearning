@@ -170,7 +170,8 @@ CREATE TABLE public.courses (
     created_at timestamp(6) with time zone NOT NULL,
     updated_at timestamp(6) with time zone NOT NULL,
     price_cents integer DEFAULT 0 NOT NULL,
-    price_currency character varying DEFAULT 'PLN'::character varying NOT NULL
+    price_currency character varying DEFAULT 'PLN'::character varying NOT NULL,
+    published boolean DEFAULT false NOT NULL
 );
 
 
@@ -567,6 +568,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20251223235630'),
 ('20251216232815'),
 ('20251212102326'),
 ('20251212102325'),

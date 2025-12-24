@@ -16,6 +16,7 @@ services:
       - bundle_cache:/usr/local/bundle
     env_file:
       - .env-docker
+    working_dir: /rails
   postgresql:
     image: postgres:17
     volumes:

@@ -21,6 +21,10 @@ module Instructor
       teacher? && record.instructor == user
     end
 
+    def publish?
+      teacher? && record.instructor == user
+    end
+
     # Instructor can only see their own courses
     class Scope < ApplicationPolicy::Scope
       def resolve

@@ -22,7 +22,11 @@ Rails.application.routes.draw do
     # Teach routes
     namespace :teach do
       get "dashboard", to: "dashboard#index"
-      resources :courses, only: %i[new create edit update]
+      resources :courses, only: %i[new create edit update] do
+        member do
+          patch :publish, as: :publish
+        end
+      end
     end
   end
 
