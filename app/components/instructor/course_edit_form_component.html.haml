@@ -15,7 +15,7 @@
           = t(".save_changes")
 
         -# Publish Button (High Contrast)
-        %button.inline-flex.items-center.bg-neutral-900.text-white.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-700.transition-colors.border.border-neutral-900{type: "button", class: "tracking-[0.15em]"}
+        = button_to publish_teach_course_path(@form.model), method: :patch, class: "inline-flex items-center bg-neutral-900 text-white px-6 py-3 text-xs font-bold uppercase hover:bg-neutral-700 transition-colors border border-neutral-900 tracking-[0.15em]" do
           = t(".publish_course")
           %svg.w-4.h-4.ml-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
             %path{d: "M5 12h14M12 5l7 7-7 7"}

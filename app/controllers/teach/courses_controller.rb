@@ -45,8 +45,9 @@ module Teach
 
     def publish
       course = policy_scope([:instructor, Course]).find(params[:id])
+      authorize([:instructor, course])
 
-      result = Courses::Publish.call(course)
+      result = Courses::Publish.call(course: course)
 
       if result.success?
         redirect_to edit_teach_course_path(course), notice: t("flash.course.published")
