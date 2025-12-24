@@ -167,4 +167,64 @@ RSpec.describe "Teach::Courses", type: :request do
       end
     end
   end
+
+  describe "PATCH /publish" do
+    let(:course) { create(:course) }
+
+    context "when user is not authenticated" do
+      it "redirects to login" do
+        patch teach_course_path(id: course.id)
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+
+    context "when user is teacher" do
+      let(:user) { create(:user) }
+      let(:course) { create(:course, instructor: user) }
+
+      before do
+        allow(user).to receive(:teacher?).and_return(true)
+        sign_in(user)
+      end
+
+      context "when params are valid" do
+        before do
+          course.update(description: "Test Description")
+          patch publish_teach_course_path(id: course.id)
+        end
+
+        it "redirects to edit page" do
+          expect(response).to redirect_to(edit_teach_course_path(course))
+        end
+
+        it "sets a success flash message" do
+          puts flash[:alert]
+          expect(flash[:notice]).to eq(I18n.t("flash.course.published"))
+        end
+
+        it "updates the course" do
+          expect(course.reload).to be_published
+        end
+      end
+
+      context "when params are invalid" do
+        before do
+          course.image.purge
+          patch publish_teach_course_path(id: course.id)
+        end
+
+        it "redirects to edit page" do
+          expect(response).to redirect_to(edit_teach_course_path(course))
+        end
+
+        it "sets an error flash message" do
+          expect(flash[:alert]).to be_present
+        end
+
+        it "does not update the course" do
+          expect(course.reload).not_to be_published
+        end
+      end
+    end
+  end
 end
