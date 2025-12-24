@@ -1,0 +1,8 @@
+---
+en:
+  courses:
+    validation:
+      image:
+        blank: Cover image cannot be blank
+      description:
+        blank: Course description cannot be blank

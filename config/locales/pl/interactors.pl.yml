@@ -1,0 +1,8 @@
+---
+pl:
+  courses:
+    validation:
+      image:
+        blank: Obraz kursu nie może być pusty
+      description:
+        blank: Opis kursu nie może być pusty
