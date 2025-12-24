@@ -3,6 +3,6 @@ en:
   flash:
     course:
       created: Course created successfully.
+      published: The course has been published.
       updated: Course updated successfully.
-      published: "The course has been published."
     unauthorized: You are not authorized to perform this action.

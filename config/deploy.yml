@@ -23,11 +23,11 @@ proxy:
 
 # Credentials for your image host.
 registry:
-  # Specify the registry server, if you're not using Docker Hub
+  # Specify the registry server if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
   username: patrogala
 
-  # Always use an access token rather than real password when possible.
+  # Always use an access token rather than a real password when possible.
   password:
     - KAMAL_REGISTRY_PASSWORD
 
@@ -41,10 +41,10 @@ env:
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
     # SOLID_QUEUE_IN_PUMA: true
 
-    # Set number of processes dedicated to Solid Queue (default: 1)
+    # Set the number of processes dedicated to Solid Queue (default: 1)
     # JOB_CONCURRENCY: 3
 
-    # Set number of cores available to the application on each server (default: 1).
+    # Set the number of cores available to the application on each server (default: 1).
     # WEB_CONCURRENCY: 2
 
     # Match this to any external database server to configure Active Record correctly
@@ -68,7 +68,7 @@ aliases:
 
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
-# hitting 404 on in-flight requests. Combines all files from new and old
+# hitting 404 on in-flight requests. Combines all files from a new and old
 # version inside the asset_path.
 asset_path: /rails/public/assets
 
@@ -81,7 +81,7 @@ builder:
   #
   # # Pass arguments and secrets to the Docker build process
   args:
-    RUBY_VERSION: 3.4.7
+    RUBY_VERSION: 3.4.8
   # secrets:
   #   - GITHUB_TOKEN
   #   - RAILS_MASTER_KEY

@@ -99,6 +99,7 @@ RSpec.describe "Teach::Courses", type: :request do
 
       before do
         allow(user).to receive(:teacher?).and_return(true)
+        course.image.purge
         sign_in(user)
         get edit_teach_course_path(id: course.id)
       end

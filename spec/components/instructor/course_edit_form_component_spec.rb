@@ -7,6 +7,7 @@ RSpec.describe Instructor::CourseEditFormComponent, type: :component do
 
   before do
     allow(user).to receive(:teacher?).and_return(true)
+    course.image.purge
   end
 
   it "renders the form" do
