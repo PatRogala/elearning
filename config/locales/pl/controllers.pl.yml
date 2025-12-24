@@ -4,4 +4,5 @@ pl:
     course:
       created: Kurs został utworzony.
       updated: Kurs został zaktualizowany.
+      published: Kurs został opublikowany.
     unauthorized: Nie masz uprawnień do wykonania tej akcji.
