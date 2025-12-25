@@ -8,7 +8,7 @@ module Instructor
     end
 
     def created_courses_count
-      12 # TODO: Get created courses count
+      user.created_courses.count
     end
 
     def active_students_count

@@ -3,13 +3,10 @@ module Instructor
   class CourseCardComponent < ApplicationViewComponent
     param :course, Types::Instance(Course)
 
-    def published?
-      false # TODO: implement
-    end
+    attr_reader :course
 
-    def description
-      "" # TODO: implement
-    end
+    delegate :published?, to: :course
+    delegate :description, to: :course
 
     def students_count
       50 # TODO: implement

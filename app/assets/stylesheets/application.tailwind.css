@@ -3,7 +3,6 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  font-display: fallback;
 }
 
 /* Images should be responsive */
@@ -24,4 +23,45 @@ img {
 
 button {
   @apply cursor-pointer;
+}
+
+@layer utilities {
+  /*
+    Usage: class="overflow-y-scroll scrollbar-editorial"
+  */
+  .scrollbar-editorial {
+    /* Firefox: simple support */
+    scrollbar-width: thin;
+    scrollbar-color: #171717 transparent; /* Thumb / Track */
+
+    /* Webkit (Chrome, Safari, Edge): Full Control */
+    &::-webkit-scrollbar {
+      width: 12px;  /* Width of vertical scrollbar */
+      height: 12px; /* Height of horizontal scrollbar */
+      background: transparent; /* Ensure track doesn't mess up layout */
+    }
+
+    /* The Track (Background) */
+    &::-webkit-scrollbar-track {
+      background: #f5f5f5; /* neutral-100 */
+      border-left: 1px solid #e5e5e5; /* Structural border on the left */
+    }
+
+    /* The Thumb (The moving part) */
+    &::-webkit-scrollbar-thumb {
+      background-color: #171717; /* neutral-900 (Black) */
+      border: 3px solid #f5f5f5; /* Creates a "padding" effect */
+      border-radius: 0; /* SHARP EDGES - No rounding */
+    }
+
+    /* Hover state for the thumb */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #404040; /* neutral-700 */
+    }
+
+    /* Corner (where horizontal meets vertical) */
+    &::-webkit-scrollbar-corner {
+      background: #f5f5f5;
+    }
+  }
 }
