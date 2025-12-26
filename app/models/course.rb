@@ -2,6 +2,8 @@
 class Course < ApplicationRecord
   ACCEPTED_IMAGE_CONTENT_TYPES = %w[image/jpeg image/png].freeze
 
+  scope :published, -> { where(published: true) }
+
   belongs_to :instructor, class_name: "User"
 
   validates :title, presence: true
@@ -24,6 +26,8 @@ class Course < ApplicationRecord
 
     placeholder_image
   end
+
+  private
 
   def placeholder_image
     "courses/placeholder_pattern.png"

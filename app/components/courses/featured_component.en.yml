@@ -1,0 +1,11 @@
+---
+en:
+  courses:
+    featured_component:
+      badge: New!
+      cta: Learn more
+      duration: Duration
+      header: Featured course
+      instructor: Instructor
+      price: Price
+      tech_stack: Tech Stack

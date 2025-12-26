@@ -1,0 +1,11 @@
+---
+pl:
+  courses:
+    featured_component:
+      badge: Nowość!
+      cta: Zacznij naukę!
+      duration: Długość
+      header: Wybrany kurs
+      instructor: Instruktor
+      price: Cena
+      tech_stack: Technologie
