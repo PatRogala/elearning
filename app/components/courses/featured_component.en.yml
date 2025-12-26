@@ -2,10 +2,10 @@
 en:
   courses:
     featured_component:
-      header: Featured course
-      cta: Learn more
-      price: Price
       badge: New!
-      instructor: Instructor
+      cta: Learn more
       duration: Duration
+      header: Featured course
+      instructor: Instructor
+      price: Price
       tech_stack: Tech Stack

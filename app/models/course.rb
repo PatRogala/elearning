@@ -27,6 +27,8 @@ class Course < ApplicationRecord
     placeholder_image
   end
 
+  private
+
   def placeholder_image
     "courses/placeholder_pattern.png"
   end
