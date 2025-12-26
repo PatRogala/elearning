@@ -10,7 +10,7 @@
           .flex.items-center.gap-3.mb-6
             %span.w-2.h-2.bg-neutral-900
             %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-[0.2em]"}
-              Featured Course
+              = t('.header')
 
           -# Main Headline
           %h1.text-5xl.lg:text-6xl.font-black.uppercase.tracking-tighter.text-neutral-900.mb-6{class: "leading-[0.9]"}
@@ -23,11 +23,13 @@
         .mt-auto.pt-8
           .flex.flex-col.gap-4
             %a.group.flex.items-center.justify-between.bg-neutral-900.text-white.px-6.py-4.text-sm.font-bold.uppercase.hover:bg-neutral-700.transition-colors{href: "#", class: "tracking-[0.15em]"}
-              %span Start Learning
+              %span
+                = t('.cta')
               %span.group-hover:translate-x-1.transition-transform &rarr;
 
             %div.flex.items-center.justify-between.px-6.py-3.border.border-neutral-200
-              %span.text-xs.font-bold.uppercase.tracking-widest.text-neutral-500 Price
+              %span.text-xs.font-bold.uppercase.tracking-widest.text-neutral-500
+                = t('.price')
               %span.text-lg.font-black.text-neutral-900
                 = course.price.format
 
@@ -41,7 +43,7 @@
           -# Badge
           .absolute.top-0.left-0.bg-neutral-900.text-white.px-4.py-2
             %span.font-bold.uppercase.tracking-widest{class: "text-[10px]"}
-              New Release
+              = t('.badge')
 
         -# 2. Metadata Grid (Fills the rest of the column)
         .grid.grid-cols-2.sm:grid-cols-3.flex-1.bg-white
@@ -49,7 +51,7 @@
           -# Cell: Instructor
           .p-6.border-r.border-b.sm:border-b-0.border-neutral-900.flex.flex-col.justify-center
             %span.block.font-bold.uppercase.text-neutral-400.mb-2{class: "text-[10px] tracking-[0.2em]"}
-              Instructor
+              = t('.instructor')
             .flex.items-center.gap-3
               .w-8.h-8.bg-neutral-200.border.border-neutral-900
                 %img.w-full.h-full.object-cover{src: "https://i.pravatar.cc/150?u=alex", alt: "Avatar"}
@@ -59,7 +61,7 @@
           -# Cell: Duration
           .p-6.border-r.border-b.sm:border-b-0.border-neutral-900.flex.flex-col.justify-center
             %span.block.font-bold.uppercase.text-neutral-400.mb-2{class: "text-[10px] tracking-[0.2em]"}
-              Duration
+              = t('.duration')
             .flex.items-center.gap-2.h-8
               %svg.w-5.h-5.text-neutral-900{fill: "none", stroke: "currentColor", "stroke-width" => "1.5", viewBox: "0 0 24 24"}
                 %path{d: "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"}
@@ -68,7 +70,7 @@
           -# Cell: Tech Stack (Spans full on mobile, 1 on desktop)
           .col-span-2.sm:col-span-1.p-6.flex.flex-col.justify-center
             %span.block.font-bold.uppercase.text-neutral-400.mb-2{class: "text-[10px] tracking-[0.2em]"}
-              Includes
+              = t('.tech_stack')
             .flex.gap-2
               %span.px-2.py-1.border.border-neutral-300.font-bold.uppercase.text-neutral-600{class: "text-[10px]"} React
               %span.px-2.py-1.border.border-neutral-300.font-bold.uppercase.text-neutral-600{class: "text-[10px]"} Figma
