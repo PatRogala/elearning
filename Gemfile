@@ -105,9 +105,6 @@ group :development, :test do
   # Load environment variables from .env file
   gem "dotenv-rails"
 
-  # Audit ruby vulnerabilities
-  gem "ruby_audit", require: false
-
   # Rubocop for code style
   gem "rubocop", require: false
   gem "rubocop-capybara", require: false

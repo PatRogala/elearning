@@ -1,9 +1,9 @@
-## Modern Rails 8.1 + Ruby 3.4 Template
+## Modern Rails 8.1 + Ruby 4.0 Template
 
 A production-ready Rails template with a modern stack: Hotwire, Tailwind CSS, Bun bundling, Devise auth, Sidekiq jobs (with DragonflyDB as Redis-compatible backend), Solid Cache, ViewComponent, RSpec/Cucumber tests, Lograge logging, and Kamal + Docker deployment.
 
 ### Highlights
-- **Rails**: 8.1, **Ruby**: 3.4
+- **Rails**: 8.1, **Ruby**: 4.0
 - **Frontend**: Hotwire (Turbo + Stimulus), Tailwind CSS 4 via Bun
 - **Auth**: Devise (+ devise-i18n)
 - **UI**: ViewComponent, Haml
@@ -17,7 +17,7 @@ A production-ready Rails template with a modern stack: Hotwire, Tailwind CSS, Bu
 
 
 ## Prerequisites
-- Ruby 3.4.x (use `rbenv` or `asdf`)
+- Ruby 4.0.x (use `rbenv` or `asdf`)
 - Bun (for JS/CSS bundling) — install from `https://bun.sh`
 - Docker & Docker Compose (for local containers)
 
@@ -47,10 +47,10 @@ docker compose exec backend bin/rails db:setup
 
 ## Alternative: Local (without Docker)
 1) Install gems and JS deps
-```bash
-bundle install
-bun install
-```
+  ```bash
+  bundle install
+  bun install
+  ```
 
 2) Setup database
 ```bash
@@ -104,7 +104,7 @@ The `Procfile.dev` runs:
 - Docker services provide sensible defaults (Postgres, DragonflyDB, MailCatcher).
 
 ### Caching
-- Uses `solid_cache` (database-backed cache store). No external cache service required.
+- Uses `solid_cache` (database-backed cache store). No external cache service is required.
 
 ### Background jobs
 - Sidekiq runs against DragonflyDB (Redis-compatible) in Docker. For non-Docker, provide `REDIS_URL`/Dragonfly endpoint accordingly.
