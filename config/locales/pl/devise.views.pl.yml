@@ -95,13 +95,21 @@ pl:
     registrations:
       destroyed: Twoje konto zostało usunięte.
       edit:
+        notifications: Powiadomienia
+        joined: Z nami od
+        account_settings: Ustawienia konta
+        account_settings_description: Zarządzaj swoimi danymi osobowymi, preferencjami dotyczącymi bezpieczeństwa i widocznością profilu publicznego.
         are_you_sure: Jesteś pewny?
         cancel_my_account: Anuluj moje konto
+        avatar: Zdjęcie profilowe
+        avatar_helper_text: Kliknij, aby zmienić zdjęcie (JPG, PNG).
+        email_helper_text: Aby zmienić adres e-mail, skontaktuj się z supportem.
+        change_password: Zmiana hasła
         currently_waiting_confirmation_for_email: 'Aktualnie oczekujemy na potwierdzenie z: %{email}'
         leave_blank_if_you_don_t_want_to_change_it: pozostaw puste, jeśli nie chcesz wprowadzać zmian
         title: Edytuj %{resource}
         unhappy: Niezadowolony
-        update: Aktualizuj
+        update: Zapisz zmiany
         we_need_your_current_password_to_confirm_your_changes: potrzebujemy Twojego bieżącego hasła, aby potwierdzić zmiany
       new:
         create_your_learning_account: Utwórz swoje konto e-learningowe

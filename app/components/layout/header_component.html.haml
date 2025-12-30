@@ -15,7 +15,7 @@
         - if user
           %nav.flex.gap-6.items-center
             = render Ui::NavLinkComponent.new(label: t(".courses"), href: "#")
-            = render Ui::NavLinkComponent.new(label: t(".profile"), href: "#")
+            = render Ui::NavLinkComponent.new(label: t(".profile"), href: edit_user_registration_path)
 
           - if user.teacher?
             = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path)
