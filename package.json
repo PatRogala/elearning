@@ -12,6 +12,7 @@
     "@rails/actiontext": "^8.1.100",
     "@rails/activestorage": "^8.1.100",
     "@tailwindcss/cli": "^4.1.18",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "trix": "^2.1.16"
   }
 }
