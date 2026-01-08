@@ -199,7 +199,6 @@ RSpec.describe "Teach::Courses", type: :request do
         end
 
         it "sets a success flash message" do
-          puts flash[:alert]
           expect(flash[:notice]).to eq(I18n.t("flash.course.published"))
         end
 
