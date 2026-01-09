@@ -8,7 +8,7 @@
         "@37signals/lexxy": "^0.1.24-beta",
         "@hotwired/stimulus": "^3.2.2",
         "@hotwired/turbo-rails": "^8.0.20",
-        "@rails/actiontext": "^8.1.100",
+        "@rails/actiontext": "^8.1.200",
         "@rails/activestorage": "^8.1.200",
         "@tailwindcss/cli": "^4.1.18",
         "tailwindcss": "^4.1.18",
@@ -95,7 +95,7 @@
 
     "@rails/actioncable": ["@rails/actioncable@8.1.100", "", {}, "sha512-j4vJQqz51CDVYv2UafKRu4jiZi5/gTnm7NkyL+VMIgEw3s8jtVtmzu9uItUaZccUg9NJ6o05yVyBAHxNfTuCRA=="],
 
-    "@rails/actiontext": ["@rails/actiontext@8.1.100", "", { "dependencies": { "@rails/activestorage": ">= 8.1.0-alpha" }, "peerDependencies": { "trix": "^2.0.0" } }, "sha512-gnLK1HgGCmmVGY40hCiAJ4RwGALwRmiRzqyht6fiM/hrQnul278CqCg9jwV2IQOo7+jMbktGx2O9luGUzayQIA=="],
+    "@rails/actiontext": ["@rails/actiontext@8.1.200", "", { "dependencies": { "@rails/activestorage": ">= 8.1.0-alpha" }, "peerDependencies": { "trix": "^2.0.0" } }, "sha512-l4OuFLZbQB+A3yCNOzX0Y4Tn7XSekfuYjy20TiBuf+4Q5JKTnfuybHrQ5cDk/9DbwWE9sdWcdbODFUIYd4tczg=="],
 
     "@rails/activestorage": ["@rails/activestorage@8.1.200", "", { "dependencies": { "spark-md5": "^3.0.1" } }, "sha512-bPZqv447REBd1NQfba//FjgUqbUd93zKh7+BWhh3vRZ7Nm+RUgm6c5GbWctmik/rMHjsruTHhusYGyoKyf60pg=="],
 
@@ -204,8 +204,6 @@
     "to-regex-range": ["to-regex-range@5.0.1", "", { "dependencies": { "is-number": "^7.0.0" } }, "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ=="],
 
     "trix": ["trix@2.1.16", "", { "dependencies": { "dompurify": "^3.2.5" } }, "sha512-XtZgWI+oBvLzX7CWnkIf+ZWC+chL+YG/TkY43iMTV0Zl+CJjn18B1GJUCEWJ8qgfpcyMBuysnNAfPWiv2sV14A=="],
-
-    "@rails/actiontext/@rails/activestorage": ["@rails/activestorage@8.1.100", "", { "dependencies": { "spark-md5": "^3.0.1" } }, "sha512-rlZg23KYT7JFYXl1tj1WD9nm/yvtUvZT6pzNMVX+HaOjPyGq8xpEv1ADrrhawkbMktKxRj3xDVZ3d/qy0akHvw=="],
 
     "@tailwindcss/oxide-wasm32-wasi/@emnapi/core": ["@emnapi/core@1.7.1", "", { "dependencies": { "@emnapi/wasi-threads": "1.1.0", "tslib": "^2.4.0" }, "bundled": true }, "sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg=="],
 
