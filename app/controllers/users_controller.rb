@@ -1,3 +1,4 @@
+# Allows users to update their profile.
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
@@ -14,6 +15,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :bio, :avatar)
+    params.expect(user: %i[first_name last_name bio avatar])
   end
 end

@@ -9,6 +9,6 @@ RSpec.describe UserPolicy, type: :policy do
     let(:course) { create(:course, instructor: user) }
 
     it { is_expected.to permit(user, user) }
-    it { is_expected.to_not permit(user, create(:user)) }
+    it { is_expected.not_to permit(user, create(:user)) }
   end
 end

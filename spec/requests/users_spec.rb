@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "Users", type: :request do
   describe "PATCH /update" do
     let(:user) { create(:user) }
+
     before { sign_in(user) }
 
     context "when params are valid and user is editing own profile" do
