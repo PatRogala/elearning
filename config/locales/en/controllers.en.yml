@@ -6,3 +6,5 @@ en:
       published: The course has been published.
       updated: Course updated successfully.
     unauthorized: You are not authorized to perform this action.
+    user:
+      updated: Your profile has been updated successfully.

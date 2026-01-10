@@ -8,7 +8,7 @@
       = t('.account_settings_description')
 
   .grid.grid-cols-1.lg:grid-cols-12.gap-12.border-t.border-neutral-900.pt-12
-    
+
     -# --- LEFT SIDEBAR (Navigation) ---
     .lg:col-span-3.space-y-8
       %nav.flex.flex-col.space-y-1
@@ -18,7 +18,7 @@
             = t('.account_settings')
           %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
             %path{d: "M9 5l7 7-7 7"}
-        
+
         -# Inactive Links
         %a.group.flex.items-center.justify-between.px-4.py-3.border-l-2.border-transparent.text-neutral-500.hover:text-neutral-900.hover:border-neutral-900.transition-all{href: "#"}
           %span.text-xs.font-bold.uppercase{class: "tracking-[0.15em]"}
@@ -36,26 +36,26 @@
       = form_for(@user) do |f|
         -# --- SECTION 1: IDENTITY & AVATAR ---
         .grid.grid-cols-1.md:grid-cols-3.gap-12.mb-16
-          
+
           -# Avatar Upload (Passport Style)
-          .md:col-span-1
+          .md:col-span-1{data: {controller: "image-preview"}}
             %label.block.text-xs.font-bold.uppercase.text-neutral-900.mb-4{class: "tracking-[0.15em]"}
               = t('.avatar')
 
             .relative.group
-              -# The Image Container
-              .w-full.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[1/1]"}
-                = image_tag @user.avatar_preview, class: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                
+              -# The Image Container (Clickable)
+              .w-full.bg-neutral-100.border.border-neutral-300.overflow-hidden.cursor-pointer{class: "aspect-[1/1]", data: {action: "click->image-preview#trigger"}}
+                = image_tag @user.avatar_preview, class: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500", data: {"image-preview-target": "preview"}
+
                 -# Overlay on Hover
-                .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity.cursor-pointer{class: "bg-black/40"}
+                .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/40"}
                   %svg.w-8.h-8.text-white{fill: "none", stroke: "currentColor", "stroke-width" => "1.5", viewBox: "0 0 24 24"}
                     %path{d: "M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"}
                     %path{d: "M15 13a3 3 0 11-6 0 3 3 0 016 0z"}
 
               -# Hidden File Input
-              %input.hidden{type: "file", name: "user[avatar]", accept: "image/*"}
-              
+              = f.file_field :avatar, class: "hidden", accept: "image/*", data: {"image-preview-target": "input", action: "change->image-preview#preview"}
+
               -# Helper Text
               %p.mt-2.text-neutral-400.uppercase.tracking-wide.text-center{class: "text-[10px]"}
                 = t('.avatar_helper_text')
