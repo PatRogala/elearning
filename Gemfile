@@ -82,7 +82,7 @@ gem "reform-rails"
 gem "pundit"
 
 # Lexxy as a new editor for action text
-gem "lexxy", "~> 0.1.24.beta"
+gem "lexxy", "~> 0.1.26.beta"
 
 # Validations for storage objects
 gem "active_storage_validations"
@@ -91,6 +91,9 @@ gem "ruby-vips"
 
 # Money for handling currency
 gem "money-rails"
+
+# AWS SDK for S3
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -104,9 +107,6 @@ group :development, :test do
 
   # Load environment variables from .env file
   gem "dotenv-rails"
-
-  # Audit ruby vulnerabilities
-  gem "ruby_audit", require: false
 
   # Rubocop for code style
   gem "rubocop", require: false
