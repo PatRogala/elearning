@@ -45,7 +45,7 @@
             .relative.group
               -# The Image Container
               .w-full.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[1/1]"}
-                %img.w-full.h-full.object-cover.grayscale.group-hover:grayscale-0.transition-all.duration-500{src: "https://i.pravatar.cc/300?u=user_123", alt: "Current Avatar"}
+                = image_tag @user.avatar_preview, class: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 
                 -# Overlay on Hover
                 .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity.cursor-pointer{class: "bg-black/40"}
@@ -79,10 +79,8 @@
                 = t('.email_helper_text')
 
             .group
-              %label.block.text-xs.font-bold.uppercase.text-neutral-500.mb-2{for: "bio", class: "tracking-[0.15em]"}
-                Short Bio
-              %textarea#bio.block.w-full.bg-white.text-sm.font-medium.text-neutral-900.border.border-neutral-300.p-4.focus:border-neutral-900.focus:ring-1.focus:ring-neutral-900.focus:outline-none.transition-colors.rounded-none.resize-none{name: "user[bio]", rows: 4}
-                Senior Software Engineer passionate about clean code, typography, and Ruby on Rails.
+              = f.label :bio, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
+              = f.textarea :bio, class: "block w-full bg-white text-sm font-medium text-neutral-900 border border-neutral-300 p-4 focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 focus:outline-none transition-colors rounded-none resize-none"
 
         -# --- FOOTER ACTIONS ---
         .flex.items-center.justify-end.gap-6.pt-8.border-t.border-neutral-900
