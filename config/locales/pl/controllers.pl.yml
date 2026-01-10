@@ -6,3 +6,5 @@ pl:
       published: Kurs został opublikowany.
       updated: Kurs został zaktualizowany.
     unauthorized: Nie masz uprawnień do wykonania tej akcji.
+    user:
+      updated: Twoje dane zostały zaktualizowane.

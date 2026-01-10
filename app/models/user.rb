@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :reset_password_token, uniqueness: true, allow_nil: true
   validates :encrypted_password, presence: true
   validates :sign_in_count, presence: true
+  validates :bio, length: { maximum: 512 }, allow_nil: true
 
   normalizes :first_name, with: ->(name) { name.capitalize }
   normalizes :last_name, with: ->(name) { name.capitalize }
