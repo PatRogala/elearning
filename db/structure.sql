@@ -286,7 +286,7 @@ CREATE TABLE public.users (
     updated_at timestamp(6) with time zone NOT NULL,
     first_name character varying DEFAULT ''::character varying NOT NULL,
     last_name character varying DEFAULT ''::character varying NOT NULL,
-    bio text DEFAULT ''::text NOT NULL
+    bio character varying(512) DEFAULT ''::character varying
 );
 
 
