@@ -285,7 +285,8 @@ CREATE TABLE public.users (
     created_at timestamp(6) with time zone NOT NULL,
     updated_at timestamp(6) with time zone NOT NULL,
     first_name character varying DEFAULT ''::character varying NOT NULL,
-    last_name character varying DEFAULT ''::character varying NOT NULL
+    last_name character varying DEFAULT ''::character varying NOT NULL,
+    bio character varying(512) DEFAULT ''::character varying
 );
 
 
@@ -568,6 +569,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260110211948'),
 ('20251223235630'),
 ('20251216232815'),
 ('20251212102326'),

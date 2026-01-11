@@ -1,35 +1,88 @@
-%h2= t('.title', resource: devise_i18n_fix_model_name_case(resource.model_name.human, i18n_key: 'registrations.edit.title'))
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
-  .field
-    = f.label :password
-    %i
-      (#{t('.leave_blank_if_you_don_t_want_to_change_it')})
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i
-      (#{t('.we_need_your_current_password_to_confirm_your_changes')})
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit t('.update')
-%h3= t('.cancel_my_account')
-%div
-  = t('.unhappy')
-  = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure'), turbo_confirm: t('.are_you_sure') }, method: :delete
-= link_to t('devise.shared.links.back'), :back
+.max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-16
+
+  -# --- PAGE HEADER ---
+  .mb-16
+    %h1.text-4xl.md:text-6xl.font-black.text-neutral-900.uppercase.tracking-tighter.leading-none.mb-4
+      = t('.account_settings')
+    %p.text-lg.text-neutral-500.max-w-2xl
+      = t('.account_settings_description')
+
+  .grid.grid-cols-1.lg:grid-cols-12.gap-12.border-t.border-neutral-900.pt-12
+
+    -# --- LEFT SIDEBAR (Navigation) ---
+    .lg:col-span-3.space-y-8
+      %nav.flex.flex-col.space-y-1
+        -# Active Link
+        %a.group.flex.items-center.justify-between.px-4.py-3.bg-neutral-900.text-white{href: "#"}
+          %span.text-xs.font-bold.uppercase{class: "tracking-[0.15em]"}
+            = t('.account_settings')
+          %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+            %path{d: "M9 5l7 7-7 7"}
+
+        -# Inactive Links
+        %a.group.flex.items-center.justify-between.px-4.py-3.border-l-2.border-transparent.text-neutral-500.hover:text-neutral-900.hover:border-neutral-900.transition-all{href: "#"}
+          %span.text-xs.font-bold.uppercase{class: "tracking-[0.15em]"}
+            = t('.notifications')
+
+      -# Quick Stat
+      .p-6.border.border-neutral-200.bg-neutral-50.mt-8
+        %span.block.font-bold.uppercase.tracking-widest.text-neutral-400{class: "text-[10px]"}
+          = t('.joined')
+        %span.block.text-sm.font-bold.text-neutral-900.uppercase
+          = @user.created_at.strftime("%b, %Y")
+
+    -# --- RIGHT COLUMN (Form) ---
+    .lg:col-span-9
+      = form_for(@user) do |f|
+        -# --- SECTION 1: IDENTITY & AVATAR ---
+        .grid.grid-cols-1.md:grid-cols-3.gap-12.mb-16
+
+          -# Avatar Upload (Passport Style)
+          .md:col-span-1{data: {controller: "image-preview"}}
+            %label.block.text-xs.font-bold.uppercase.text-neutral-900.mb-4{class: "tracking-[0.15em]"}
+              = t('.avatar')
+
+            .relative.group
+              -# The Image Container (Clickable)
+              .w-full.bg-neutral-100.border.border-neutral-300.overflow-hidden.cursor-pointer{class: "aspect-[1/1]", data: {action: "click->image-preview#trigger"}}
+                = image_tag @user.avatar_preview, class: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500", data: {"image-preview-target": "preview"}
+
+                -# Overlay on Hover
+                .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/40"}
+                  %svg.w-8.h-8.text-white{fill: "none", stroke: "currentColor", "stroke-width" => "1.5", viewBox: "0 0 24 24"}
+                    %path{d: "M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"}
+                    %path{d: "M15 13a3 3 0 11-6 0 3 3 0 016 0z"}
+
+              -# Hidden File Input
+              = f.file_field :avatar, class: "hidden", accept: "image/*", data: {"image-preview-target": "input", action: "change->image-preview#preview"}
+
+              -# Helper Text
+              %p.mt-2.text-neutral-400.uppercase.tracking-wide.text-center{class: "text-[10px]"}
+                = t('.avatar_helper_text')
+
+          -# Name Fields
+          .md:col-span-2.space-y-8
+            .grid.grid-cols-1.sm:grid-cols-2.gap-6
+              .group
+                = f.label :first_name, class: "block text-xs font-bold uppercase text-neutral-500 mb-2"
+                = f.text_field :first_name, class: "block w-full bg-white text-lg font-bold text-neutral-900 border border-neutral-300 p-4 focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 focus:outline-none transition-colors rounded-none"
+
+              .group
+                = f.label :last_name, class: "block text-xs font-bold uppercase text-neutral-500 mb-2"
+                = f.text_field :last_name, class: "block w-full bg-white text-lg font-bold text-neutral-900 border border-neutral-300 p-4 focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 focus:outline-none transition-colors rounded-none"
+
+            .group
+              = f.label :email, class: "block text-xs font-bold uppercase text-neutral-500 mb-2"
+              -# Read-only style (Gray background)
+              = f.email_field :email, class: "block w-full bg-neutral-100 text-lg font-medium text-neutral-500 border border-transparent p-4 cursor-not-allowed rounded-none", disabled: true
+              %p.mt-2.text-neutral-400{class: "text-[10px]"}
+                = t('.email_helper_text')
+
+            .group
+              = f.label :bio, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
+              = f.textarea :bio, class: "block w-full bg-white text-sm font-medium text-neutral-900 border border-neutral-300 p-4 focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 focus:outline-none transition-colors rounded-none resize-none"
+
+        -# --- FOOTER ACTIONS ---
+        .flex.items-center.justify-end.gap-6.pt-8.border-t.border-neutral-900
+          = f.button :submit, class: "inline-flex items-center justify-center bg-neutral-900 text-white px-10 py-4 text-xs font-bold uppercase hover:bg-neutral-700 transition-all border border-neutral-900 rounded-none tracking-[0.15em]" do
+            = t('.update')

@@ -95,10 +95,18 @@ en:
     registrations:
       destroyed: Bye! Your account has been successfully cancelled. We hope to see you again soon.
       edit:
+        account_settings: Account settings
+        account_settings_description: Manage your account settings, preferences and profile visibility.
         are_you_sure: Are you sure?
+        avatar: Avatar
+        avatar_helper_text: Click on the image to change it.
         cancel_my_account: Cancel my account
+        change_password: Password Change
         currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
+        email_helper_text: To change your email address, please contact support.
+        joined: Joined at
         leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
+        notifications: Notifications
         title: Edit %{resource}
         unhappy: Unhappy?
         update: Update

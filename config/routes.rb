@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     # Devise routes for user authentication
     devise_for :users
 
+    resources :users, only: %i[update]
+
     # Teach routes
     namespace :teach do
       get "dashboard", to: "dashboard#index"
