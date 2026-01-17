@@ -1,7 +1,5 @@
 # Presentation of the course you can sign up for
 class Course < ApplicationRecord
-  ACCEPTED_IMAGE_CONTENT_TYPES = %w[image/jpeg image/png].freeze
-
   scope :published, -> { where(published: true) }
 
   belongs_to :instructor, class_name: "User"
@@ -16,8 +14,8 @@ class Course < ApplicationRecord
 
   has_rich_text :description
   has_one_attached :image do |attachable|
-    attachable.variant :cover, resize_to_limit: [1280, 720]
-    attachable.variant :thumb, resize_to_limit: [400, 225]
+    attachable.variant :cover, resize_to_limit: [1280, 720], format: :webp
+    attachable.variant :thumb, resize_to_limit: [400, 225], format: :webp
   end
   monetize :price_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }
 
