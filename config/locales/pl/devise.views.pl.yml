@@ -99,7 +99,7 @@ pl:
         account_settings_description: Zarządzaj swoimi danymi osobowymi, preferencjami dotyczącymi bezpieczeństwa i widocznością profilu publicznego.
         are_you_sure: Jesteś pewny?
         avatar: Zdjęcie profilowe
-        avatar_helper_text: Kliknij, aby zmienić zdjęcie (JPG, PNG).
+        avatar_helper_text: Kliknij, aby zmienić zdjęcie (JPG, PNG, WEBP).
         cancel_my_account: Anuluj moje konto
         change_password: Zmiana hasła
         currently_waiting_confirmation_for_email: 'Aktualnie oczekujemy na potwierdzenie z: %{email}'

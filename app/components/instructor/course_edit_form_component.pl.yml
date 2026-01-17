@@ -4,6 +4,6 @@ pl:
     course_edit_form_component:
       dashboard: Tablica
       publish_course: Opublikuj kurs
-      recommended_size: 'Rekomendowany rozmiar: 1280x720px JPG lub PNG'
+      recommended_size: 'Rekomendowany rozmiar: 1280x720px JPG, PNG, WEBP'
       replace_image: Zmień obraz
       save_changes: Zapisz zmiany

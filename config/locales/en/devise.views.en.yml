@@ -99,7 +99,7 @@ en:
         account_settings_description: Manage your account settings, preferences and profile visibility.
         are_you_sure: Are you sure?
         avatar: Avatar
-        avatar_helper_text: Click on the image to change it.
+        avatar_helper_text: Click on the image to change it (JPG, PNG, WEBP).
         cancel_my_account: Cancel my account
         change_password: Password Change
         currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'

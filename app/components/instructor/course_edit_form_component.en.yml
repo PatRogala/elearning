@@ -4,6 +4,6 @@ en:
     course_edit_form_component:
       dashboard: Dashboard
       publish_course: Publish course
-      recommended_size: 'Recommended size: 1280x720px JPG or PNG'
+      recommended_size: 'Recommended size: 1280x720px JPG, PNG, WEBP'
       replace_image: Replace image
       save_changes: Save changes
