@@ -19,12 +19,17 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Bun install
+ENV BUN_INSTALL=/usr/local/bun
+ENV PATH=/usr/local/bun/bin:$PATH
 RUN curl -fsSL https://bun.sh/install | bash
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
-RUN gem update --system
-RUN bundle install
+RUN gem install bundler && \
+    gem install rubygems-update && \
+    update_rubygems && \
+    gem update --system && \
+    bundle install
 
 # Install node modules
 COPY package.json bun.lock ./
