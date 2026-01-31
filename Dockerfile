@@ -23,7 +23,8 @@ RUN apt-get update -qq && \
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development" \
+    NODE_ENV="production"
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
@@ -38,10 +39,8 @@ RUN apt-get update -qq && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 
-ENV BUN_INSTALL=/usr/local/bun
-ENV PATH=/usr/local/bun/bin:$PATH
-ARG BUN_VERSION=1.3.5
-RUN curl -fsSL https://bun.sh/install | bash -s -- "bun-v${BUN_VERSION}"
+
+RUN curl -fsSL https://bun.sh/install | bash
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./

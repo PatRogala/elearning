@@ -13,7 +13,6 @@ services:
         condition: service_started
     volumes:
       - .:/rails
-      - bundle_cache:/usr/local/bundle
     env_file:
       - .env-docker
     working_dir: /rails
@@ -27,7 +26,7 @@ services:
       test: pg_isready -U postgres -h postgresql
       interval: 5s
   dragonfly:
-    image: 'docker.dragonflydb.io/dragonflydb/dragonfly'
+    image: ghcr.io/dragonflydb/dragonfly:v1.36.0
     ulimits:
       memlock: -1
     volumes:
@@ -50,6 +49,5 @@ services:
       - minio_data:/data
 volumes:
   db_data:
-  bundle_cache:
   dragonflydata:
   minio_data:
