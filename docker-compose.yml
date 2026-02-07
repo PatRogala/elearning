@@ -17,9 +17,9 @@ services:
       - .env-docker
     working_dir: /rails
   postgresql:
-    image: postgres:17
+    image: postgres:18
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - db_data18:/var/lib/postgresql
     environment:
       POSTGRES_PASSWORD: postgres
     healthcheck:
@@ -48,6 +48,6 @@ services:
     volumes:
       - minio_data:/data
 volumes:
-  db_data:
+  db_data18:
   dragonflydata:
   minio_data:
