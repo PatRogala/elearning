@@ -28,6 +28,6 @@ class Course < ApplicationRecord
   private
 
   def placeholder_image
-    "courses/placeholder_pattern.png"
+    "courses/course_placeholder.png"
   end
 end
