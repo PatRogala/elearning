@@ -46,6 +46,6 @@ class User < ApplicationRecord
   private
 
   def placeholder_image
-    "courses/placeholder_pattern.png"
+    "users/avatar_placeholder.png"
   end
 end
