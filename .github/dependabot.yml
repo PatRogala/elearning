@@ -4,13 +4,21 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
+  versioning-strategy: increase
+  open-pull-requests-limit: 99
+  allow:
+  - dependency-type: all
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 99
+  allow:
+  - dependency-type: all
 - package-ecosystem: bun
   directory: "/"
   schedule:
     interval: daily
+  open-pull-requests-limit: 99
+  allow:
+  - dependency-type: all
