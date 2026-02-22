@@ -20,11 +20,6 @@ Style/StringLiterals:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
-Style/Documentation:
-  Enabled: true
-  Exclude:
-    - 'db/migrate/*'
-
 Metrics/MethodLength:
   CountAsOne: ['array', 'hash', 'heredoc', 'method_call']
   Exclude:

@@ -1,3 +1,4 @@
+# Add index for the name column
 class AddRolesLowerNameIndex < ActiveRecord::Migration[8.1]
   disable_ddl_transaction!
 

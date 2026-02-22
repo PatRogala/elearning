@@ -1,3 +1,4 @@
+# Change the null constraint for the title column
 class ChangeCoursesTitleNullConstraint < ActiveRecord::Migration[8.1]
   def change
     safety_assured do

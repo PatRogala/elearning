@@ -1,3 +1,4 @@
+# Join model for users and roles
 class CreateUserRoles < ActiveRecord::Migration[8.1]
   def change
     create_table :user_roles do |t|

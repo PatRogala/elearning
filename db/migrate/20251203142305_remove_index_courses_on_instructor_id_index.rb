@@ -1,3 +1,4 @@
+# Deuplicated index
 class RemoveIndexCoursesOnInstructorIdIndex < ActiveRecord::Migration[8.1]
   def up
     remove_index "courses", name: "index_courses_on_instructor_id"

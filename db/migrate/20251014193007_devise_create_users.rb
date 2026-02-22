@@ -1,3 +1,4 @@
+# Standard Devise migration for creating users table
 class DeviseCreateUsers < ActiveRecord::Migration[8.0]
   def change
     create_table :users do |t|

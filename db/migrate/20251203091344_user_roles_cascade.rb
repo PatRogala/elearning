@@ -1,3 +1,4 @@
+# Cascade delete for user roles
 class UserRolesCascade < ActiveRecord::Migration[8.1]
   def change
     safety_assured do

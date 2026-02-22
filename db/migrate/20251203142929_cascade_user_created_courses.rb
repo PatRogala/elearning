@@ -1,3 +1,4 @@
+# Cascade delete for user created courses
 class CascadeUserCreatedCourses < ActiveRecord::Migration[8.1]
   def change
     safety_assured do
