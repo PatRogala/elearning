@@ -1,0 +1,45 @@
+---
+alwaysApply: true
+---
+
+# 📄 Szkoleo: Business & Product Overview
+
+### 1. Business Summary
+**Szkoleo** is an interactive e-learning web application currently in the MVP stage. Built on the core belief that "knowledge should be for everyone," it provides high-quality, highly interactive educational content at an affordable price point. The platform generates revenue through direct sales of first-party courses and by taking a percentage commission on courses sold by third-party creators.
+
+### 2. Product Description
+Szkoleo goes beyond traditional video-only learning platforms by offering a multi-format educational experience. Course creators can build comprehensive curriculums using:
+*   Video lessons
+*   Text-based lessons
+*   Interactive quizzes
+*   Built-in programming tasks
+These features make learning highly active, distinguishing the platform from passive consumption models.
+
+### 3. Target Audience
+*   **Primary:** Students and individuals looking to learn programming, computer science, and related tech skills affordably without sacrificing top-tier quality.
+*   **Secondary:** Course creators seeking better, more interactive tools to teach and engage their students.
+
+### 4. Market & Competitors
+*   **Main Competitor:** Udemy.
+*   **Differentiator:** Where Udemy restricts creators primarily to video uploads, Szkoleo provides built-in interactive tools (coding environments, quizzes, text), offering a much richer and more effective learning environment for technical subjects.
+
+### 5. Marketing Strategy
+*   **Tone of Voice:** Casual, accessible, and inclusive.
+*   **Acquisition Channels:** Social media and paid ads.
+*   **Lead Magnets:** Offering free courses to attract users to the platform and demonstrate the quality of the interactive features.
+
+### 6. Content Approach
+*   **Content Strategy:** Creating a large volume of free content focused heavily on programming.
+*   **Core Topics/Niche:** Deep focus on Ruby and Ruby on Rails to build initial authority and attract the right developer audience.
+
+### 7. Sales Process
+*   **Monetization:**
+    *   Direct sales of courses created by Szkoleo.
+    *   Revenue-share model (percentage commission) for courses hosted and sold by other users.
+*   **Growth Mechanisms:** A referral program is currently planned to incentivize users and creators to share the platform.
+*   **Customer Objections:** To be discovered as the MVP scales and user feedback is gathered.
+
+### 8. Tools & Tech Stack
+*   **Core Application:** Ruby on Rails 8, Ruby, Stimulus, and Turbo (Hotwire stack).
+*   **Marketing/CRM/Analytics:** Not yet implemented (planned for future phases).
+*   **User Feedback:** Not yet implemented (planned for future phases).
