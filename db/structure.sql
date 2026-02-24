@@ -495,6 +495,13 @@ CREATE UNIQUE INDEX index_roles_lower_name_ ON public.roles USING btree (lower((
 
 
 --
+-- Name: index_roles_on_name; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_roles_on_name ON public.roles USING btree (name);
+
+
+--
 -- Name: index_user_roles_on_role_id; Type: INDEX; Schema: public; Owner: -
 --
 
