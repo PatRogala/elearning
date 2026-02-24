@@ -2,11 +2,11 @@
 en:
   courses:
     categories_callout_component:
-      categories_label: Choose your path
-      title: Time for something new?
       categories:
         backend: Backend
+        devops: DevOps
         frontend: Frontend
         ui_ux: UI / UX
-        devops: DevOps
+      categories_label: Choose your path
       soon: Coming soon
+      title: Time for something new?
