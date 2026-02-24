@@ -93,4 +93,5 @@ Rails.application.configure do
   # Active Storage service for tests
   config.active_storage.service = :amazon
   config.active_storage.variant_processor = :vips
+  config.active_storage.resolve_model_to_route = :rails_storage_proxy
 end
