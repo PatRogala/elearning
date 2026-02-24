@@ -38,7 +38,7 @@
 
         -# 1. Image Container (Constrained to 16:9 Aspect Ratio)
         .relative.w-full.aspect-video.bg-neutral-100.border-b.border-neutral-900.group.overflow-hidden
-          = image_tag course.image_cover, class: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out", alt: course.title
+          = image_tag course.image_cover, class: "w-full h-full object-cover transition-all duration-700 ease-in-out", alt: course.title
 
           -# Badge
           .absolute.top-0.left-0.bg-neutral-900.text-white.px-4.py-2
