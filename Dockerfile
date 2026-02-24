@@ -43,6 +43,9 @@ RUN apt-get update -qq && \
     apt-get install -y nodejs
 
 
+# Bun install
+ENV BUN_INSTALL=/usr/local/bun
+ENV PATH=/usr/local/bun/bin:$PATH
 RUN curl -fsSL https://bun.sh/install | bash
 
 # Install application gems

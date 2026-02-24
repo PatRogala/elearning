@@ -119,9 +119,7 @@ accessories:
     image: minio/minio
     roles:
       - web
-    port:
-      - "127.0.0.1:9000:9000"
-      - "127.0.0.1:9001:9001"
+    port: "127.0.0.1:9001:9001"
     cmd: minio server /data --console-address ":9001"
     env:
       secret:
