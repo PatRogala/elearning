@@ -3,6 +3,6 @@ pl:
   layout:
     marquee_spacer_component:
       items:
-        - interaktywne lekcje
-        - ucz się własnym tempem
-        - darmowe kursy
+      - interaktywne lekcje
+      - ucz się własnym tempem
+      - darmowe kursy

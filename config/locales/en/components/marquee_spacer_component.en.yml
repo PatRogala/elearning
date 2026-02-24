@@ -3,6 +3,6 @@ en:
   layout:
     marquee_spacer_component:
       items:
-        - interactive lessons
-        - learn at your own pace
-        - free courses
+      - interactive lessons
+      - learn at your own pace
+      - free courses
