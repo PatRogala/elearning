@@ -18,5 +18,5 @@ amazon:
   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   bucket: s3-<%= Rails.env %>
-  region: ""
+  region: "us-east-1"
   force_path_style: true
