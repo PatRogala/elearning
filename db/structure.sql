@@ -495,13 +495,6 @@ CREATE UNIQUE INDEX index_roles_lower_name_ ON public.roles USING btree (lower((
 
 
 --
--- Name: index_roles_on_name; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX index_roles_on_name ON public.roles USING btree (name);
-
-
---
 -- Name: index_user_roles_on_role_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -576,6 +569,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260224102055'),
 ('20260110211948'),
 ('20251223235630'),
 ('20251216232815'),
