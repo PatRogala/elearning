@@ -54,6 +54,7 @@ env:
     POSTGRES_DB: szkoleo_production
     RAILS_ENV: production
     REDIS_URL: redis://szkoleo-redis:6379
+    MINIO_ENDPOINT: https://szkoleo-minio:9000
 
     # Log everything from Rails
     # RAILS_LOG_LEVEL: debug
@@ -112,5 +113,19 @@ accessories:
     roles:
       - web
     port: "127.0.0.1:6379:6379"
+    directories:
+      - data:/data
+  minio:
+    image: minio/minio
+    roles:
+      - web
+    port:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+    cmd: minio server /data --console-address ":9001"
+    env:
+      secret:
+        - MINIO_ROOT_USER
+        - MINIO_ROOT_PASSWORD
     directories:
       - data:/data
