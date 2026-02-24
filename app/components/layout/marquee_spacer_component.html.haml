@@ -1,0 +1,7 @@
+%section.border-b.border-neutral-900.bg-neutral-900.text-white.overflow-hidden
+  .flex.whitespace-nowrap.py-3
+    .animate-marquee.flex.items-center.gap-8.text-sm.font-bold.uppercase.tracking-widest
+      - 10.times do
+        - items.each do |item|
+          %span= item
+          %span.w-2.h-2.bg-white.shrink-0.rounded-full
