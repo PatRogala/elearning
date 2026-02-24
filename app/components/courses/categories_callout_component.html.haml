@@ -1,0 +1,44 @@
+%section.border-b.border-neutral-900.bg-white
+  .mx-auto
+    .grid.grid-cols-1.lg:grid-cols-12
+
+      .lg:col-span-4.p-6.md:p-12.border-b.lg:border-b-0.lg:border-r.border-neutral-900.flex.flex-col.justify-between
+        %span.block.font-bold.uppercase.text-neutral-400.mb-8{class: "tracking-[0.2em] text-[10px]"}
+          = t('.categories_label')
+        %h2.text-4xl.font-black.uppercase.tracking-tighter.text-neutral-900.leading-normal{class: "leading-[0.9]"}
+          = t('.title')
+
+      .lg:col-span-8.grid.grid-cols-1.sm:grid-cols-2
+
+        %a.group.block.p-6.md:p-12.border-b.sm:border-r.border-neutral-900.hover:bg-neutral-900.hover:text-white.transition-colors{href: "#"}
+          .flex.justify-between.items-start.mb-12
+            %span.text-xs.font-bold.tracking-widest.text-neutral-400.group-hover:text-neutral-500 01
+            %svg.w-6.h-6.opacity-0.-translate-x-4.group-hover:opacity-100.group-hover:translate-x-0.transition-all{fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"}
+              %path{d: "M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3", "stroke-width" => "2"}
+          %h3.text-3xl.font-black.uppercase.tracking-tighter
+            = t('.categories.backend')
+
+        -# Offline categories (coming soon)
+        .block.p-6.md:p-12.border-b.border-neutral-900.bg-neutral-50.cursor-not-allowed.select-none
+          .flex.justify-between.items-start.mb-12
+            %span.text-xs.font-bold.tracking-widest.text-neutral-300 02
+            %span.text-xs.font-bold.tracking-widest.uppercase.text-neutral-300{class: "tracking-[0.15em]"}
+              = t('.soon')
+          %h3.text-3xl.font-black.uppercase.tracking-tighter.text-neutral-300
+            = t('.categories.frontend')
+
+        .block.p-6.md:p-12.border-b.sm:border-b-0.sm:border-r.border-neutral-900.bg-neutral-50.cursor-not-allowed.select-none
+          .flex.justify-between.items-start.mb-12
+            %span.text-xs.font-bold.tracking-widest.text-neutral-300 03
+            %span.text-xs.font-bold.tracking-widest.uppercase.text-neutral-300{class: "tracking-[0.15em]"}
+              = t('.soon')
+          %h3.text-3xl.font-black.uppercase.tracking-tighter.text-neutral-300
+            = t('.categories.ui_ux')
+
+        .block.p-6.md:p-12.bg-neutral-50.cursor-not-allowed.select-none
+          .flex.justify-between.items-start.mb-12
+            %span.text-xs.font-bold.tracking-widest.text-neutral-300 04
+            %span.text-xs.font-bold.tracking-widest.uppercase.text-neutral-300{class: "tracking-[0.15em]"}
+              = t('.soon')
+          %h3.text-3xl.font-black.uppercase.tracking-tighter.text-neutral-300
+            = t('.categories.devops')
