@@ -1,0 +1,12 @@
+---
+pl:
+  courses:
+    categories_callout_component:
+      categories_label: Wybierz ścieżkę
+      title: Pora na coś nowego?
+      categories:
+        backend: Backend
+        frontend: Frontend
+        ui_ux: UI / UX
+        devops: DevOps
+      soon: Już wkrótce
