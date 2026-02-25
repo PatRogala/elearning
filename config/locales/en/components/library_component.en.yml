@@ -1,0 +1,7 @@
+---
+en:
+  courses:
+    library_component:
+      new: New!
+      see_all: See all
+      title: New courses on the platform
