@@ -1,6 +1,7 @@
 # Presentation of the course you can sign up for
 class Course < ApplicationRecord
   scope :published, -> { where(published: true) }
+  scope :recent, -> { order(created_at: :desc) }
 
   belongs_to :instructor, class_name: "User"
 
