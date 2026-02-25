@@ -5,7 +5,7 @@ module Courses
       @courses ||= Course.published.recent
                          .with_attached_image
                          .with_rich_text_description
-                         .includes(:instructor).limit(3)
+                         .includes(instructor: { avatar_attachment: :blob }).limit(3)
     end
 
     def render?
