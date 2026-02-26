@@ -1,5 +1,7 @@
 # Presentation of the course you can sign up for
 class Course < ApplicationRecord
+  extend FriendlyId
+
   scope :published, -> { where(published: true) }
   scope :recent, -> { order(created_at: :desc) }
 
@@ -20,6 +22,8 @@ class Course < ApplicationRecord
   end
   monetize :price_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }
 
+  friendly_id :title, use: :slugged
+
   def image_cover
     return image.variant(:cover) if image.attached?
 
@@ -30,5 +34,9 @@ class Course < ApplicationRecord
 
   def placeholder_image
     "courses/course_placeholder.png"
+  end
+
+  def should_generate_new_friendly_id?
+    title_changed? || slug.blank?
   end
 end
