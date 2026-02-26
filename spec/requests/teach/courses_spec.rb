@@ -137,7 +137,7 @@ RSpec.describe "Teach::Courses", type: :request do
         end
 
         it "redirects to edit page" do
-          expect(response).to redirect_to(edit_teach_course_path(course))
+          expect(response).to redirect_to(edit_teach_course_path(course.reload))
         end
 
         it "sets a success flash message" do
