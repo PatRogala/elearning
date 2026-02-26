@@ -14,7 +14,7 @@
         .group.border-b.lg:border-b-0.border-neutral-900.flex.flex-col{class: "lg:border-r [&:last-child]:border-r-0 [&:last-child]:border-b-0"}
 
           .relative.w-full.aspect-video.bg-neutral-100.border-b.border-neutral-900.overflow-hidden
-            = image_tag course.image_cover, class: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            = image_tag course.image_cover, class: "w-full h-full object-cover transition-all duration-500"
             .absolute.top-0.left-0.bg-white.text-neutral-900.px-3.py-1.border-r.border-b.border-neutral-900
               %span.font-bold.uppercase.tracking-widest{class: "text-[9px]"}
                 = t(".new")
