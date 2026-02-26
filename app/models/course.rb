@@ -13,7 +13,8 @@ class Course < ApplicationRecord
   validates :image, size: { less_than_or_equal_to: 5.megabytes }
   validates :price_cents, presence: true
   validates :price_currency, presence: true
-  validates :published, inclusion: { in: [true, false] }, allow_nil: true
+  validates :published, inclusion: { in: [true, false] }
+  validates :slug, uniqueness: true, allow_nil: true
 
   has_rich_text :description
   has_one_attached :image do |attachable|
