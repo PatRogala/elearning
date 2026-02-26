@@ -14,7 +14,7 @@
       .hidden.md:flex.items-center.gap-8
         - if user
           %nav.flex.gap-6.items-center
-            = render Ui::NavLinkComponent.new(label: t(".courses"), href: "#")
+            = render Ui::NavLinkComponent.new(label: t(".courses"), href: courses_path)
             = render Ui::NavLinkComponent.new(label: t(".profile"), href: edit_user_registration_path)
 
           - if user.teacher?

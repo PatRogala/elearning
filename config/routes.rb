@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     devise_for :users
 
     resources :users, only: %i[update]
+    resources :courses, only: %i[index]
 
     # Teach routes
     namespace :teach do
