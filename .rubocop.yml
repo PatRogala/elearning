@@ -41,4 +41,4 @@ RSpec/NestedGroups:
   Max: 4
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 25

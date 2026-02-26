@@ -171,7 +171,8 @@ CREATE TABLE public.courses (
     updated_at timestamp(6) with time zone NOT NULL,
     price_cents integer DEFAULT 0 NOT NULL,
     price_currency character varying DEFAULT 'PLN'::character varying NOT NULL,
-    published boolean DEFAULT false NOT NULL
+    published boolean DEFAULT false NOT NULL,
+    slug character varying
 );
 
 
@@ -488,6 +489,13 @@ CREATE UNIQUE INDEX index_courses_on_instructor_id_and_title ON public.courses U
 
 
 --
+-- Name: index_courses_on_slug; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_courses_on_slug ON public.courses USING btree (slug);
+
+
+--
 -- Name: index_roles_lower_name_; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -569,6 +577,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260226123713'),
 ('20260224102055'),
 ('20260110211948'),
 ('20251223235630'),

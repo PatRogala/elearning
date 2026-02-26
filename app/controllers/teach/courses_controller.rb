@@ -10,7 +10,7 @@ module Teach
     end
 
     def edit
-      course = policy_scope([:instructor, Course]).find(params[:id])
+      course = policy_scope([:instructor, Course]).friendly.find(params[:id])
       @form = Teach::CourseForm.new(course)
       authorize([:instructor, course])
     end
@@ -30,7 +30,7 @@ module Teach
     end
 
     def update
-      course = policy_scope([:instructor, Course]).find(params[:id])
+      course = policy_scope([:instructor, Course]).friendly.find(params[:id])
       @form = Teach::CourseForm.new(course)
       authorize([:instructor, course])
 
@@ -44,7 +44,7 @@ module Teach
     end
 
     def publish
-      course = policy_scope([:instructor, Course]).find(params[:id])
+      course = policy_scope([:instructor, Course]).friendly.find(params[:id])
       authorize([:instructor, course])
 
       result = Courses::Publish.call(course: course)
