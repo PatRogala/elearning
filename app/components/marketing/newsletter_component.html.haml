@@ -1,0 +1,15 @@
+%section.border-b.border-neutral-900.bg-neutral-50
+  .max-w-7xl.mx-auto
+    .grid.grid-cols-1.lg:grid-cols-12
+
+      .lg:col-span-6.p-6.md:p-12.border-b.lg:border-b-0.lg:border-r.border-neutral-900.flex.flex-col.justify-center
+        %h2.text-4xl.font-black.uppercase.tracking-tighter.text-neutral-900.mb-4
+          = t(".title")
+        %p.text-neutral-600
+          = t(".description")
+
+      .lg:col-span-6.p-6.md:p-12.flex.items-center
+        %form.w-full.flex.flex-col.sm:flex-row.gap-4{action: "#"}
+          %input.flex-1.px-6.py-4.bg-white.border.border-neutral-900.text-sm.font-bold.text-neutral-900.placeholder:text-neutral-400.placeholder:uppercase.placeholder:tracking-widest.focus:outline-none.focus:ring-2.focus:ring-neutral-900.focus:ring-offset-2{type: "email", placeholder: "Twój adres e-mail"}
+          %button.bg-neutral-900.text-white.px-8.py-4.text-sm.font-bold.uppercase.tracking-widest.hover:bg-neutral-700.transition-colors.whitespace-nowrap{type: "submit"}
+            = t(".button")
