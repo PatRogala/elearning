@@ -2,8 +2,17 @@
 pl:
   instructor:
     course_edit_form_component:
-      dashboard: Tablica
+      course_programme: Program kursu
+      create_first_lesson: Utwórz pierwszą lekcję
+      dashboard: Wróć do panelu
+      draft: Szkic
+      manage_lessons: Zarządzaj lekcjami
+      new_lesson: Nowa lekcja
       publish_course: Opublikuj kurs
-      recommended_size: 'Rekomendowany rozmiar: 1280x720px JPG, PNG, WEBP'
+      published: Opublikowany
+      recommended_size: 'Rekomendowany rozmiar: 1280x720 px (16:9) JPG, PNG, WEBP'
       replace_image: Zmień obraz
       save_changes: Zapisz zmiany
+      status: Status
+      title_placeholder: WPISZ TYTUŁ KURSU...
+      your_course_is_empty: Twój kurs to na razie czysta karta.

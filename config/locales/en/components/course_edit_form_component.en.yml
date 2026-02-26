@@ -2,8 +2,17 @@
 en:
   instructor:
     course_edit_form_component:
+      course_programme: Course programme
+      create_first_lesson: Create first lesson
       dashboard: Dashboard
+      draft: Draft
+      manage_lessons: Manage lessons
+      new_lesson: New lesson
       publish_course: Publish course
+      published: Published
       recommended_size: 'Recommended size: 1280x720px JPG, PNG, WEBP'
       replace_image: Replace image
       save_changes: Save changes
+      status: Status
+      title_placeholder: Enter course title...
+      your_course_is_empty: Your course is empty
