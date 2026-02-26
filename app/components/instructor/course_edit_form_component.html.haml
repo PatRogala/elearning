@@ -1,70 +1,116 @@
--# --- STICKY ACTION BAR ---
-.sticky.z-40.bg-white.border-b.border-neutral-900.top-20
-  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
-    .h-20.flex.items-center.justify-between
-      -# Back Link
-      = link_to teach_dashboard_path, class: "inline-flex items-center text-xs font-bold uppercase text-neutral-500 hover:text-neutral-900 transition-colors tracking-[0.15em]" do
-        %svg.w-4.h-4.mr-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+.sticky.z-40.bg-white.border-b.border-neutral-900.top-0
+  .max-w-7xl.mx-auto
+    .h-20.px-6.md:px-12.flex.items-center.justify-between.border-x.border-neutral-900
+
+      = link_to teach_dashboard_path, class: "group inline-flex items-center text-xs font-bold uppercase text-neutral-500 hover:text-neutral-900 transition-colors tracking-[0.2em]" do
+        %svg.w-4.h-4.mr-3.group-hover:-translate-x-1.transition-transform{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
           %path{d: "M19 12H5M12 19l-7-7 7-7"}
         = t(".dashboard")
 
-      -# Primary Actions
       .flex.items-center.gap-4
-        -# Save Button
-        %button.inline-flex.items-center.bg-white.text-neutral-900.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-50.transition-colors.border.border-neutral-200{type: "submit", form: "course-edit-form", class: "tracking-[0.15em]"}
+        %button.inline-flex.items-center.bg-transparent.text-neutral-900.px-6.py-3.text-xs.font-bold.uppercase.hover:bg-neutral-100.transition-colors.border.border-neutral-900{type: "submit", form: "course-edit-form", class: "tracking-[0.15em]"}
           = t(".save_changes")
 
-        -# Publish Button (High Contrast)
         - unless @form.model.published?
           = button_to publish_teach_course_path(@form.model), method: :patch, class: "inline-flex items-center bg-neutral-900 text-white px-6 py-3 text-xs font-bold uppercase hover:bg-neutral-700 transition-colors border border-neutral-900 tracking-[0.15em]" do
             = t(".publish_course")
-            %svg.w-4.h-4.ml-2{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+            %svg.w-4.h-4.ml-3{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
               %path{d: "M5 12h14M12 5l7 7-7 7"}
 
--# --- MAIN FORM CONTAINER ---
-.max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8.py-12
-  = form_with(model: @form, url: teach_course_path(@form.model), id: "course-edit-form", class: "grid grid-cols-1 lg:grid-cols-12 gap-12") do |f|
-    -# --- LEFT COLUMN (CONTENT) - Spans 8 cols ---
-    .lg:col-span-8.space-y-12
+%section.border-b.border-neutral-900
+  .max-w-7xl.mx-auto.border-x.border-neutral-900
 
-      -# 1. Title Section (Document Style)
-      .space-y-6
-        .group
-          = f.label :title, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
-          = f.text_field :title, class: "block w-full bg-transparent text-4xl md:text-5xl font-black text-neutral-900 tracking-tight border-b-2 border-neutral-200 focus:border-neutral-900 focus:outline-none placeholder-neutral-300 py-2 transition-colors rounded-none tracking-[0.15em]"
+    = form_with(model: @form, url: teach_course_path(@form.model), id: "course-edit-form", class: "grid grid-cols-1 lg:grid-cols-12") do |f|
+      .lg:col-span-8.border-b.lg:border-b-0.lg:border-r.border-neutral-900.flex.flex-col
+        .p-6.md:p-12.border-b.border-neutral-900
+          .mb-10
+            = f.label :title, class: "block text-[10px] font-bold uppercase text-neutral-400 mb-3 tracking-[0.2em]"
+            = f.text_field :title, class: "block w-full bg-transparent text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter border-b-2 border-transparent focus:border-neutral-900 focus:outline-none placeholder-neutral-300 pb-2 transition-colors rounded-none placeholder:uppercase", placeholder: t(".title_placeholder")
 
-      -# 2. Description (Rich Text Simulator)
-      .space-y-4
-        = f.label :description, class: "block text-xs font-bold uppercase text-neutral-500 mb-2 tracking-[0.15em]"
-        = f.rich_text_area :description
+          .mb-4
+            = f.label :description, class: "block text-[10px] font-bold uppercase text-neutral-400 mb-3 tracking-[0.2em]"
+            = f.rich_text_area :description, class: "min-h-[200px] max-w-none lexxy-content"
 
-    -# --- RIGHT COLUMN (SIDEBAR / SETTINGS) - Spans 4 cols ---
-    .lg:col-span-4.space-y-10
+        .p-6.md:p-12.bg-white
+          .flex.items-center.justify-between.mb-8
+            %div
+              %h2.text-2xl.font-black.uppercase.tracking-tighter.text-neutral-900
+                = t(".course_programme")
+              %p.text-xs.font-bold.text-neutral-400.tracking-widest.mt-1
+                = t(".manage_lessons")
 
-      -# 1. Course Cover Image
-      .space-y-4
-        = f.label :image, class: "block text-xs font-bold uppercase text-neutral-900 tracking-[0.15em]"
+            %a.bg-neutral-900.text-white.px-5.py-3.font-bold.uppercase.tracking-widest.hover:bg-neutral-700.transition-colors{href: "#", class: "text-[10px]"}
+              +
+              = t(".new_lesson")
 
-        .relative.group.bg-neutral-100.border.border-neutral-300.overflow-hidden{class: "aspect-[16/9]", "data-controller" => "image-preview"}
-          -# File Input (Hidden)
-          = f.file_field :image, class: "hidden", data: { "image-preview-target" => "input", action: "change->image-preview#preview" }, accept: "image/*"
+          .border.border-neutral-900.flex.flex-col
+            - if false # TODO: Add lessons
+              .group.flex.items-center.justify-between.p-4.border-b.border-neutral-900.last:border-b-0.hover:bg-neutral-50.transition-colors
 
-          -# Preview Image
-          = image_tag image_cover, class: "object-cover w-full h-full", data: { "image-preview-target" => "preview" }, alt: "#{form.model.title}"
+                .flex.items-center.gap-4
+                  %span.text-xs.font-bold.text-neutral-400.tracking-widest 01
+                  %span.text-sm.font-bold.text-neutral-900.uppercase Wprowadzenie do frameworka
 
-          -# Upload Overlay (Hidden by default, visible on hover)
-          .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/50"}
-            %button.px-4.py-2.bg-white.text-neutral-900.text-xs.font-bold.uppercase.tracking-widest.cursor-pointer{type: "button", data: { action: "click->image-preview#trigger" }}
-              = t(".replace_image")
+                .flex.items-center.gap-6
+                  %span.font-bold.uppercase.text-neutral-500.tracking-widest{class: "text-[10px]"} 12:40
 
-        %p.text-neutral-500.uppercase.tracking-wide{class: "text-[10px]"}
-          = t(".recommended_size")
+                  .flex.items-center.gap-3.opacity-0.group-hover:opacity-100.transition-opacity
+                    %a.font-bold.uppercase.text-neutral-500.hover:text-neutral-900.tracking-widest.underline{href: "#"} Edytuj
+                    %a.font-bold.uppercase.text-red-500.hover:text-red-700.tracking-widest.underline{href: "#", class: "text-[10px]"} Usuń
 
-      -# 3. Course Details
-      .space-y-6
-        -# Price
-        .space-y-2
-          = f.label :price, class: "block text-xs font-bold uppercase text-neutral-900 tracking-[0.15em]"
-          .relative
-            %span.absolute.left-4.text-neutral-500.font-serif.italic{class: "top-1/2 -translate-y-1/2"} PLN
-            = f.number_field :price, class: "block w-full bg-white border border-neutral-300 text-neutral-900 text-sm font-bold py-3 pl-14 pr-4 focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 focus:outline-none rounded-none", placeholder: "49.99", step: "0.01", min: "0.00"
+
+              .group.flex.items-center.justify-between.p-4.border-b.border-neutral-900.last:border-b-0.hover:bg-neutral-50.transition-colors
+                .flex.items-center.gap-4
+                  %span.text-xs.font-bold.text-neutral-400.tracking-widest 02
+                  %span.text-sm.font-bold.text-neutral-900.uppercase Konfiguracja środowiska
+                .flex.items-center.gap-6
+                  %span.font-bold.uppercase.text-neutral-500.tracking-widest{class: "text-[10px]"} 08:15
+                  .flex.items-center.gap-3.opacity-0.group-hover:opacity-100.transition-opacity
+                    %a.font-bold.uppercase.text-neutral-500.hover:text-neutral-900.tracking-widest.underline{href: "#", class: "text-[10px]"} Edytuj
+                    %a.font-bold.uppercase.text-red-500.hover:text-red-700.tracking-widest.underline{href: "#", class: "text-[10px]"} Usuń
+
+          - if true # TODO: Add lessons
+            .mt-8.border-2.border-dashed.border-neutral-300.p-12.flex.flex-col.items-center.justify-center.text-center.bg-neutral-50.hover:bg-neutral-100.transition-colors.group
+              %span.block.text-4xl.mb-4.opacity-50.group-hover:scale-110.transition-transform 📚
+              %p.text-sm.font-bold.uppercase.text-neutral-500.tracking-widest.mb-6
+                = t(".your_course_is_empty")
+              %a.bg-white.border.border-neutral-900.text-neutral-900.px-6.py-3.font-bold.uppercase.tracking-widest.hover:bg-neutral-900.hover:text-white.transition-colors{href: "#", class: "text-xs"}
+                = t(".create_first_lesson")
+
+
+      .lg:col-span-4.bg-neutral-50.flex.flex-col
+        .p-6.md:p-8.border-b.border-neutral-900
+          = f.label :image, class: "block text-[10px] font-bold uppercase text-neutral-400 mb-4 tracking-[0.2em]"
+
+          .relative.group.bg-neutral-200.border.border-neutral-900.overflow-hidden{class: "aspect-video", "data-controller" => "image-preview"}
+            = f.file_field :image, class: "hidden", data: { "image-preview-target" => "input", action: "change->image-preview#preview" }, accept: "image/*"
+
+            = image_tag @form.model.image_cover, class: "object-cover w-full h-full transition-all duration-500", data: { "image-preview-target" => "preview" }, alt: "Okładka"
+
+            .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity.backdrop-blur-sm{class: "bg-black/40"}
+              %button.px-4.py-2.bg-white.text-neutral-900.font-bold.uppercase.cursor-pointer.border.border-neutral-900{type: "button", data: { action: "click->image-preview#trigger" }, class: "text-[10px] tracking-[0.2em]"}
+                = t(".replace_image")
+
+          %p.mt-4.text-neutral-400.font-bold.uppercase.tracking-widest{class: "text-[9px]"}
+            = t(".recommended_size")
+
+        -# 2. Price Setting
+        .p-6.md:p-8.border-b.border-neutral-900
+          = f.label :price, class: "block text-[10px] font-bold uppercase text-neutral-400 mb-4 tracking-[0.2em]"
+
+          .relative.flex
+            .flex.items-center.justify-center.px-4.bg-neutral-200.border-y.border-l.border-neutral-900
+              %span.text-xs.font-black.text-neutral-900
+                = Constants::CURRENCY
+            = f.number_field :price, class: "block w-full bg-white border border-neutral-900 text-neutral-900 text-lg font-black py-4 px-4 focus:ring-0 focus:outline-none focus:bg-neutral-100 transition-colors rounded-none", placeholder: "0.00", step: "0.01", min: "0.00"
+
+        .p-6.md:p-8
+          .flex.items-center.justify-between.p-4.border.border-neutral-900.bg-white
+            %span.text-xs.font-bold.uppercase.text-neutral-900.tracking-widest
+              = t(".status")
+            - if @form.model.published?
+              %span.px-2.py-1.bg-green-100.text-green-800.font-black.uppercase.tracking-widest{class: "text-[10px]"}
+                = t(".published")
+            - else
+              %span.px-2.py-1.bg-yellow-100.text-yellow-800.font-black.uppercase.tracking-widest{class: "text-[10px]"}
+                = t(".draft")
