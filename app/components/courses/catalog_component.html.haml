@@ -1,0 +1,46 @@
+%section.border-b.border-neutral-900.bg-white
+  .max-w-7xl.mx-auto.border-x.border-neutral-900
+    .grid.grid-cols-1.lg:grid-cols-12
+
+      .lg:col-span-4.p-6.md:p-12.border-b.lg:border-b-0.lg:border-r.border-neutral-900.flex.flex-col.justify-end
+        %span.block.font-bold.uppercase.text-neutral-400.mb-4{class: "text-[10px] tracking-[0.2em]"}
+          = t('.catalog_subtitle', default: 'Wybierz ścieżkę')
+        %h1.text-5xl.lg:text-6xl.font-black.uppercase.tracking-tighter.text-neutral-900{class: "leading-[0.9]"}
+          Katalog
+          %br
+          Kursów
+
+      .lg:col-span-8.flex.flex-col.bg-neutral-50
+
+        = form_with url: courses_path, method: :get, class: "flex-1 flex flex-col", data: { turbo_frame: "courses_grid", turbo_action: "advance" } do |f|
+          .relative.flex-1.flex.items-center.border-b.border-neutral-900
+            %span.absolute.left-6.md:left-12.text-neutral-400
+              %svg.w-8.h-8{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+                %path{d: "M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"}
+
+            = f.text_field :query, placeholder: "SZUKAJ KURSU, TECHNOLOGII, AUTORA...", class: "w-full h-full min-h-[100px] bg-transparent pl-20 md:pl-28 pr-6 text-xl md:text-2xl font-black text-neutral-900 uppercase tracking-tighter focus:outline-none placeholder-neutral-300 transition-colors focus:bg-white"
+
+          .p-6.md:px-12.flex.flex-wrap.items-center.gap-3.bg-white
+            %span.font-bold.uppercase.text-neutral-400.mr-2{class: "text-[10px] tracking-[0.2em]"} Filtruj:
+
+            %button.px-3.py-1.border.border-neutral-900.bg-neutral-900.text-white.font-bold.uppercase.tracking-widest.hover:bg-neutral-700.transition-colors{type: "button", class: "text-[10px]"} Wszystkie
+            %button.px-3.py-1.border.border-neutral-300.text-neutral-500.font-bold.uppercase.tracking-widest.hover:border-neutral-900.hover:text-neutral-900.transition-colors{type: "button", class: "text-[10px]"} Ruby on Rails
+            %button.px-3.py-1.border.border-neutral-300.text-neutral-500.font-bold.uppercase.tracking-widest.hover:border-neutral-900.hover:text-neutral-900.transition-colors{type: "button", class: "text-[10px]"} React
+            %button.px-3.py-1.border.border-neutral-300.text-neutral-500.font-bold.uppercase.tracking-widest.hover:border-neutral-900.hover:text-neutral-900.transition-colors{type: "button", class: "text-[10px]"} UI/UX
+
+%section.bg-white
+  .max-w-7xl.mx-auto.border-x.border-neutral-900
+
+    = turbo_frame_tag "courses_grid" do
+      .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3
+        - courses.each do |course|
+          = render Courses::CardComponent.new(course)
+
+-# TODO: Add pagination
+-# %section.border-b.border-neutral-900.bg-white
+-#   .max-w-7xl.mx-auto.border-x.border-neutral-900.p-6.flex.justify-center
+-#     .flex.items-center.gap-2
+-#       %button.px-4.py-2.border.border-neutral-200.text-neutral-400.text-xs.font-bold.uppercase.tracking-widest{disabled: true} &larr; Poprzednia
+-#       %span.px-4.py-2.bg-neutral-900.text-white.text-xs.font-bold.uppercase.tracking-widest 1
+-#       %a.px-4.py-2.border.border-neutral-900.text-neutral-900.hover:bg-neutral-100.text-xs.font-bold.uppercase.tracking-widest.transition-colors{href: "#"} 2
+-#       %a.px-4.py-2.border.border-neutral-900.text-neutral-900.hover:bg-neutral-100.text-xs.font-bold.uppercase.tracking-widest.transition-colors{href: "#"} Następna &rarr;
