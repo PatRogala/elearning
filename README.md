@@ -65,19 +65,12 @@ Both values are available in your BetterStack source settings. Once set, all pro
 
 ## Skylight Integration
 
-Performance monitoring is handled by [Skylight](https://www.skylight.io) via the `skylight` gem. The authentication token is loaded from Rails credentials in `config/initializers/skylight.rb`.
+Performance monitoring is handled by [Skylight](https://www.skylight.io) via the `skylight` gem. The authentication token is injected as an environment variable by Kamal at deploy time.
 
-Add the required credential with:
+Set the token on the machine running `kamal deploy` (or in your CI secrets):
 
 ```bash
-bin/rails credentials:edit
+export SZKOLEO_SKYLIGHT_AUTHENTICATION=<your-skylight-authentication-token>
 ```
 
-Include the following key:
-
-```yaml
-skylight:
-  authentication: <your-skylight-authentication-token>
-```
-
-The token is available in your Skylight app settings. Once set, Skylight automatically profiles your Rails app and surfaces slow endpoints, N+1 queries, and other performance issues in your Skylight dashboard.
+Kamal reads this via `.kamal/secrets` and injects `SKYLIGHT_AUTHENTICATION` into the production container. The token is available in your Skylight app settings.
