@@ -74,3 +74,24 @@ export SZKOLEO_SKYLIGHT_AUTHENTICATION=<your-skylight-authentication-token>
 ```
 
 Kamal reads this via `.kamal/secrets` and injects `SKYLIGHT_AUTHENTICATION` into the production container. The token is available in your Skylight app settings.
+
+## Resend Integration
+
+Transactional emails in production are sent via [Resend](https://resend.com) using the `resend` gem. Action Mailer is configured to use Resend as the delivery method in `config/environments/production.rb`.
+
+The API key is loaded from Rails credentials in `config/initializers/mailer.rb`.
+
+Add the required credential with:
+
+```bash
+bin/rails credentials:edit
+```
+
+Include the following key:
+
+```yaml
+resend:
+  api_key: <your-resend-api-key>
+```
+
+The API key is available in your Resend dashboard under **API Keys**.
