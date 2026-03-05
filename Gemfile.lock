@@ -159,6 +159,7 @@ GEM
       addressable
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
+    csv (3.3.5)
     cucumber (10.2.0)
       base64 (~> 0.2)
       builder (~> 3.2)
@@ -299,6 +300,10 @@ GEM
       ruby_parser (~> 3.5)
     htmlbeautifier (1.4.3)
     htmlentities (4.3.4)
+    httparty (0.24.2)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     i18n-tasks (1.1.2)
@@ -417,6 +422,8 @@ GEM
       railties (>= 7.0)
     msgpack (1.8.0)
     multi_test (1.1.0)
+    multi_xml (0.8.1)
+      bigdecimal (>= 3.1, < 5)
     net-imap (0.6.3)
       date
       net-protocol
@@ -538,6 +545,8 @@ GEM
       uber (< 0.2.0)
     request_store (1.7.0)
       rack (>= 1.4)
+    resend (1.0.1)
+      httparty (>= 0.21.0)
     responders (3.2.0)
       actionpack (>= 7.0)
       railties (>= 7.0)
@@ -751,6 +760,7 @@ DEPENDENCIES
   rails
   rails-i18n
   reform-rails
+  resend
   rspec-rails
   rspec-sidekiq
   rubocop
