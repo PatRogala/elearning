@@ -6,3 +6,7 @@
 Rails.application.config.filter_parameters += %i[
   passw email secret token _key crypt salt certificate otp ssn cvv cvc
 ]
+
+Logtail::Integrations::Rack::HTTPEvents.http_header_filters = %i[
+  authorization proxy_authorization cookie
+]
