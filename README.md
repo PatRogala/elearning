@@ -42,3 +42,23 @@ docker compose exec backend bin/rails db:reset
 Active Storage is configured to use MinIO in development. Create the required bucket once the stack is up.
 
 Open the MinIO console at http://localhost:9001 (credentials: `minio` / `miniodevelopment`) and create a bucket named `default-bucket` manually.
+
+## BetterStack Integration
+
+Production logs are shipped to [BetterStack](https://betterstack.com) via the `logtail-rails` gem. The logger is configured in `config/environments/production.rb` using Rails credentials.
+
+Add the required credentials with:
+
+```bash
+bin/rails credentials:edit
+```
+
+Include the following keys:
+
+```yaml
+logtail:
+  source_token: <your-betterstack-source-token>
+  ingesting_host: <your-betterstack-ingesting-host>
+```
+
+Both values are available in your BetterStack source settings. Once set, all production logs are automatically forwarded to your BetterStack dashboard.
