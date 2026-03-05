@@ -41,6 +41,9 @@ Rails.application.routes.draw do
 
     # Avo for admin interface
     mount_avo at: "/avo"
+
+    # Flipper for feature flags
+    mount Flipper::UI.app(Flipper), at: "/flipper"
   end
 
   # Lookbook for UI development
