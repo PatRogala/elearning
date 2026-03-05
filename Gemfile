@@ -18,6 +18,8 @@ gem "stimulus-rails"
 gem "cssbundling-rails"
 # Logtail for logging to BetterStack
 gem "logtail-rails"
+# Skylight for performance monitoring
+gem "skylight"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
