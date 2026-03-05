@@ -1,0 +1,4 @@
+%p= @user.email
+%p= t("user_mailer.welcome_email.greeting")
+%p= t("user_mailer.welcome_email.instruction")
+%p= link_to t("user_mailer.welcome_email.action"), new_user_session_url
