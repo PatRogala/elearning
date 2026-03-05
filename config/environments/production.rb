@@ -35,6 +35,7 @@ Rails.application.configure do
 
   # Log to STDOUT with the current request id as a default log tag.
   config.log_tags = [:request_id]
+  # We need to add if to make it work with deploy # TODO: refactor this and make it better
   if (logtail_token = Rails.application.credentials.dig(:logtail, :source_token))
     config.logger = Logtail::Logger.create_default_logger(
       logtail_token,
