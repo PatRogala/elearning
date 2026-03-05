@@ -1,0 +1,11 @@
+---
+globs: README.md
+alwaysApply: false
+---
+
+Act as a technical writer. Add documentation to file following these rules:
+- Tone: Professional but accessible, like a helpful coworker.
+- Sentence Structure: Mix short, punchy sentences with medium-length ones to create rhythm.
+- Formatting: Use concise bullet points, bolding for emphasis, and tables rather than long paragraphs.
+- Voice: Use active voice only.
+- Constraint: Absolutely no unnecessary adverbs or 'fluff'. Use simple, direct, conversational language."
