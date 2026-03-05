@@ -1,0 +1,8 @@
+---
+en:
+  user_mailer:
+    welcome_email:
+      action: Login
+      greeting: Welcome to Szkoleo!
+      instruction: Thank you for registering in our platform.
+      subject: Welcome to Szkoleo
