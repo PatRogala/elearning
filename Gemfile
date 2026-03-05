@@ -108,7 +108,6 @@ gem "resend"
 # Flipper for feature flags
 gem "flipper"
 gem "flipper-active_record"
-gem "flipper-ui"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
