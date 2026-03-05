@@ -62,3 +62,22 @@ logtail:
 ```
 
 Both values are available in your BetterStack source settings. Once set, all production logs are automatically forwarded to your BetterStack dashboard.
+
+## Skylight Integration
+
+Performance monitoring is handled by [Skylight](https://www.skylight.io) via the `skylight` gem. The authentication token is loaded from Rails credentials in `config/initializers/skylight.rb`.
+
+Add the required credential with:
+
+```bash
+bin/rails credentials:edit
+```
+
+Include the following key:
+
+```yaml
+skylight:
+  authentication: <your-skylight-authentication-token>
+```
+
+The token is available in your Skylight app settings. Once set, Skylight automatically profiles your Rails app and surfaces slow endpoints, N+1 queries, and other performance issues in your Skylight dashboard.
