@@ -49,7 +49,8 @@
         -# 4. LISTA LEKCJI (Syllabus)
         .flex.flex-col.border-b.border-neutral-900
           .p-6.md:px-12.md:py-8.bg-neutral-900.text-white
-            %h2.text-2xl.font-black.uppercase.tracking-tighter Program Kursu
+            %h2.text-2xl.font-black.uppercase.tracking-tighter
+              = t('.program')
             %span.block.mt-1.font-bold.uppercase.text-neutral-400{class: "text-[10px] tracking-widest"} 4 Moduły • 24 Lekcje
 
           .border-b.border-neutral-900.bg-neutral-50.px-6.md:px-12.py-4
@@ -77,7 +78,8 @@
 
         -# 5. Prowadzący
         .p-6.md:p-12.bg-white
-          %h2.text-2xl.font-black.uppercase.tracking-tighter.text-neutral-900.mb-8 Prowadzący
+          %h2.text-2xl.font-black.uppercase.tracking-tighter.text-neutral-900.mb-8
+            = t('.instructor')
           .flex.flex-col.sm:flex-row.gap-8.items-start
             .w-32.h-32.shrink-0.border.border-neutral-900.bg-neutral-200
               = image_tag instructor.avatar_preview, class: "w-full h-full object-cover grayscale"
@@ -97,7 +99,8 @@
 
           -# Sekcja Ceny
           .mb-8
-            %span.block.text-neutral-500.font-bold.uppercase.mb-2{class: "text-[10px] tracking-[0.2em]"} Inwestycja w wiedzę
+            %span.block.text-neutral-500.font-bold.uppercase.mb-2{class: "text-[10px] tracking-[0.2em]"}
+              = t('.investment')
             .flex.items-end.gap-2
               %span.text-5xl.font-black.tracking-tighter.text-neutral-900
                 = course.price
@@ -107,31 +110,33 @@
           -# Formularz Zakupu
           %form{action: "#", method: "post"}
             %button.w-full.flex.items-center.justify-between.bg-neutral-900.text-white.px-6.py-5.text-sm.font-bold.uppercase.hover:bg-neutral-700.transition-colors.group.mb-4{type: "submit", class: "tracking-widest shadow-[6px_6px_0px_0px_rgba(23,23,23,0.2)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"}
-              %span Kup Dostęp
+              %span= t('.buy_access')
               %span.group-hover:translate-x-2.transition-transform &rarr;
 
             %p.text-center.text-neutral-400.font-bold.uppercase{class: "text-[9px] tracking-widest"}
-              Dożywotni dostęp • Gwarancja satysfakcji
+              = t('.lifetime_access')
 
           -# Tabela Metadanych
           .mt-10.border-t.border-neutral-900.pt-6
             %ul.flex.flex-col.gap-4
               %li.flex.items-center.justify-between
-                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Poziom
+                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"}
+                  = t('.level')
                 %span.text-xs.font-black.uppercase.text-neutral-900 Średniozaawansowany
               %li.flex.items-center.justify-between
-                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Język
+                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"}
+                  = t('.language')
                 %span.text-xs.font-black.uppercase.text-neutral-900 Polski
               %li.flex.items-center.justify-between
-                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Certyfikat
-                %span.text-xs.font-black.uppercase.text-neutral-900 Tak (PDF)
-              %li.flex.items-center.justify-between
-                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Aktualizacje
-                %span.text-xs.font-black.uppercase.text-neutral-900 W cenie
+                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"}
+                  = t('.certificate')
+                %span.text-xs.font-black.uppercase.text-neutral-900
+                  = t('.yes_pdf')
 
           -# Tagi Technologiczne
           .mt-8.bg-white.border.border-neutral-900.p-4
-            %span.block.text-neutral-900.font-bold.uppercase.mb-3{class: "text-[10px] tracking-widest"} Technologie w kursie:
+            %span.block.text-neutral-900.font-bold.uppercase.mb-3{class: "text-[10px] tracking-widest"}
+              = t('.technologies')
             .flex.flex-wrap.gap-2
               %span.px-2.py-1.bg-neutral-100.text-neutral-600.font-bold.uppercase{class: "text-[9px]"} Ruby 3.2
               %span.px-2.py-1.bg-neutral-100.text-neutral-600.font-bold.uppercase{class: "text-[9px]"} Rails 7

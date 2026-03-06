@@ -1,0 +1,15 @@
+---
+en:
+  courses:
+    store_page_component:
+      index: Catalog
+      program: Course Program
+      instructor: Instructor
+      investment: Investment in knowledge
+      buy_access: Buy Access
+      lifetime_access: Lifetime Access • Satisfaction Guarantee
+      level: Level
+      language: Language
+      certificate: Certificate
+      yes_pdf: Yes (PDF)
+      technologies: "Technologies in the course:"
