@@ -7,9 +7,6 @@ import { application } from "./application"
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
-import LocaleDropdownController from "./locale_dropdown_controller"
-application.register("locale-dropdown", LocaleDropdownController)
-
 import MobileMenuController from "./mobile_menu_controller"
 application.register("mobile-menu", MobileMenuController)
 
