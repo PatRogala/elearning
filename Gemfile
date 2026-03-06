@@ -16,6 +16,10 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
+# Logtail for logging to BetterStack
+gem "logtail-rails"
+# Skylight for performance monitoring
+gem "skylight"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
@@ -82,7 +86,7 @@ gem "reform-rails"
 gem "pundit"
 
 # Lexxy as a new editor for action text
-gem "lexxy", "~> 0.7.6.beta"
+gem "lexxy", "~> 0.8.0.beta"
 
 # Validations for storage objects
 gem "active_storage_validations"
@@ -97,6 +101,13 @@ gem "aws-sdk-s3", require: false
 
 # Friendly ID for slugging models
 gem "friendly_id"
+
+# Resend for email sending
+gem "resend"
+
+# Flipper for feature flags
+gem "flipper"
+gem "flipper-active_record"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

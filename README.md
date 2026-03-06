@@ -42,3 +42,56 @@ docker compose exec backend bin/rails db:reset
 Active Storage is configured to use MinIO in development. Create the required bucket once the stack is up.
 
 Open the MinIO console at http://localhost:9001 (credentials: `minio` / `miniodevelopment`) and create a bucket named `default-bucket` manually.
+
+## BetterStack Integration
+
+Production logs are shipped to [BetterStack](https://betterstack.com) via the `logtail-rails` gem. The logger is configured in `config/environments/production.rb` using Rails credentials.
+
+Add the required credentials with:
+
+```bash
+bin/rails credentials:edit
+```
+
+Include the following keys:
+
+```yaml
+logtail:
+  source_token: <your-betterstack-source-token>
+  ingesting_host: <your-betterstack-ingesting-host>
+```
+
+Both values are available in your BetterStack source settings. Once set, all production logs are automatically forwarded to your BetterStack dashboard.
+
+## Skylight Integration
+
+Performance monitoring is handled by [Skylight](https://www.skylight.io) via the `skylight` gem. The authentication token is injected as an environment variable by Kamal at deploy time.
+
+Set the token on the machine running `kamal deploy` (or in your CI secrets):
+
+```bash
+export SZKOLEO_SKYLIGHT_AUTHENTICATION=<your-skylight-authentication-token>
+```
+
+Kamal reads this via `.kamal/secrets` and injects `SKYLIGHT_AUTHENTICATION` into the production container. The token is available in your Skylight app settings.
+
+## Resend Integration
+
+Transactional emails in production are sent via [Resend](https://resend.com) using the `resend` gem. Action Mailer is configured to use Resend as the delivery method in `config/environments/production.rb`.
+
+The API key is loaded from Rails credentials in `config/initializers/mailer.rb`.
+
+Add the required credential with:
+
+```bash
+bin/rails credentials:edit
+```
+
+Include the following key:
+
+```yaml
+resend:
+  api_key: <your-resend-api-key>
+```
+
+The API key is available in your Resend dashboard under **API Keys**.

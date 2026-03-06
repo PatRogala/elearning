@@ -5,7 +5,7 @@
     "": {
       "name": "app",
       "dependencies": {
-        "@37signals/lexxy": "^0.1.24-beta",
+        "@37signals/lexxy": "^0.8.0-beta",
         "@hotwired/stimulus": "^3.2.2",
         "@hotwired/turbo-rails": "^8.0.23",
         "@rails/actiontext": "^8.1.200",
@@ -17,7 +17,7 @@
     },
   },
   "packages": {
-    "@37signals/lexxy": ["@37signals/lexxy@0.1.24-beta", "", { "dependencies": { "@lexical/clipboard": "^0.38.2", "@lexical/code": "^0.38.2", "@lexical/history": "^0.38.2", "@lexical/html": "^0.38.2", "@lexical/link": "^0.38.2", "@lexical/list": "^0.38.2", "@lexical/markdown": "^0.38.2", "@lexical/rich-text": "^0.38.2", "@lexical/selection": "^0.38.2", "@lexical/table": "^0.38.2", "@lexical/utils": "^0.38.2", "dompurify": "^3.3.0", "marked": "^16.4.1", "prismjs": "^1.30.0" }, "peerDependencies": { "@rails/activestorage": "^7.0.0" }, "optionalPeers": ["@rails/activestorage"] }, "sha512-kR0GWYlKT0bIs6S/tVsNEkbxCg3wf7NkzKiA7uDOCK7521lwkcExqA7NJBC8ejzfMrr48yUdjbz2TV1rZJ1WXg=="],
+    "@37signals/lexxy": ["@37signals/lexxy@0.8.0-beta", "", { "dependencies": { "@lexical/clipboard": "^0.38.2", "@lexical/code": "^0.38.2", "@lexical/extension": "^0.38.2", "@lexical/history": "^0.38.2", "@lexical/html": "^0.38.2", "@lexical/link": "^0.38.2", "@lexical/list": "^0.38.2", "@lexical/markdown": "^0.38.2", "@lexical/plain-text": "^0.38.2", "@lexical/rich-text": "^0.38.2", "@lexical/selection": "^0.38.2", "@lexical/table": "^0.38.2", "@lexical/utils": "^0.38.2", "dompurify": "^3.3.0", "lexical": "^0.38.2", "marked": "^16.4.1", "prismjs": "^1.30.0" }, "peerDependencies": { "@rails/activestorage": ">= 7.0.0" }, "optionalPeers": ["@rails/activestorage"] }, "sha512-vGrvMzBBUh3S9lPxZOburvUrW9GCORlCL7cC379sSsh8+yG5+0Scp7FtmSjVYvjpxV2SGNTKiReQ6/hasHgRGA=="],
 
     "@hotwired/stimulus": ["@hotwired/stimulus@3.2.2", "", {}, "sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A=="],
 
@@ -52,6 +52,8 @@
     "@lexical/list": ["@lexical/list@0.38.2", "", { "dependencies": { "@lexical/extension": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-OQm9TzatlMrDZGxMxbozZEHzMJhKxAbH1TOnOGyFfzpfjbnFK2y8oLeVsfQZfZRmiqQS4Qc/rpFnRP2Ax5dsbA=="],
 
     "@lexical/markdown": ["@lexical/markdown@0.38.2", "", { "dependencies": { "@lexical/code": "0.38.2", "@lexical/link": "0.38.2", "@lexical/list": "0.38.2", "@lexical/rich-text": "0.38.2", "@lexical/text": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-ykQJ9KUpCs1+Ak6ZhQMP6Slai4/CxfLEGg/rSHNVGbcd7OaH/ICtZN5jOmIe9ExfXMWy1o8PyMu+oAM3+AWFgA=="],
+
+    "@lexical/plain-text": ["@lexical/plain-text@0.38.2", "", { "dependencies": { "@lexical/clipboard": "0.38.2", "@lexical/dragon": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-xRYNHJJFCbaQgr0uErW8Im2Phv1nWHIT4VSoAlBYqLuVGZBD4p61dqheBwqXWlGGJFk+MY5C5URLiMicgpol7A=="],
 
     "@lexical/rich-text": ["@lexical/rich-text@0.38.2", "", { "dependencies": { "@lexical/clipboard": "0.38.2", "@lexical/dragon": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-eFjeOT7YnDZYpty7Zlwlct0UxUSaYu53uLYG+Prs3NoKzsfEK7e7nYsy/BbQFfk5HoM1pYuYxFR2iIX62+YHGw=="],
 
@@ -135,7 +137,7 @@
 
     "detect-libc": ["detect-libc@1.0.3", "", { "bin": { "detect-libc": "./bin/detect-libc.js" } }, "sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg=="],
 
-    "dompurify": ["dompurify@3.3.1", "", { "optionalDependencies": { "@types/trusted-types": "^2.0.7" } }, "sha512-qkdCKzLNtrgPFP1Vo+98FRzJnBRGe4ffyCea9IwHB1fyxPOeNTHpLKYGd4Uk9xvNoH0ZoOjwZxNptyMwqrId1Q=="],
+    "dompurify": ["dompurify@3.3.2", "", { "optionalDependencies": { "@types/trusted-types": "^2.0.7" } }, "sha512-6obghkliLdmKa56xdbLOpUZ43pAR6xFy1uOrxBaIDjT+yaRuuybLjGS9eVBoSR/UPU5fq3OXClEHLJNGvbxKpQ=="],
 
     "enhanced-resolve": ["enhanced-resolve@5.19.0", "", { "dependencies": { "graceful-fs": "^4.2.4", "tapable": "^2.3.0" } }, "sha512-phv3E1Xl4tQOShqSte26C7Fl84EwUdZsyOuSSk9qtAGyyQs2s3jJzComh+Abf4g187lUUAvH+H26omrqia2aGg=="],
 

@@ -35,7 +35,13 @@ Rails.application.configure do
 
   # Log to STDOUT with the current request id as a default log tag.
   config.log_tags = [:request_id]
-  config.logger   = ActiveSupport::TaggedLogging.logger($stdout)
+  # We need to add if to make it work with deploy # TODO: refactor this and make it better
+  if (logtail_token = Rails.application.credentials.dig(:logtail, :source_token))
+    config.logger = Logtail::Logger.create_default_logger(
+      logtail_token,
+      ingesting_host: Rails.application.credentials.dig(:logtail, :ingesting_host)
+    )
+  end
 
   # Change to "debug" to log everything (including potentially personally-identifiable information!).
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
@@ -60,7 +66,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "example.com" }
+  config.action_mailer.default_url_options = { host: "szkoleo.patrykrogala.dev" }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via bin/rails credentials:edit.
   # config.action_mailer.smtp_settings = {
@@ -94,4 +100,7 @@ Rails.application.configure do
   config.active_storage.service = :amazon
   config.active_storage.variant_processor = :vips
   config.active_storage.resolve_model_to_route = :rails_storage_proxy
+
+  # Resend for email sending
+  config.action_mailer.delivery_method = :resend
 end
