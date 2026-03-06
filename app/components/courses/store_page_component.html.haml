@@ -1,0 +1,138 @@
+-# --- BREADCRUMBS ---
+%section.border-b.border-neutral-900.bg-neutral-50
+  .max-w-7xl.mx-auto.border-x.border-neutral-900.px-6.md:px-12.py-4.flex.items-center.justify-between
+    %div.flex.items-center.gap-2.text-neutral-500.font-bold.uppercase{class: "text-[10px] tracking-[0.2em]"}
+      = link_to t('.index'), courses_path, class: "hover:text-neutral-900 transition-colors"
+      %span /
+      %a.hover:text-neutral-900.transition-colors{href: "#"} Ruby on Rails
+      %span /
+      %span.text-neutral-900 Budowa API
+
+-# --- HERO HEADER (Tytuł na pełną szerokość - Gazetowy styl) ---
+%section.border-b.border-neutral-900.bg-white
+  .max-w-7xl.mx-auto.border-x.border-neutral-900.p-6.md:p-12
+    .flex.items-center.gap-3.mb-6
+      %span.px-2.py-1.border.border-neutral-900.font-bold.uppercase.text-neutral-900{class: "text-[10px] tracking-widest"} Backend
+      %span.px-2.py-1.bg-neutral-900.text-white.font-bold.uppercase{class: "text-[10px] tracking-widest"} Bestseller
+
+    %h1.text-5xl.md:text-6xl.lg:text-7xl.font-black.uppercase.tracking-tighter.text-neutral-900.max-w-5xl{class: "leading-[0.9]"}
+      = course.title
+
+-# --- MAIN SPLIT (16:9 Media + Treść vs Sidebar) ---
+%section.bg-white
+  .max-w-7xl.mx-auto.border-x.border-neutral-900
+    .grid.grid-cols-1.lg:grid-cols-12
+
+      -# --- LEWA KOLUMNA (8 kolumn) ---
+      .lg:col-span-8.border-b.lg:border-b-0.lg:border-r.border-neutral-900.flex.flex-col
+
+        -# 1. MEDIA 16:9 (Idealne proporcje, zero przycinania)
+        .relative.w-full.bg-neutral-900.border-b.border-neutral-900.group{class: "aspect-video"}
+          = image_tag course.image_cover, class: "w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+
+        -# 2. Opis Kursu
+        .p-6.md:p-12.border-b.border-neutral-900
+          = course.description
+
+        -# 3. Czego się nauczysz (Grid 2x2)
+        .border-b.border-neutral-900.bg-neutral-50
+          .grid.grid-cols-1.sm:grid-cols-2
+            .p-6.md:p-8.border-b.sm:border-b-0.sm:border-r.border-neutral-900
+              %span.block.text-3xl.font-black.text-neutral-300.mb-2 01
+              %h3.text-sm.font-bold.uppercase.text-neutral-900.mb-2 Autoryzacja JWT
+              %p.text-xs.text-neutral-600.leading-relaxed Bezpieczne logowanie i odświeżanie tokenów bez użycia ciężkich gemów typu Devise.
+            .p-6.md:p-8
+              %span.block.text-3xl.font-black.text-neutral-300.mb-2 02
+              %h3.text-sm.font-bold.uppercase.text-neutral-900.mb-2 N+1 Queries
+              %p.text-xs.text-neutral-600.leading-relaxed Narzędzia i techniki eliminacji problemów z wydajnością bazy PostgreSQL.
+
+        -# 4. LISTA LEKCJI (Syllabus)
+        .flex.flex-col.border-b.border-neutral-900
+          .p-6.md:px-12.md:py-8.bg-neutral-900.text-white
+            %h2.text-2xl.font-black.uppercase.tracking-tighter Program Kursu
+            %span.block.mt-1.font-bold.uppercase.text-neutral-400{class: "text-[10px] tracking-widest"} 4 Moduły • 24 Lekcje
+
+          .border-b.border-neutral-900.bg-neutral-50.px-6.md:px-12.py-4
+            %h3.text-sm.font-bold.uppercase.tracking-widest.text-neutral-900 Moduł 01: Fundamenty API
+
+          .flex.flex-col
+            -# Lekcja Otwarta
+            %a.group.flex.items-center.justify-between.p-4.md:px-12.border-b.border-neutral-200.hover:bg-neutral-50.transition-colors{href: "#"}
+              .flex.items-center.gap-4
+                %span.w-6.h-6.flex.items-center.justify-center.bg-neutral-900.text-white
+                  %svg.w-3.h-3.translate-x-0.5{fill: "currentColor", viewBox: "0 0 24 24"}
+                    %path{d: "M8 5v14l11-7z"}
+                %span.text-sm.font-bold.text-neutral-900 1. Czym różni się API od standardowej aplikacji?
+                %span.px-2.py-0.5.border.border-neutral-900.text-neutral-900.font-bold.uppercase{class: "text-[9px] tracking-widest hidden sm:inline-block"} DARMOWY PODGLĄD
+              %span.font-bold.uppercase.text-neutral-400{class: "text-[10px] tracking-widest"} 12:40
+
+            -# Lekcja Zablokowana
+            .flex.items-center.justify-between.p-4.md:px-12.border-b.border-neutral-200.bg-white
+              .flex.items-center.gap-4
+                %span.w-6.h-6.flex.items-center.justify-center.border.border-neutral-300.text-neutral-300
+                  %svg.w-3.h-3{fill: "currentColor", viewBox: "0 0 24 24"}
+                    %path{d: "M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"}
+                %span.text-sm.font-medium.text-neutral-500 2. Konfiguracja projektu w trybie --api
+              %span.font-bold.uppercase.text-neutral-400{class: "text-[10px] tracking-widest"} 08:15
+
+        -# 5. Prowadzący
+        .p-6.md:p-12.bg-white
+          %h2.text-2xl.font-black.uppercase.tracking-tighter.text-neutral-900.mb-8 Prowadzący
+          .flex.flex-col.sm:flex-row.gap-8.items-start
+            .w-32.h-32.shrink-0.border.border-neutral-900.bg-neutral-200
+              = image_tag instructor.avatar_preview, class: "w-full h-full object-cover grayscale"
+            %div
+              %h3.text-xl.font-black.uppercase.text-neutral-900.mb-1
+                = instructor.full_name
+              %span.block.text-xs.font-bold.uppercase.text-neutral-500.mb-4{class: "tracking-widest"} Senior Backend Developer
+              %p.text-sm.text-neutral-600.leading-relaxed
+                = instructor.bio
+
+
+      -# --- PRAWA KOLUMNA (4 kolumny) - STICKY SIDEBAR ---
+      .lg:col-span-4.bg-neutral-50.relative
+
+        -# Ten kontener przyklei się do góry ekranu z 2rem (8 w tailwindzie) odstępu podczas scrollowania
+        .sticky.p-6.md:p-8.flex.flex-col{class: "top-8"}
+
+          -# Sekcja Ceny
+          .mb-8
+            %span.block.text-neutral-500.font-bold.uppercase.mb-2{class: "text-[10px] tracking-[0.2em]"} Inwestycja w wiedzę
+            .flex.items-end.gap-2
+              %span.text-5xl.font-black.tracking-tighter.text-neutral-900
+                = course.price
+              %span.text-xl.font-black.text-neutral-900.pb-1
+                = course.price.currency.symbol
+
+          -# Formularz Zakupu
+          %form{action: "#", method: "post"}
+            %button.w-full.flex.items-center.justify-between.bg-neutral-900.text-white.px-6.py-5.text-sm.font-bold.uppercase.hover:bg-neutral-700.transition-colors.group.mb-4{type: "submit", class: "tracking-widest shadow-[6px_6px_0px_0px_rgba(23,23,23,0.2)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"}
+              %span Kup Dostęp
+              %span.group-hover:translate-x-2.transition-transform &rarr;
+
+            %p.text-center.text-neutral-400.font-bold.uppercase{class: "text-[9px] tracking-widest"}
+              Dożywotni dostęp • Gwarancja satysfakcji
+
+          -# Tabela Metadanych
+          .mt-10.border-t.border-neutral-900.pt-6
+            %ul.flex.flex-col.gap-4
+              %li.flex.items-center.justify-between
+                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Poziom
+                %span.text-xs.font-black.uppercase.text-neutral-900 Średniozaawansowany
+              %li.flex.items-center.justify-between
+                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Język
+                %span.text-xs.font-black.uppercase.text-neutral-900 Polski
+              %li.flex.items-center.justify-between
+                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Certyfikat
+                %span.text-xs.font-black.uppercase.text-neutral-900 Tak (PDF)
+              %li.flex.items-center.justify-between
+                %span.text-xs.font-bold.uppercase.text-neutral-500{class: "tracking-widest"} Aktualizacje
+                %span.text-xs.font-black.uppercase.text-neutral-900 W cenie
+
+          -# Tagi Technologiczne
+          .mt-8.bg-white.border.border-neutral-900.p-4
+            %span.block.text-neutral-900.font-bold.uppercase.mb-3{class: "text-[10px] tracking-widest"} Technologie w kursie:
+            .flex.flex-wrap.gap-2
+              %span.px-2.py-1.bg-neutral-100.text-neutral-600.font-bold.uppercase{class: "text-[9px]"} Ruby 3.2
+              %span.px-2.py-1.bg-neutral-100.text-neutral-600.font-bold.uppercase{class: "text-[9px]"} Rails 7
+              %span.px-2.py-1.bg-neutral-100.text-neutral-600.font-bold.uppercase{class: "text-[9px]"} PostgreSQL
