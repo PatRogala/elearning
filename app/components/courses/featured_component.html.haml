@@ -22,7 +22,7 @@
         -# Action Area
         .mt-auto.pt-8
           .flex.flex-col.gap-4
-            %a.group.flex.items-center.justify-between.bg-neutral-900.text-white.px-6.py-4.text-sm.font-bold.uppercase.hover:bg-neutral-700.transition-colors{href: "#", class: "tracking-[0.15em]"}
+            = link_to course_path(course), class: "group flex items-center justify-between bg-neutral-900 text-white px-6 py-4 text-sm font-bold uppercase hover:bg-neutral-700 transition-colors tracking-[0.15em]", data: { turbo: false } do
               %span
                 = t('.cta')
               %span.group-hover:translate-x-1.transition-transform &rarr;

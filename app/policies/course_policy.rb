@@ -4,6 +4,10 @@ class CoursePolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   # We can show all courses to all users and guests
   class Scope < ApplicationPolicy::Scope
     def resolve
