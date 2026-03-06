@@ -2,14 +2,14 @@
 pl:
   courses:
     store_page_component:
+      buy_access: Kup Dostęp
+      certificate: Certyfikat
       index: Katalog
-      program: Program Kursu
       instructor: Prowadzący
       investment: Inwestycja w wiedzę
-      buy_access: Kup Dostęp
-      lifetime_access: Dożywotni dostęp • Gwarancja satysfakcji
-      level: Poziom
       language: Język
-      certificate: Certyfikat
+      level: Poziom
+      lifetime_access: Dożywotni dostęp • Gwarancja satysfakcji
+      program: Program Kursu
+      technologies: 'Technologie w kursie:'
       yes_pdf: Tak (PDF)
-      technologies: "Technologie w kursie:"

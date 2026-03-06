@@ -2,14 +2,14 @@
 en:
   courses:
     store_page_component:
+      buy_access: Buy Access
+      certificate: Certificate
       index: Catalog
-      program: Course Program
       instructor: Instructor
       investment: Investment in knowledge
-      buy_access: Buy Access
-      lifetime_access: Lifetime Access • Satisfaction Guarantee
-      level: Level
       language: Language
-      certificate: Certificate
+      level: Level
+      lifetime_access: Lifetime Access • Satisfaction Guarantee
+      program: Course Program
+      technologies: 'Technologies in the course:'
       yes_pdf: Yes (PDF)
-      technologies: "Technologies in the course:"
