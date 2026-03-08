@@ -1,0 +1,42 @@
+---
+pl:
+  avo:
+    field_translations:
+      current_sign_in_at: Data ostatniego logowania
+      current_sign_in_ip: IP ostatniego logowania
+      description: Opis
+      full_name: Imię i nazwisko
+      image: Obraz
+      instructor: Nauczyciel
+      last_sign_in_ip: IP ostatniego logowania
+      name: Nazwa
+      price: Cena
+      published: Opublikowany
+      sign_in_count: Liczba logowań
+      title: Tytuł
+    filter:
+      published:
+        options:
+          is_published: Opublikowane
+          is_unpublished: Nie opublikowane
+    resource_translations:
+      course:
+        few: Kursy
+        many: Kursy
+        one: Kurs
+        other: Kursy
+      lesson:
+        few: Lekcje
+        many: Lekcje
+        one: Lekcja
+        other: Lekcje
+      role:
+        few: Role
+        many: Role
+        one: Rola
+        other: Role
+      user:
+        few: Użytkownicy
+        many: Użytkownicy
+        one: Użytkownik
+        other: Użytkownicy

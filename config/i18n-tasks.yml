@@ -19,7 +19,6 @@ data:
     - config/locales/%{locale}.yml
     ## More files:
     - config/locales/**/*.%{locale}.yml
-    - app/components/**/*.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -150,8 +149,8 @@ ignore_unused:
   - 'errors.messages.*'
   - 'activerecord.models.user.*'
   - 'helpers.label.*'
-# - 'simple_form.{placeholders,hints,labels}.*'
-# - 'simple_form.{error_notification,required}.:'
+  - 'avo.resource_translations.*'
+  - 'avo.field_translations.*'
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

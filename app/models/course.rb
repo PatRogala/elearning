@@ -3,6 +3,7 @@ class Course < ApplicationRecord
   extend FriendlyId
 
   scope :published, -> { where(published: true) }
+  scope :unpublished, -> { where(published: false) }
   scope :recent, -> { order(created_at: :desc) }
 
   belongs_to :instructor, class_name: "User"
