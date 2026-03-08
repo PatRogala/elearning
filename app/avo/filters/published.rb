@@ -2,8 +2,6 @@ module Avo
   module Filters
     # Show only published resources
     class Published < Avo::Filters::BooleanFilter
-      self.name = -> { I18n.t("avo.filter.published.name") }
-
       def apply(_request, query, values)
         return query if values["is_published"] && values["is_unpublished"]
 
