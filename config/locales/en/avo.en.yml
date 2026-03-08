@@ -16,7 +16,6 @@ en:
       title: Title
     filter:
       published:
-        name: Availability
         options:
           is_published: Published
           is_unpublished: Unpublished

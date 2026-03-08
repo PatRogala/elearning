@@ -16,7 +16,6 @@ pl:
       title: Tytuł
     filter:
       published:
-        name: Dostępność
         options:
           is_published: Opublikowane
           is_unpublished: Nie opublikowane
