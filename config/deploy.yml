@@ -67,6 +67,7 @@ aliases:
   shell: app exec --interactive --reuse "bash"
   logs: app logs -f
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
+  database: app exec --interactive --reuse "bin/rails dbconsole"
 
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
