@@ -2,6 +2,7 @@ module Avo
   module Resources
     # User resource for admin
     class User < Avo::BaseResource
+      self.title = :email
       self.includes = [:roles]
       # self.attachments = []
       # self.search = {
@@ -10,6 +11,7 @@ module Avo
 
       def fields
         field :id, as: :id
+        field :full_name, as: :text, display: :full_name
         field :email, as: :text
         field :sign_in_count, as: :number
         field :current_sign_in_at, as: :date_time

@@ -1,13 +1,6 @@
-# For more information regarding these settings check out our docs https://docs.avohq.io
-# The values disaplayed here are the default ones. Uncomment and change them to fit your needs.
 Avo.configure do |config|
   ## == Routing ==
   config.root_path = "/avo"
-  # used only when you have custom `map` configuration in your config.ru
-  # config.prefix_path = "/internal"
-
-  # Where should the user be redirected when visiting the `/avo` url
-  # config.home_path = nil
 
   ## == Licensing ==
   # config.license_key = ENV['AVO_LICENSE_KEY']
@@ -19,8 +12,6 @@ Avo.configure do |config|
 
   ## == Authentication ==
   config.current_user_method = :current_user
-  # config.authenticate_with do
-  # end
 
   ## == Authorization ==
   config.is_admin_method = :admin?
@@ -40,7 +31,7 @@ Avo.configure do |config|
   config.explicit_authorization = true
 
   ## == Localization ==
-  # config.locale = "en-US"
+  config.locale = :pl
 
   ## == Resource options ==
   # config.resource_row_controls_config = {
@@ -101,9 +92,9 @@ Avo.configure do |config|
 
   ## == Customization ==
   config.click_row_to_view_record = true
-  config.app_name = "SZKOLEO"
-  # config.timezone = 'UTC'
-  # config.currency = 'USD'
+  config.app_name = "Szkoleo"
+  config.timezone = "Warsaw"
+  config.currency = "PLN"
   # config.hide_layout_when_printing = false
   # config.full_width_container = false
   # config.full_width_index_view = false
@@ -119,20 +110,20 @@ Avo.configure do |config|
   # config.model_generator_hook = true
 
   ## == Branding ==
-  # config.branding = {
-  #   colors: {
-  #     background: "248 246 242",
-  #     100 => "#CEE7F8",
-  #     400 => "#399EE5",
-  #     500 => "#0886DE",
-  #     600 => "#066BB2",
-  #   },
-  #   chart_colors: ["#0B8AE2", "#34C683", "#2AB1EE", "#34C6A8"],
-  #   logo: "/avo-assets/logo.png",
-  #   logomark: "/avo-assets/logomark.png",
-  #   placeholder: "/avo-assets/placeholder.svg",
-  #   favicon: "/avo-assets/favicon.ico"
-  # }
+  config.branding = {
+    colors: {
+      background: "245 245 245",
+      100 => "#e5e5e5",
+      400 => "#737373",
+      500 => "#262626",
+      600 => "#171717"
+    },
+    chart_colors: ["#171717", "#404040", "#737373", "#a3a3a3"],
+    logo: "/icon.png",
+    logomark: "/icon.png",
+    placeholder: "/icon.png",
+    favicon: "/icon.png"
+  }
 
   ## == Breadcrumbs ==
   # config.display_breadcrumbs = true

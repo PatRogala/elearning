@@ -1,0 +1,27 @@
+---
+en:
+  avo:
+    field_translations:
+      current_sign_in_at: Current Sign In At
+      current_sign_in_ip: Current Sign In IP
+      description: Description
+      full_name: Full Name
+      image: Image
+      instructor: Instructor
+      last_sign_in_ip: Last Sign In IP
+      name: Name
+      price: Price
+      published: Published
+      sign_in_count: Sign In Count
+      title: Title
+    filter:
+      published:
+        name: Availability
+        options:
+          is_published: Published
+          is_unpublished: Unpublished
+    resource_translations:
+      course: Course
+      lesson: Lesson
+      role: Role
+      user: User
