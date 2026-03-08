@@ -6,6 +6,7 @@ class Course < ApplicationRecord
   scope :recent, -> { order(created_at: :desc) }
 
   belongs_to :instructor, class_name: "User"
+  has_many :lessons, dependent: :destroy
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :instructor_id }
