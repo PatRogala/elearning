@@ -260,6 +260,40 @@ ALTER SEQUENCE public.flipper_gates_id_seq OWNED BY public.flipper_gates.id;
 
 
 --
+-- Name: lessons; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.lessons (
+    id bigint NOT NULL,
+    title character varying NOT NULL,
+    slug character varying NOT NULL,
+    "position" integer NOT NULL,
+    course_id bigint NOT NULL,
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone NOT NULL
+);
+
+
+--
+-- Name: lessons_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.lessons_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: lessons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.lessons_id_seq OWNED BY public.lessons.id;
+
+
+--
 -- Name: roles; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -424,6 +458,13 @@ ALTER TABLE ONLY public.flipper_gates ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: lessons id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.lessons ALTER COLUMN id SET DEFAULT nextval('public.lessons_id_seq'::regclass);
+
+
+--
 -- Name: roles id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -506,6 +547,14 @@ ALTER TABLE ONLY public.flipper_features
 
 ALTER TABLE ONLY public.flipper_gates
     ADD CONSTRAINT flipper_gates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: lessons lessons_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.lessons
+    ADD CONSTRAINT lessons_pkey PRIMARY KEY (id);
 
 
 --
@@ -604,6 +653,20 @@ CREATE UNIQUE INDEX index_flipper_gates_on_feature_key_and_key_and_value ON publ
 
 
 --
+-- Name: index_lessons_on_course_id_and_position; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_lessons_on_course_id_and_position ON public.lessons USING btree (course_id, "position");
+
+
+--
+-- Name: index_lessons_slug; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_lessons_slug ON public.lessons USING btree (slug);
+
+
+--
 -- Name: index_roles_lower_name_; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -663,6 +726,14 @@ ALTER TABLE ONLY public.user_roles
 
 
 --
+-- Name: lessons fk_rails_4bcdb571d9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.lessons
+    ADD CONSTRAINT fk_rails_4bcdb571d9 FOREIGN KEY (course_id) REFERENCES public.courses(id);
+
+
+--
 -- Name: active_storage_variant_records fk_rails_993965df05; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -685,6 +756,9 @@ ALTER TABLE ONLY public.active_storage_attachments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260308092741'),
+('20260308092553'),
+('20260308091000'),
 ('20260305224359'),
 ('20260226123713'),
 ('20260224102055'),
