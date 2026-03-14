@@ -4,9 +4,11 @@
 
 ## Setup
 
-The easiest way to run the project locally is with Docker Compose — it spins up the Rails app, PostgreSQL, DragonflyDB (Redis-compatible cache), MinIO (S3-compatible storage), and Mailcatcher all at once.
+The project uses [Ruby on Whales](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development) — a Docker-based development environment managed by [`dip`](https://github.com/bibendi/dip). It spins up the Rails app, PostgreSQL, DragonflyDB (Redis-compatible cache), MinIO (S3-compatible storage), and Mailcatcher all at once.
 
-**Prerequisites:** Docker & Docker Compose installed.
+**Prerequisites:**
+- [Docker](https://docs.docker.com/engine/installation/) installed
+- [`dip`](https://github.com/bibendi/dip) installed: `gem install dip`
 
 ### 1. Clone the repository
 
@@ -15,33 +17,72 @@ git clone https://github.com/PatRogala/elearning.git
 cd elearning
 ```
 
-### 2. Start all services
+### 2. Provision the environment
+
+Builds the Docker image, installs gems and JS packages, and prepares the database:
 
 ```bash
-docker compose up --build
+dip provision
 ```
 
-This builds the dev image (Ruby 4, Bun, PostgreSQL client) and starts:
-
-| Service | URL |
-|---|---|
-| Rails app | http://localhost:3000 |
-| MinIO console | http://localhost:9001 |
-| Mailcatcher web UI | http://localhost:1080 |
-
-### 3. Set up the database
-
-On the first run the entrypoint script (`bin/docker-entrypoint`) automatically runs `db:prepare`. If you need to reset or reseed manually:
+To start fresh (wipes all volumes):
 
 ```bash
-docker compose exec backend bin/rails db:reset
+RESET_DOCKER=true dip provision
 ```
+
+### 3. Start the server
+
+```bash
+dip rails s
+```
+
+The app is available at http://localhost:3000.
 
 ### 4. Create the MinIO bucket
 
-Active Storage is configured to use MinIO in development. Create the required bucket once the stack is up.
+Active Storage is configured to use MinIO in development. On first run, open the MinIO console at http://localhost:9001 (credentials: `minio` / `miniodevelopment`) and create a bucket named `default-bucket`.
 
-Open the MinIO console at http://localhost:9001 (credentials: `minio` / `miniodevelopment`) and create a bucket named `default-bucket` manually.
+## Useful commands
+
+```bash
+# Open a Rails console
+dip rails c
+
+# Run database migrations
+dip rails db:migrate
+
+# Run tests
+dip rails test
+
+# Run CI
+dip rails ci
+
+# Install gems
+dip bundle install
+
+# Install JS packages
+dip bun install
+
+# Open a psql console
+dip psql
+
+# Open a Bash shell inside the container (with dependencies up)
+dip runner
+
+# Shut down all containers
+dip down
+```
+
+For Claude CLI access inside the container:
+
+```bash
+dip claude
+```
+
+Authenticate on first launch. Sessions and settings persist in a Docker volume between runs.
+
+See [`.dockerdev/README.md`](.dockerdev/README.md) for more details on the Docker setup.
 
 ## BetterStack Integration
 

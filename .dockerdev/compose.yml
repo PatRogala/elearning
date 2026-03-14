@@ -44,6 +44,10 @@ x-backend: &backend
   depends_on:
     postgres:
       condition: service_healthy
+    dragonfly:
+      condition: service_started
+    minio:
+      condition: service_started
 
 services:
   rails:
@@ -57,6 +61,8 @@ services:
       - '3000:3000'
     depends_on:
       sidekiq:
+        condition: service_started
+      mailcatcher:
         condition: service_started
 
   sidekiq:

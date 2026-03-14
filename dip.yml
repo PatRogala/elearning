@@ -54,7 +54,12 @@ interaction:
         command: bundle exec rspec
         environment:
           RAILS_ENV: test
-
+      ci:
+        description: Run CI commands
+        service: rails
+        command: bin/ci
+        environment:
+          RAILS_ENV: test
   psql:
     description: Run Postgres psql console
     service: postgres
