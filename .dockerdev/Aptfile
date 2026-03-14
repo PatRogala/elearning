@@ -1,0 +1,12 @@
+# An editor to work with credentials
+vim
+# Application dependencies
+libvips-dev
+libyaml-dev
+libjemalloc2
+libpq-dev
+pkg-config
+unzip
+# Claude
+bubblewrap
+socat
