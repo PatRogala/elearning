@@ -1,0 +1,120 @@
+x-app: &app
+  build:
+    context: .
+    args:
+      RUBY_VERSION: '4.0.1'
+      PG_MAJOR: '18'
+  image: elearning-dev:1.0.0
+  working_dir: ${PWD}
+  environment: &env
+    NODE_ENV: ${NODE_ENV:-development}
+    RAILS_ENV: ${RAILS_ENV:-}
+  tmpfs:
+    - /tmp
+    - ${PWD}/tmp/pids
+
+x-backend: &backend
+  <<: *app
+  stdin_open: true
+  tty: true
+  volumes:
+    - ${PWD}:/${PWD}:cached
+    - bundle:/usr/local/bundle
+    - rails_cache:/${PWD}/tmp/cache
+    - assets:/${PWD}/public/assets
+    - node_modules:/${PWD}/node_modules
+    - bun_cache:/usr/local/bun/install
+    - history:/usr/local/hist
+    - claude:/root/.claude
+    - ./.claude.json:/root/.claude.json
+    - ./.psqlrc:/root/.psqlrc:ro
+    - ./.bashrc:/root/.bashrc:ro
+  environment: &backend_environment
+    <<: *env
+    DATABASE_URL: postgresql://postgres:postgres@postgres:5432
+    MALLOC_ARENA_MAX: 2
+    WEB_CONCURRENCY: ${WEB_CONCURRENCY:-1}
+    BOOTSNAP_CACHE_DIR: /usr/local/bundle/_bootsnap
+    XDG_DATA_HOME: /${PWD}/tmp/cache
+    HISTFILE: /usr/local/hist/.bash_history
+    PSQL_HISTFILE: /usr/local/hist/.psql_history
+    IRB_HISTFILE: /usr/local/hist/.irb_history
+    EDITOR: vi
+    CLAUDE_CODE_TMPDIR: /root/.claude/__tmp__
+  depends_on:
+    postgres:
+      condition: service_healthy
+    dragonfly:
+      condition: service_started
+    minio:
+      condition: service_started
+
+services:
+  rails:
+    <<: *backend
+    command: bundle exec rails
+
+  web:
+    <<: *backend
+    command: bin/dev
+    ports:
+      - '3000:3000'
+    depends_on:
+      sidekiq:
+        condition: service_started
+      mailcatcher:
+        condition: service_started
+
+  sidekiq:
+    <<: *backend
+    command: bundle exec sidekiq
+
+  postgres:
+    image: postgres:18
+    volumes:
+      - .psqlrc:/root/.psqlrc:ro
+      - postgres:/var/lib/postgresql
+      - history:/usr/local/hist
+    environment:
+      PSQL_HISTFILE: /usr/local/hist/.psql_history
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432
+    healthcheck:
+      test: pg_isready -U postgres -h 127.0.0.1
+      interval: 5s
+  dragonfly:
+    image: ghcr.io/dragonflydb/dragonfly:v1.36.0
+    ulimits:
+      memlock: -1
+    volumes:
+      - dragonflydata:/data
+  mailcatcher:
+    image: sj26/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    command: minio server /data
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: miniodevelopment
+    volumes:
+      - minio_data:/data
+
+volumes:
+  bundle:
+  node_modules:
+  bun_cache:
+  history:
+  rails_cache:
+  postgres:
+  assets:
+  claude:
+  dragonflydata:
+  minio_data:
+

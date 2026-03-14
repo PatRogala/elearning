@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
+  database: elearning_development
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -31,6 +33,7 @@ development:
 test:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
+  database: elearning_test
 
 production:
   primary: &primary_production
