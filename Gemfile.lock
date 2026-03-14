@@ -89,7 +89,7 @@ GEM
     addressable (2.8.9)
       public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.3)
-    avo (3.30.0)
+    avo (3.30.2)
       actionview (>= 6.1)
       active_link_to
       activerecord (>= 6.1)
@@ -99,7 +99,7 @@ GEM
       docile
       meta-tags
       pagy (>= 7.0.0, < 43)
-      prop_initializer (>= 0.2.0)
+      prop_initializer (>= 0.3.0)
       turbo-rails (>= 2.0.0)
       turbo_power (>= 0.6.0)
       view_component (>= 3.7.0)
