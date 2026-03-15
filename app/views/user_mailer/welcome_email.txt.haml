@@ -1,4 +1,29 @@
-= @user.email
-= t("user_mailer.welcome_email.greeting")
-= t("user_mailer.welcome_email.instruction")
-= link_to t("user_mailer.welcome_email.action"), new_user_session_url
+:plain
+  ============================================================
+  SZKOLEO                             SYS.MSG.01: KONTO AKTYWNE
+  ============================================================
+
+  WITAJ NA POKŁADZIE.
+
+  Cześć #{@user.first_name || 'Nieznajomy'},
+
+  Twoje konto zostało pomyślnie utworzone.
+  Żadnego spamu - tylko czysta wiedza i konkretne umiejętności.
+  Jesteś o krok od rozpoczęcia swojej pierwszej ścieżki.
+
+  ------------------------------------------------------------
+  >> PRZEJDŹ DO KATALOGU KURSÓW:
+  #{courses_url}
+  ------------------------------------------------------------
+
+  Zarządzaj swoim profilem:
+  #{profile_url}
+
+  Potrzebujesz pomocy?
+  Napisz na: support@szkoleo.pl
+
+  ============================================================
+  Szkoleo Platform | Warszawa, Polska
+  ============================================================
+  Jeśli nie chcesz otrzymywać od nas wiadomości,
+  możesz wypisać się tutaj: TODO
