@@ -51,9 +51,6 @@ gem "dry-initializer" # A simple way to create initializer methods
 gem "dry-types" # Type system for Ruby
 gem "dry-validation" # Validation for Ruby (ReForm)
 
-# Lograge for 1-line logging
-gem "lograge"
-
 # Interactor for business logic
 gem "interactor-rails"
 

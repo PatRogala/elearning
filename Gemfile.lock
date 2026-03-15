@@ -363,11 +363,6 @@ GEM
       rails (>= 8.0.2)
     lint_roller (1.1.0)
     logger (1.7.0)
-    lograge (0.14.0)
-      actionpack (>= 4)
-      activesupport (>= 4)
-      railties (>= 4)
-      request_store (~> 1.0)
     logtail (0.1.17)
       msgpack (~> 1.0)
     logtail-rack (0.2.6)
@@ -548,8 +543,6 @@ GEM
       declarative (< 0.1.0)
       trailblazer-option (>= 0.1.1, < 0.2.0)
       uber (< 0.2.0)
-    request_store (1.7.0)
-      rack (>= 1.4)
     resend (1.0.1)
       httparty (>= 0.21.0)
     responders (3.2.0)
@@ -752,7 +745,6 @@ DEPENDENCIES
   jsbundling-rails
   kamal
   lexxy (~> 0.8.0.beta)
-  lograge
   logtail-rails
   lookbook
   lucide-rails
