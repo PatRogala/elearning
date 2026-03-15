@@ -56,7 +56,7 @@ services:
 
   web:
     <<: *backend
-    command: bin/dev
+    command: bundle exec rails server -p 3000 -b '0.0.0.0'
     ports:
       - '3000:3000'
     depends_on:
@@ -64,6 +64,18 @@ services:
         condition: service_started
       mailcatcher:
         condition: service_started
+      js:
+        condition: service_started
+      css:
+        condition: service_started
+
+  js:
+    <<: *backend
+    command: bun run build --watch
+
+  css:
+    <<: *backend
+    command: bun run build:css --watch
 
   sidekiq:
     <<: *backend
