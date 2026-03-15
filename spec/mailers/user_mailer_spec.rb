@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe UserMailer, type: :mailer do
   describe "welcome_email" do
     let(:user) { create(:user) }
-    let(:mail) { described_class.welcome_email(user) }
+    let(:mail) { described_class.welcome_email(user.id) }
 
     it "renders the subject" do
       expect(mail.subject).to eq("Welcome to Szkoleo")
