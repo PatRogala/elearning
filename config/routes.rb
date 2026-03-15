@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     root "dashboard#index"
 
     # Devise routes for user authentication
-    devise_for :users
+    devise_for :users, controllers: {
+      registrations: "users/registrations"
+    }
 
     resources :users, only: %i[update]
     resources :courses, only: %i[index show]

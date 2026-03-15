@@ -2,7 +2,16 @@
 pl:
   user_mailer:
     welcome_email:
-      action: Zaloguj się
-      greeting: Witaj w Szkoleo!
-      instruction: Dziękujemy za rejestrację w naszej platformie.
+      browse_catalog: Przeglądaj Katalog
+      click_button: Kliknij przycisk powyżej, aby zobaczyć kursy.
+      greeting: Witaj na
+      greeting_2: pokładzie.
+      greeting_3: Cześć %{first_name},
+      instruction: Twoje konto zostało pomyślnie utworzone. Żadnego spamu - tylko czysta wiedza i konkretne umiejętności. Jesteś o krok od rozpoczęcia swojej pierwszej ścieżki nauki.
+      logo: Szkoleo
+      status: 'Status: Konto aktywne'
       subject: Witaj w Szkoleo
+      system_message: Sys.Msg.01
+      unsubscribe: Nie chcesz otrzymywać tych wiadomości?
+      unsubscribe_button: Wypisz się
+      your_profile: Twój Profil

@@ -2,7 +2,16 @@
 en:
   user_mailer:
     welcome_email:
-      action: Login
-      greeting: Welcome to Szkoleo!
-      instruction: Thank you for registering in our platform.
+      browse_catalog: Browse Catalog
+      click_button: Click the button above to see the courses.
+      greeting: Welcome on
+      greeting_2: deck.
+      greeting_3: Hello %{first_name},
+      instruction: Your account has been successfully created. No spam - just pure knowledge and specific skills. You're one step away from starting your first learning journey.
+      logo: Szkoleo
+      status: 'Status: Active account'
       subject: Welcome to Szkoleo
+      system_message: Sys.Msg.01
+      unsubscribe: Don't want to receive these messages?
+      unsubscribe_button: Unsubscribe
+      your_profile: Your Profile
