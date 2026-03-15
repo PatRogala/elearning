@@ -104,6 +104,17 @@ logtail:
 
 Both values are available in your BetterStack source settings. Once set, all production logs are automatically forwarded to your BetterStack dashboard.
 
+## BetterStack Error Tracking
+
+Errors are captured and shipped to [BetterStack](https://betterstack.com) via the Sentry SDK (`sentry-ruby`, `sentry-rails`, `sentry-sidekiq`). The initializer lives in `config/initializers/sentry.rb`.
+
+**What gets tracked:**
+- Unhandled exceptions in Rails controllers and middleware
+- Errors raised inside Sidekiq background jobs
+- ActiveSupport and HTTP breadcrumbs for request context
+
+Tracking is **only active in `production`**.
+
 ## Skylight Integration
 
 Performance monitoring is handled by [Skylight](https://www.skylight.io) via the `skylight` gem. The authentication token is injected as an environment variable by Kamal at deploy time.

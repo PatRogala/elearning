@@ -18,10 +18,9 @@ gem "stimulus-rails"
 gem "cssbundling-rails"
 # Logtail for logging to BetterStack
 gem "logtail-rails"
-
 # Error tracking via Better Stack (Sentry SDK)
-gem "sentry-ruby"
 gem "sentry-rails"
+gem "sentry-ruby"
 gem "sentry-sidekiq"
 # Skylight for performance monitoring
 gem "skylight"
