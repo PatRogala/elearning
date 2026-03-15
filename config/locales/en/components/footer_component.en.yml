@@ -1,0 +1,20 @@
+---
+en:
+  layout:
+    footer_component:
+      about_us: About Us
+      all_courses: All Courses
+      all_rights_reserved: All rights reserved
+      career: Career
+      company: Company
+      contact: Contact
+      description: Educational platform for software engineers. Zero water, only architecture, code and hard data.
+      for_companies: For Companies
+      github: GitHub
+      linkedin: LinkedIn
+      manifest: Manifest
+      network: Network
+      platform: Platform
+      privacy_policy: Privacy Policy
+      regulations: Regulations
+      twitter: Twitter / X
