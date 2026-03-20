@@ -1,61 +1,43 @@
--# Outer Container: Sticky, White, Sharp Black Border Bottom
-%header{class: "bg-white border-b border-neutral-900 z-50 #{sticky ? 'sticky top-0' : ''}", data: { controller: "mobile-menu" }}
-  .max-w-7xl.mx-auto.px-4.sm:px-6.lg:px-8
-    .flex.justify-between.items-center.h-20
+%header.w-full.flex.items-center.justify-between.px-6.md:px-8.h-20.z-50{class: "bg-[#131313]"}
 
-      -# --- LEFT: LOGO ---
-      .flex.items-center
-        = link_to root_path, class: "group flex items-center gap-2" do
-          -# Typography Logo: Heavy weight, tight tracking to contrast the wide navigation
-          %span.text-xl.font-black.tracking-tighter.text-neutral-900.uppercase.group-hover:text-neutral-600.transition-colors
-            = app_name
+  .flex.items-center.gap-12
+    .flex.items-baseline.gap-2
+      %a.font-black.uppercase.tracking-tighter.transition-opacity.hover:opacity-80{href: "/", class: "text-[#E0115F] text-2xl"}
+        = Constants::APPLICATION_NAME
 
-      -# --- CENTER/RIGHT: DESKTOP ---
-      .hidden.md:flex.items-center.gap-8
-        - if user
-          %nav.flex.gap-6.items-center
-            = render Ui::NavLinkComponent.new(label: t(".courses"), href: courses_path)
-            = render Ui::NavLinkComponent.new(label: t(".profile"), href: edit_user_registration_path)
+    %nav.hidden.md:flex.items-center.gap-8
+      = render Ui::NavLinkComponent.new(label: t(".courses"), href: courses_path)
 
-          - if user.teacher?
-            = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path)
+      = render Ui::NavLinkComponent.new(label: t(".projects"), href: "#")
+      = render Ui::NavLinkComponent.new(label: t(".manifesto"), href: "#")
 
-          -# Minimalist vertical divider
-          .h-5.w-px.bg-neutral-200
+      - if user&.teacher?
+        = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path)
 
-          .flex.gap-4.items-center
-            = render Ui::ButtonComponent.new(label: t(".sign_out"), href: destroy_user_session_path, method: :delete, scheme: :danger)
 
-        - else
-          %nav.flex.gap-6.items-center
-            = render Ui::NavLinkComponent.new(label: t(".sign_in"), href: new_user_session_path)
-            = render Ui::ButtonComponent.new(label: t(".sign_up"), href: new_user_registration_path)
+  .flex.items-center.gap-3
+    .relative.hidden.lg:block{class: "w-[320px]"}
+      %span.absolute.left-4.pointer-events-none{class: "top-1/2 -translate-y-1/2 text-[#E5E2E1]/40"}
+        %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+          %path{d: "M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"}
 
-        -# Locale Selector (Assuming you have a partial)
-        .pl-4.border-l.border-neutral-200
-          = render "shared/locale_selector" rescue nil
+      = form_with url: courses_path, method: :get, class: "flex-1 flex items-center" do |f|
+        = f.text_field :query, placeholder: t(".search_placeholder"), class: "w-full focus:outline-none transition-colors rounded-md font-mono bg-[#0E0E0E] border border-[#5B3F44]/30 text-[#E5E2E1] text-sm pl-10 pr-4 py-2.5 focus:border-[#E0115F] placeholder:text-[#E5E2E1]/30"
 
-      -# --- RIGHT: MOBILE HAMBURGER ---
-      .md:hidden
-        %button.p-2.text-neutral-900.hover:bg-neutral-100.transition-colors{"aria-label" => "Open menu", "data-action" => "click->mobile-menu#toggle"}
-          -# Using a thinner stroke width (1.5) for a cleaner look
-          = lucide_icon("menu", class: "h-6 w-6 stroke-[1.5]")
+    - if user
+      .flex.items-center.gap-5
+        .relative{"data-controller": "user-menu", "data-action": "click@window->user-menu#close"}
+          %button.overflow-hidden.border.transition-colors.rounded-md{class: "w-9 h-9 bg-[#1C1B1B] border-[#5B3F44]/30 hover:border-[#E0115F]/50", "data-action": "click->user-menu#toggle"}
+            = image_tag user.avatar_preview, class: "w-full h-full object-cover", alt: user.full_name
 
-  -# --- MOBILE MENU DRAWER ---
-  .hidden.bg-white.border-b.border-neutral-900.md:hidden{"data-mobile-menu-target" => "menu"}
-    .px-4.pt-2.pb-6
-      -# Mobile Locale Selector
-      .py-3.border-b.border-neutral-100.mb-2
-        = render "shared/mobile_locale_selector" rescue nil
+          .hidden.absolute.right-0.top-full.mt-2.w-48.rounded-md.border.overflow-hidden.z-50{class: "bg-[#131313] border-[#5B3F44]/30 shadow-[0_4px_24px_rgba(0,0,0,0.4)]", "data-user-menu-target": "menu"}
+            = link_to t(".profile"), edit_user_registration_path, class: "flex items-center gap-2 px-4 py-2.5 text-sm transition-colors text-[#E5E2E1] hover:bg-[#2A2A2A]"
+            .border-t{class: "border-[#5B3F44]/30"}
+            = link_to t(".sign_out"), destroy_user_session_path, data: { turbo_method: :delete }, class: "flex items-center gap-2 px-4 py-2.5 text-sm transition-colors text-[#E0115F] hover:bg-[#2A2A2A]"
+    - else
+      = link_to t(".sign_in"), new_user_session_path, class: "font-medium transition-colors px-5 py-2.5 rounded-sm text-[#E5E2E1] hover:bg-[#393939] text-sm"
 
-      - if user
-        = render Ui::NavLinkComponent.new(label: t(".courses"), href: "#", mobile: true)
-        = render Ui::NavLinkComponent.new(label: t(".profile"), href: "#", mobile: true)
-        - if user.teacher?
-          = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path, mobile: true)
-        .pt-6
-          = render Ui::ButtonComponent.new(label: t(".sign_out"), href: destroy_user_session_path, method: :delete, mobile: true, scheme: :danger)
-      - else
-        = render Ui::NavLinkComponent.new(label: t(".sign_in"), href: new_user_session_path, mobile: true)
-        .pt-6
-          = render Ui::ButtonComponent.new(label: t(".sign_up"), href: new_user_registration_path, mobile: true)
+      = link_to new_user_registration_path, class: "font-medium transition-colors px-6 py-2.5 rounded-sm flex items-center gap-2 bg-[#E0115F] hover:bg-[#E0115F]/90 text-[#FFF8F8] text-sm shadow-[0_0_15px_rgba(224,17,95,0.15)]" do
+        %span= t(".sign_up")
+        %svg.w-4.h-4{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
+          %path{d: "M5 12h14M12 5l7 7-7 7"}

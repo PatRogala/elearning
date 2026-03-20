@@ -20,7 +20,7 @@ RSpec.describe "Teach::Courses", type: :request do
     end
 
     context "when user is teacher" do
-      let(:user) { create(:user) }
+      let(:user) { create(:user, first_name: "John", last_name: "Doe") }
 
       before do
         allow(user).to receive(:teacher?).and_return(true)
@@ -94,7 +94,7 @@ RSpec.describe "Teach::Courses", type: :request do
     end
 
     context "when user is teacher" do
-      let(:user) { create(:user) }
+      let(:user) { create(:user, first_name: "John", last_name: "Doe") }
       let(:course) { create(:course, instructor: user, title: "Test Course", id: 1) }
 
       before do
@@ -123,7 +123,7 @@ RSpec.describe "Teach::Courses", type: :request do
     end
 
     context "when user is teacher" do
-      let(:user) { create(:user) }
+      let(:user) { create(:user, first_name: "John", last_name: "Doe") }
       let(:course) { create(:course, instructor: user) }
 
       before do
@@ -180,7 +180,7 @@ RSpec.describe "Teach::Courses", type: :request do
     end
 
     context "when user is teacher" do
-      let(:user) { create(:user) }
+      let(:user) { create(:user, first_name: "John", last_name: "Doe") }
       let(:course) { create(:course, instructor: user) }
 
       before do
