@@ -126,7 +126,13 @@ pl:
       already_signed_out: Wylogowano pomyślnie.
       new:
         access_your_learning_dashboard: Uzyskaj dostęp do swojej tablicy e-learningowej
+        authenticate: Autoryzacja
+        create_account: Utwórz konto
+        forgot_your_password: Zapomniałeś hasła?
+        new_to_the_system: Nowy użytkownik?
+        session: Sesji
         sign_in: Zaloguj się
+        system_access_required: Wymagany dostęp do systemu
       signed_in: Zalogowano pomyślnie.
       signed_out: Wylogowano pomyślnie.
     shared:
