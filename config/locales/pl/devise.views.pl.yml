@@ -112,8 +112,13 @@ pl:
         update: Zapisz zmiany
         we_need_your_current_password_to_confirm_your_changes: potrzebujemy Twojego bieżącego hasła, aby potwierdzić zmiany
       new:
-        create_your_learning_account: Utwórz swoje konto e-learningowe
-        sign_up: Zarejestruj się
+        already_registered: Masz już konto?
+        create_your_learning_account: Witaj na pokładzie
+        description: Utwórz swoje konto e-learningowe
+        min_length: Minimalna długość hasła to %{count} znaków
+        sign_in: Zaloguj się
+        sign_up: Załóż konto
+        system_access_required: Wymagany dostęp do systemu
         title: Dołącz do nas
       signed_up: Witaj! Rejestracja zakończyła się pomyślnie.
       signed_up_but_inactive: Konto zostało utworzone pomyślnie. Zanim się jednak zalogujesz, musi ono zostać jeszcze aktywowane.
