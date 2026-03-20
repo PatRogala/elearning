@@ -3,22 +3,31 @@ module Ui
   class NavLinkComponent < ApplicationViewComponent
     option :label, Types::String
     option :href, Types::String
-    option :mobile, Types::Bool, default: -> { false }
+
+    delegate :current_page?, to: :helpers
 
     def call
-      link_to label, href, class: classes
+      link_to href, class: classes do
+        content_tag(:span, label) +
+          (if current_page?(href)
+             content_tag(:span, "",
+                         class: "absolute bottom-0 left-0 w-full h-[2px] bg-[#E0115F]")
+           end).to_s
+      end
     end
 
     private
 
     def classes
-      base = "font-bold text-neutral-900 uppercase tracking-[0.15em] transition-all duration-300"
+      current_page?(href) ? active_classes : inactive_classes
+    end
 
-      if @mobile
-        "#{base} block py-4 text-sm border-b border-neutral-100 hover:bg-neutral-50"
-      else
-        "#{base} text-xs hover:text-neutral-500 decoration-neutral-900 underline-offset-4 hover:underline"
-      end
+    def active_classes
+      "relative font-medium py-2 transition-colors text-[#E0115F] text-base"
+    end
+
+    def inactive_classes
+      "text-[#E5E2E1]/60 hover:text-[#E5E2E1] text-base font-medium transition-colors py-2"
     end
   end
 end

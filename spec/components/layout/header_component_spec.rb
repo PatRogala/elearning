@@ -6,17 +6,17 @@ RSpec.describe Layout::HeaderComponent, type: :component do
 
     it "renders courses link" do
       render_inline(described_class.new(user: current_user))
-      expect(page).to have_link("Courses", href: "#")
+      expect(page).to have_link("Courses", href: "/en/courses")
     end
 
-    it "renders profile link" do
+    it "renders projects link" do
       render_inline(described_class.new(user: current_user))
-      expect(page).to have_link("Profile", href: "#")
+      expect(page).to have_link("Projects", href: "#")
     end
 
     it "renders sign out link" do
       render_inline(described_class.new(user: current_user))
-      expect(page).to have_button("Sign out")
+      expect(page).to have_link("Sign out")
     end
   end
 

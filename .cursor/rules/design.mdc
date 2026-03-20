@@ -1,0 +1,85 @@
+---
+alwaysApply: false
+---
+# Design System Strategy: The Editorial IDE
+
+## 1. Overview & Creative North Star
+The Creative North Star for this design system is **"The Technical Monolith."**
+
+This system moves away from the "friendly SaaS" aesthetic of rounded bubbles and soft pastels. Instead, it adopts the high-precision, high-contrast world of a premium Integrated Development Environment (IDE) merged with the sophisticated layout of a luxury editorial magazine. We lean into the "Obsidian" depth of the dark mode, using the Ruby Red accent (#E0115F) not as a mere decoration, but as a laser-focused indicator of action and importance.
+
+By utilizing intentional asymmetry—such as oversized `display-lg` typography paired with microscopic `label-sm` metadata—we create a rhythm that feels engineered and authoritative. We break the "template" look by treating negative space as a functional element, allowing the content to breathe like code in a well-formatted file.
+
+---
+
+## 2. Colors & Surface Philosophy
+
+### The "No-Line" Rule
+Standard UI relies on 1px borders to separate content. This design system **prohibits** 1px solid borders for sectioning. Boundaries must be defined through background color shifts. To separate a sidebar from a main feed, transition from `surface` (#131313) to `surface-container-low` (#1C1B1B). This creates a sophisticated, seamless environment that feels like a single unified tool rather than a collection of boxes.
+
+### Surface Hierarchy & Nesting
+Treat the UI as a series of physical layers of polished volcanic glass.
+- **Base Layer:** `surface` (#131313) for the main application background.
+- **Deepest Layer:** Use `surface-container-lowest` (#0E0E0E) for "wells" like code editors or terminal emulators to create a sense of recessed focus.
+- **Elevated Layers:** Use `surface-container-high` (#2A2A2A) for floating panels or navigation overlays.
+- **The "Glass & Gradient" Rule:** For hero sections or high-impact CTAs, use a subtle radial gradient: `primary-container` (#E0115F) at 15% opacity fading into `surface`. Apply a `backdrop-blur` of 20px to any floating element to allow the Ruby Red accents to bleed through the dark interface.
+
+---
+
+## 3. Typography: The Signal & The Noise
+
+The typographic scale is designed to mimic the hierarchy of a complex codebase—clear headings (the signal) supported by precise, smaller metadata (the noise).
+
+*   **Display & Headlines (Space Grotesk):** These are your architectural anchors. Use `display-lg` (3.5rem) for landing page headers with tight letter-spacing (-0.02em). The geometric nature of Space Grotesk provides a "tech-forward" editorial feel.
+*   **Body (Inter):** All long-form content and documentation must use `body-lg` (1rem). The high legibility of Inter ensures that complex technical explanations remain accessible.
+*   **Labels (Inter):** Use `label-sm` (0.6875rem) in uppercase with 0.1em letter-spacing for category tags and "breadcrumbs." This creates a professional, "spec-sheet" aesthetic.
+
+---
+
+## 4. Elevation & Depth: Tonal Layering
+
+### The Layering Principle
+Forget drop shadows. Depth is achieved by "stacking" the surface-container tiers. Place a `surface-container-highest` card on a `surface-container-low` background. The contrast in charcoal tones creates a natural "lift" that is felt rather than seen.
+
+### Ambient Shadows
+If a floating element (like a dropdown or modal) requires a shadow for legibility, it must be an **Ambient Shadow**:
+- **Color:** `#000000` at 40% opacity.
+- **Blur:** 40px to 60px.
+- **Spread:** -10px (to keep the shadow "tucked" under the element).
+
+### The "Ghost Border" Fallback
+Where accessibility requirements demand a container boundary, use a **Ghost Border**: `outline-variant` (#5B3F44) at 20% opacity. This provides a structural hint without cluttering the minimalist aesthetic.
+
+---
+
+## 5. Components
+
+### Buttons
+*   **Primary:** Background: `primary-container` (#E0115F). Text: `on_primary_container` (#FFF8F8). Shape: `sm` (0.125rem) for a sharp, technical look.
+*   **Secondary:** Background: Transparent. Border: Ghost Border (20% `outline-variant`). Text: `primary`.
+*   **Tertiary:** Text: `on_surface`. Transition: On hover, shift background to `surface-bright` (#393939).
+
+### Input Fields
+*   **Structure:** No background fill. Only a bottom border using `outline-variant` at 40% opacity.
+*   **Active State:** The bottom border transforms to `primary` (#E0115F). Use `label-sm` for floating labels that sit 0.5rem above the input.
+
+### Cards & Lists
+*   **Constraint:** Zero dividers. Use `spacing-8` (2.75rem) to separate content blocks.
+*   **Code Snippets:** Use `surface-container-lowest` for the container background with a `DEFAULT` (0.25rem) radius.
+
+### The "Progress Monolith" (Contextual Component)
+For developer platforms, replace standard progress bars with a "Monolith Indicator": A vertical 2px line that runs the height of a module card, filling with `primary` as the user completes lessons.
+
+---
+
+## 6. Do's and Don'ts
+
+### Do:
+*   **Embrace Asymmetry:** Align text to the left but place supporting imagery or code snippets offset to the right using `spacing-16` (5.5rem).
+*   **Use Mono for Data:** Use a monospaced font (like Roboto Mono) for any numerical data, timestamps, or system paths to reinforce the developer focus.
+*   **Maximize Negative Space:** If you think there is enough space between sections, double it. Use `spacing-24` (8.5rem) for major section breaks.
+
+### Don't:
+*   **Don't use pure White:** Avoid `#FFFFFF` for large text blocks; use `on_surface` (#E5E2E1) to reduce eye strain against the charcoal background.
+*   **No Rounded Corners over 0.75rem:** High-end technical tools feel "tight" and "engineered." Avoid large `full` or `xl` radii unless it is for a specific "pill" badge.
+*   **No Icons without Labels:** In a professional e-learning context, clarity is king. Never use a "ghost" icon; always pair it with `label-md` text.

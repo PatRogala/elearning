@@ -16,3 +16,6 @@ application.register("syntax-highlight", SyntaxHighlightController)
 import ImagePreviewController from "./image_preview_controller"
 application.register("image-preview", ImagePreviewController)
 
+import UserMenuController from "./user_menu_controller"
+application.register("user-menu", UserMenuController)
+
