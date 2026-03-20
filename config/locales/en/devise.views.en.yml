@@ -125,6 +125,12 @@ en:
     sessions:
       already_signed_out: Signed out successfully.
       new:
+        system_access_required: System access required
+        forgot_your_password: Forgot your password?
+        authenticate: Authenticate
+        session: Session
+        new_to_the_system: New to the system?
+        create_account: Create account
         access_your_learning_dashboard: Access your learning dashboard
         sign_in: Log in
       signed_in: Signed in successfully.
