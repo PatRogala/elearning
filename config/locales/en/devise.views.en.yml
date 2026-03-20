@@ -112,8 +112,13 @@ en:
         update: Update
         we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
       new:
-        create_your_learning_account: Create your learning account
+        already_registered: Already have an account?
+        create_your_learning_account: Welcome to the Monolith
+        description: Create your learning account
+        min_length: The minimum password length is %{count} characters
+        sign_in: Sign in
         sign_up: Sign up
+        system_access_required: System access required
         title: Join us
       signed_up: Welcome! You have signed up successfully.
       signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
