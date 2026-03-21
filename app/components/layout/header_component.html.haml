@@ -9,7 +9,7 @@
       = render Ui::NavLinkComponent.new(label: t(".courses"), href: courses_path)
 
       = render Ui::NavLinkComponent.new(label: t(".projects"), href: "#")
-      = render Ui::NavLinkComponent.new(label: t(".manifesto"), href: "#")
+      = render Ui::NavLinkComponent.new(label: t(".manifesto"), href: page_path("manifesto"))
 
       - if user&.teacher?
         = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path)

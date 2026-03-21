@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       registrations: "users/registrations"
     }
 
+    get "/pages/*id" => "pages#show", as: :page, format: false
+
     resources :users, only: %i[update]
     resources :courses, only: %i[index show]
 

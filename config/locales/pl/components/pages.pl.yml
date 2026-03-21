@@ -1,0 +1,14 @@
+---
+pl:
+  pages:
+    manifesto:
+      title: Manifesto
+      mission: Naszą misją jest zapewnienie dostępu do wiedzy inżynieryjnej dla każdego.
+      access_without_barriers: DOSTĘP_BEZ_BARIER
+      access_without_barriers_description: Wiedza to prawo, nie luksus. Uważamy, że każdy powinien mieć możliwość nauki i rozwoju bez zaciągania długów. Oferujemy curriculum o najwyższej rygorystyczności po kosztach, które nie wykluczają. Gatekeeping w IT kończy się tutaj.
+      radical_transparency: RADYKALNA_PRZEJRZYSTOŚĆ
+      radical_transparency_description: Brak paywalli na fundamenty. Wierzymy, że podstawowy inżynierii oprogramowania powinny być dostępne dla każdego, jak gwiazdy na niebie. Dzielenie się kodem i wiedzą to podstawa naszej architektury.
+      focus_on_content: SKUPIENIE_NA_TREŚCI
+      focus_on_content_description: Tworzymy kursy z myślą o praktyczności i skuteczności. Każda lekcja jest starannie przygotowana, żeby przekazać Ci konkretną wiedzę bez zbędnych dodatków. Nie tracimy Twojego czasu na wypełniacze - skupiamy się na tym, co naprawdę pomoże Ci w rozwoju.
+      not_a_product: SZKOLEO TO NIE JEST PRODUKT.
+      not_a_product_description: TO INFRASTRUKTURA ROZWOJU.
