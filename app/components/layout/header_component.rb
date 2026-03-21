@@ -4,5 +4,7 @@ module Layout
     option :user, Types::Instance(User).optional
 
     option :sticky, Types::Bool, default: -> { true }
+
+    delegate :page_path, to: :helpers
   end
 end
