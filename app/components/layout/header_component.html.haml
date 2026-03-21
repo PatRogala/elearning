@@ -8,7 +8,7 @@
     %nav.hidden.md:flex.items-center.gap-8
       = render Ui::NavLinkComponent.new(label: t(".courses"), href: courses_path)
 
-      = render Ui::NavLinkComponent.new(label: t(".projects"), href: "#")
+      = render Ui::NavLinkComponent.new(label: t(".projects"), href: page_path("projects"))
       = render Ui::NavLinkComponent.new(label: t(".manifesto"), href: page_path("manifesto"))
 
       - if user&.teacher?
