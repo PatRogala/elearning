@@ -1,0 +1,14 @@
+---
+en:
+  pages:
+    manifesto:
+      access_without_barriers: ACCESS_WITHOUT_BARRIERS
+      access_without_barriers_description: Knowledge is a right, not a luxury. We believe that everyone should have the opportunity to learn and grow without incurring debt. We offer a curriculum with the highest rigor at costs that do not exclude. Gatekeeping in IT ends here.
+      focus_on_content: FOCUS_ON_CONTENT
+      focus_on_content_description: We create courses with practicality and effectiveness. Each lesson is carefully prepared to convey specific knowledge without unnecessary add-ons. We don't waste your time on fillers - we focus on what truly helps you grow.
+      mission: Our mission is to provide access to engineering knowledge for everyone.
+      not_a_product: SZKOLEO IS NOT A PRODUCT.
+      not_a_product_description: IT IS DEVELOPMENT INFRASTRUCTURE.
+      radical_transparency: RADICAL_TRANSPARENCY
+      radical_transparency_description: No paywalls on foundations. We believe that the basic engineering of software should be available to everyone, like stars in the sky. Sharing code and knowledge is the foundation of our architecture.
+      title: Manifesto
