@@ -11,7 +11,7 @@ RSpec.describe Layout::HeaderComponent, type: :component do
 
     it "renders projects link" do
       render_inline(described_class.new(user: current_user))
-      expect(page).to have_link("Projects", href: "#")
+      expect(page).to have_link("Projects", href: "/en/pages/projects")
     end
 
     it "renders sign out link" do
