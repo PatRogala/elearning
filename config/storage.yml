@@ -1,6 +1,6 @@
 local:
   service: s3
-  endpoint: <%= ENV.fetch("MINIO_ENDPOINT") %>
+  endpoint: <%= ENV["MINIO_ENDPOINT"] %>
   access_key_id: minio
   secret_access_key: miniodevelopment
   region: us-east-1
