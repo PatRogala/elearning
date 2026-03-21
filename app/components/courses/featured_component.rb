@@ -10,5 +10,13 @@ module Courses
     def before_render
       @course = Course.published.first
     end
+
+    def title
+      course.title.split[0]
+    end
+
+    def subtitle
+      course.title.split[1..].join(" ")
+    end
   end
 end

@@ -1,6 +1,6 @@
 local:
   service: s3
-  endpoint: http://minio:9000
+  endpoint: <%= ENV["MINIO_ENDPOINT"] %>
   access_key_id: minio
   secret_access_key: miniodevelopment
   region: us-east-1
