@@ -12,3 +12,7 @@ pl:
       radical_transparency: RADYKALNA_PRZEJRZYSTOŚĆ
       radical_transparency_description: Brak paywalli na fundamenty. Wierzymy, że podstawowy inżynierii oprogramowania powinny być dostępne dla każdego, jak gwiazdy na niebie. Dzielenie się kodem i wiedzą to podstawa naszej architektury.
       title: Manifest
+    projects:
+      coming_soon: Wkrótce...
+      description: Pracujemy nad nowymi projektami i funkcjami dla platformy. Wkrótce będziesz mógł zobaczyć, nad czym pracujemy i jak możesz się zaangażować w rozwój Szkoleo
+      system_status: 'Status: Inicjalizacja'
