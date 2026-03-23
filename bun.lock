@@ -5,7 +5,7 @@
     "": {
       "name": "app",
       "dependencies": {
-        "@37signals/lexxy": "^0.8.0-beta",
+        "@37signals/lexxy": "^0.9.0-beta",
         "@hotwired/stimulus": "^3.2.2",
         "@hotwired/turbo-rails": "^8.0.23",
         "@rails/actiontext": "^8.1.200",
@@ -17,7 +17,7 @@
     },
   },
   "packages": {
-    "@37signals/lexxy": ["@37signals/lexxy@0.8.0-beta", "", { "dependencies": { "@lexical/clipboard": "^0.38.2", "@lexical/code": "^0.38.2", "@lexical/extension": "^0.38.2", "@lexical/history": "^0.38.2", "@lexical/html": "^0.38.2", "@lexical/link": "^0.38.2", "@lexical/list": "^0.38.2", "@lexical/markdown": "^0.38.2", "@lexical/plain-text": "^0.38.2", "@lexical/rich-text": "^0.38.2", "@lexical/selection": "^0.38.2", "@lexical/table": "^0.38.2", "@lexical/utils": "^0.38.2", "dompurify": "^3.3.0", "lexical": "^0.38.2", "marked": "^16.4.1", "prismjs": "^1.30.0" }, "peerDependencies": { "@rails/activestorage": ">= 7.0.0" }, "optionalPeers": ["@rails/activestorage"] }, "sha512-vGrvMzBBUh3S9lPxZOburvUrW9GCORlCL7cC379sSsh8+yG5+0Scp7FtmSjVYvjpxV2SGNTKiReQ6/hasHgRGA=="],
+    "@37signals/lexxy": ["@37signals/lexxy@0.9.0-beta", "", { "dependencies": { "@lexical/clipboard": "^0.41.0", "@lexical/code": "^0.41.0", "@lexical/extension": "^0.41.0", "@lexical/history": "^0.41.0", "@lexical/html": "^0.41.0", "@lexical/link": "^0.41.0", "@lexical/list": "^0.41.0", "@lexical/markdown": "^0.41.0", "@lexical/plain-text": "^0.41.0", "@lexical/rich-text": "^0.41.0", "@lexical/selection": "^0.41.0", "@lexical/table": "^0.41.0", "@lexical/utils": "^0.41.0", "dompurify": "^3.3.0", "lexical": "^0.41.0", "marked": "^16.4.1", "prismjs": "^1.30.0" }, "peerDependencies": { "@rails/activestorage": ">= 7.0.0" }, "optionalPeers": ["@rails/activestorage"] }, "sha512-w78BoC3c6SuWaxIwcBi7vt1ghl86bUhU+RYnnRw2H3SarhoZ6ofUnTDfuiT2db6Hr/bnVagexSyGhw4Lfjvt6A=="],
 
     "@hotwired/stimulus": ["@hotwired/stimulus@3.2.2", "", {}, "sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A=="],
 
@@ -35,35 +35,35 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@lexical/clipboard": ["@lexical/clipboard@0.38.2", "", { "dependencies": { "@lexical/html": "0.38.2", "@lexical/list": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-dDShUplCu8/o6BB9ousr3uFZ9bltR+HtleF/Tl8FXFNPpZ4AXhbLKUoJuucRuIr+zqT7RxEv/3M6pk/HEoE6NQ=="],
+    "@lexical/clipboard": ["@lexical/clipboard@0.41.0", "", { "dependencies": { "@lexical/html": "0.41.0", "@lexical/list": "0.41.0", "@lexical/selection": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-Ex5lPkb4NBBX1DCPzOAIeHBJFH1bJcmATjREaqpnTfxCbuOeQkt44wchezUA0oDl+iAxNZ3+pLLWiUju9icoSA=="],
 
-    "@lexical/code": ["@lexical/code@0.38.2", "", { "dependencies": { "@lexical/utils": "0.38.2", "lexical": "0.38.2", "prismjs": "^1.30.0" } }, "sha512-wpqgbmPsfi/+8SYP0zI2kml09fGPRhzO5litR9DIbbSGvcbawMbRNcKLO81DaTbsJRnBJiQvbBBBJAwZKRqgBw=="],
+    "@lexical/code": ["@lexical/code@0.41.0", "", { "dependencies": { "@lexical/utils": "0.41.0", "lexical": "0.41.0", "prismjs": "^1.30.0" } }, "sha512-0hoNi1KC9/N3SBOGcOcFqnT0OpwmcRRAhfxTKMGqfCtCvAMzULVwZ8RWc9/NV9bKYESgBTW5D9xkDANP2mspHg=="],
 
-    "@lexical/dragon": ["@lexical/dragon@0.38.2", "", { "dependencies": { "@lexical/extension": "0.38.2", "lexical": "0.38.2" } }, "sha512-riOhgo+l4oN50RnLGhcqeUokVlMZRc+NDrxRNs2lyKSUdC4vAhAmAVUHDqYPyb4K4ZSw4ebZ3j8hI2zO4O3BbA=="],
+    "@lexical/dragon": ["@lexical/dragon@0.41.0", "", { "dependencies": { "@lexical/extension": "0.41.0", "lexical": "0.41.0" } }, "sha512-gBEqkk8Q6ZPruvDaRcOdF1EK9suCVBODzOCcR+EnoJTaTjfDkCM7pkPAm4w90Wa1wCZEtFHvCfas+jU9MDSumg=="],
 
-    "@lexical/extension": ["@lexical/extension@0.38.2", "", { "dependencies": { "@lexical/utils": "0.38.2", "@preact/signals-core": "^1.11.0", "lexical": "0.38.2" } }, "sha512-qbUNxEVjAC0kxp7hEMTzktj0/51SyJoIJWK6Gm790b4yNBq82fEPkksfuLkRg9VQUteD0RT1Nkjy8pho8nNamw=="],
+    "@lexical/extension": ["@lexical/extension@0.41.0", "", { "dependencies": { "@lexical/utils": "0.41.0", "@preact/signals-core": "^1.11.0", "lexical": "0.41.0" } }, "sha512-sF4SPiP72yXvIGchmmIZ7Yg2XZTxNLOpFEIIzdqG7X/1fa1Ham9P/T7VbrblWpF6Ei5LJtK9JgNVB0hb4l3o1g=="],
 
-    "@lexical/history": ["@lexical/history@0.38.2", "", { "dependencies": { "@lexical/extension": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-QWPwoVDMe/oJ0+TFhy78TDi7TWU/8bcDRFUNk1nWgbq7+2m+5MMoj90LmOFwakQHnCVovgba2qj+atZrab1dsQ=="],
+    "@lexical/history": ["@lexical/history@0.41.0", "", { "dependencies": { "@lexical/extension": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-kGoVWsiOn62+RMjRolRa+NXZl8jFwxav6GNDiHH8yzivtoaH8n1SwUfLJELXCzeqzs81HySqD4q30VLJVTGoDg=="],
 
-    "@lexical/html": ["@lexical/html@0.38.2", "", { "dependencies": { "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-pC5AV+07bmHistRwgG3NJzBMlIzSdxYO6rJU4eBNzyR4becdiLsI4iuv+aY7PhfSv+SCs7QJ9oc4i5caq48Pkg=="],
+    "@lexical/html": ["@lexical/html@0.41.0", "", { "dependencies": { "@lexical/selection": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-3RyZy+H/IDKz2D66rNN/NqYx87xVFrngfEbyu1OWtbY963RUFnopiVHCQvsge/8kT04QSZ7U/DzjVFqeNS6clg=="],
 
-    "@lexical/link": ["@lexical/link@0.38.2", "", { "dependencies": { "@lexical/extension": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-UOKTyYqrdCR9+7GmH6ZVqJTmqYefKGMUHMGljyGks+OjOGZAQs78S1QgcPEqltDy+SSdPSYK7wAo6gjxZfEq9g=="],
+    "@lexical/link": ["@lexical/link@0.41.0", "", { "dependencies": { "@lexical/extension": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-Rjtx5cGWAkKcnacncbVsZ1TqRnUB2Wm4eEVKpaAEG41+kHgqghzM2P+UGT15yROroxJu8KvAC9ISiYFiU4XE1w=="],
 
-    "@lexical/list": ["@lexical/list@0.38.2", "", { "dependencies": { "@lexical/extension": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-OQm9TzatlMrDZGxMxbozZEHzMJhKxAbH1TOnOGyFfzpfjbnFK2y8oLeVsfQZfZRmiqQS4Qc/rpFnRP2Ax5dsbA=="],
+    "@lexical/list": ["@lexical/list@0.41.0", "", { "dependencies": { "@lexical/extension": "0.41.0", "@lexical/selection": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-RXvB+xcbzVoQLGRDOBRCacztG7V+bI95tdoTwl8pz5xvgPtAaRnkZWMDP+yMNzMJZsqEChdtpxbf0NgtMkun6g=="],
 
-    "@lexical/markdown": ["@lexical/markdown@0.38.2", "", { "dependencies": { "@lexical/code": "0.38.2", "@lexical/link": "0.38.2", "@lexical/list": "0.38.2", "@lexical/rich-text": "0.38.2", "@lexical/text": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-ykQJ9KUpCs1+Ak6ZhQMP6Slai4/CxfLEGg/rSHNVGbcd7OaH/ICtZN5jOmIe9ExfXMWy1o8PyMu+oAM3+AWFgA=="],
+    "@lexical/markdown": ["@lexical/markdown@0.41.0", "", { "dependencies": { "@lexical/code": "0.41.0", "@lexical/link": "0.41.0", "@lexical/list": "0.41.0", "@lexical/rich-text": "0.41.0", "@lexical/text": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-bzI73JMXpjGFhqUWNV6KqfjWcgAWzwFT+J3RHtbCF5rysC8HLldBYojOgAAtPfXqfxyv2mDzsY7SoJ75s9uHZA=="],
 
-    "@lexical/plain-text": ["@lexical/plain-text@0.38.2", "", { "dependencies": { "@lexical/clipboard": "0.38.2", "@lexical/dragon": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-xRYNHJJFCbaQgr0uErW8Im2Phv1nWHIT4VSoAlBYqLuVGZBD4p61dqheBwqXWlGGJFk+MY5C5URLiMicgpol7A=="],
+    "@lexical/plain-text": ["@lexical/plain-text@0.41.0", "", { "dependencies": { "@lexical/clipboard": "0.41.0", "@lexical/dragon": "0.41.0", "@lexical/selection": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-HIsGgmFUYRUNNyvckun33UQfU7LRzDlxymHUq67+Bxd5bXqdZOrStEKJXuDX+LuLh/GXZbaWNbDLqwLBObfbQg=="],
 
-    "@lexical/rich-text": ["@lexical/rich-text@0.38.2", "", { "dependencies": { "@lexical/clipboard": "0.38.2", "@lexical/dragon": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-eFjeOT7YnDZYpty7Zlwlct0UxUSaYu53uLYG+Prs3NoKzsfEK7e7nYsy/BbQFfk5HoM1pYuYxFR2iIX62+YHGw=="],
+    "@lexical/rich-text": ["@lexical/rich-text@0.41.0", "", { "dependencies": { "@lexical/clipboard": "0.41.0", "@lexical/dragon": "0.41.0", "@lexical/selection": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-yUcr7ZaaVTZNi8bow4CK1M8jy2qyyls1Vr+5dVjwBclVShOL/F/nFyzBOSb6RtXXRbd3Ahuk9fEleppX/RNIdw=="],
 
-    "@lexical/selection": ["@lexical/selection@0.38.2", "", { "dependencies": { "lexical": "0.38.2" } }, "sha512-eMFiWlBH6bEX9U9sMJ6PXPxVXTrihQfFeiIlWLuTpEIDF2HRz7Uo1KFRC/yN6q0DQaj7d9NZYA6Mei5DoQuz5w=="],
+    "@lexical/selection": ["@lexical/selection@0.41.0", "", { "dependencies": { "lexical": "0.41.0" } }, "sha512-1s7/kNyRzcv5uaTwsUL28NpiisqTf5xZ1zNukLsCN1xY+TWbv9RE9OxIv+748wMm4pxNczQe/UbIBODkbeknLw=="],
 
-    "@lexical/table": ["@lexical/table@0.38.2", "", { "dependencies": { "@lexical/clipboard": "0.38.2", "@lexical/extension": "0.38.2", "@lexical/utils": "0.38.2", "lexical": "0.38.2" } }, "sha512-uu0i7yz0nbClmHOO5ZFsinRJE6vQnFz2YPblYHAlNigiBedhqMwSv5bedrzDq8nTTHwych3mC63tcyKIrM+I1g=="],
+    "@lexical/table": ["@lexical/table@0.41.0", "", { "dependencies": { "@lexical/clipboard": "0.41.0", "@lexical/extension": "0.41.0", "@lexical/utils": "0.41.0", "lexical": "0.41.0" } }, "sha512-d3SPThBAr+oZ8O74TXU0iXM3rLbrAVC7/HcOnSAq7/AhWQW8yMutT51JQGN+0fMLP9kqoWSAojNtkdvzXfU/+A=="],
 
-    "@lexical/text": ["@lexical/text@0.38.2", "", { "dependencies": { "lexical": "0.38.2" } }, "sha512-+juZxUugtC4T37aE3P0l4I9tsWbogDUnTI/mgYk4Ht9g+gLJnhQkzSA8chIyfTxbj5i0A8yWrUUSw+/xA7lKUQ=="],
+    "@lexical/text": ["@lexical/text@0.41.0", "", { "dependencies": { "lexical": "0.41.0" } }, "sha512-gGA+Anc7ck110EXo4KVKtq6Ui3M7Vz3OpGJ4QE6zJHWW8nV5h273koUGSutAMeoZgRVb6t01Izh3ORoFt/j1CA=="],
 
-    "@lexical/utils": ["@lexical/utils@0.38.2", "", { "dependencies": { "@lexical/list": "0.38.2", "@lexical/selection": "0.38.2", "@lexical/table": "0.38.2", "lexical": "0.38.2" } }, "sha512-y+3rw15r4oAWIEXicUdNjfk8018dbKl7dWHqGHVEtqzAYefnEYdfD2FJ5KOTXfeoYfxi8yOW7FvzS4NZDi8Bfw=="],
+    "@lexical/utils": ["@lexical/utils@0.41.0", "", { "dependencies": { "@lexical/selection": "0.41.0", "lexical": "0.41.0" } }, "sha512-Wlsokr5NQCq83D+7kxZ9qs5yQ3dU3Qaf2M+uXxLRoPoDaXqW8xTWZq1+ZFoEzsHzx06QoPa4Vu/40BZR91uQPg=="],
 
     "@parcel/watcher": ["@parcel/watcher@2.5.1", "", { "dependencies": { "detect-libc": "^1.0.3", "is-glob": "^4.0.3", "micromatch": "^4.0.5", "node-addon-api": "^7.0.0" }, "optionalDependencies": { "@parcel/watcher-android-arm64": "2.5.1", "@parcel/watcher-darwin-arm64": "2.5.1", "@parcel/watcher-darwin-x64": "2.5.1", "@parcel/watcher-freebsd-x64": "2.5.1", "@parcel/watcher-linux-arm-glibc": "2.5.1", "@parcel/watcher-linux-arm-musl": "2.5.1", "@parcel/watcher-linux-arm64-glibc": "2.5.1", "@parcel/watcher-linux-arm64-musl": "2.5.1", "@parcel/watcher-linux-x64-glibc": "2.5.1", "@parcel/watcher-linux-x64-musl": "2.5.1", "@parcel/watcher-win32-arm64": "2.5.1", "@parcel/watcher-win32-ia32": "2.5.1", "@parcel/watcher-win32-x64": "2.5.1" } }, "sha512-dfUnCxiN9H4ap84DvD2ubjw+3vUNpstxa0TneY/Paat8a3R4uQZDLSvWjmznAY/DoahqTHl9V46HF/Zs3F29pg=="],
 
@@ -153,7 +153,7 @@
 
     "jiti": ["jiti@2.6.1", "", { "bin": { "jiti": "lib/jiti-cli.mjs" } }, "sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ=="],
 
-    "lexical": ["lexical@0.38.2", "", {}, "sha512-JJmfsG3c4gwBHzUGffbV7ifMNkKAWMCnYE3xJl87gty7hjyV5f3xq7eqTjP5HFYvO4XpjJvvWO2/djHp5S10tw=="],
+    "lexical": ["lexical@0.41.0", "", {}, "sha512-pNIm5+n+hVnJHB9gYPDYsIO5Y59dNaDU9rJmPPsfqQhP2ojKFnUoPbcRnrI9FJLXB14sSumcY8LUw7Sq70TZqA=="],
 
     "lightningcss": ["lightningcss@1.32.0", "", { "dependencies": { "detect-libc": "^2.0.3" }, "optionalDependencies": { "lightningcss-android-arm64": "1.32.0", "lightningcss-darwin-arm64": "1.32.0", "lightningcss-darwin-x64": "1.32.0", "lightningcss-freebsd-x64": "1.32.0", "lightningcss-linux-arm-gnueabihf": "1.32.0", "lightningcss-linux-arm64-gnu": "1.32.0", "lightningcss-linux-arm64-musl": "1.32.0", "lightningcss-linux-x64-gnu": "1.32.0", "lightningcss-linux-x64-musl": "1.32.0", "lightningcss-win32-arm64-msvc": "1.32.0", "lightningcss-win32-x64-msvc": "1.32.0" } }, "sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ=="],
 
