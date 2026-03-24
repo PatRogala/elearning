@@ -8,7 +8,7 @@
         "@37signals/lexxy": "^0.9.0-beta",
         "@hotwired/stimulus": "^3.2.2",
         "@hotwired/turbo-rails": "^8.0.23",
-        "@rails/actiontext": "^8.1.200",
+        "@rails/actiontext": "^8.1.201",
         "@rails/activestorage": "^8.1.200",
         "@tailwindcss/cli": "^4.2.2",
         "tailwindcss": "^4.2.2",
@@ -97,7 +97,7 @@
 
     "@rails/actioncable": ["@rails/actioncable@8.1.100", "", {}, "sha512-j4vJQqz51CDVYv2UafKRu4jiZi5/gTnm7NkyL+VMIgEw3s8jtVtmzu9uItUaZccUg9NJ6o05yVyBAHxNfTuCRA=="],
 
-    "@rails/actiontext": ["@rails/actiontext@8.1.200", "", { "dependencies": { "@rails/activestorage": ">= 8.1.0-alpha" }, "peerDependencies": { "trix": "^2.0.0" } }, "sha512-l4OuFLZbQB+A3yCNOzX0Y4Tn7XSekfuYjy20TiBuf+4Q5JKTnfuybHrQ5cDk/9DbwWE9sdWcdbODFUIYd4tczg=="],
+    "@rails/actiontext": ["@rails/actiontext@8.1.201", "", { "dependencies": { "@rails/activestorage": ">= 8.1.0-alpha" }, "peerDependencies": { "trix": "^2.0.0" } }, "sha512-Ol+2BCCjJWYwuByTXLBBaL4+iQCGSeNrVB5Tt9oiuZbxm43ay9bXtYKFLCiuZrZn5bn3OiAcLMB2CQna97YpwQ=="],
 
     "@rails/activestorage": ["@rails/activestorage@8.1.200", "", { "dependencies": { "spark-md5": "^3.0.1" } }, "sha512-bPZqv447REBd1NQfba//FjgUqbUd93zKh7+BWhh3vRZ7Nm+RUgm6c5GbWctmik/rMHjsruTHhusYGyoKyf60pg=="],
 
