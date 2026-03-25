@@ -1,7 +1,7 @@
 # Join model for users and roles
 class UserRole < ApplicationRecord
-  belongs_to :user
-  belongs_to :role
+  db_belongs_to :user
+  db_belongs_to :role
 
-  validates :user_id, uniqueness: { scope: :role_id }
+  validates :user_id, db_uniqueness: { scope: :role_id }
 end

@@ -2,12 +2,12 @@
 class Lesson < ApplicationRecord
   extend FriendlyId
 
-  belongs_to :course
+  db_belongs_to :course
 
   validates :title, presence: true
   validates :position, presence: true, numericality: { only_integer: true, greater_than: 0 },
-                       uniqueness: { scope: :course_id }
-  validates :slug, presence: true, uniqueness: true
+                       db_uniqueness: { scope: :course_id }
+  validates :slug, presence: true, db_uniqueness: true
   friendly_id :title, use: :slugged
   has_rich_text :content
 

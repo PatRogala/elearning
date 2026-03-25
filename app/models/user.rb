@@ -15,8 +15,8 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :reset_password_token, uniqueness: true, allow_nil: true
+  validates :email, presence: true, db_uniqueness: true
+  validates :reset_password_token, db_uniqueness: true, allow_nil: true
   validates :encrypted_password, presence: true
   validates :sign_in_count, presence: true
   validates :bio, length: { maximum: 512 }, allow_nil: true
