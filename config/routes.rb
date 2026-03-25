@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   end
 
   authenticate :user, ->(user) { user.admin? } do
+    # Mission Control for background job insights
+    mount MissionControl::Jobs::Engine, at: "jobs"
+
     # PgHero for database insights
     mount PgHero::Engine, at: "pghero"
 

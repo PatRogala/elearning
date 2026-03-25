@@ -98,4 +98,7 @@ Rails.application.configure do
   config.active_storage.service = :local
   config.active_storage.variant_processor = :vips
   config.active_storage.resolve_model_to_route = :rails_storage_proxy
+
+  # Disable HTTP basic auth for Mission Control Jobs UI
+  config.mission_control.jobs.http_basic_auth_enabled = false
 end

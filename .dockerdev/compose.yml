@@ -64,6 +64,11 @@ services:
         condition: service_started
       css:
         condition: service_started
+      jobs:
+        condition: service_started
+  jobs:
+    <<: *backend
+    command: bin/jobs
 
   js:
     <<: *backend

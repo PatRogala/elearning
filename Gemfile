@@ -32,6 +32,7 @@ gem "solid_cache"
 
 # Background job processing
 gem "solid_queue"
+gem "mission_control-jobs" # UI
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
