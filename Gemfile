@@ -31,8 +31,8 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "solid_cache"
 
 # Background job processing
-gem "solid_queue"
 gem "mission_control-jobs" # UI
+gem "solid_queue"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
