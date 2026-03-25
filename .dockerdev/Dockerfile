@@ -44,6 +44,11 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
       $(grep -Ev '^\s*#' /tmp/Aptfile | xargs)
 
+# The localhost gem calls `update-ca-trust` when it detects p11-kit's trust anchor directory,
+# but that command is Red Hat/Arch-specific. Shim it to Debian's equivalent.
+RUN printf '#!/bin/sh\nexec update-ca-certificates "$@"\n' > /usr/local/bin/update-ca-trust \
+    && chmod +x /usr/local/bin/update-ca-trust
+
 # Bun install
 ENV BUN_INSTALL=/usr/local/bun
 ENV PATH=/usr/local/bun/bin:$PATH

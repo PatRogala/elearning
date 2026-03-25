@@ -6,8 +6,9 @@ gem "rails"
 gem "propshaft"
 # Use postgresql as the database for Active Record
 gem "pg"
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma"
+# Use the Falcon web server
+gem "falcon"
+gem "falcon-rails"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]

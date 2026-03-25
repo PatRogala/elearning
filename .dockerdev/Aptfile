@@ -1,6 +1,8 @@
 # An editor to work with credentials
 vim
 # Application dependencies
+ca-certificates
+sudo
 libvips-dev
 libyaml-dev
 libjemalloc2
