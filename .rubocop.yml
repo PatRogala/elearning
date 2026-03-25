@@ -15,6 +15,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'db/queue_migrate/*'
+    - 'vendor/**/*'
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
