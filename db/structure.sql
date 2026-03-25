@@ -653,13 +653,6 @@ CREATE UNIQUE INDEX index_flipper_gates_on_feature_key_and_key_and_value ON publ
 
 
 --
--- Name: index_lessons_on_course_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_lessons_on_course_id ON public.lessons USING btree (course_id);
-
-
---
 -- Name: index_lessons_on_course_id_and_position; Type: INDEX; Schema: public; Owner: -
 --
 
