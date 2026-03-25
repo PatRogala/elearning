@@ -523,8 +523,6 @@ GEM
       psych (>= 4.0.0)
       tsort
     redcarpet (3.6.1)
-    redis-client (0.28.0)
-      connection_pool
     reform (2.6.2)
       disposable (>= 0.5.0, < 1.0.0)
       representable (>= 3.1.1, < 4)
@@ -562,11 +560,6 @@ GEM
       rspec-expectations (>= 3.13.0, < 5.0.0)
       rspec-mocks (>= 3.13.0, < 5.0.0)
       rspec-support (>= 3.13.0, < 5.0.0)
-    rspec-sidekiq (5.3.0)
-      rspec-core (~> 3.0)
-      rspec-expectations (~> 3.0)
-      rspec-mocks (~> 3.0)
-      sidekiq (>= 5, < 9)
     rspec-support (3.13.7)
     rubocop (1.86.0)
       json (~> 2.3)
@@ -620,18 +613,9 @@ GEM
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
       logger
-    sentry-sidekiq (6.5.0)
-      sentry-ruby (~> 6.5.0)
-      sidekiq (>= 5.0)
     sexp_processor (4.17.5)
     shoulda-matchers (7.0.1)
       activesupport (>= 7.1)
-    sidekiq (8.1.1)
-      connection_pool (>= 3.0.0)
-      json (>= 2.16.0)
-      logger (>= 1.7.0)
-      rack (>= 3.2.0)
-      redis-client (>= 0.26.0)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -767,7 +751,6 @@ DEPENDENCIES
   reform-rails
   resend
   rspec-rails
-  rspec-sidekiq
   rubocop
   rubocop-capybara
   rubocop-factory_bot
@@ -778,9 +761,7 @@ DEPENDENCIES
   ruby-vips
   sentry-rails
   sentry-ruby
-  sentry-sidekiq
   shoulda-matchers
-  sidekiq
   simplecov
   skylight
   solid_cache

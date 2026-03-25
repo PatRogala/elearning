@@ -60,8 +60,6 @@ services:
     ports:
       - '3000:3000'
     depends_on:
-      sidekiq:
-        condition: service_started
       mailcatcher:
         condition: service_started
       js:
@@ -76,10 +74,6 @@ services:
   css:
     <<: *backend
     command: bun run build:css --watch
-
-  sidekiq:
-    <<: *backend
-    command: bundle exec sidekiq
 
   postgres:
     image: postgres:18

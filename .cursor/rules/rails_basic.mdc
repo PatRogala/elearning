@@ -44,7 +44,7 @@ alwaysApply: true
   - Use concerns for shared behavior across models or controllers.
   - Implement service objects for complex business logic.
   - Use Layered Design Principles.
-  - Use background jobs (e.g., Sidekiq) for time-consuming tasks.
+  - Use background jobs (e.g., SolidQueue) for time-consuming tasks.
 
   Testing
   - Write comprehensive tests using RSpec.

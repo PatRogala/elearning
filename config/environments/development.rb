@@ -82,7 +82,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = { address: "mailcatcher", port: 1025 }
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
-  config.active_job.queue_adapter = :sidekiq
+  config.active_job.queue_adapter = :TODO
 
   # Enable Prosopite to find N+1 queries
   config.after_initialize do

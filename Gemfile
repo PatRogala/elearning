@@ -21,7 +21,6 @@ gem "logtail-rails"
 # Error tracking via Better Stack (Sentry SDK)
 gem "sentry-rails"
 gem "sentry-ruby"
-gem "sentry-sidekiq"
 # Skylight for performance monitoring
 gem "skylight"
 
@@ -39,9 +38,6 @@ gem "kamal", require: false
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
-
-# Background job processing
-gem "sidekiq"
 
 # Authentication framework
 gem "devise"
@@ -172,9 +168,6 @@ group :development do
 end
 
 group :test do
-  # Sidekiq testing helpers
-  gem "rspec-sidekiq"
-
   # Code coverage for tests
   gem "simplecov", require: false
 
