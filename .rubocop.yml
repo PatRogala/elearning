@@ -6,6 +6,9 @@ plugins:
   - rubocop-capybara
   - rubocop-factory_bot
 
+require:
+  - database_validations/rubocop/cops
+
 inherit_gem:
   pundit: config/rubocop-rspec.yml
 
@@ -45,3 +48,7 @@ RSpec/NestedGroups:
 
 Metrics/AbcSize:
   Max: 25
+
+DatabaseValidations/BelongsTo:
+  Exclude:
+    - 'db/migrate/*'

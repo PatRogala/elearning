@@ -195,6 +195,8 @@ GEM
     database_cleaner-core (2.0.1)
     database_consistency (3.0.2)
       activerecord (>= 3.2)
+    database_validations (2.0.0)
+      activerecord (>= 7.2.0)
     date (3.5.1)
     debug (1.11.1)
       irb (~> 1.10)
@@ -741,6 +743,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner-active_record
   database_consistency
+  database_validations
   debug
   devise
   devise-i18n
