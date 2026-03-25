@@ -9,7 +9,7 @@
     "@37signals/lexxy": "^0.9.0-beta",
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.23",
-    "@rails/actiontext": "^8.1.201",
+    "@rails/actiontext": "^8.1.300",
     "@rails/activestorage": "^8.1.201",
     "@tailwindcss/cli": "^4.2.2",
     "tailwindcss": "^4.2.2",
