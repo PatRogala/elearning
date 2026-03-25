@@ -31,7 +31,6 @@ x-backend: &backend
     - ./.bashrc:/root/.bashrc:ro
   environment: &backend_environment
     <<: *env
-    DATABASE_URL: postgresql://postgres:postgres@postgres:5432
     MALLOC_ARENA_MAX: 2
     WEB_CONCURRENCY: ${WEB_CONCURRENCY:-1}
     BOOTSNAP_CACHE_DIR: /usr/local/bundle/_bootsnap
@@ -41,11 +40,10 @@ x-backend: &backend
     IRB_HISTFILE: /usr/local/hist/.irb_history
     EDITOR: vi
     CLAUDE_CODE_TMPDIR: /root/.claude/__tmp__
+    DATABASE_URL: postgresql://postgres:postgres@postgres:5432
   depends_on:
     postgres:
       condition: service_healthy
-    dragonfly:
-      condition: service_started
     minio:
       condition: service_started
 
@@ -60,14 +58,17 @@ services:
     ports:
       - '3000:3000'
     depends_on:
-      sidekiq:
-        condition: service_started
       mailcatcher:
         condition: service_started
       js:
         condition: service_started
       css:
         condition: service_started
+      jobs:
+        condition: service_started
+  jobs:
+    <<: *backend
+    command: bin/jobs
 
   js:
     <<: *backend
@@ -76,10 +77,6 @@ services:
   css:
     <<: *backend
     command: bun run build:css --watch
-
-  sidekiq:
-    <<: *backend
-    command: bundle exec sidekiq
 
   postgres:
     image: postgres:18
@@ -91,18 +88,10 @@ services:
       PSQL_HISTFILE: /usr/local/hist/.psql_history
       POSTGRES_PASSWORD: postgres
     ports:
-      - 5432
+      - "5432:5432"
     healthcheck:
       test: pg_isready -U postgres -h 127.0.0.1
       interval: 5s
-  dragonfly:
-    image: ghcr.io/dragonflydb/dragonfly:v1.36.0
-    ulimits:
-      memlock: -1
-    ports:
-      - "6379:6379"
-    volumes:
-      - dragonflydata:/data
   mailcatcher:
     image: sj26/mailcatcher
     ports:
@@ -129,6 +118,5 @@ volumes:
   postgres:
   assets:
   claude:
-  dragonflydata:
   minio_data:
 

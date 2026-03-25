@@ -59,11 +59,6 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
 end
 
-RSpec::Sidekiq.configure do |config|
-  # Disable warnings from Sidekiq
-  config.warn_when_jobs_not_processed_by_sidekiq = false
-end
-
 # Configure shoulda-matchers for one-liner testing
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

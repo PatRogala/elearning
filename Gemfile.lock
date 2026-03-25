@@ -258,6 +258,8 @@ GEM
     erb (6.0.2)
     erubi (1.13.1)
     erubis (2.7.0)
+    et-orbi (1.2.11)
+      tzinfo
     factory_bot (6.5.6)
       activesupport (>= 6.1.0)
     factory_bot_rails (6.5.1)
@@ -275,6 +277,9 @@ GEM
       flipper (~> 1.4.0)
     friendly_id (5.6.0)
       activerecord (>= 4.0.0)
+    fugit (1.11.1)
+      et-orbi (~> 1, >= 1.2.11)
+      raabro (~> 1.4)
     globalid (1.3.0)
       activesupport (>= 6.1)
     google-protobuf (4.34.1-aarch64-linux-gnu)
@@ -327,6 +332,10 @@ GEM
     image_processing (1.14.0)
       mini_magick (>= 4.9.5, < 6)
       ruby-vips (>= 2.0.17, < 3)
+    importmap-rails (2.2.3)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     inline_svg (1.10.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
@@ -406,6 +415,16 @@ GEM
     minitest (6.0.2)
       drb (~> 2.0)
       prism (~> 1.5)
+    mission_control-jobs (1.1.0)
+      actioncable (>= 7.1)
+      actionpack (>= 7.1)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      importmap-rails (>= 1.2.1)
+      irb (~> 1.13)
+      railties (>= 7.1)
+      stimulus-rails
+      turbo-rails
     monetize (2.0.0)
       money (~> 7.0)
     money (7.0.2)
@@ -474,6 +493,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.5.2)
       activesupport (>= 3.0.0)
+    raabro (1.4.0)
     racc (1.8.1)
     rack (3.2.5)
     rack-session (2.1.1)
@@ -523,8 +543,6 @@ GEM
       psych (>= 4.0.0)
       tsort
     redcarpet (3.6.1)
-    redis-client (0.28.0)
-      connection_pool
     reform (2.6.2)
       disposable (>= 0.5.0, < 1.0.0)
       representable (>= 3.1.1, < 4)
@@ -562,11 +580,6 @@ GEM
       rspec-expectations (>= 3.13.0, < 5.0.0)
       rspec-mocks (>= 3.13.0, < 5.0.0)
       rspec-support (>= 3.13.0, < 5.0.0)
-    rspec-sidekiq (5.3.0)
-      rspec-core (~> 3.0)
-      rspec-expectations (~> 3.0)
-      rspec-mocks (~> 3.0)
-      sidekiq (>= 5, < 9)
     rspec-support (3.13.7)
     rubocop (1.86.0)
       json (~> 2.3)
@@ -620,18 +633,9 @@ GEM
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
       logger
-    sentry-sidekiq (6.5.0)
-      sentry-ruby (~> 6.5.0)
-      sidekiq (>= 5.0)
     sexp_processor (4.17.5)
     shoulda-matchers (7.0.1)
       activesupport (>= 7.1)
-    sidekiq (8.1.1)
-      connection_pool (>= 3.0.0)
-      json (>= 2.16.0)
-      logger (>= 1.7.0)
-      rack (>= 3.2.0)
-      redis-client (>= 0.26.0)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -644,6 +648,13 @@ GEM
       activejob (>= 7.2)
       activerecord (>= 7.2)
       railties (>= 7.2)
+    solid_queue (1.4.0)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      concurrent-ruby (>= 1.3.1)
+      fugit (~> 1.11)
+      railties (>= 7.1)
+      thor (>= 1.3.1)
     sshkit (1.25.0)
       base64
       logger
@@ -754,6 +765,7 @@ DEPENDENCIES
   logtail-rails
   lookbook
   lucide-rails
+  mission_control-jobs
   money-rails
   pg
   pg_query
@@ -767,7 +779,6 @@ DEPENDENCIES
   reform-rails
   resend
   rspec-rails
-  rspec-sidekiq
   rubocop
   rubocop-capybara
   rubocop-factory_bot
@@ -778,12 +789,11 @@ DEPENDENCIES
   ruby-vips
   sentry-rails
   sentry-ruby
-  sentry-sidekiq
   shoulda-matchers
-  sidekiq
   simplecov
   skylight
   solid_cache
+  solid_queue
   stimulus-rails
   strong_migrations
   thruster

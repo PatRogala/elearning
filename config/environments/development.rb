@@ -82,7 +82,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = { address: "mailcatcher", port: 1025 }
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
-  config.active_job.queue_adapter = :sidekiq
+  config.active_job.queue_adapter = :solid_queue
+  config.solid_queue.connects_to = { database: { writing: :queue } }
 
   # Enable Prosopite to find N+1 queries
   config.after_initialize do
@@ -97,4 +98,7 @@ Rails.application.configure do
   config.active_storage.service = :local
   config.active_storage.variant_processor = :vips
   config.active_storage.resolve_model_to_route = :rails_storage_proxy
+
+  # Disable HTTP basic auth for Mission Control Jobs UI
+  config.mission_control.jobs.http_basic_auth_enabled = false
 end

@@ -1,14 +1,19 @@
 #!/usr/bin/env ruby
 def system!(*args)
   log "Executing #{args}"
-  system(*args) ? log("#{args} succeeded") : (log("#{args} failed"); abort)
+  if system(*args)
+    log("#{args} succeeded")
+  else
+    (log("#{args} failed")
+     abort)
+  end
 end
 
 def log(message)
   puts "[ bin/setup ] #{message}"
 end
 
-def setup
+def setup # rubocop:disable Metrics/MethodLength
   log "== Installing dependencies =="
   system("bundle check") || system!("bundle install")
   system!("bun install")

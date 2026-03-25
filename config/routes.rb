@@ -1,5 +1,3 @@
-require "sidekiq/web"
-
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -38,8 +36,8 @@ Rails.application.routes.draw do
   end
 
   authenticate :user, ->(user) { user.admin? } do
-    # Sidekiq web interface
-    mount Sidekiq::Web, at: "sidekiq"
+    # Mission Control for background job insights
+    mount MissionControl::Jobs::Engine, at: "jobs"
 
     # PgHero for database insights
     mount PgHero::Engine, at: "pghero"

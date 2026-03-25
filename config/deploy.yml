@@ -11,7 +11,7 @@ servers:
   job:
     hosts:
       - szkoleo.patrykrogala.dev
-    cmd: bundle exec sidekiq
+    cmd: bin/jobs
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 # Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
@@ -54,7 +54,6 @@ env:
     POSTGRES_USER: szkoleo
     POSTGRES_DB: szkoleo_production
     RAILS_ENV: production
-    REDIS_URL: redis://szkoleo-redis:6379
     MINIO_ENDPOINT: http://szkoleo-minio:9000
 
     # Log everything from Rails
@@ -110,13 +109,6 @@ accessories:
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:
       - data:/var/lib/postgresql/data
-  redis:
-    image: docker.dragonflydb.io/dragonflydb/dragonfly
-    roles:
-      - web
-    port: "127.0.0.1:6379:6379"
-    directories:
-      - data:/data
   minio:
     image: minio/minio
     roles:
