@@ -5,4 +5,6 @@ require "bundler/setup"
 # Explicit RuboCop config increases performance slightly while avoiding config confusion.
 ARGV.unshift("--config", File.expand_path("../.rubocop.yml", __dir__))
 
+ARGV.unshift("--no-parallel") if ENV["CI"]
+
 load Gem.bin_path("rubocop", "rubocop")
