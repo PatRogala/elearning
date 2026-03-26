@@ -260,7 +260,7 @@ GEM
     erb (6.0.2)
     erubi (1.13.1)
     erubis (2.7.0)
-    et-orbi (1.2.11)
+    et-orbi (1.4.0)
       tzinfo
     factory_bot (6.5.6)
       activesupport (>= 6.1.0)
