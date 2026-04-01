@@ -5,9 +5,8 @@ plugins:
   - rubocop-rspec_rails
   - rubocop-capybara
   - rubocop-factory_bot
-
-require:
-  - database_validations/rubocop/cops
+  - database_validations:
+      require_path: rubocop-database_validations
 
 inherit_gem:
   pundit: config/rubocop-rspec.yml
