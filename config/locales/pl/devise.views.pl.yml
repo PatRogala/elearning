@@ -132,14 +132,14 @@ pl:
       already_signed_out: Wylogowano pomyślnie.
       new:
         access_your_learning_dashboard: Uzyskaj dostęp do swojej tablicy e-learningowej
-        welcome_back: Witaj ponownie
-        focus_mind: Czego dzisiaj chcesz się nauczyć?
         create_account: Utwórz konto
+        focus_mind: Czego dzisiaj chcesz się nauczyć?
         forgot_your_password: Zapomniałeś hasła?
         new_to_the_system: Nowy użytkownik?
         session: Sesji
         sign_in: Zaloguj się
         system_access_required: Wymagany dostęp do systemu
+        welcome_back: Witaj ponownie
       signed_in: Zalogowano pomyślnie.
       signed_out: Wylogowano pomyślnie.
     shared:
