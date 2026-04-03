@@ -2,5 +2,7 @@
 en:
   courses:
     featured_component:
+      course_stats: Course stats
       cta: Learn more
+      duration_info: "%{duration} hours of content"
       header: Featured course

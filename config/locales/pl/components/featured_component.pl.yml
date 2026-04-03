@@ -2,5 +2,7 @@
 pl:
   courses:
     featured_component:
+      course_stats: Statystyki kursu
       cta: Zacznij naukę!
-      header: Wybrany kurs
+      duration_info: "%{duration} godzin treści"
+      header: Najnowszy kurs
