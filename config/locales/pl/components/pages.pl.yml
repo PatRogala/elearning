@@ -15,4 +15,5 @@ pl:
     projects:
       coming_soon: Wkrótce...
       description: Pracujemy nad nowymi projektami i funkcjami dla platformy. Wkrótce będziesz mógł zobaczyć, nad czym pracujemy i jak możesz się zaangażować w rozwój Szkoleo
-      system_status: 'Status: Inicjalizacja'
+      projects: Projekty
+      title: Praca nad projektami
