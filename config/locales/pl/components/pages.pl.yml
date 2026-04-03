@@ -9,9 +9,12 @@ pl:
       mission: Naszą misją jest zapewnienie dostępu do wiedzy inżynieryjnej dla każdego.
       not_a_product: SZKOLEO TO NIE JEST PRODUKT.
       not_a_product_description: TO INFRASTRUKTURA ROZWOJU.
+      overline: Nasza filozofia
       radical_transparency: RADYKALNA_PRZEJRZYSTOŚĆ
       radical_transparency_description: Brak paywalli na fundamenty. Wierzymy, że podstawowy inżynierii oprogramowania powinny być dostępne dla każdego, jak gwiazdy na niebie. Dzielenie się kodem i wiedzą to podstawa naszej architektury.
       title: Manifest
+      value_1: Zamiłowanie do wiedzy
+      value_2: Dostęp na całe życie
     projects:
       coming_soon: Wkrótce...
       description: Pracujemy nad nowymi projektami i funkcjami dla platformy. Wkrótce będziesz mógł zobaczyć, nad czym pracujemy i jak możesz się zaangażować w rozwój Szkoleo
