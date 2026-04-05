@@ -9,8 +9,9 @@ RSpec.describe Courses::TopCoursesComponent, type: :component do
 
   it "renders the component" do
     render_inline(described_class.new)
-    expect(page).to have_content("Top courses")
-      .and have_content("Browse all modules")
+    expect(page).to have_content("Newest courses")
+      .and have_content("Browse all courses")
       .and have_content("Instructor:")
+      .and have_content("Start learning")
   end
 end

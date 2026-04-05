@@ -2,6 +2,8 @@
 pl:
   courses:
     top_courses_component:
-      browse_all_modules: Przeglądaj wszystkie moduły
+      browse_all_modules: Przeglądaj wszystkie kursy
       instructor: 'Prowadzi:'
-      top_courses: Najlepsze kursy
+      newest_courses: Najnowsze kursy
+      start_learning: Zacznij naukę
+      title: Wybierz swoją ścieżkę
