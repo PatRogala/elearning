@@ -96,6 +96,7 @@ pl:
     registrations:
       destroyed: Twoje konto zostało usunięte.
       edit:
+        profile: Profil
         account_settings: Ustawienia konta
         account_settings_description: Zarządzaj swoimi danymi osobowymi, preferencjami dotyczącymi bezpieczeństwa i widocznością profilu publicznego.
         are_you_sure: Jesteś pewny?
