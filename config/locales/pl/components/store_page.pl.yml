@@ -2,14 +2,24 @@
 pl:
   courses:
     store_page_component:
+      about_the_course: O tym kursie
+      access: Dostęp
+      all_lessons_access: Dostęp do wszystkich lekcji
       buy_access: Kup Dostęp
       certificate: Certyfikat
+      community_access: Dostęp do społeczności
+      exercises_and_tasks: Zadania i ćwiczenia
+      free: Darmowy
       index: Katalog
+      instant_access_guarantee: Natychmiastowy dostęp • Bez karty kredytowej
       instructor: Prowadzący
       investment: Inwestycja w wiedzę
       language: Język
       level: Poziom
       lifetime_access: Dożywotni dostęp • Gwarancja satysfakcji
       program: Program Kursu
+      sign_up_now_for_free: Zapisz się teraz — to nic nie kosztuje
       technologies: 'Technologie w kursie:'
-      yes_pdf: Tak (PDF)
+      what_you_will_learn: Czego się nauczysz
+      what_you_will_receive: Co otrzymujesz
+      yes_pdf: Certyfikat ukończenia (PDF)
