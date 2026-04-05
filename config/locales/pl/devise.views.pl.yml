@@ -108,6 +108,7 @@ pl:
         joined: Z nami od
         leave_blank_if_you_don_t_want_to_change_it: pozostaw puste, jeśli nie chcesz wprowadzać zmian
         notifications: Powiadomienia
+        profile: Profil
         title: Edytuj %{resource}
         unhappy: Niezadowolony
         update: Zapisz zmiany
