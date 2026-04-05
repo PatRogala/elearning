@@ -3,7 +3,5 @@ en:
   courses:
     top_courses_component:
       browse_all_modules: Browse all courses
-      instructor: 'Instructor:'
       newest_courses: Newest courses
-      start_learning: Start learning
       title: Choose your path
