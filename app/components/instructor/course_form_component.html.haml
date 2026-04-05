@@ -4,8 +4,6 @@
   .absolute.rounded-full.pointer-events-none.-right-32{class: "top-[30%] bg-[#f8f4f2] blur-[100px] opacity-80 w-[500px] h-[500px]"}
 
   .max-w-2xl.mx-auto.relative.z-10
-
-    -# --- HEADER ---
     .mb-12.space-y-3
       %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8a7b7e]"}
         = t(".step_1")
@@ -13,7 +11,7 @@
         %span.italic.font-normal{class: "text-[#675458]"}
           = t(".give_your_new_course_a_working_title")
 
-    -# --- FORM ---
+
     = form_with(model: form, url: teach_courses_path, class: "block") do |f|
 
       .p-8.bg-white.mb-6{class: "rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
@@ -32,7 +30,6 @@
           %p.text-sm.leading-relaxed{class: "text-[#8a7b7e]"}
             = t(".helper_text")
 
-      -# --- ACTIONS ---
       .flex.items-center.justify-between
         = link_to teach_dashboard_path, class: "inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-medium transition-all border text-[#8a7b7e] border-[#e9d5d8] bg-white hover:border-[#c9a0a6] hover:text-[#5a2e35] hover:bg-[#fdf6f7] shadow-sm" do
           = t(".cancel")
