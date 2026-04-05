@@ -12,12 +12,4 @@ RSpec.describe Ui::FooterComponent, type: :component do
       .and have_content("Cookie Policy")
       .and have_content("Made with 💖 by Szkoleo")
   end
-
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
 end
