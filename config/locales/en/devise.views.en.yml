@@ -108,6 +108,7 @@ en:
         joined: Joined at
         leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
         notifications: Notifications
+        profile: Profile
         title: Edit %{resource}
         unhappy: Unhappy?
         update: Update
