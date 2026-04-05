@@ -7,10 +7,7 @@ Rails.application.configure do
   config.enable_reloading = false
 
   # Eager load code on boot for better performance and memory savings (ignored by Rake tasks).
-  # Disabled during Docker asset precompilation (SECRET_KEY_BASE_DUMMY=1) so gems that
-  # introspect the DB schema at class load time (e.g. database_validations) don't crash
-  # when no database is available during the build stage.
-  config.eager_load = ENV["SECRET_KEY_BASE_DUMMY"].blank?
+  config.eager_load = true
 
   # Full error reports are disabled.
   config.consider_all_requests_local = false
