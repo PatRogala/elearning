@@ -4,8 +4,6 @@ pl:
     catalog_component:
       all_courses: Wszystkie
       catalog_subtitle: Wybierz ścieżkę
-      filter_label: 'Filtruj:'
-      next: Następna
-      previous: Poprzednia
+      search_placeholder: Szukaj kursów, pojęć lub narzędzi...
       subtitle: Kursów
       title: Katalog

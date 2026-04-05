@@ -4,8 +4,6 @@ en:
     catalog_component:
       all_courses: All
       catalog_subtitle: Choose your path
-      filter_label: 'Filter:'
-      next: Next
-      previous: Previous
+      search_placeholder: Search for courses, concepts, or tools...
       subtitle: Catalog
       title: Courses
