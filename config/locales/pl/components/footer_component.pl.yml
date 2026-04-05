@@ -1,0 +1,15 @@
+---
+pl:
+  ui:
+    footer_component:
+      connect: Nasze social media
+      cookies: Polityka cookies
+      courses: Kursy
+      description: Szkoleo to platforma edukacyjna celująca w udostępnianiu wiedzy dla każdego.
+      explore: Odkrywaj
+      legal: Polityka
+      made_with: "Stworzone z 💖 przez Szkoleo"
+      manifesto: Manifesto
+      privacy: Polityka prywatności
+      projects: Projekty
+      terms: Warunki korzystania z usługi
