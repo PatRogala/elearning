@@ -1,0 +1,15 @@
+---
+en:
+  ui:
+    footer_component:
+      connect: Our social media
+      cookies: Cookie Policy
+      courses: Courses
+      description: Szkoleo is an educational platform focused on sharing knowledge for everyone.
+      explore: Explore
+      legal: Legal
+      made_with: "Made with 💖 by Szkoleo"
+      manifesto: Manifesto
+      privacy: Privacy Policy
+      projects: Projects
+      terms: Terms of Service
