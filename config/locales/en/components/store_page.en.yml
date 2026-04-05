@@ -2,14 +2,24 @@
 en:
   courses:
     store_page_component:
+      about_the_course: About the course
+      access: Access
+      all_lessons_access: All lessons access
       buy_access: Buy Access
       certificate: Certificate
+      community_access: Community access
+      exercises_and_tasks: Exercises and tasks
+      free: Free
       index: Catalog
+      instant_access_guarantee: Instant access • No credit card required
       instructor: Instructor
       investment: Investment in knowledge
       language: Language
       level: Level
       lifetime_access: Lifetime Access • Satisfaction Guarantee
       program: Course Program
+      sign_up_now_for_free: Sign up now — it's free
       technologies: 'Technologies in the course:'
-      yes_pdf: Yes (PDF)
+      what_you_will_learn: What you will learn
+      what_you_will_receive: What you will receive
+      yes_pdf: Completion certificate (PDF)
