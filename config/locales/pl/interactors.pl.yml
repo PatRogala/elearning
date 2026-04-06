@@ -6,3 +6,5 @@ pl:
         blank: Opis kursu nie może być pusty
       image:
         blank: Obraz kursu nie może być pusty
+      short_description:
+        blank: Krótki opis kursu nie może być pusty

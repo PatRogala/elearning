@@ -64,7 +64,8 @@ RSpec.describe "Teach::Courses", type: :request do
 
       context "when course is valid" do
         before do
-          post teach_courses_path, params: { course: { title: "Test Course" } }
+          post teach_courses_path,
+               params: { course: { title: "Test Course" } }
         end
 
         it "redirects to dashboard" do
@@ -95,7 +96,9 @@ RSpec.describe "Teach::Courses", type: :request do
 
     context "when user is teacher" do
       let(:user) { create(:user, first_name: "John", last_name: "Doe") }
-      let(:course) { create(:course, instructor: user, title: "Test Course", id: 1) }
+      let(:course) do
+        create(:course, instructor: user, title: "Test Course", id: 1, short_description: "Test Short Description")
+      end
 
       before do
         allow(user).to receive(:teacher?).and_return(true)
