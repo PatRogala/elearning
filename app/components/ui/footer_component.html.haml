@@ -4,7 +4,8 @@
     .grid.gap-12{class: "grid-cols-1 lg:grid-cols-12 lg:gap-8"}
 
       .flex.flex-col{class: "lg:col-span-5 pr-0 lg:pr-12"}
-        %span.text-2xl.font-light.tracking-wide{class: "text-[#333333]"}
+        %span.text-2xl.font-light.tracking-wide.flex.items-center.gap-2{class: "text-[#333333]"}
+          = image_tag "logo.svg", class: "w-10 h-10", alt: Constants::APPLICATION_NAME
           = Constants::APPLICATION_NAME
         %p.text-sm.leading-relaxed.mt-4.mb-8.max-w-md{class: "text-[#8a7b7e]"}
           = t(".description")
