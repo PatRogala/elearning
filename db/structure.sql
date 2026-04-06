@@ -172,7 +172,8 @@ CREATE TABLE public.courses (
     price_cents integer DEFAULT 0 NOT NULL,
     price_currency character varying DEFAULT 'PLN'::character varying NOT NULL,
     published boolean DEFAULT false NOT NULL,
-    slug character varying
+    slug character varying,
+    short_description text DEFAULT ''::text NOT NULL
 );
 
 
@@ -756,6 +757,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260406074016'),
 ('20260308092741'),
 ('20260308092553'),
 ('20260308091000'),

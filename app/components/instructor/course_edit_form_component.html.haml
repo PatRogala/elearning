@@ -43,6 +43,19 @@
               placeholder: t(".title_placeholder")
 
           .mt-8
+            = f.label :short_description, class: "block font-semibold uppercase tracking-widest mb-3 text-[#cbb3b6]", style: "font-size: 10px" do
+              = t(".short_description")
+            = f.text_area :short_description,
+              class: "block w-full rounded-xl border bg-transparent px-4 py-3 text-sm text-[#333333] border-[#f0e4e6] placeholder:text-[#e9d5d8] focus:outline-none focus:border-[#675458] transition-colors resize-none",
+              rows: 3,
+              maxlength: 255,
+              placeholder: t(".short_description_placeholder")
+            .mt-2.flex.items-start.gap-2
+              = lucide_icon("info", class: "w-4 h-4 mt-0.5 shrink-0 stroke-[1.5] text-[#cbb3b6]")
+              %p.text-xs{class: "text-[#8a7b7e]"}
+                = t(".short_description_hint")
+
+          .mt-8
             = f.label :description, class: "block font-semibold uppercase tracking-widest mb-3 text-[#cbb3b6]", style: "font-size: 10px" do
               = t(".description")
             = f.rich_text_area :description, class: "min-h-[200px] max-w-none lexxy-content"

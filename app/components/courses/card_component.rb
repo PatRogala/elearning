@@ -4,7 +4,7 @@ module Courses
     param :course, Types::Instance(Course)
 
     delegate :title, to: :course
-    delegate :description, to: :course
+    delegate :short_description, to: :course
     delegate :instructor, to: :course
     delegate :image_cover, to: :course
   end

@@ -20,6 +20,9 @@ pl:
       recommended_size: 'Rekomendowany rozmiar: 1280x720 px (16:9) JPG, PNG, WEBP'
       replace_image: Zmień obraz
       save_changes: Zapisz zmiany
+      short_description: Krótki opis
+      short_description_hint: Wyświetlany na kartach kursów i wynikach wyszukiwania. Maks. 255 znaków.
+      short_description_placeholder: Krótko opisz, czego nauczą się studenci...
       status: Status
       title: Tytuł kursu
       title_placeholder: Wpisz tytuł kursu...

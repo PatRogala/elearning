@@ -18,7 +18,7 @@
             = subtitle
 
         %p.text-base.leading-relaxed.mb-10.max-w-md{class: "text-[#8a7b7e]"}
-          = course.description.to_plain_text.truncate(120)
+          = course.short_description
 
         .flex.flex-col.sm:flex-row.items-center.gap-6
           = link_to course_path(course), class: "w-full sm:w-auto flex items-center justify-center px-8 py-4 text-sm font-medium transition-all shadow-sm hover:shadow-md rounded-xl text-white bg-[#675458] hover:bg-[#5a2e35]" do

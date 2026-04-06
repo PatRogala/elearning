@@ -6,7 +6,7 @@ RSpec.describe Courses::CardComponent, type: :component do
     render_inline(described_class.new(course))
 
     expect(page).to have_content(course.title)
-      .and have_content(course.description.to_plain_text.truncate(100))
+      .and have_content(course.short_description)
       .and have_content(course.instructor.full_name)
       .and have_content(course.price.format)
   end
