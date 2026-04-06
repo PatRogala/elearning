@@ -173,7 +173,7 @@ CREATE TABLE public.courses (
     price_currency character varying DEFAULT 'PLN'::character varying NOT NULL,
     published boolean DEFAULT false NOT NULL,
     slug character varying,
-    short_description character varying(255) DEFAULT ''::character varying NOT NULL
+    short_description character varying(255)
 );
 
 

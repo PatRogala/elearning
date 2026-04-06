@@ -17,7 +17,7 @@ class Course < ApplicationRecord
   validates :price_currency, presence: true
   validates :published, inclusion: { in: [true, false] }
   validates :slug, db_uniqueness: true, allow_nil: true
-  validates :short_description, length: { maximum: 255 }, presence: true, allow_blank: true
+  validates :short_description, length: { maximum: 255 }
 
   has_rich_text :description
   has_one_attached :image do |attachable|
