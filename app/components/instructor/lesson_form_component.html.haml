@@ -12,12 +12,19 @@
 
     .mb-12.space-y-3
       %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8a7b7e]"}
-        = t(".new_lesson")
+        - if form.model.persisted?
+          = t(".edit_lesson")
+        - else
+          = t(".new_lesson")
       %h1.text-4xl.font-light.tracking-tight.leading-tight{class: "md:text-5xl text-[#333333]"}
         %span.italic.font-normal{class: "text-[#675458]"}
-          = t(".heading")
+          - if form.model.persisted?
+            = form.model.title.presence || t(".untitled_lesson")
+          - else
+            = t(".heading")
 
-    = form_with(model: form, url: teach_course_lessons_path(course), class: "block space-y-6") do |f|
+    - form_url = form.model.persisted? ? teach_course_lesson_path(course, form.model) : teach_course_lessons_path(course)
+    = form_with(model: form, url: form_url, class: "block space-y-6") do |f|
 
       .p-8.bg-white{class: "rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
 
@@ -42,5 +49,8 @@
           = t(".cancel")
 
         = f.button :submit, class: "group inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-medium transition-all text-white shadow-sm hover:shadow-md bg-[#675458] hover:bg-[#5a2e35]" do
-          = t(".save_lesson")
+          - if form.model.persisted?
+            = t(".save_changes")
+          - else
+            = t(".save_lesson")
           = lucide_icon("arrow-right", class: "w-4 h-4 ml-2 transition-transform group-hover:translate-x-1 stroke-[2]")

@@ -8,5 +8,17 @@ module Instructor
     def create?
       teacher? && record.course.instructor == user
     end
+
+    def edit?
+      teacher? && record.course.instructor == user
+    end
+
+    def update?
+      teacher? && record.course.instructor == user
+    end
+
+    def destroy?
+      teacher? && record.course.instructor == user
+    end
   end
 end

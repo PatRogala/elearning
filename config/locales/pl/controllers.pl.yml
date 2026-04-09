@@ -7,6 +7,8 @@ pl:
       updated: Kurs został zaktualizowany.
     lesson:
       created: Lekcja została utworzona.
+      updated: Lekcja została zaktualizowana.
+      destroyed: Lekcja została usunięta.
     unauthorized: Nie masz uprawnień do wykonania tej akcji.
     user:
       updated: Twoje dane zostały zaktualizowane.

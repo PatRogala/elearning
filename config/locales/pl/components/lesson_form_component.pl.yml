@@ -4,9 +4,12 @@ pl:
     lesson_form_component:
       back_to_course: Wróć do kursu
       new_lesson: Nowa lekcja
+      edit_lesson: Edytuj lekcję
       heading: Dodaj nową lekcję do swojego kursu.
+      untitled_lesson: Lekcja bez tytułu
       lesson_title: Tytuł lekcji
       title_placeholder: np. Wprowadzenie do frameworka
       lesson_content: Treść
       cancel: Anuluj
       save_lesson: Zapisz lekcję
+      save_changes: Zapisz zmiany

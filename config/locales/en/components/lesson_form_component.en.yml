@@ -4,9 +4,12 @@ en:
     lesson_form_component:
       back_to_course: Back to course
       new_lesson: New Lesson
+      edit_lesson: Edit Lesson
       heading: Add a new lesson to your course.
+      untitled_lesson: Untitled Lesson
       lesson_title: Lesson Title
       title_placeholder: e.g. Introduction to the Framework
       lesson_content: Content
       cancel: Cancel
       save_lesson: Save Lesson
+      save_changes: Save Changes
