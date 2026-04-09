@@ -67,25 +67,27 @@
                 = t(".course_programme")
               %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8a7b7e]"}
                 = t(".manage_lessons")
-            %a.inline-flex.items-center.gap-2.px-4.py-2.rounded-xl.text-xs.font-medium.transition-all.text-white{href: "#", class: "bg-[#675458] hover:bg-[#5a2e35] shadow-sm hover:shadow-md"}
+            = link_to new_teach_course_lesson_path(@form.model), class: "inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium transition-all text-white bg-[#675458] hover:bg-[#5a2e35] shadow-sm hover:shadow-md" do
               = lucide_icon("plus", class: "w-4 h-4 stroke-[2]")
               = t(".new_lesson")
 
-          - if false
+          - @form.model.lessons.each do |lesson|
             .space-y-2
               .group.flex.items-center.justify-between.p-4.rounded-xl.border.transition-all{class: "border-[#f0e4e6] hover:border-[#c9a0a6] hover:bg-[#fdf6f7]"}
                 .flex.items-center.gap-4
-                  %span.w-6.h-6.rounded-full.flex.items-center.justify-center.text-xs.font-bold.shrink-0{class: "bg-[#f5e6e8] text-[#675458]"} 01
+                  %span.w-6.h-6.rounded-full.flex.items-center.justify-center.text-xs.font-bold.shrink-0{class: "bg-[#f5e6e8] text-[#675458]"}
+                    = lesson.position
                   .space-y-0.5
-                    %span.text-sm.font-medium{class: "text-[#333333]"} Wprowadzenie do frameworka
+                    %span.text-sm.font-medium{class: "text-[#333333]"}
+                      = lesson.title
                     %span.text-xs{class: "text-[#8a7b7e]"} 12:40
                 .flex.items-center.gap-3.opacity-0.group-hover:opacity-100.transition-opacity
-                  %a.text-xs.font-medium.underline.underline-offset-2.transition-colors{href: "#", class: "text-[#8a7b7e] hover:text-[#5a2e35]"}
+                  = link_to edit_teach_course_lesson_path(@form.model, lesson), class: "text-xs font-medium underline underline-offset-2 transition-colors text-[#8a7b7e] hover:text-[#5a2e35]" do
                     = t(".edit")
-                  %a.text-xs.font-medium.underline.underline-offset-2.transition-colors{href: "#", class: "text-red-400 hover:text-red-600"}
-                    = t(".delete")
+                  -# = button_to teach_course_lesson_path(@form.model, lesson), method: :delete, form: { data: { turbo_confirm: t(".confirm_delete_lesson") } }, class: "text-xs font-medium underline underline-offset-2 transition-colors text-red-400 hover:text-red-600 bg-transparent border-0 p-0 cursor-pointer" do
+                  -#   = t(".delete")
 
-          - if true
+          - if @form.model.lessons.empty?
             .flex.flex-col.items-center.justify-center.text-center.py-16.rounded-2xl.border-2.border-dashed{class: "border-[#f0e4e6] bg-[#fdf6f7]"}
               .w-16.h-16.rounded-full.flex.items-center.justify-center.mb-4{class: "bg-[#f5e6e8]"}
                 = lucide_icon("layout-list", class: "w-7 h-7 stroke-[1.5] text-[#c9a0a6]")
@@ -93,7 +95,7 @@
                 = t(".your_course_is_empty")
               %p.text-xs.mb-6{class: "text-[#8a7b7e]"}
                 = t(".manage_lessons")
-              %a.inline-flex.items-center.gap-2.px-5.py-2.5.rounded-xl.text-xs.font-medium.transition-all.border{href: "#", class: "text-[#675458] border-[#e9d5d8] bg-white hover:border-[#c9a0a6] hover:bg-[#fdf6f7] shadow-sm"}
+              = link_to new_teach_course_lesson_path(@form.model), class: "inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-medium transition-all border text-[#675458] border-[#e9d5d8] bg-white hover:border-[#c9a0a6] hover:bg-[#fdf6f7] shadow-sm" do
                 = lucide_icon("plus", class: "w-4 h-4 stroke-[2]")
                 = t(".create_first_lesson")
 

@@ -31,6 +31,7 @@ Rails.application.routes.draw do
         member do
           patch :publish, as: :publish
         end
+        resources :lessons, only: %i[new create edit update destroy]
       end
     end
   end

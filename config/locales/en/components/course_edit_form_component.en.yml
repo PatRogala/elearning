@@ -6,7 +6,6 @@ en:
       cover_image: Course cover
       create_first_lesson: Create first lesson
       dashboard: Dashboard
-      delete: Delete
       description: Course description
       draft: Draft
       edit: Edit
