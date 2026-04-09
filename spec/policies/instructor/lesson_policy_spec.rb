@@ -22,7 +22,7 @@ RSpec.describe Instructor::LessonPolicy, type: :policy do
     end
   end
 
-  permissions :edit?, :update?, :destroy? do
+  permissions :edit?, :destroy?, :update? do
     before do
       allow(user).to receive(:teacher?).and_return(true)
     end
@@ -37,6 +37,10 @@ RSpec.describe Instructor::LessonPolicy, type: :policy do
     end
 
     context "when user is not a teacher" do
+      before do
+        allow(user).to receive(:teacher?).and_return(false)
+      end
+
       it { is_expected.not_to permit(user, lesson) }
     end
   end

@@ -10,6 +10,13 @@ module Teach
       authorize([:instructor, lesson])
     end
 
+    def edit
+      course = find_course
+      lesson = course.lessons.friendly.find(params[:id])
+      @form = Teach::LessonForm.new(lesson)
+      authorize([:instructor, lesson])
+    end
+
     def create
       course = find_course
       lesson = course.lessons.build(position: next_position(course))
@@ -23,13 +30,6 @@ module Teach
         flash[:alert] = @form.errors.full_messages.join(", ")
         redirect_to new_teach_course_lesson_path(course)
       end
-    end
-
-    def edit
-      course = find_course
-      lesson = course.lessons.friendly.find(params[:id])
-      @form = Teach::LessonForm.new(lesson)
-      authorize([:instructor, lesson])
     end
 
     def update

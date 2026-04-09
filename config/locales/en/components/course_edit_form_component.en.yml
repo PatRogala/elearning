@@ -6,8 +6,6 @@ en:
       cover_image: Course cover
       create_first_lesson: Create first lesson
       dashboard: Dashboard
-      confirm_delete_lesson: Are you sure you want to delete this lesson? This action cannot be undone.
-      delete: Delete
       description: Course description
       draft: Draft
       edit: Edit

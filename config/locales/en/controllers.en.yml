@@ -7,8 +7,8 @@ en:
       updated: Course updated successfully.
     lesson:
       created: Lesson created successfully.
-      updated: Lesson updated successfully.
       destroyed: Lesson deleted.
+      updated: Lesson updated successfully.
     unauthorized: You are not authorized to perform this action.
     user:
       updated: Your profile has been updated successfully.
