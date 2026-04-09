@@ -5,6 +5,8 @@ en:
       created: Course created successfully.
       published: The course has been published.
       updated: Course updated successfully.
+    lesson:
+      created: Lesson created successfully.
     unauthorized: You are not authorized to perform this action.
     user:
       updated: Your profile has been updated successfully.

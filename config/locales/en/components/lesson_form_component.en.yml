@@ -1,0 +1,12 @@
+---
+en:
+  instructor:
+    lesson_form_component:
+      back_to_course: Back to course
+      new_lesson: New Lesson
+      heading: Add a new lesson to your course.
+      lesson_title: Lesson Title
+      title_placeholder: e.g. Introduction to the Framework
+      lesson_content: Content
+      cancel: Cancel
+      save_lesson: Save Lesson
