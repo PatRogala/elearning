@@ -89,13 +89,13 @@ GEM
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.3)
-    avo (3.30.4)
+    avo (3.31.0)
       actionview (>= 6.1)
       active_link_to
       activerecord (>= 6.1)
       activesupport (>= 6.1)
       addressable
-      avo-icons (>= 0.1.1)
+      avo-icons (>= 0.1.2)
       docile
       meta-tags
       pagy (>= 7.0.0, < 43)
