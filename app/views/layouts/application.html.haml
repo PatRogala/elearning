@@ -12,6 +12,7 @@
     %link{:href => "/icon.png", :rel => "icon", :type => "image/png"}/
     %link{:href => "/icon.png", :rel => "apple-touch-icon"}/
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
+    = stylesheet_link_tag "lexxy", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
   %body.bg-white.text-black
     = render Layout::HeaderComponent.new(user: current_user)

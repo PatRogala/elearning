@@ -764,7 +764,7 @@ DEPENDENCIES
   interactor-rails
   jsbundling-rails
   kamal
-  lexxy (~> 0.9.6.beta)
+  lexxy
   logtail-rails
   lookbook
   lucide-rails
