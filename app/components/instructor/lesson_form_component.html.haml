@@ -1,54 +1,50 @@
-.min-h-screen.relative.py-20{class: "px-6 md:px-12 bg-[#faf7f6] font-sans"}
+.min-h-screen.py-20{class: "px-6 md:px-12 bg-white font-sans"}
 
-  .absolute.rounded-full.pointer-events-none.top-0.-left-32{class: "bg-[#f5e6e8] blur-[120px] opacity-60 w-[600px] h-[600px]"}
-  .absolute.rounded-full.pointer-events-none.-right-32{class: "top-[30%] bg-[#f8f4f2] blur-[100px] opacity-80 w-[500px] h-[500px]"}
-
-  .max-w-3xl.mx-auto.relative.z-10
+  .max-w-3xl.mx-auto
 
     .mb-4
-      = link_to edit_teach_course_path(course), class: "group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest transition-colors text-[#8a7b7e] hover:text-[#5a2e35]" do
+      = link_to edit_teach_course_path(course), class: "group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest transition-colors text-[#505a63] hover:text-[#191c1f]" do
         = lucide_icon("arrow-left", class: "w-4 h-4 transition-transform group-hover:-translate-x-1 stroke-[2]")
         = t(".back_to_course")
 
     .mb-12.space-y-3
-      %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8a7b7e]"}
+      %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8d969e]"}
         - if form.model.persisted?
           = t(".edit_lesson")
         - else
           = t(".new_lesson")
-      %h1.text-4xl.font-light.tracking-tight.leading-tight{class: "md:text-5xl text-[#333333]"}
-        %span.italic.font-normal{class: "text-[#675458]"}
-          - if form.model.persisted?
-            = form.model.title.presence || t(".untitled_lesson")
-          - else
-            = t(".heading")
+      %h1.text-4xl.font-medium.tracking-tight.leading-tight{class: "md:text-5xl text-[#191c1f]"}
+        - if form.model.persisted?
+          = form.model.title.presence || t(".untitled_lesson")
+        - else
+          = t(".heading")
 
     - form_url = form.model.persisted? ? teach_course_lesson_path(course, form.model) : teach_course_lessons_path(course)
     = form_with(model: form, url: form_url, class: "block space-y-6") do |f|
 
-      .p-8.bg-white{class: "rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
+      .p-8{class: "rounded-[20px] bg-[#f4f4f4]"}
 
         .mb-8
-          = f.label :title, class: "block font-semibold uppercase tracking-widest mb-4 text-[#cbb3b6]", style: "font-size: 10px" do
+          = f.label :title, class: "block font-semibold uppercase tracking-widest mb-4 text-[#8d969e]", style: "font-size: 10px" do
             = t(".lesson_title")
 
           = f.text_field :title,
-            class: "block w-full text-2xl font-light bg-transparent border-b-2 pb-3 text-[#333333] border-[#f5e6e8] placeholder:text-[#e9d5d8] focus:outline-none focus:border-[#675458] transition-colors",
+            class: "block w-full text-2xl font-medium bg-transparent border-b-2 pb-3 text-[#191c1f] border-[#c9c9cd] placeholder:text-[#c9c9cd] focus:outline-none focus:border-[#191c1f] transition-colors",
             placeholder: t(".title_placeholder"),
             required: true,
             autofocus: true
 
         .mt-8
-          = f.label :content, class: "block font-semibold uppercase tracking-widest mb-4 text-[#cbb3b6]", style: "font-size: 10px" do
+          = f.label :content, class: "block font-semibold uppercase tracking-widest mb-4 text-[#8d969e]", style: "font-size: 10px" do
             = t(".lesson_content")
 
           = f.rich_text_area :content, class: "min-h-[300px] max-w-none lexxy-content"
 
       .flex.items-center.justify-between
-        = link_to edit_teach_course_path(course), class: "inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-medium transition-all border text-[#8a7b7e] border-[#e9d5d8] bg-white hover:border-[#c9a0a6] hover:text-[#5a2e35] hover:bg-[#fdf6f7] shadow-sm" do
+        = link_to edit_teach_course_path(course), class: "inline-flex items-center justify-center rounded-full text-sm font-medium transition-opacity border text-[#191c1f] border-[#191c1f] hover:opacity-70", style: "padding: 14px 32px" do
           = t(".cancel")
 
-        = f.button :submit, class: "group inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-medium transition-all text-white shadow-sm hover:shadow-md bg-[#675458] hover:bg-[#5a2e35]" do
+        = f.button :submit, class: "group inline-flex items-center justify-center rounded-full text-sm font-medium transition-opacity text-white bg-[#191c1f] hover:opacity-85", style: "padding: 14px 32px" do
           - if form.model.persisted?
             = t(".save_changes")
           - else

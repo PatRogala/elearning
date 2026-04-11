@@ -24,3 +24,19 @@ img {
 button {
   @apply cursor-pointer;
 }
+
+/* Dark theme for code blocks */
+:where(.lexxy-content) {
+  code, pre {
+    --lexxy-color-code-token-att: #f92672;
+    --lexxy-color-code-token-comment: #75715e;
+    --lexxy-color-code-token-function: #a6e22e;
+    --lexxy-color-code-token-operator: #f92672;
+    --lexxy-color-code-token-property: #66d9e8;
+    --lexxy-color-code-token-punctuation: #f8f8f2;
+    --lexxy-color-code-token-selector: #e6db74;
+    --lexxy-color-code-token-variable: #fd971f;
+    background-color: #272822 !important;
+    color: #f8f8f2 !important;
+  }
+}

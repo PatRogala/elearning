@@ -1,144 +1,139 @@
-.sticky.z-40.top-0{class: "bg-white/80 backdrop-blur-md border-b border-[#f0e4e6]"}
+.sticky.z-40.top-0{class: "bg-white/80 backdrop-blur-md border-b border-[#c9c9cd]"}
   .max-w-7xl.mx-auto
     .h-16.px-6.flex.items-center.justify-between{class: "md:px-10"}
 
-      = link_to teach_dashboard_path, class: "group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest transition-colors text-[#8a7b7e] hover:text-[#5a2e35]" do
+      = link_to teach_dashboard_path, class: "group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest transition-colors text-[#505a63] hover:text-[#191c1f]" do
         = lucide_icon("arrow-left", class: "w-4 h-4 transition-transform group-hover:-translate-x-1 stroke-[2]")
         = t(".dashboard")
 
       .flex.items-center.gap-3
 
-        %button.inline-flex.items-center.gap-2.px-5.py-2.5.rounded-xl.text-sm.font-medium.transition-all.border{type: "submit", form: "course-edit-form", class: "text-[#675458] border-[#e9d5d8] bg-white hover:border-[#c9a0a6] hover:bg-[#fdf6f7] shadow-sm"}
+        %button.inline-flex.items-center.gap-2.rounded-full.text-sm.font-medium.transition-opacity.border{type: "submit", form: "course-edit-form", class: "text-[#191c1f] border-[#191c1f] bg-transparent hover:opacity-70", style: "padding: 10px 24px"}
           = lucide_icon("save", class: "w-4 h-4 stroke-[1.5]")
           = t(".save_changes")
 
         - unless @form.model.published?
-          = button_to publish_teach_course_path(@form.model), method: :patch, class: "group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-white shadow-sm hover:shadow-md bg-[#675458] hover:bg-[#5a2e35]" do
+          = button_to publish_teach_course_path(@form.model), method: :patch, class: "group inline-flex items-center gap-2 rounded-full text-sm font-medium transition-opacity text-white bg-[#191c1f] hover:opacity-85", style: "padding: 10px 24px" do
             = t(".publish_course")
             = lucide_icon("send", class: "w-4 h-4 stroke-[2] transition-transform group-hover:translate-x-0.5")
 
-.min-h-screen.relative{class: "pt-10 pb-24 px-6 md:px-10 bg-[#faf7f6] font-sans"}
-  .absolute.rounded-full.pointer-events-none.top-0.-left-32{class: "bg-[#f5e6e8] blur-[120px] opacity-50 w-[600px] h-[600px]"}
-  .absolute.rounded-full.pointer-events-none.-right-32{class: "top-[40%] bg-[#f8f4f2] blur-[100px] opacity-70 w-[500px] h-[500px]"}
+.min-h-screen{class: "pt-10 pb-24 px-6 md:px-10 bg-white font-sans"}
 
-  .max-w-7xl.mx-auto.relative.z-10
+  .max-w-7xl.mx-auto
 
     .mb-10.space-y-2
-      %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8a7b7e]"}
+      %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8d969e]"}
         = t(".editing_course")
-      %h1.text-3xl.font-light.tracking-tight{class: "md:text-4xl text-[#333333]"}
-        %span.italic{class: "text-[#675458]"}
-          = @form.model.title.presence || t(".untitled_course")
+      %h1.text-3xl.font-medium.tracking-tight{class: "md:text-4xl text-[#191c1f]"}
+        = @form.model.title.presence || t(".untitled_course")
 
     = form_with(model: @form, url: teach_course_path(@form.model), id: "course-edit-form", class: "grid grid-cols-1 gap-6 lg:grid-cols-12") do |f|
 
       .space-y-6{class: "lg:col-span-8"}
 
-        .p-8.bg-white{class: "rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
+        .p-8{class: "rounded-[20px] bg-[#f4f4f4]"}
           .mb-8
-            = f.label :title, class: "block font-semibold uppercase tracking-widest mb-3 text-[#cbb3b6]", style: "font-size: 10px" do
+            = f.label :title, class: "block font-semibold uppercase tracking-widest mb-3 text-[#8d969e]", style: "font-size: 10px" do
               = t(".title")
             = f.text_field :title,
-              class: "block w-full text-3xl font-light bg-transparent border-b-2 pb-3 text-[#333333] border-[#f5e6e8] placeholder:text-[#e9d5d8] focus:outline-none focus:border-[#675458] transition-colors",
+              class: "block w-full text-3xl font-medium bg-transparent border-b-2 pb-3 text-[#191c1f] border-[#c9c9cd] placeholder:text-[#c9c9cd] focus:outline-none focus:border-[#191c1f] transition-colors",
               placeholder: t(".title_placeholder")
 
           .mt-8
-            = f.label :short_description, class: "block font-semibold uppercase tracking-widest mb-3 text-[#cbb3b6]", style: "font-size: 10px" do
+            = f.label :short_description, class: "block font-semibold uppercase tracking-widest mb-3 text-[#8d969e]", style: "font-size: 10px" do
               = t(".short_description")
             = f.text_area :short_description,
-              class: "block w-full rounded-xl border bg-transparent px-4 py-3 text-sm text-[#333333] border-[#f0e4e6] placeholder:text-[#e9d5d8] focus:outline-none focus:border-[#675458] transition-colors resize-none",
+              class: "block w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#191c1f] border-[#c9c9cd] placeholder:text-[#c9c9cd] focus:outline-none focus:border-[#191c1f] transition-colors resize-none",
               rows: 3,
               maxlength: 255,
               placeholder: t(".short_description_placeholder")
             .mt-2.flex.items-start.gap-2
-              = lucide_icon("info", class: "w-4 h-4 mt-0.5 shrink-0 stroke-[1.5] text-[#cbb3b6]")
-              %p.text-xs{class: "text-[#8a7b7e]"}
+              = lucide_icon("info", class: "w-4 h-4 mt-0.5 shrink-0 stroke-[1.5] text-[#8d969e]")
+              %p.text-xs{class: "text-[#505a63]"}
                 = t(".short_description_hint")
 
           .mt-8
-            = f.label :description, class: "block font-semibold uppercase tracking-widest mb-3 text-[#cbb3b6]", style: "font-size: 10px" do
+            = f.label :description, class: "block font-semibold uppercase tracking-widest mb-3 text-[#8d969e]", style: "font-size: 10px" do
               = t(".description")
             = f.rich_text_area :description, class: "min-h-[200px] max-w-none lexxy-content"
 
-        .p-8.bg-white{class: "rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
+        .p-8{class: "rounded-[20px] bg-[#f4f4f4]"}
           .flex.items-start.justify-between.mb-8
             .space-y-1
-              %h2.text-xl.font-light.tracking-tight{class: "text-[#333333]"}
+              %h2.text-xl.font-medium.tracking-tight{class: "text-[#191c1f]"}
                 = t(".course_programme")
-              %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8a7b7e]"}
+              %p.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8d969e]"}
                 = t(".manage_lessons")
-            = link_to new_teach_course_lesson_path(@form.model), class: "inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium transition-all text-white bg-[#675458] hover:bg-[#5a2e35] shadow-sm hover:shadow-md" do
+            = link_to new_teach_course_lesson_path(@form.model), class: "inline-flex items-center gap-2 rounded-full text-xs font-medium transition-opacity text-white bg-[#191c1f] hover:opacity-85", style: "padding: 10px 20px" do
               = lucide_icon("plus", class: "w-4 h-4 stroke-[2]")
               = t(".new_lesson")
 
           - @form.model.lessons.each do |lesson|
             .space-y-2
-              .group.flex.items-center.justify-between.p-4.rounded-xl.border.transition-all{class: "border-[#f0e4e6] hover:border-[#c9a0a6] hover:bg-[#fdf6f7]"}
+              .group.flex.items-center.justify-between.p-4.rounded-xl.border.transition-colors{class: "border-[#c9c9cd] bg-white hover:border-[#505a63]"}
                 .flex.items-center.gap-4
-                  %span.w-6.h-6.rounded-full.flex.items-center.justify-center.text-xs.font-bold.shrink-0{class: "bg-[#f5e6e8] text-[#675458]"}
+                  %span.w-6.h-6.rounded-full.flex.items-center.justify-center.text-xs.font-bold.shrink-0{class: "bg-[#f4f4f4] text-[#505a63]"}
                     = lesson.position
                   .space-y-0.5
-                    %span.text-sm.font-medium{class: "text-[#333333]"}
+                    %span.text-sm.font-medium{class: "text-[#191c1f]"}
                       = lesson.title
-                    %span.text-xs{class: "text-[#8a7b7e]"} 12:40
+                    %span.text-xs{class: "text-[#8d969e]"} 12:40
                 .flex.items-center.gap-3.opacity-0.group-hover:opacity-100.transition-opacity
-                  = link_to edit_teach_course_lesson_path(@form.model, lesson), class: "text-xs font-medium underline underline-offset-2 transition-colors text-[#8a7b7e] hover:text-[#5a2e35]" do
+                  = link_to edit_teach_course_lesson_path(@form.model, lesson), class: "text-xs font-medium underline underline-offset-2 transition-colors text-[#505a63] hover:text-[#191c1f]" do
                     = t(".edit")
-                  -# = button_to teach_course_lesson_path(@form.model, lesson), method: :delete, form: { data: { turbo_confirm: t(".confirm_delete_lesson") } }, class: "text-xs font-medium underline underline-offset-2 transition-colors text-red-400 hover:text-red-600 bg-transparent border-0 p-0 cursor-pointer" do
-                  -#   = t(".delete")
 
           - if @form.model.lessons.empty?
-            .flex.flex-col.items-center.justify-center.text-center.py-16.rounded-2xl.border-2.border-dashed{class: "border-[#f0e4e6] bg-[#fdf6f7]"}
-              .w-16.h-16.rounded-full.flex.items-center.justify-center.mb-4{class: "bg-[#f5e6e8]"}
-                = lucide_icon("layout-list", class: "w-7 h-7 stroke-[1.5] text-[#c9a0a6]")
-              %p.text-sm.font-medium.mb-1{class: "text-[#333333]"}
+            .flex.flex-col.items-center.justify-center.text-center.py-16.rounded-xl{class: "bg-white border border-[#c9c9cd]"}
+              .w-16.h-16.rounded-full.flex.items-center.justify-center.mb-4{class: "bg-[#f4f4f4]"}
+                = lucide_icon("layout-list", class: "w-7 h-7 stroke-[1.5] text-[#8d969e]")
+              %p.text-sm.font-medium.mb-1{class: "text-[#191c1f]"}
                 = t(".your_course_is_empty")
-              %p.text-xs.mb-6{class: "text-[#8a7b7e]"}
+              %p.text-xs.mb-6{class: "text-[#505a63]"}
                 = t(".manage_lessons")
-              = link_to new_teach_course_lesson_path(@form.model), class: "inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-medium transition-all border text-[#675458] border-[#e9d5d8] bg-white hover:border-[#c9a0a6] hover:bg-[#fdf6f7] shadow-sm" do
+              = link_to new_teach_course_lesson_path(@form.model), class: "inline-flex items-center gap-2 rounded-full text-xs font-medium transition-opacity border text-[#191c1f] border-[#191c1f] hover:opacity-70", style: "padding: 10px 20px" do
                 = lucide_icon("plus", class: "w-4 h-4 stroke-[2]")
                 = t(".create_first_lesson")
 
       .space-y-6{class: "lg:col-span-4"}
 
-        .px-6.py-5.bg-white.flex.items-center.justify-between{class: "rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
-          %span.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8a7b7e]"}
+        .px-6.py-5.flex.items-center.justify-between{class: "rounded-[20px] bg-[#f4f4f4]"}
+          %span.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8d969e]"}
             = t(".status")
           - if @form.model.published?
-            .inline-flex.items-center.gap-1.5.px-3.py-1.rounded-full{class: "bg-green-50 text-green-700"}
-              .w-1.5.h-1.5.rounded-full{class: "bg-green-500"}
+            .inline-flex.items-center.gap-1.5.px-3.py-1.rounded-full{class: "bg-[#00a87e]/10 text-[#00a87e]"}
+              .w-1.5.h-1.5.rounded-full{class: "bg-[#00a87e]"}
               %span.text-xs.font-semibold.uppercase.tracking-widest= t(".published")
           - else
-            .inline-flex.items-center.gap-1.5.px-3.py-1.rounded-full{class: "bg-amber-50 text-amber-700"}
-              .w-1.5.h-1.5.rounded-full{class: "bg-amber-400"}
+            .inline-flex.items-center.gap-1.5.px-3.py-1.rounded-full{class: "bg-[#ec7e00]/10 text-[#ec7e00]"}
+              .w-1.5.h-1.5.rounded-full{class: "bg-[#ec7e00]"}
               %span.text-xs.font-semibold.uppercase.tracking-widest= t(".draft")
 
-        .p-6.bg-white{class: "rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
-          %p.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#cbb3b6]"}
+        .p-6{class: "rounded-[20px] bg-[#f4f4f4]"}
+          %p.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#8d969e]"}
             = t(".cover_image")
 
-          .relative.group.overflow-hidden.rounded-xl.border{class: "aspect-video border-[#f0e4e6]", "data-controller" => "image-preview"}
+          .relative.group.overflow-hidden.rounded-xl.border{class: "aspect-video border-[#c9c9cd]", "data-controller" => "image-preview"}
             = f.file_field :image, class: "hidden", data: { "image-preview-target" => "input", action: "change->image-preview#preview" }, accept: "image/*"
             = image_tag @form.model.image_cover, class: "object-cover w-full h-full transition-all duration-500", data: { "image-preview-target" => "preview" }, alt: t(".cover_image")
 
-            .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity.backdrop-blur-sm{class: "bg-[#333333]/40"}
-              %button.inline-flex.items-center.gap-2.px-4.py-2.rounded-xl.text-xs.font-medium.bg-white.transition-all{type: "button", data: { action: "click->image-preview#trigger" }, class: "text-[#675458] hover:bg-[#fdf6f7]"}
+            .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity.backdrop-blur-sm{class: "bg-[#191c1f]/40"}
+              %button.inline-flex.items-center.gap-2.px-4.py-2.rounded-full.text-xs.font-medium.bg-white.transition-opacity{type: "button", data: { action: "click->image-preview#trigger" }, class: "text-[#191c1f] hover:opacity-70"}
                 = lucide_icon("image", class: "w-4 h-4 stroke-[1.5]")
                 = t(".replace_image")
 
-          %p.mt-3.font-semibold.uppercase.tracking-widest{class: "text-[9px] text-[#cbb3b6]"}
+          %p.mt-3.font-semibold.uppercase.tracking-widest{class: "text-[9px] text-[#8d969e]"}
             = t(".recommended_size")
 
-        .p-6.bg-white{class: "rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)]"}
-          %p.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#cbb3b6]"}
+        .p-6{class: "rounded-[20px] bg-[#f4f4f4]"}
+          %p.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#8d969e]"}
             = t(".price")
 
           .relative.flex.items-stretch
-            .flex.items-center.justify-center.px-4.rounded-l-xl.border-y.border-l{class: "bg-[#f5e6e8] border-[#f0e4e6]"}
-              %span.text-sm.font-bold{class: "text-[#675458]"}= Constants::CURRENCY
-            = f.number_field :price, class: "block w-full rounded-none rounded-r-xl border py-3 px-4 text-base font-medium bg-white focus:ring-0 focus:outline-none transition-colors placeholder:text-[#e9d5d8] border-[#f0e4e6] text-[#333333] focus:border-[#675458]", placeholder: "0.00", step: "0.01", min: "0.00"
+            .flex.items-center.justify-center.px-4.rounded-l-xl.border-y.border-l{class: "bg-white border-[#c9c9cd]"}
+              %span.text-sm.font-bold{class: "text-[#505a63]"}= Constants::CURRENCY
+            = f.number_field :price, class: "block w-full rounded-none rounded-r-xl border py-3 px-4 text-base font-medium bg-white focus:ring-0 focus:outline-none transition-colors placeholder:text-[#c9c9cd] border-[#c9c9cd] text-[#191c1f] focus:border-[#191c1f]", placeholder: "0.00", step: "0.01", min: "0.00"
 
           .mt-3.flex.items-start.gap-2
-            = lucide_icon("info", class: "w-4 h-4 mt-0.5 shrink-0 stroke-[1.5] text-[#cbb3b6]")
-            %p.text-xs{class: "text-[#8a7b7e]"}
+            = lucide_icon("info", class: "w-4 h-4 mt-0.5 shrink-0 stroke-[1.5] text-[#8d969e]")
+            %p.text-xs{class: "text-[#505a63]"}
               = t(".free_course_hint")

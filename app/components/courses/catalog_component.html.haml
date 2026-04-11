@@ -1,34 +1,31 @@
-.min-h-screen.relative.py-20{class: "px-6 md:px-12 lg:py-32 bg-[#faf7f6] font-sans overflow-hidden"}
+.min-h-screen.py-20{class: "px-6 md:px-12 lg:py-32 bg-white font-sans"}
 
-  .absolute.rounded-full.pointer-events-none.-top-40.-left-32{class: "bg-[#f5e6e8] blur-[120px] opacity-60 w-[800px] h-[800px]"}
-  .absolute.rounded-full.pointer-events-none.-right-32{class: "bg-[#f8f4f2] blur-[100px] opacity-80 w-[600px] h-[600px] top-[20%]"}
-
-  .max-w-7xl.mx-auto.relative.z-10
+  .max-w-7xl.mx-auto
 
     .flex.flex-col.items-center.text-center.mb-16
-      %span.block.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#8a7b7e]"}
+      %span.block.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#8d969e]"}
         = t('.catalog_subtitle', default: 'Course Catalog')
 
-      %h1.text-4xl.font-light.tracking-tight.mb-10{class: "md:text-6xl text-[#333333]"}
+      %h1.mb-10{class: "text-4xl md:text-6xl font-medium leading-none text-[#191c1f]", style: "letter-spacing: -0.48px"}
         = t('.title')
-        %span.italic{class: "text-[#675458]"}
+        %span.italic
           = t('.subtitle')
 
       = form_with url: courses_path, method: :get, class: "w-full max-w-2xl relative" do |f|
-        = lucide_icon("search", class: "absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#cbb3b6]")
-        = f.text_field :query, placeholder: t('.search_placeholder'), class: "w-full pl-14 pr-6 py-4 bg-white rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.03)] border border-[#f5e6e8] text-sm text-[#333333] placeholder:text-[#cbb3b6] focus:outline-none focus:border-[#e9d5d8] focus:ring-4 focus:ring-[#f5e6e8]/50 transition-all"
+        = lucide_icon("search", class: "absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#c9c9cd]")
+        = f.text_field :query, placeholder: t('.search_placeholder'), class: "w-full pl-14 pr-6 py-4 bg-[#f4f4f4] rounded-full border-0 text-sm text-[#191c1f] placeholder:text-[#8d969e] focus:outline-none focus:ring-2 focus:ring-[#191c1f]/10 transition-all"
 
     .flex.flex-wrap.items-center.justify-center.gap-3.mb-16
-      %button.px-6.py-2.5.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#675458] text-white shadow-sm hover:bg-[#5a2e35]"}
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#191c1f] text-white px-8 py-3.5 hover:opacity-85"}
         = t('.all_courses')
 
-      %button.px-6.py-2.5.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-white text-[#8a7b7e] hover:text-[#5a2e35] hover:bg-[#f5e6e8] shadow-[0_4px_20px_rgba(0,0,0,0.02)]"}
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#f4f4f4] text-[#191c1f] px-8 py-3.5 hover:opacity-85"}
         Ruby on Rails
 
-      %button.px-6.py-2.5.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-white text-[#8a7b7e] hover:text-[#5a2e35] hover:bg-[#f5e6e8] shadow-[0_4px_20px_rgba(0,0,0,0.02)]"}
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#f4f4f4] text-[#191c1f] px-8 py-3.5 hover:opacity-85"}
         React
 
-      %button.px-6.py-2.5.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-white text-[#8a7b7e] hover:text-[#5a2e35] hover:bg-[#f5e6e8] shadow-[0_4px_20px_rgba(0,0,0,0.02)]"}
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#f4f4f4] text-[#191c1f] px-8 py-3.5 hover:opacity-85"}
         UI/UX
 
     = turbo_frame_tag "courses_grid" do
@@ -37,14 +34,14 @@
           = render Courses::CardComponent.new(course)
 
     .flex.items-center.justify-center.gap-2.mt-20
-      %button.flex.items-center.justify-center.w-10.h-10.rounded-xl.transition-all{disabled: true, class: "bg-white text-[#cbb3b6] cursor-not-allowed shadow-[0_4px_20px_rgba(0,0,0,0.02)]"}
+      %button.flex.items-center.justify-center.w-10.h-10.rounded-full.transition-all{disabled: true, class: "bg-[#f4f4f4] text-[#c9c9cd] cursor-not-allowed"}
         = lucide_icon("chevron-left", class: "w-4 h-4")
 
-      %span.flex.items-center.justify-center.w-10.h-10.rounded-xl.text-sm.font-medium.shadow-sm{class: "bg-[#675458] text-white"}
+      %span.flex.items-center.justify-center.w-10.h-10.rounded-full.text-sm.font-medium{class: "bg-[#191c1f] text-white"}
         1
 
-      %a.flex.items-center.justify-center.w-10.h-10.rounded-xl.text-sm.font-medium.transition-all{href: "#", class: "bg-white text-[#8a7b7e] hover:bg-[#f5e6e8] hover:text-[#5a2e35] shadow-[0_4px_20px_rgba(0,0,0,0.02)]"}
+      %a.flex.items-center.justify-center.w-10.h-10.rounded-full.text-sm.font-medium.transition-all{href: "#", class: "bg-[#f4f4f4] text-[#191c1f] hover:opacity-85"}
         2
 
-      %a.flex.items-center.justify-center.w-10.h-10.rounded-xl.transition-all{href: "#", class: "bg-white text-[#8a7b7e] hover:bg-[#f5e6e8] hover:text-[#5a2e35] shadow-[0_4px_20px_rgba(0,0,0,0.02)]"}
+      %a.flex.items-center.justify-center.w-10.h-10.rounded-full.transition-all{href: "#", class: "bg-[#f4f4f4] text-[#191c1f] hover:opacity-85"}
         = lucide_icon("chevron-right", class: "w-4 h-4")
