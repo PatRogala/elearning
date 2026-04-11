@@ -19,15 +19,15 @@ module Ui
     end
 
     def active_classes
-      "#{base_classes} text-[#5a2e35] border-[#e9d5d8]"
+      "#{base_classes} text-[#191c1f] border-[#191c1f]"
     end
 
     def inactive_classes
-      "#{base_classes} text-[#8a7b7e] border-transparent hover:text-[#5a2e35] hover:border-[#f5e6e8]"
+      "#{base_classes} text-[#505a63] border-transparent hover:text-[#191c1f] hover:border-[#c9c9cd]"
     end
 
     def base_classes
-      "uppercase tracking-widest text-[13px] font-medium pb-1 border-b-2 transition-colors"
+      "text-sm font-medium tracking-wide pb-1 border-b-2 transition-colors"
     end
   end
 end

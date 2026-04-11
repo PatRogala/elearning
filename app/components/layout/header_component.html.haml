@@ -1,6 +1,6 @@
-%header.w-full.flex.items-center.justify-between.px-6.md:px-12.h-24.z-50.relative{class: "bg-[#faf7f6]"}
+%header.w-full.flex.items-center.justify-between.px-6.md:px-12.h-24.z-50.relative{class: "bg-white border-b border-[#c9c9cd]"}
   .flex.items-center.gap-10
-    %a.text-3xl.tracking-normal.transition-opacity.hover:opacity-80.flex.items-center.gap-2{href: "/", class: "text-[#5a2e35]"}
+    %a.text-2xl.font-medium.tracking-tight.transition-opacity.hover:opacity-80.flex.items-center.gap-2{href: "/", class: "text-[#191c1f]"}
       = image_tag "logo.svg", class: "w-10 h-10", alt: Constants::APPLICATION_NAME
       = Constants::APPLICATION_NAME
 
@@ -12,23 +12,23 @@
         = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path)
 
   .flex.items-center.gap-4
-    %form.hidden.lg:flex.items-center.gap-2.rounded-full.px-4.py-2.transition-colors{action: courses_path, method: :get, class: "bg-white border border-[#f5e6e8] hover:border-[#e9d5d8] focus-within:border-[#e9d5d8]"}
-      = lucide_icon("search", class: "w-4 h-4 flex-shrink-0 text-[#8a7b7e]")
-      %input.bg-transparent.outline-none.text-sm.w-80{type: "search", name: "query", placeholder: t(".search_placeholder"), class: "placeholder:text-[#c4b0b3] text-[#5a2e35]"}
+    %form.hidden.lg:flex.items-center.gap-2.rounded-full.px-4.py-2.transition-colors{action: courses_path, method: :get, class: "bg-[#f4f4f4] hover:bg-[#ebebeb] focus-within:bg-[#ebebeb]"}
+      = lucide_icon("search", class: "w-4 h-4 flex-shrink-0 text-[#8d969e]")
+      %input.bg-transparent.outline-none.text-sm.w-80{type: "search", name: "query", placeholder: t(".search_placeholder"), class: "placeholder:text-[#8d969e] text-[#191c1f]"}
 
     - if user
       .relative{"data-controller": "user-menu", "data-action": "click@window->user-menu#close"}
-        %button.overflow-hidden.transition-transform.hover:scale-105.rounded-full{class: "w-10 h-10 ring-2 ring-transparent hover:ring-[#e9d5d8]", "data-action": "click->user-menu#toggle"}
+        %button.overflow-hidden.transition-transform.hover:scale-105.rounded-full{class: "w-10 h-10 ring-2 ring-transparent hover:ring-[#c9c9cd]", "data-action": "click->user-menu#toggle"}
           = image_tag user.avatar_preview, class: "w-full h-full object-cover", alt: user.full_name
 
-        .hidden.absolute.right-0.top-full.mt-3.w-48.rounded-xl.border.overflow-hidden.z-50{class: "bg-white border-[#f5e6e8] shadow-[0_8px_30px_rgba(0,0,0,0.04)]", "data-user-menu-target": "menu"}
-          = link_to t(".profile"), edit_user_registration_path, class: "flex items-center gap-2 px-4 py-3 text-sm transition-colors text-[#5a2e35] hover:bg-[#faf7f6]"
-          .border-t{class: "border-[#f5e6e8]"}
-          = link_to t(".sign_out"), destroy_user_session_path, data: { turbo_method: :delete }, class: "flex items-center gap-2 px-4 py-3 text-sm transition-colors text-[#8a7b7e] hover:bg-[#faf7f6] hover:text-[#5a2e35]"
+        .hidden.absolute.right-0.top-full.mt-3.w-48.rounded-xl.overflow-hidden.z-50{class: "bg-white border border-[#c9c9cd]", "data-user-menu-target": "menu"}
+          = link_to t(".profile"), edit_user_registration_path, class: "flex items-center gap-2 px-4 py-3 text-sm transition-colors text-[#191c1f] hover:bg-[#f4f4f4]"
+          .border-t{class: "border-[#c9c9cd]"}
+          = link_to t(".sign_out"), destroy_user_session_path, data: { turbo_method: :delete }, class: "flex items-center gap-2 px-4 py-3 text-sm transition-colors text-[#505a63] hover:bg-[#f4f4f4] hover:text-[#191c1f]"
 
     - else
-      = link_to t(".sign_in"), new_user_session_path, class: "uppercase tracking-widest text-[13px] font-medium text-[#8a7b7e] hover:text-[#5a2e35] transition-colors"
+      = link_to t(".sign_in"), new_user_session_path, class: "text-sm font-medium tracking-wide text-[#505a63] hover:text-[#191c1f] transition-colors"
 
-      = link_to new_user_registration_path, class: "transition-colors px-6 py-2.5 rounded-full flex items-center gap-2 bg-[#f5e6e8] hover:bg-[#e9d5d8] text-[#5a2e35] text-sm font-medium shadow-sm" do
+      = link_to new_user_registration_path, class: "transition-opacity px-8 py-3.5 rounded-full flex items-center gap-2 bg-[#191c1f] hover:opacity-85 text-white text-sm font-medium" do
         %span= t(".sign_up")
         = lucide_icon("arrow-right", class: "w-4 h-4")

@@ -1,15 +1,15 @@
-%section.relative.w-full.px-6.py-20{class: "md:px-12 lg:py-32 bg-[#faf7f6] font-sans"}
+%section.w-full.px-6.py-20{class: "md:px-12 lg:py-32 bg-[#f4f4f4]"}
   .max-w-7xl.mx-auto
 
     .flex.flex-col.justify-between.gap-6.mb-16{class: "md:flex-row md:items-end"}
       .max-w-2xl
-        %span.block.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#8a7b7e]"}
+        %span.block.text-xs.font-medium.tracking-wide.mb-4{class: "text-[#8d969e]"}
           = t('.newest_courses')
-        %h2.text-4xl.font-light.tracking-tight.leading-tight{class: "md:text-5xl text-[#333333]"}
+        %h2.font-medium.tracking-tight{class: "text-4xl md:text-5xl text-[#191c1f] leading-[1.05]"}
           = t('.title')
 
       %div
-        = link_to courses_path, class: "flex items-center gap-2 text-sm font-medium pb-1 border-b transition-colors text-[#675458] border-[#e9d5d8] hover:border-[#675458]" do
+        = link_to courses_path, class: "flex items-center gap-2 text-sm font-medium pb-1 border-b transition-colors text-[#191c1f] border-[#c9c9cd] hover:border-[#191c1f]" do
           = t('.browse_all_modules')
           = lucide_icon('arrow-right', class: 'w-4 h-4')
 

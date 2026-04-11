@@ -102,11 +102,7 @@ Routes locale-scoped: `/:locale/...`. Default locale Polish (`:pl`). Root → `d
 
 ## Design System
 
-**"The Editorial IDE"** — dark mode (Obsidian background), Ruby Red (`#E0115F`) accents.
-
-- Fonts: Space Grotesk (headlines), Inter (body/labels)
-- **No 1px borders** — use surface layer transitions
-- Buttons, inputs, cards use surface-container layering
+For design see @DESIGN.md
 
 ## Testing Setup
 
