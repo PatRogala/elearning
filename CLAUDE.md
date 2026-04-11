@@ -1,14 +1,14 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+File guides Claude Code (claude.ai/code) for this repo.
 
 ## Project Overview
 
-**Szkoleo** is an MVP e-learning platform built with Ruby on Rails 8.1. It targets tech education (especially Ruby/Rails) with multi-format content: video, text, quizzes, and programming tasks. The differentiator from competitors like Udemy is rich interactive tools.
+**Szkoleo** — MVP e-learning platform, Ruby on Rails 8.1. Target: tech education (Ruby/Rails). Content: video, text, quizzes, programming tasks. Differentiator from Udemy: rich interactive tools.
 
 ## Development Environment
 
-All development runs inside Docker containers managed by `dip`:
+All dev runs in Docker via `dip`:
 
 ```bash
 dip provision          # First-time setup: build images, install gems/packages, prepare DB
@@ -21,7 +21,7 @@ dip psql               # PostgreSQL console
 dip down               # Shutdown all containers
 ```
 
-**First-time setup note**: After `dip provision`, create a MinIO bucket named `default-bucket` at `http://localhost:9001` (credentials: minio/miniodevelopment) for Active Storage to work.
+**First-time setup note**: After `dip provision`, create MinIO bucket named `default-bucket` at `http://localhost:9001` (credentials: minio/miniodevelopment) for Active Storage to work.
 
 Services: PostgreSQL 17, MinIO (S3-compatible storage), Mailcatcher (dev email at localhost:1080).
 
@@ -59,44 +59,44 @@ npm run build:css             # Build Tailwind CSS → app/assets/builds/applica
 ### Key Patterns
 
 **Forms (Reform gem)** — `app/forms/teach/`
-- All instructor-facing mutations go through Reform form objects (not raw model params)
-- `Teach::CourseForm` handles validation and persistence separately from the model
+- Instructor mutations go through Reform form objects (not raw model params)
+- `Teach::CourseForm` handles validation + persistence separate from model
 
 **Interactors** — `app/interactors/`
 - Business logic steps: `result = Courses::Publish.call(course: @course)`
-- Include `Interactor` module, use `context` for passing data
+- Include `Interactor` module, pass data via `context`
 
 **Policies (Pundit)** — `app/policies/`
-- Every controller action is authorized: `authorize @course`
-- Scopes via `policy_scope(Course)`
+- Every controller action authorized: `authorize @course`
+- Scopes: `policy_scope(Course)`
 - Separate policies: `CoursePolicy` (public), `InstructorCoursePolicy` (teach namespace)
 
 **View Components** — `app/components/`
 - UI primitives: `UI::ButtonComponent`, `UI::FlashMessageComponent`, `UI::NavLinkComponent`
-- Preview in development: `/lookbook`
+- Dev preview: `/lookbook`
 
 ### Controller Namespaces
 
 - **Public**: `CoursesController`, `DashboardController`, `PagesController` (HighVoltage static pages)
-- **Teach namespace** (`/teach/`): `Teach::CoursesController`, `Teach::LessonsController` — instructor dashboard, uses Reform forms + interactors
-- **Admin** (`/avo/`): Avo-based admin panel, requires admin role
+- **Teach namespace** (`/teach/`): `Teach::CoursesController`, `Teach::LessonsController` — instructor dashboard, Reform + interactors
+- **Admin** (`/avo/`): Avo admin panel, requires admin role
 
 ### Routing
 
-Routes are locale-scoped: `/:locale/...`. Default locale is Polish (`:pl`). Root path goes to `dashboard#index`. Auth via Devise with a custom registrations controller.
+Routes locale-scoped: `/:locale/...`. Default locale Polish (`:pl`). Root → `dashboard#index`. Auth via Devise + custom registrations controller.
 
 ### Models
 
 - `User` — Devise auth, roles via `UserRole` join table (admin/teacher/developer)
-- `Course` — belongs to instructor (User), has many lessons, uses MoneyRails for pricing, ActionText for rich description
-- `Lesson` — belongs to course, ordered position, rich content via ActionText
+- `Course` — belongs to instructor (User), has many lessons, MoneyRails pricing, ActionText rich description
+- `Lesson` — belongs to course, ordered position, ActionText rich content
 
 ### Tech Stack Notes
 
 - **Asset pipeline**: Propshaft (not Sprockets)
 - **JS**: Bun bundler, Hotwire (Turbo + Stimulus), no heavy frontend framework
 - **CSS**: Tailwind CSS 4.x
-- **Rich text**: ActionText + Trix, with `@37signals/Lexxy` editor
+- **Rich text**: ActionText + Trix, `@37signals/Lexxy` editor
 - **Feature flags**: Flipper gem
 - **Background jobs**: Solid Queue (Rails 8 built-in)
 
@@ -105,14 +105,14 @@ Routes are locale-scoped: `/:locale/...`. Default locale is Polish (`:pl`). Root
 **"The Editorial IDE"** — dark mode (Obsidian background), Ruby Red (`#E0115F`) accents.
 
 - Fonts: Space Grotesk (headlines), Inter (body/labels)
-- **No 1px borders** — use surface layer transitions instead
+- **No 1px borders** — use surface layer transitions
 - Buttons, inputs, cards use surface-container layering
 
 ## Testing Setup
 
-- Framework: RSpec with FactoryBot, Capybara, Shoulda Matchers
-- Acceptance tests: Cucumber
-- Database strategy: DatabaseCleaner with transactions
+- Framework: RSpec + FactoryBot, Capybara, Shoulda Matchers
+- Acceptance: Cucumber
+- DB strategy: DatabaseCleaner with transactions
 - N+1 detection: Prosopite (opt-in per spec)
 - Coverage: SimpleCov
-- Admin/teacher roles are auto-created in test suite setup (`spec/rails_helper.rb`)
+- Admin/teacher roles auto-created in test setup (`spec/rails_helper.rb`)
