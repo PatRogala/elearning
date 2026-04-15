@@ -1,0 +1,48 @@
+%footer.w-full.px-6.pt-20.pb-10{class: "md:px-12 lg:pt-32 bg-white border-t border-[#c9c9cd]"}
+  .max-w-7xl.mx-auto
+
+    .grid.gap-12{class: "grid-cols-1 lg:grid-cols-12 lg:gap-8"}
+
+      .flex.flex-col{class: "lg:col-span-5 pr-0 lg:pr-12"}
+        %span.text-2xl.font-medium.tracking-tight.flex.items-center.gap-2{class: "text-[#191c1f]"}
+          = image_tag "logo.svg", class: "w-10 h-10", alt: Constants::APPLICATION_NAME
+          = Constants::APPLICATION_NAME
+        %p.text-sm.mt-4.mb-8.max-w-md{class: "text-[#505a63] leading-[1.56] tracking-[0.24px]"}
+          = t(".description")
+
+        -# TODO: Add newsletter form
+        -# = form_tag '#', method: :post, class: "relative w-full max-w-sm mt-auto" do
+        -#   %input{type: "email", placeholder: t('.newsletter_placeholder', default: "Join our newsletter"), class: "w-full bg-transparent pb-3 text-sm transition-colors border-b outline-none border-[#c9c9cd] focus:border-[#191c1f] text-[#191c1f] placeholder:text-[#8d969e]"}
+        -#   %button{type: "submit", class: "absolute right-0 top-0 pb-3 transition-colors text-[#8d969e] hover:text-[#191c1f]"}
+        -#     = lucide_icon("arrow-right", class: "w-4 h-4")
+
+      .flex.flex-col{class: "lg:col-span-2"}
+        %h3.text-xs.font-medium.tracking-wide.mb-6{class: "text-[#191c1f]"}
+          = t('.explore')
+        .flex.flex-col.gap-4
+          = link_to t('.courses'), courses_path, class: "text-sm transition-colors text-[#505a63] hover:text-[#191c1f]"
+          = link_to t('.projects'), page_path("projects"), class: "text-sm transition-colors text-[#505a63] hover:text-[#191c1f]"
+          = link_to t('.manifesto'), page_path("manifesto"), class: "text-sm transition-colors text-[#505a63] hover:text-[#191c1f]"
+
+      .flex.flex-col{class: "lg:col-span-2"}
+        %h3.text-xs.font-medium.tracking-wide.mb-6{class: "text-[#191c1f]"}
+          = t('.legal')
+        .flex.flex-col.gap-4
+          = link_to t('.terms', default: 'Terms of Service'), '#', class: "text-sm transition-colors text-[#505a63] hover:text-[#191c1f]"
+          = link_to t('.privacy', default: 'Privacy Policy'), '#', class: "text-sm transition-colors text-[#505a63] hover:text-[#191c1f]"
+          = link_to t('.cookies', default: 'Cookie Policy'), '#', class: "text-sm transition-colors text-[#505a63] hover:text-[#191c1f]"
+
+      .flex.flex-col{class: "lg:col-span-3 lg:items-end"}
+        %h3.text-xs.font-medium.tracking-wide.mb-6{class: "text-[#191c1f]"}
+          = t('.connect')
+        .flex.gap-5
+          = link_to '#', class: "transition-colors text-[#8d969e] hover:text-[#191c1f]" do
+            = lucide_icon("github", class: "w-5 h-5 stroke-[1.5]")
+          = link_to '#', class: "transition-colors text-[#8d969e] hover:text-[#191c1f]" do
+            = lucide_icon("twitter", class: "w-5 h-5 stroke-[1.5]")
+          = link_to '#', class: "transition-colors text-[#8d969e] hover:text-[#191c1f]" do
+            = lucide_icon("linkedin", class: "w-5 h-5 stroke-[1.5]")
+
+    .flex.flex-col.items-center.justify-between.gap-4.mt-20.pt-8.border-t{class: "md:flex-row border-[#c9c9cd]"}
+      %span.text-xs.font-medium.tracking-wide{class: "text-[#8d969e]"}
+        = t('.made_with')

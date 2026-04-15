@@ -1,96 +1,85 @@
-.min-h-screen.relative.overflow-hidden.px-6.md:px-12.py-20.lg:py-32{class: "bg-[#131313]"}
-  .absolute.inset-0.opacity-10.pointer-events-none{class: "bg-[image:radial-gradient(#E5E2E1_1px,transparent_1px)] bg-[size:32px_32px]"}
-  .absolute.rounded-full.pointer-events-none{class: "w-[800px] h-[800px] blur-[200px] -top-64 -right-64 bg-[#E0115F]/10"}
-  .max-w-7xl.mx-auto.relative.z-10
-    .mb-32
-      %span.block.font-mono.uppercase.tracking-widest.mb-8{class: "text-[#E0115F] text-[10px]"}
-        CORE_PRINCIPLES_V1.0.4
+.min-h-screen.px-6.md:px-12.py-20.lg:py-32{class: "bg-white font-sans"}
 
-      %h1.font-black.uppercase.tracking-tighter.leading-none.flex.flex-wrap.mb-12{class: "text-6xl md:text-8xl lg:text-[9vw]"}
-        %span{class: "text-[#E5E2E1]"}
-          = Constants::APPLICATION_NAME
-        %span{class: "text-[#E0115F]"}
+  .max-w-7xl.mx-auto
+
+    .mb-24.md:mb-32
+      %span.block.font-semibold.uppercase.tracking-widest.mb-6{class: "text-[#8d969e] text-[10px]"}
+        = t(".overline")
+
+      %h1.text-5xl.md:text-7xl.font-medium.tracking-tight.mb-8.flex.items-center.gap-5{class: "text-[#191c1f] lg:text-[8vw] leading-[1.0]", style: "letter-spacing: -0.8px"}
+        %span.italic
           = t(".title")
 
-      .flex.flex-col.md:flex-row.md:items-end.justify-between.gap-8
-        %p.text-xl.md:text-2xl.font-medium.uppercase.tracking-tight.max-w-2xl{class: "text-[#E5E2E1]/80"}
-          = t(".mission")
+      %p.text-lg.md:text-2xl.font-normal.leading-relaxed.max-w-3xl{class: "text-[#505a63]"}
+        = t(".mission")
 
-        .flex.flex-col.items-end.font-mono.uppercase.tracking-widest.text-right{class: "text-[#5B3F44] text-[8px] md:text-[9px] leading-relaxed"}
-          %span LATENCY: 0.4MS
-          %span KERNEL_VER: 0X882A
-          %span STATUS: STABLE
-
-    .grid.grid-cols-1.md:grid-cols-2.gap-16.lg:gap-32.mb-32
+    .grid.grid-cols-1.md:grid-cols-2.gap-16.lg:gap-24.mb-24.lg:mb-32
 
       .flex.flex-col
         .flex.items-center.gap-4.mb-6
-          %span.font-black{class: "text-[#E0115F] text-xs"} 01
-          .h-px.flex-1{class: "bg-[#5B3F44]/30"}
+          %span.text-sm.font-medium{class: "text-[#8d969e]"} 01
+          .h-px.flex-1{class: "bg-[#c9c9cd]"}
 
-        %h2.text-2xl.font-black.uppercase.tracking-tighter.mb-2{class: "text-[#E5E2E1]"}
+        %h2.text-2xl.md:text-3xl.font-medium.tracking-tight.mb-4{class: "text-[#191c1f]"}
           = t(".access_without_barriers")
-        %span.block.font-mono.uppercase.tracking-widest.mb-6{class: "text-[#5B3F44] text-[9px]"}
-          SUB_PROTOCOL: EQUITY
 
-        %p.leading-relaxed.font-medium{class: "text-[#E5E2E1]/60 text-sm md:text-base"}
+        %p.leading-relaxed.text-base.md:text-lg{class: "text-[#505a63]"}
           = t(".access_without_barriers_description")
 
-      -# Punkt 02
       .flex.flex-col
         .flex.items-center.gap-4.mb-6
-          %span.font-black{class: "text-[#E0115F] text-xs"} 02
-          .h-px.flex-1{class: "bg-[#5B3F44]/30"}
+          %span.text-sm.font-medium{class: "text-[#8d969e]"} 02
+          .h-px.flex-1{class: "bg-[#c9c9cd]"}
 
-        %h2.text-2xl.font-black.uppercase.tracking-tighter.mb-2{class: "text-[#E5E2E1]"}
+        %h2.text-2xl.md:text-3xl.font-medium.tracking-tight.mb-4{class: "text-[#191c1f]"}
           = t(".radical_transparency")
-        %span.block.font-mono.uppercase.tracking-widest.mb-6{class: "text-[#5B3F44] text-[9px]"}
-          SUB_PROTOCOL: OPEN_SRC
 
-        %p.leading-relaxed.font-medium{class: "text-[#E5E2E1]/60 text-sm md:text-base"}
+        %p.leading-relaxed.text-base.md:text-lg{class: "text-[#505a63]"}
           = t(".radical_transparency_description")
 
-    .max-w-5xl.mx-auto.mb-40
-      .p-8.md:p-12.lg:p-16.shadow-2xl.relative{class: "bg-[#1C1B1B] border-t border-[#5B3F44]/20 shadow-[0_0_80px_rgba(0,0,0,0.6)]"}
-        .absolute.top-8.right-8.hidden.sm:block{class: "text-[#E0115F]"}
-          = lucide_icon("eye")
+    .max-w-5xl.mx-auto.mb-32
+      .p-10.md:p-16.relative{class: "bg-[#f4f4f4] rounded-[1.25rem]"}
+
+        .absolute.top-10.right-10.hidden.sm:block{class: "text-[#c9c9cd]"}
+          = lucide_icon("sparkles", class: "w-6 h-6")
 
         .flex.items-baseline.gap-4.mb-10
-          %span.font-black{class: "text-[#E0115F] text-xs"} 03
-          %h2.text-3xl.md:text-4xl.font-black.uppercase.tracking-tighter{class: "text-[#E5E2E1]"}
+          %span.text-sm.font-medium{class: "text-[#8d969e]"} 03
+          %h2.text-3xl.md:text-4xl.font-medium.tracking-tight{class: "text-[#191c1f]"}
             = t(".focus_on_content")
 
         .grid.grid-cols-1.lg:grid-cols-2.gap-12.items-center
-          %p.leading-relaxed.font-medium{class: "text-[#E5E2E1]/70 text-base md:text-lg"}
+          %p.leading-relaxed.text-base.md:text-lg{class: "text-[#505a63]"}
             = t(".focus_on_content_description")
 
-          -# Okno z fałszywym kodem
-          .p-6.rounded-sm.font-mono.text-xs.leading-relaxed.overflow-x-auto{class: "bg-[#0E0E0E] border border-[#5B3F44]/30"}
-            %div{class: "text-[#E0115F] mb-4"} // OPTIMIZATION_ROUTINE
-            %div{class: "text-[#E5E2E1]"}
-              %span{class: "text-[#E5E2E1]/50"} while
-              (knowledge.gap) {
-            %div.pl-4{class: "text-[#E5E2E1]"}
-              deploy_precision_modules();
-            %div.pl-4{class: "text-[#4ADE80]"}
-              validate_competency(0x1);
-            %div{class: "text-[#E5E2E1]"} }
+          .p-6.rounded-2xl.font-mono.leading-loose.overflow-x-auto{class: "bg-white text-[11px]"}
+            %div{class: "text-[#8d969e] mb-4"}
+            %div{class: "text-[#191c1f]"}
+              %span{class: "text-[#494fdf]"} while
+              (knowledge.expanding) {
+            %div.pl-4{class: "text-[#505a63]"}
+              absorb_concepts();
+            %div.pl-4{class: "text-[#505a63]"}
+              apply_to_reality();
+            %div{class: "text-[#191c1f]"} }
 
-    .border-t.pt-20.pb-12.text-center{class: "border-[#5B3F44]/20"}
+    .border-t.pt-20.pb-12.text-center{class: "border-[#c9c9cd]"}
 
-      %h3.font-black.uppercase.tracking-tighter.mb-2.leading-none{class: "text-[#E5E2E1] text-4xl md:text-5xl lg:text-6xl"}
+      %h3.text-4xl.md:text-5xl.lg:text-6xl.font-medium.tracking-tight.mb-2{class: "text-[#191c1f]", style: "letter-spacing: -0.48px"}
         = t(".not_a_product")
-      %h3.font-black.uppercase.italic.tracking-tighter.leading-none{class: "text-[#E0115F] text-4xl md:text-5xl lg:text-6xl"}
+      %h3.text-4xl.md:text-5xl.lg:text-6xl.font-medium.italic.tracking-tight{class: "text-[#191c1f]", style: "letter-spacing: -0.48px"}
         = t(".not_a_product_description")
 
-      .flex.items-center.justify-center.gap-12.mt-20
+      .flex.items-center.justify-center.gap-12.mt-16
         .flex.flex-col.items-center
-          %span.font-mono.font-bold{class: "text-[#E5E2E1] text-xl md:text-2xl"} 100%
-          %span.font-mono.uppercase.tracking-widest.mt-2{class: "text-[#5B3F44] text-[9px]"} NO_BULLSHIT
+          %span.text-xl.md:text-2xl.font-medium{class: "text-[#191c1f]"} 100%
+          %span.uppercase.tracking-widest.mt-2.font-semibold{class: "text-[#8d969e] text-[10px]"}
+            = t(".value_1")
 
-        .w-px.h-8{class: "bg-[#5B3F44]/30"}
+        .w-px.h-8{class: "bg-[#c9c9cd]"}
 
         .flex.flex-col.items-center
-          %span.font-mono.font-bold{class: "text-[#E5E2E1] text-xl md:text-2xl"}
-            = lucide_icon("infinity")
-          %span.font-mono.uppercase.tracking-widest.mt-2{class: "text-[#5B3F44] text-[9px]"} LIFETIME_ACCESS
+          %span.text-xl.md:text-2xl{class: "text-[#191c1f]"}
+            = lucide_icon("infinity", class: "w-6 h-6 stroke-1")
+          %span.uppercase.tracking-widest.mt-2.font-semibold{class: "text-[#8d969e] text-[10px]"}
+            = t(".value_2")

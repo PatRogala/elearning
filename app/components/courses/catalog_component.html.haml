@@ -1,51 +1,47 @@
-%section.border-b.border-neutral-900.bg-white
-  .max-w-7xl.mx-auto.border-x.border-neutral-900
-    .grid.grid-cols-1.lg:grid-cols-12
+.min-h-screen.py-20{class: "px-6 md:px-12 lg:py-32 bg-white font-sans"}
 
-      .lg:col-span-4.p-6.md:p-12.border-b.lg:border-b-0.lg:border-r.border-neutral-900.flex.flex-col.justify-end
-        %span.block.font-bold.uppercase.text-neutral-400.mb-4{class: "text-[10px] tracking-[0.2em]"}
-          = t('.catalog_subtitle')
-        %h1.text-5xl.lg:text-6xl.font-black.uppercase.tracking-tighter.text-neutral-900{class: "leading-[0.9]"}
-          = t('.title')
-          %br
+  .max-w-7xl.mx-auto
+
+    .flex.flex-col.items-center.text-center.mb-16
+      %span.block.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#8d969e]"}
+        = t('.catalog_subtitle', default: 'Course Catalog')
+
+      %h1.mb-10{class: "text-4xl md:text-6xl font-medium leading-none text-[#191c1f]", style: "letter-spacing: -0.48px"}
+        = t('.title')
+        %span.italic
           = t('.subtitle')
 
-      .lg:col-span-8.flex.flex-col.bg-neutral-50
+      = form_with url: courses_path, method: :get, class: "w-full max-w-2xl relative" do |f|
+        = lucide_icon("search", class: "absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#c9c9cd]")
+        = f.text_field :query, placeholder: t('.search_placeholder'), class: "w-full pl-14 pr-6 py-4 bg-[#f4f4f4] rounded-full border-0 text-sm text-[#191c1f] placeholder:text-[#8d969e] focus:outline-none focus:ring-2 focus:ring-[#191c1f]/10 transition-all"
 
-        = form_with url: courses_path, method: :get, class: "flex-1 flex flex-col", data: { turbo_frame: "courses_grid", turbo_action: "advance" } do |f|
-          .relative.flex-1.flex.items-center.border-b.border-neutral-900
-            %span.absolute.left-6.md:left-12.text-neutral-400
-              %svg.w-8.h-8{fill: "none", stroke: "currentColor", "stroke-width" => "2", viewBox: "0 0 24 24"}
-                %path{d: "M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"}
+    .flex.flex-wrap.items-center.justify-center.gap-3.mb-16
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#191c1f] text-white px-8 py-3.5 hover:opacity-85"}
+        = t('.all_courses')
 
-          .p-6.md:px-12.flex.flex-wrap.items-center.gap-3.bg-white
-            %span.font-bold.uppercase.text-neutral-400.mr-2{class: "text-[10px] tracking-[0.2em]"}
-              = t('.filter_label')
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#f4f4f4] text-[#191c1f] px-8 py-3.5 hover:opacity-85"}
+        Ruby on Rails
 
-            %button.px-3.py-1.border.border-neutral-900.bg-neutral-900.text-white.font-bold.uppercase.tracking-widest.hover:bg-neutral-700.transition-colors{type: "button", class: "text-[10px]"}
-              = t('.all_courses')
-            -# TODO: Add categories
-            %button.px-3.py-1.border.border-neutral-300.text-neutral-500.font-bold.uppercase.tracking-widest.hover:border-neutral-900.hover:text-neutral-900.transition-colors{type: "button", class: "text-[10px]"} Ruby on Rails
-            %button.px-3.py-1.border.border-neutral-300.text-neutral-500.font-bold.uppercase.tracking-widest.hover:border-neutral-900.hover:text-neutral-900.transition-colors{type: "button", class: "text-[10px]"} React
-            %button.px-3.py-1.border.border-neutral-300.text-neutral-500.font-bold.uppercase.tracking-widest.hover:border-neutral-900.hover:text-neutral-900.transition-colors{type: "button", class: "text-[10px]"} UI/UX
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#f4f4f4] text-[#191c1f] px-8 py-3.5 hover:opacity-85"}
+        React
 
-%section.bg-white
-  .max-w-7xl.mx-auto.border-x.border-neutral-900
+      %button.rounded-full.text-sm.font-medium.transition-all{type: "button", class: "bg-[#f4f4f4] text-[#191c1f] px-8 py-3.5 hover:opacity-85"}
+        UI/UX
 
     = turbo_frame_tag "courses_grid" do
-      .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3
+      .grid.grid-cols-1.gap-8{class: "md:grid-cols-2 lg:grid-cols-3"}
         - courses.each do |course|
           = render Courses::CardComponent.new(course)
 
--# TODO: Add pagination
-%section.border-b.border-neutral-900.bg-white
-  .max-w-7xl.mx-auto.border-x.border-neutral-900.p-6.flex.justify-center
-    .flex.items-center.gap-2
-      %button.px-4.py-2.border.border-neutral-200.text-neutral-400.text-xs.font-bold.uppercase.tracking-widest{disabled: true}
-        &larr;
-        = t('.previous')
-      %span.px-4.py-2.bg-neutral-900.text-white.text-xs.font-bold.uppercase.tracking-widest 1
-      %a.px-4.py-2.border.border-neutral-900.text-neutral-900.hover:bg-neutral-100.text-xs.font-bold.uppercase.tracking-widest.transition-colors{href: "#"} 2
-      %a.px-4.py-2.border.border-neutral-900.text-neutral-900.hover:bg-neutral-100.text-xs.font-bold.uppercase.tracking-widest.transition-colors{href: "#"}
-        = t('.next')
-        &rarr;
+    .flex.items-center.justify-center.gap-2.mt-20
+      %button.flex.items-center.justify-center.w-10.h-10.rounded-full.transition-all{disabled: true, class: "bg-[#f4f4f4] text-[#c9c9cd] cursor-not-allowed"}
+        = lucide_icon("chevron-left", class: "w-4 h-4")
+
+      %span.flex.items-center.justify-center.w-10.h-10.rounded-full.text-sm.font-medium{class: "bg-[#191c1f] text-white"}
+        1
+
+      %a.flex.items-center.justify-center.w-10.h-10.rounded-full.text-sm.font-medium.transition-all{href: "#", class: "bg-[#f4f4f4] text-[#191c1f] hover:opacity-85"}
+        2
+
+      %a.flex.items-center.justify-center.w-10.h-10.rounded-full.transition-all{href: "#", class: "bg-[#f4f4f4] text-[#191c1f] hover:opacity-85"}
+        = lucide_icon("chevron-right", class: "w-4 h-4")

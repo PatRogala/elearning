@@ -1,69 +1,28 @@
-.min-h-screen.relative.flex.flex-col.items-center.justify-center.overflow-hidden.px-4.py-12{class: "bg-[#131313]"}
-  .absolute.inset-0.opacity-20.pointer-events-none{class: "bg-[image:radial-gradient(#393939_1px,transparent_1px)] bg-[size:24px_24px]"}
-  .absolute.hidden.xl:block.pointer-events-none.select-none{class: "left-[15%] top-[25%] text-[#E5E2E1]/10 font-mono text-[10px] leading-relaxed"}
-    %pre
-      :plain
-        001  import { monolith } from '@core/auth';
-        002  const session = await monolith.recover();
-        003  // Initializing recovery sequence...
-        004  if (!session) throw new Error('Void');
+.min-h-screen.flex.flex-col.items-center.justify-center.px-4.py-12{class: "bg-[#f4f4f4]"}
 
-  .relative.w-full.max-w-md.z-10
-    .p-8.md:p-12.shadow-2xl{class: "bg-[#1C1B1B] shadow-[0_0_80px_rgba(0,0,0,0.5)] border border-[#5B3F44]/10"}
+  .w-full.max-w-md.bg-white.p-8.md:p-10.border{class: "rounded-[20px] border-[#c9c9cd]"}
 
-      .flex.items-center.gap-3.mb-4
-        %span.w-2.h-2.rounded-full{class: "bg-[#E0115F]"}
-        %span.font-bold.uppercase.tracking-widest{class: "text-[#E5E2E1]/50 text-[10px]"}
-          = t('.system_service')
-
-      %h1.font-black.uppercase.tracking-tighter.mb-4{class: "text-[#E5E2E1] text-4xl md:text-5xl"}
+    .mb-8
+      %h2.text-2xl.font-medium.tracking-tight.mb-1{class: "text-[#191c1f]"}
         = t('.password_reset')
-
-      %p.mb-10.leading-relaxed{class: "text-[#E5E2E1]/70 text-sm md:text-base"}
+      %p.text-sm{class: "text-[#505a63] tracking-[0.24px]"}
         = t('.enter_your_email_to_receive_reset_instructions')
 
-      .mb-6
-        = render "devise/shared/error_messages", resource: resource
+    .mb-6
+      = render "devise/shared/error_messages", resource: resource
 
-      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-8" }) do |f|
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-6" }) do |f|
 
-        .field.group
-          = f.label :email, class: "block font-bold uppercase tracking-widest mb-3 transition-colors group-focus-within:text-[#E0115F] text-[#E5E2E1]/50 text-[10px]"
+      .field.group
+        = f.label :email, class: "block text-xs font-medium tracking-wide mb-2 text-[#8d969e] transition-colors group-focus-within:text-[#191c1f]"
 
-          .relative.border-b.pb-2.transition-colors{class: "border-[#5B3F44]/40 group-focus-within:border-[#E0115F]"}
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@domain.tech", class: "w-full bg-transparent border-0 p-0 pr-8 focus:ring-0 font-mono text-sm tracking-widest text-[#E5E2E1] placeholder:text-[#5B3F44]/40 outline-none"
+        = f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: "name@example.com", class: "w-full border border-[#c9c9cd] rounded-xl px-4 py-3 text-sm text-[#191c1f] placeholder:text-[#8d969e] bg-[#f4f4f4] focus:bg-white focus:border-[#191c1f] focus:ring-4 focus:ring-[#191c1f]/10 transition-all outline-none"
 
-            .absolute.right-0.bottom-2.pointer-events-none.transition-colors{class: "text-[#5B3F44]/50 group-focus-within:text-[#E0115F]"}
-              = lucide_icon("mail", class: "h-5 w-5 stroke-[2] text-[#5B3F44] group-focus-within:text-[#E0115F]")
+      .pt-2
+        %button.w-full.flex.items-center.justify-center.py-3.5.rounded-full.text-white.text-sm.font-medium.transition-opacity{type: "submit", class: "bg-[#191c1f] hover:opacity-85"}
+          = t('.send_recovery_email')
 
-        .pt-4
-          %button.w-full.flex.items-center.justify-center.gap-3.py-4.font-bold.uppercase.tracking-widest.transition-all.rounded-sm{type: "submit", class: "bg-[#E0115F] hover:bg-[#E0115F]/90 text-[#FFF8F8] text-sm shadow-[0_0_15px_rgba(224,17,95,0.15)]"}
-            = t('.send_recovery_email')
-            = lucide_icon("arrow-right", class: "h-4 w-4 stroke-[2] text-[#FFF8F8]")
-
-      .mt-12.pt-6.border-t.flex.items-end.justify-between{class: "border-[#5B3F44]/20"}
-        = link_to new_session_path(resource_name), class: "group flex items-center gap-2 font-mono uppercase tracking-widest transition-opacity hover:opacity-80 text-[#E5E2E1]/50 hover:text-[#E5E2E1] text-[10px]" do
-          %span.transition-transform.group-hover:-translate-x-1 &larr;
-          = t('.go_back_to_login')
-
-        .flex.flex-col.items-end.gap-1
-          .flex.gap-1.opacity-20
-            .w-3.h-3.border{class: "border-[#5B3F44] bg-[#5B3F44]/20"}
-            .w-3.h-3.border{class: "border-[#5B3F44]"}
-            .w-3.h-3.border.ml-2{class: "border-[#5B3F44] bg-[#5B3F44]/20"}
-          .flex.gap-1.opacity-20.mb-1
-            .w-3.h-3.border{class: "border-[#5B3F44]"}
-            .w-3.h-3.border{class: "border-[#5B3F44]"}
-            .w-3.h-3.border{class: "border-[#5B3F44]"}
-          %span.font-mono.uppercase.tracking-widest{class: "text-[#5B3F44] text-[8px]"}
-            ID: 0xFD29...E011
-
-    .mt-8.flex.items-center.justify-center.gap-8.font-mono.uppercase.tracking-widest{class: "text-[#5B3F44] text-[9px]"}
-
-      .flex.items-center.gap-2
-        = lucide_icon("lock", class: "h-3 w-3 stroke-[2] text-[#5B3F44]")
-        %span AES_256_ENC
-
-      .flex.items-center.gap-2
-        = lucide_icon("shield", class: "h-3 w-3 stroke-[2] text-[#5B3F44]")
-        %span SSL_VERIFIED
+  .mt-8
+    = link_to new_session_path(resource_name), class: "group flex items-center gap-1.5 text-sm font-medium transition-colors text-[#505a63] hover:text-[#191c1f]" do
+      = lucide_icon("arrow-left", class: "w-3.5 h-3.5 transition-transform group-hover:-translate-x-1")
+      = t('.go_back_to_login')

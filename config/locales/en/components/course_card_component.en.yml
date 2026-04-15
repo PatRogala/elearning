@@ -4,5 +4,4 @@ en:
     course_card_component:
       draft: Draft
       manage: Manage
-      not_yet_published: Not yet published
       published: Published

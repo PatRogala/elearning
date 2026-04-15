@@ -1,11 +1,11 @@
-%div{class: container_classes, data: { controller: "flash" }, role: "alert"}
-  %div{class: left_indicator_classes}
-  .shrink-0.pl-5.pr-1
-    = lucide_icon(icon_name, class: "h-5 w-5 stroke-[2] #{icon_classes}")
+%div{class: "flex items-center gap-3 px-4 py-3 bg-white border border-[#f5e6e8] rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] #{container_classes}", data: { controller: "flash" }, role: "alert"}
 
-  .flex-1.min-w-0.py-1
-    %p{class: title_classes}
+  .shrink-0.flex.items-center.justify-center.w-8.h-8.rounded-full{class: "bg-[#faf7f6]"}
+    = lucide_icon(icon_name, class: "h-4 w-4 #{icon_classes}")
+
+  .flex-1.min-w-0
+    %p.text-sm.font-medium{class: "text-[#333333]"}
       = message
 
-  %button.shrink-0.p-2.transition-colors.rounded-sm{type: "button", "aria-label" => "Dismiss", "data-action" => "click->flash#dismiss", class: "text-[#E5E2E1]/30 hover:text-[#E5E2E1]/80 hover:bg-[#393939]/50"}
-    = lucide_icon("x", class: "h-4 w-4 stroke-[2]")
+  %button.shrink-0.p-1.5.transition-colors.rounded-full{type: "button", "aria-label" => "Dismiss", "data-action" => "click->flash#dismiss", class: "text-[#cbb3b6] hover:text-[#675458] hover:bg-[#faf7f6]"}
+    = lucide_icon("x", class: "h-4 w-4 stroke-[1.5]")

@@ -8,7 +8,7 @@ Feature: Teacher Course Creation
     When I log in as "teacher@example.com" with password "secret"
     And I visit "the new course page"
     Then I should be on "the new course page"
-    And I should see "Name your course"
+    And I should see "Give your new course a working title."
 
   Scenario: Unauthorized Access (Student)
     Given a user exists with email "student@example.com" and password "secret"

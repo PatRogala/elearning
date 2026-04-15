@@ -1,76 +1,53 @@
-.min-h-screen.relative.flex.flex-col.items-center.justify-center.overflow-hidden.px-6.py-12{class: "bg-[#131313]"}
-  .absolute.inset-0.opacity-20.pointer-events-none{class: "bg-[image:radial-gradient(#393939_1px,transparent_1px)] bg-[size:24px_24px]"}
-  .absolute.w-96.h-96.rounded-full.pointer-events-none{class: "top-1/4 -left-32 bg-[#E0115F]/15 blur-[120px]"}
-  .absolute.hidden.xl:block.pointer-events-none.select-none{class: "right-[15%] top-[30%] text-[#E5E2E1]/10 font-mono text-[10px] leading-relaxed"}
-    %pre
-      :plain
-        01 module Monolith::Auth
-        02   def initialize(key)
-        03     @encrypted_key = encrypt(key)
-        04   end
-        05
-        06   def authenticate!
-        07     Request.post('/v1/session')
-        08   end
-        09 end
+.min-h-screen.flex.flex-col.items-center.justify-start.pt-20.px-4{class: "bg-[#f4f4f4]"}
 
-    .mt-12.text-right{class: "tracking-widest opacity-50"}
-      _BUILD_REF_4092-X
+  .flex.flex-col.items-center.mb-10
+    %p.mt-2.text-sm{class: "text-[#505a63] tracking-[0.24px]"}
+      = t('.access_your_learning_dashboard')
 
-  .relative.w-full.max-w-md.z-10
+  .w-full.max-w-md.bg-white.p-8.md:p-10.border{class: "rounded-[20px] border-[#c9c9cd]"}
 
     .mb-8
-      .flex.items-center.gap-3.mb-4
-        %span.h-px.w-12{class: "bg-[#E0115F]"}
-        %span.font-bold.uppercase.tracking-widest{class: "text-[#E0115F] text-[10px]"}
-          = t('.system_access_required')
+      %h2.text-2xl.font-medium.tracking-tight.mb-1{class: "text-[#191c1f]"}
+        = t('.welcome_back')
+      %p.text-sm{class: "text-[#505a63] tracking-[0.24px]"}
+        = t('.focus_mind')
 
-      %h1.font-black.uppercase.tracking-tighter.leading-none{class: "text-[#E5E2E1] text-4xl md:text-5xl"}
-        = t('.authenticate')
-      %h2.font-black.uppercase.italic.tracking-tighter.leading-none{class: "text-[#E0115F] text-4xl md:text-5xl"}
-        = t('.session')
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-6" }) do |f|
 
-    .p-8.md:p-10.shadow-2xl.mb-8{class: "bg-[#1C1B1B] border-l-4 border-[#E0115F] shadow-[#000000]/50"}
+      .field.group
+        = f.label :email, class: "block text-xs font-medium tracking-wide mb-2 text-[#8d969e] transition-colors group-focus-within:text-[#191c1f]"
 
-      = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-10" }) do |f|
-        .field.group
-          .flex.items-center.justify-between.mb-4
-            = f.label :email, class: "font-bold uppercase tracking-widest transition-colors group-focus-within:text-[#E0115F] text-[#E5E2E1]/50 text-[10px]"
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@example.com", class: "w-full border border-[#c9c9cd] rounded-xl px-4 py-3 text-sm text-[#191c1f] placeholder:text-[#8d969e] bg-[#f4f4f4] focus:bg-white focus:border-[#191c1f] focus:ring-4 focus:ring-[#191c1f]/10 transition-all outline-none"
 
-          .flex.items-end.gap-4.border-b.pb-2.transition-colors{class: "border-[#5B3F44]/40 group-focus-within:border-[#E0115F]"}
-            .shrink-0.pb-1{class: "text-[#5B3F44] group-focus-within:text-[#E0115F]"}
-              = lucide_icon("mail", class: "h-5 w-5 stroke-[2] text-[#5B3F44] group-focus-within:text-[#E0115F]")
+      .field.group
+        .flex.items-center.justify-between.mb-2
+          = f.label :password, class: "block text-xs font-medium tracking-wide text-[#8d969e] transition-colors group-focus-within:text-[#191c1f]"
 
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@monolith.sh", class: "w-full bg-transparent border-0 p-0 focus:ring-0 font-mono text-sm pb-1 text-[#E5E2E1] placeholder:text-[#5B3F44]/50 outline-none"
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            = link_to t('.forgot_your_password', default: 'Forgot Password?'), new_password_path(resource_name), class: "text-xs font-medium text-[#8d969e] hover:text-[#191c1f] transition-colors"
 
-        .field.group
-          .flex.items-center.justify-between.mb-4
-            = f.label :password, class: "font-bold uppercase tracking-widest transition-colors group-focus-within:text-[#E0115F] text-[#E5E2E1]/50 text-[10px]"
+        = f.password_field :password, autocomplete: "current-password", placeholder: "••••••••", class: "w-full border border-[#c9c9cd] rounded-xl px-4 py-3 text-sm tracking-widest text-[#191c1f] placeholder:text-[#8d969e] bg-[#f4f4f4] focus:bg-white focus:border-[#191c1f] focus:ring-4 focus:ring-[#191c1f]/10 transition-all outline-none"
 
-            - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-              = link_to t('.forgot_your_password'), new_password_path(resource_name), class: "font-bold uppercase tracking-widest hover:opacity-80 transition-opacity text-[#E0115F] text-[10px] hover:underline"
+      .pt-2
+        %button.w-full.flex.items-center.justify-center.py-3.5.rounded-full.text-white.text-sm.font-medium.transition-opacity{type: "submit", class: "bg-[#191c1f] hover:opacity-85"}
+          = t('.sign_in')
 
-          .flex.items-end.gap-4.border-b.pb-2.transition-colors{class: "border-[#5B3F44]/40 group-focus-within:border-[#E0115F]"}
-            .shrink-0.pb-1{class: "text-[#5B3F44] group-focus-within:text-[#E0115F]"}
-              = lucide_icon("lock", class: "h-5 w-5 stroke-[2] text-[#5B3F44] group-focus-within:text-[#E0115F]")
+  -# TODO: Add OAuth section
+  -#   .mt-8
+  -#     .relative.flex.items-center.py-2
+  -#       .flex-grow.border-t{class: "border-[#c9c9cd]"}
+  -#       %span.flex-shrink-0.px-4.text-xs.font-medium.tracking-wide{class: "text-[#8d969e]"}
+  -#         = t('.or_continue_with', default: 'Or continue with')
+  -#       .flex-grow.border-t{class: "border-[#c9c9cd]"}
 
-            = f.password_field :password, autocomplete: "current-password", placeholder: "••••••••••••", class: "w-full bg-transparent border-0 p-0 focus:ring-0 font-mono text-sm tracking-widest pb-1 text-[#E5E2E1] placeholder:text-[#5B3F44]/50 outline-none"
-        .pt-2
-          %button.w-full.flex.items-center.justify-center.gap-3.py-4.font-bold.uppercase.tracking-widest.transition-colors.rounded-sm{type: "submit", class: "bg-[#E0115F] hover:bg-[#E0115F]/90 text-[#FFF8F8] text-sm"}
-            = t('.sign_in')
-            = lucide_icon("arrow-right", class: "h-4 w-4 stroke-[2] text-[#FFF8F8]")
+  -#     .flex.gap-4.mt-6
+  -#       %button.flex-1.flex.items-center.justify-center.gap-2.py-2.5.rounded-full.transition-opacity.text-sm.font-medium{class: "bg-[#f4f4f4] hover:opacity-85 text-[#191c1f]"}
+  -#         = lucide_icon("github", class: "w-4 h-4")
+  -#         GitHub
+  -#       %button.flex-1.flex.items-center.justify-center.gap-2.py-2.5.rounded-full.transition-opacity.text-sm.font-medium{class: "bg-[#f4f4f4] hover:opacity-85 text-[#191c1f]"}
+  -#         = lucide_icon("layout-grid", class: "w-4 h-4")
+  -#         Google
 
-      .flex.items-center.justify-between.mt-8.pt-6.border-t{class: "border-[#5B3F44]/20 text-[#5B3F44] text-[9px] font-mono uppercase tracking-widest"}
-        .flex.flex-col.gap-1
-          %span Encryption
-          %span{class: "text-[#E5E2E1]/40"} AES-256-GCM
-        .flex.flex-col.gap-1.text-right
-          %span Gateway
-          %span{class: "text-[#E5E2E1]/40"} EU-CENTRAL-01
-
-    .text-center.flex.flex-col.items-center.gap-4
-      %span{class: "text-[#E5E2E1]/50 text-xs font-medium"}
-        = t('.new_to_the_system')
-      = link_to new_registration_path(resource_name), class: "flex items-center gap-2 font-bold uppercase tracking-widest hover:opacity-80 transition-opacity text-[#E5E2E1] text-sm" do
-        = t('.create_account')
-        = lucide_icon("arrow-right", class: "h-4 w-4 stroke-[2] text-[#E5E2E1]")
+  -# .mt-6.text-sm{class: "text-[#505a63]"}
+  -#   = t('.dont_have_account', default: "Don't have an account?")
+  -#   = link_to t('.sign_up', default: "Sign up"), new_registration_path(resource_name), class: "font-medium transition-colors hover:underline ml-1 text-[#191c1f]"

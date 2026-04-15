@@ -5,6 +5,7 @@ module Teach
 
     property :title
     property :description
+    property :short_description
     property :image, virtual: true
     property :price, virtual: true
 

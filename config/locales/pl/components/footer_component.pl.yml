@@ -1,20 +1,15 @@
 ---
 pl:
-  layout:
+  ui:
     footer_component:
-      about_us: O nas
-      all_courses: Wszystkie Kursy
-      all_rights_reserved: Wszelkie prawa zastrzeżone
-      career: Kariera
-      company: Firma
-      contact: Kontakt
-      description: Platforma edukacyjna dla inżynierów oprogramowania. Zero lania wody, tylko architektura, kod i twarde dane.
-      for_companies: Dla Firm
-      github: GitHub
-      linkedin: LinkedIn
-      manifest: Manifest
-      network: Sieć
-      platform: Platforma
-      privacy_policy: Polityka Prywatności
-      regulations: Regulamin
-      twitter: Twitter / X
+      connect: Nasze social media
+      cookies: Polityka cookies
+      courses: Kursy
+      description: Szkoleo to platforma edukacyjna celująca w udostępnianiu wiedzy dla każdego.
+      explore: Odkrywaj
+      legal: Polityka
+      made_with: "Stworzone z 💖 przez Szkoleo"
+      manifesto: Manifesto
+      privacy: Polityka prywatności
+      projects: Projekty
+      terms: Warunki korzystania z usługi

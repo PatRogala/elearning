@@ -1,19 +1,13 @@
 - if resource.errors.any?
-  #error_explanation{"data-turbo-cache" => "false", class: "mb-8 p-6 bg-[#1C1B1B] border-l-[3px] border-[#E48787] shadow-[0_0_30px_-5px_rgba(228,135,135,0.1)] rounded-sm relative overflow-hidden"}
-    .absolute.inset-0.opacity-5.pointer-events-none{class: "bg-[image:repeating-linear-gradient(45deg,transparent,transparent_10px,#E48787_10px,#E48787_20px)]"}
+  #error_explanation{"data-turbo-cache" => "false", class: "mb-6 p-5 rounded-xl border bg-white border-[#e23b4a]/20"}
+    .flex.items-center.gap-2.5.mb-3
+      .shrink-0
+        = lucide_icon("triangle-alert", class: "h-4 w-4 text-[#e23b4a]")
 
-    .relative.z-10
-      .flex.items-center.gap-3.mb-4
-        .shrink-0{class: "text-[#E48787]"}
-          = lucide_icon("triangle-alert", class: "h-5 w-5 stroke-[2] text-[#E48787]")
+      %h2.font-medium.tracking-wide.leading-snug.text-xs{class: "text-[#e23b4a]"}
+        = I18n.t("errors.messages.not_saved", count: resource.errors.count, resource: devise_i18n_fix_model_name_case(resource.model_name.human, i18n_key: 'errors.messages.not_saved'))
 
-        %h2.text-xs.font-bold.uppercase.tracking-widest.leading-snug{class: "text-[#E48787]"}
-          System Error:
-          = I18n.t("errors.messages.not_saved", count: resource.errors.count, resource: devise_i18n_fix_model_name_case(resource.model_name.human, i18n_key: 'errors.messages.not_saved'))
-
-      %ul.flex.flex-col.gap-2.mt-2.pl-8
-        - resource.errors.full_messages.each do |message|
-          %li.text-xs.flex.items-start.font-mono{class: "text-[#E5E2E1]/70 tracking-tight"}
-            %span.mr-3.font-black{class: "text-[#E48787] select-none"} >
-            %span
-              = message
+    %ul.flex.flex-col.gap-1.5.pl-6
+      - resource.errors.full_messages.each do |message|
+        %li.text-sm.list-disc.list-outside{class: "text-[#505a63] marker:text-[#e23b4a]"}
+          = message

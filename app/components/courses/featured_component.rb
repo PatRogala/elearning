@@ -8,7 +8,7 @@ module Courses
     end
 
     def before_render
-      @course = Course.published.first
+      @course = Course.published.recent.first
     end
 
     def title

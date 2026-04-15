@@ -3,16 +3,27 @@ en:
   instructor:
     course_edit_form_component:
       course_programme: Course programme
+      cover_image: Course cover
       create_first_lesson: Create first lesson
       dashboard: Dashboard
+      description: Course description
       draft: Draft
+      edit: Edit
+      editing_course: Editing course
+      free_course_hint: Set to 0 to make this course free.
       manage_lessons: Manage lessons
       new_lesson: New lesson
+      price: Price
       publish_course: Publish course
       published: Published
       recommended_size: 'Recommended size: 1280x720px JPG, PNG, WEBP'
       replace_image: Replace image
       save_changes: Save changes
+      short_description: Short description
+      short_description_hint: Shown on course cards and search results. Max 255 characters.
+      short_description_placeholder: Briefly describe what students will learn...
       status: Status
+      title: Course title
       title_placeholder: Enter course title...
-      your_course_is_empty: Your course is empty
+      untitled_course: Untitled course
+      your_course_is_empty: Your course is empty.

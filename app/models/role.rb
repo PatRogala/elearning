@@ -7,7 +7,7 @@ class Role < ApplicationRecord
   has_many :user_roles, dependent: :delete_all
   has_many :users, through: :user_roles
 
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, db_uniqueness: { index_name: :index_roles_lower_name_, case_sensitive: false }
 
   def self.admin
     find(ADMIN_ID)

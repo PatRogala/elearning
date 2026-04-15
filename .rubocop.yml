@@ -5,6 +5,8 @@ plugins:
   - rubocop-rspec_rails
   - rubocop-capybara
   - rubocop-factory_bot
+  - database_validations:
+      require_path: rubocop-database_validations
 
 inherit_gem:
   pundit: config/rubocop-rspec.yml
@@ -27,11 +29,13 @@ Metrics/MethodLength:
   CountAsOne: ['array', 'hash', 'heredoc', 'method_call']
   Exclude:
     - 'db/migrate/*'
+  Max: 15
 
 Metrics/BlockLength:
   CountAsOne: ['array', 'hash', 'heredoc', 'method_call']
   Exclude:
     - 'config/**/*.rb'
+    
 
 # It is legacy and will be removed in future versions of RSpec Rails
 RSpecRails/InferredSpecType:
@@ -45,3 +49,7 @@ RSpec/NestedGroups:
 
 Metrics/AbcSize:
   Max: 25
+
+DatabaseValidations/BelongsTo:
+  Exclude:
+    - 'db/migrate/*'

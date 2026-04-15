@@ -6,6 +6,7 @@ module Courses
     def call
       context.fail!(message: I18n.t("courses.validation.image.blank")) unless course.image.attached?
       context.fail!(message: I18n.t("courses.validation.description.blank")) if course.description.blank?
+      context.fail!(message: I18n.t("courses.validation.short_description.blank")) if course.short_description.blank?
 
       course.update!(published: true)
     end

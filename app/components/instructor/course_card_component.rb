@@ -6,7 +6,7 @@ module Instructor
     attr_reader :course
 
     delegate :published?, to: :course
-    delegate :description, to: :course
+    delegate :short_description, to: :course
 
     def students_count
       50 # TODO: implement

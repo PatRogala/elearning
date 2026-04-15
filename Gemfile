@@ -88,7 +88,7 @@ gem "reform-rails"
 gem "pundit"
 
 # Lexxy as a new editor for action text
-gem "lexxy", "~> 0.9.0.beta"
+gem "lexxy"
 
 # Validations for storage objects
 gem "active_storage_validations"
@@ -113,6 +113,9 @@ gem "flipper-active_record"
 
 # Highvoltage for static pages
 gem "high_voltage"
+
+# Database validations for consistency and better performance
+gem "database_validations"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

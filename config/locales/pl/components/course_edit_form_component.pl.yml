@@ -3,16 +3,27 @@ pl:
   instructor:
     course_edit_form_component:
       course_programme: Program kursu
+      cover_image: Okładka kursu
       create_first_lesson: Utwórz pierwszą lekcję
       dashboard: Wróć do panelu
+      description: Opis kursu
       draft: Szkic
+      edit: Edytuj
+      editing_course: Edytujesz kurs
+      free_course_hint: Ustaw 0, aby kurs był bezpłatny.
       manage_lessons: Zarządzaj lekcjami
       new_lesson: Nowa lekcja
+      price: Cena
       publish_course: Opublikuj kurs
       published: Opublikowany
       recommended_size: 'Rekomendowany rozmiar: 1280x720 px (16:9) JPG, PNG, WEBP'
       replace_image: Zmień obraz
       save_changes: Zapisz zmiany
+      short_description: Krótki opis
+      short_description_hint: Wyświetlany na kartach kursów i wynikach wyszukiwania. Maks. 255 znaków.
+      short_description_placeholder: Krótko opisz, czego nauczą się studenci...
       status: Status
-      title_placeholder: WPISZ TYTUŁ KURSU...
+      title: Tytuł kursu
+      title_placeholder: Wpisz tytuł kursu...
+      untitled_course: Kurs bez tytułu
       your_course_is_empty: Twój kurs to na razie czysta karta.

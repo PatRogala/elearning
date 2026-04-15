@@ -6,3 +6,5 @@ en:
         blank: Course description cannot be blank
       image:
         blank: Cover image cannot be blank
+      short_description:
+        blank: Short description cannot be blank

@@ -6,17 +6,18 @@ class Course < ApplicationRecord
   scope :unpublished, -> { where(published: false) }
   scope :recent, -> { order(created_at: :desc) }
 
-  belongs_to :instructor, class_name: "User"
+  db_belongs_to :instructor, class_name: "User"
   has_many :lessons, dependent: :destroy
 
   validates :title, presence: true
-  validates :title, uniqueness: { scope: :instructor_id }
+  validates :title, db_uniqueness: { scope: :instructor_id }
   validates :image, content_type: ACCEPTED_IMAGE_CONTENT_TYPES
   validates :image, size: { less_than_or_equal_to: 5.megabytes }
   validates :price_cents, presence: true
   validates :price_currency, presence: true
   validates :published, inclusion: { in: [true, false] }
-  validates :slug, uniqueness: true, allow_nil: true
+  validates :slug, db_uniqueness: true, allow_nil: true
+  validates :short_description, length: { maximum: 255 }
 
   has_rich_text :description
   has_one_attached :image do |attachable|
