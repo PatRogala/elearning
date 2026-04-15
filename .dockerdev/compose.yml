@@ -25,7 +25,7 @@ x-backend: &backend
     - node_modules:/${PWD}/node_modules
     - bun_cache:/usr/local/bun/install
     - history:/usr/local/hist
-    - localhost_certs:/root/.local/state/localhost.rb
+    - ${HOME}/.local/state/localhost.rb:/root/.local/state/localhost.rb:cached
     - claude:/root/.claude
     - ./.claude.json:/root/.claude.json
     - ./.psqlrc:/root/.psqlrc:ro
@@ -57,7 +57,7 @@ services:
     <<: *backend
     command: falcon serve
     ports:
-      - '9292:9292'
+      - '3000:3000'
     depends_on:
       mailcatcher:
         condition: service_started
@@ -119,6 +119,5 @@ volumes:
   postgres:
   assets:
   claude:
-  localhost_certs:
   minio_data:
 

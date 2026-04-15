@@ -81,6 +81,6 @@ COPY --chown=rails:rails --from=build /rails /rails
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Start server via Thruster by default, this can be overwritten at runtime
-EXPOSE 80
-CMD ["./bin/thrust", "./bin/rails", "server"]
+# Start server via Falcon. TLS is terminated by Kamal proxy (Let's Encrypt).
+EXPOSE 3000
+CMD ["bundle", "exec", "falcon", "serve"]

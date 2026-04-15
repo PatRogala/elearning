@@ -79,6 +79,7 @@ provision:
   - dip bundle check || dip bundle install
   - dip bun install --frozen-lockfile
   - dip bash -c "bundle exec bake localhost:install"
+  - '[[ "$(uname)" == "Darwin" ]] && security add-trusted-cert -d -r trustRoot -k ~/Library/Keychains/login.keychain-db "${HOME}/.local/state/localhost.rb/localhost.crt" 2>/dev/null && echo "✓ localhost certificate trusted in macOS Keychain" || echo "ℹ️  On Linux: run update-ca-certificates manually if needed"'
   - dip rails db:prepare
   - dip rails db:test:prepare
   - echo "🚀 Ready to rock! Run 'dip rails s' to start a Rails web server or 'dip rails test' to run tests."
