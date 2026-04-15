@@ -1,72 +1,69 @@
-.min-h-screen.relative.py-20{class: "px-6 md:px-12 lg:py-32 bg-[#faf7f6] font-sans"}
+.min-h-screen.py-20{class: "px-6 md:px-12 lg:py-32 bg-[#f4f4f4] font-sans"}
 
-  .absolute.rounded-full.pointer-events-none.top-0.-left-32{class: "bg-[#f5e6e8] blur-[120px] opacity-60 w-[600px] h-[600px]"}
-  .absolute.rounded-full.pointer-events-none.bottom-0.-right-32{class: "bg-[#f8f4f2] blur-[100px] opacity-80 w-[500px] h-[500px]"}
-
-  .max-w-6xl.mx-auto.relative.z-10
+  .max-w-6xl.mx-auto
 
     .mb-16
-      %h1.text-4xl.font-light.tracking-tight.mb-3{class: "md:text-5xl text-[#333333]"}
+      %h1.font-medium.tracking-tight.mb-3{class: "text-[2.5rem] md:text-[3rem] leading-tight text-[#191c1f] font-display"}
         = t('.account_settings')
-      %p.text-sm.leading-relaxed.max-w-xl{class: "text-[#8a7b7e]"}
+      %p.text-base.leading-relaxed.max-w-xl{class: "text-[#505a63] tracking-[0.24px]"}
         = t('.account_settings_description')
 
     .grid.gap-12{class: "grid-cols-1 lg:grid-cols-12 lg:gap-16"}
 
       .space-y-8{class: "lg:col-span-3"}
         %nav.flex.flex-col.gap-2
-          %a.group.flex.items-center.justify-between.px-5.py-3.5.transition-colors{href: "#", class: "bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] text-[#5a2e35]"}
+          %a.flex.items-center.justify-between.px-5.py-3.5.bg-white.transition-colors{href: "#", class: "rounded-xl text-[#191c1f]"}
             %span.text-xs.font-semibold.uppercase.tracking-widest
               = t('.profile')
-            = lucide_icon("chevron-right", class: "w-4 h-4 text-[#cbb3b6]")
+            = lucide_icon("chevron-right", class: "w-4 h-4 text-[#8d969e]")
 
-          %a.group.flex.items-center.justify-between.px-5.py-3.5.transition-colors{href: "#", class: "rounded-2xl text-[#8a7b7e] hover:bg-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:text-[#5a2e35]"}
+          %a.flex.items-center.justify-between.px-5.py-3.5.transition-colors{href: "#", class: "rounded-xl text-[#505a63] hover:bg-white hover:text-[#191c1f]"}
             %span.text-xs.font-semibold.uppercase.tracking-widest
               = t('.notifications')
 
-        .p-6.bg-white{class: "rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.02)] border border-[#f5e6e8]"}
-          %span.block.font-semibold.uppercase.tracking-widest.mb-2{class: "text-[10px] text-[#cbb3b6]"}
+        .p-6.bg-white{class: "rounded-xl border border-[#c9c9cd]"}
+          %span.block.font-semibold.uppercase.tracking-widest.mb-2{class: "text-[10px] text-[#8d969e]"}
             = t('.joined')
-          %span.block.text-sm.font-medium{class: "text-[#333333]"}
+          %span.block.text-sm.font-medium{class: "text-[#191c1f]"}
             = @user.created_at.strftime("%B %Y")
 
       .lg:col-span-9
-        .bg-white.p-8{class: "md:p-12 rounded-[2.5rem] shadow-[0_8px_40px_rgba(0,0,0,0.03)]"}
+        .bg-white.p-8{class: "md:p-12 rounded-[20px]"}
           = form_for(@user, html: { class: "space-y-10" }) do |f|
 
             .flex.flex-col.gap-10{class: "md:flex-row md:items-start"}
               .flex.flex-col.items-center.gap-4{data: {controller: "image-preview"}}
-                .relative.group.w-32.h-32.rounded-full.overflow-hidden.cursor-pointer.transition-transform{class: "bg-[#f5e6e8] hover:scale-105 shadow-sm", data: {action: "click->image-preview#trigger"}}
+                .relative.group.w-32.h-32.rounded-full.overflow-hidden.cursor-pointer.transition-transform{class: "bg-[#f4f4f4] hover:scale-105", data: {action: "click->image-preview#trigger"}}
                   = image_tag @user.avatar_preview, class: "w-full h-full object-cover transition-all duration-500 group-hover:blur-sm", data: {"image-preview-target": "preview"}
 
-                  .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-white/30 backdrop-blur-sm"}
-                    = lucide_icon("camera", class: "w-6 h-6 text-[#5a2e35]")
+                  .absolute.inset-0.flex.items-center.justify-center.opacity-0.group-hover:opacity-100.transition-opacity{class: "bg-black/20"}
+                    = lucide_icon("camera", class: "w-6 h-6 text-white")
 
                 = f.file_field :avatar, class: "hidden", accept: "image/*", data: {"image-preview-target": "input", action: "change->image-preview#preview"}
 
-                %span.uppercase.tracking-widest.font-semibold.text-center{class: "text-[#cbb3b6] text-[10px]"}
+                %span.uppercase.tracking-widest.font-semibold.text-center{class: "text-[#8d969e] text-[10px]"}
                   = t('.avatar_helper_text')
 
               .flex-grow.space-y-6.w-full
                 .grid.gap-6{class: "grid-cols-1 sm:grid-cols-2"}
                   .group
-                    = f.label :first_name, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 transition-colors text-[#8a7b7e] group-focus-within:text-[#675458]"
-                    = f.text_field :first_name, class: "w-full border border-transparent rounded-xl px-4 py-3 text-sm text-[#333333] placeholder:text-[#cbb3b6] outline-none transition-all focus:bg-white focus:border-[#e9d5d8] focus:ring-4 focus:ring-[#f5e6e8]/50 bg-[#faf7f6]/50"
+                    = f.label :first_name, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 text-[#505a63] group-focus-within:text-[#191c1f] transition-colors"
+                    = f.text_field :first_name, class: "w-full border border-[#c9c9cd] rounded-xl px-4 py-3 text-sm text-[#191c1f] placeholder:text-[#8d969e] outline-none transition-all bg-white focus:border-[#191c1f] focus:ring-2 focus:ring-[#191c1f]/10"
 
                   .group
-                    = f.label :last_name, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 transition-colors text-[#8a7b7e] group-focus-within:text-[#675458]"
-                    = f.text_field :last_name, class: "w-full border border-transparent rounded-xl px-4 py-3 text-sm text-[#333333] placeholder:text-[#cbb3b6] outline-none transition-all focus:bg-white focus:border-[#e9d5d8] focus:ring-4 focus:ring-[#f5e6e8]/50 bg-[#faf7f6]/50"
+                    = f.label :last_name, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 text-[#505a63] group-focus-within:text-[#191c1f] transition-colors"
+                    = f.text_field :last_name, class: "w-full border border-[#c9c9cd] rounded-xl px-4 py-3 text-sm text-[#191c1f] placeholder:text-[#8d969e] outline-none transition-all bg-white focus:border-[#191c1f] focus:ring-2 focus:ring-[#191c1f]/10"
 
                 .group
-                  = f.label :email, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 transition-colors text-[#8a7b7e]"
-                  = f.email_field :email, disabled: true, class: "w-full rounded-xl px-4 py-3 text-sm outline-none cursor-not-allowed text-[#8a7b7e] bg-[#faf7f6]"
-                  %p.mt-2.font-medium{class: "text-[#cbb3b6] text-[10px]"}
+                  = f.label :email, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 text-[#505a63]"
+                  = f.email_field :email, disabled: true, class: "w-full rounded-xl px-4 py-3 text-sm outline-none cursor-not-allowed text-[#8d969e] bg-[#f4f4f4] border border-[#c9c9cd]"
+                  %p.mt-2.font-medium{class: "text-[#8d969e] text-[10px]"}
                     = t('.email_helper_text')
 
             .group
-              = f.label :bio, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 transition-colors text-[#8a7b7e] group-focus-within:text-[#675458]"
-              = f.text_area :bio, rows: 4, class: "w-full border border-transparent rounded-xl px-4 py-3 text-sm text-[#333333] placeholder:text-[#cbb3b6] outline-none transition-all resize-none focus:bg-white focus:border-[#e9d5d8] focus:ring-4 focus:ring-[#f5e6e8]/50 bg-[#faf7f6]/50"
+              = f.label :bio, class: "block text-[10px] font-semibold uppercase tracking-widest mb-2 text-[#505a63] group-focus-within:text-[#191c1f] transition-colors"
+              = f.text_area :bio, rows: 4, class: "w-full border border-[#c9c9cd] rounded-xl px-4 py-3 text-sm text-[#191c1f] placeholder:text-[#8d969e] outline-none transition-all resize-none bg-white focus:border-[#191c1f] focus:ring-2 focus:ring-[#191c1f]/10"
 
-            .pt-8.mt-8.border-t.flex.justify-end{class: "border-[#f5e6e8]"}
-              = f.button :submit, class: "px-8 py-3.5 rounded-xl text-white text-sm font-medium transition-all shadow-sm hover:shadow-md bg-[#675458] hover:bg-[#5a2e35]" do
+            .pt-8.mt-8.border-t.flex.justify-end{class: "border-[#c9c9cd]"}
+              = f.button :submit, class: "px-8 py-[14px] rounded-full text-white text-sm font-medium transition-all bg-[#191c1f] hover:opacity-85" do
                 = t('.update')
