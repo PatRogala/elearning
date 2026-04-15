@@ -83,4 +83,4 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start server via Falcon. TLS is terminated by Kamal proxy (Let's Encrypt).
 EXPOSE 3000
-CMD ["bundle", "exec", "falcon", "serve"]
+CMD ["bundle", "exec", "falcon", "serve", "--bind", "http://0.0.0.0:3000"]

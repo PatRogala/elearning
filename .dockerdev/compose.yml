@@ -55,7 +55,7 @@ services:
 
   web:
     <<: *backend
-    command: falcon serve
+    command: falcon serve --bind "https://localhost:3000" --count 1
     ports:
       - '3000:3000'
     depends_on:

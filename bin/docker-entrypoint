@@ -8,7 +8,7 @@ fi
 
 # If running the web server (rails server or falcon serve) then create or migrate existing database
 if { [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; } || \
-   { [ "${@: -2:1}" == "falcon" ] && [ "${@: -1:1}" == "serve" ]; }; then
+   [[ "$*" == *"falcon serve"* ]]; then
   ./bin/rails db:prepare
 fi
 

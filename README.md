@@ -4,7 +4,7 @@
 
 ## Setup
 
-The project uses [Ruby on Whales](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development) — a Docker-based development environment managed by [`dip`](https://github.com/bibendi/dip). It spins up the Rails app, PostgreSQL, DragonflyDB (Redis-compatible cache), MinIO (S3-compatible storage), and Mailcatcher all at once.
+The project uses [Ruby on Whales](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development) — a Docker-based development environment managed by [`dip`](https://github.com/bibendi/dip). It spins up the Rails app, PostgreSQL, MinIO (S3-compatible storage), and Mailcatcher all at once.
 
 **Prerequisites:**
 - [Docker](https://docs.docker.com/engine/installation/) installed
