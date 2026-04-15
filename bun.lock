@@ -5,7 +5,7 @@
     "": {
       "name": "app",
       "dependencies": {
-        "@37signals/lexxy": "^0.9.7-beta",
+        "@37signals/lexxy": "^0.9.8-beta",
         "@hotwired/stimulus": "^3.2.2",
         "@hotwired/turbo-rails": "^8.0.23",
         "@rails/actiontext": "^8.1.300",
@@ -17,7 +17,7 @@
     },
   },
   "packages": {
-    "@37signals/lexxy": ["@37signals/lexxy@0.9.7-beta", "", { "dependencies": { "@lexical/clipboard": "^0.42.0", "@lexical/code": "^0.42.0", "@lexical/extension": "^0.42.0", "@lexical/history": "^0.42.0", "@lexical/html": "^0.42.0", "@lexical/link": "^0.42.0", "@lexical/list": "^0.42.0", "@lexical/markdown": "^0.42.0", "@lexical/plain-text": "^0.42.0", "@lexical/rich-text": "^0.42.0", "@lexical/selection": "^0.42.0", "@lexical/table": "^0.42.0", "@lexical/utils": "^0.42.0", "dompurify": "^3.3.0", "lexical": "^0.42.0", "marked": "^16.4.1", "prismjs": "^1.30.0" }, "peerDependencies": { "@rails/activestorage": ">= 7.0.0" }, "optionalPeers": ["@rails/activestorage"] }, "sha512-pqa9z0KmK8blNopIorZ35bsvjsGDRhBIpd3T9/B/hbkMmtjLYUhI8NPbDxaBlXnI8iGqlYYIb+Yff2tin/SJZA=="],
+    "@37signals/lexxy": ["@37signals/lexxy@0.9.8-beta", "", { "dependencies": { "@lexical/clipboard": "^0.42.0", "@lexical/code": "^0.42.0", "@lexical/extension": "^0.42.0", "@lexical/history": "^0.42.0", "@lexical/html": "^0.42.0", "@lexical/link": "^0.42.0", "@lexical/list": "^0.42.0", "@lexical/markdown": "^0.42.0", "@lexical/plain-text": "^0.42.0", "@lexical/rich-text": "^0.42.0", "@lexical/selection": "^0.42.0", "@lexical/table": "^0.42.0", "@lexical/utils": "^0.42.0", "dompurify": "^3.3.0", "lexical": "^0.42.0", "marked": "^16.4.1", "prismjs": "^1.30.0" }, "peerDependencies": { "@rails/activestorage": ">= 7.0.0" }, "optionalPeers": ["@rails/activestorage"] }, "sha512-TATTH3ojx4rpYN6ADrWEGrEk+5VD5qQIE0Pao2sOTsirETIefisRWFMv3HjGIjk/8V6cwRjEUZYwkbzqcYL/lA=="],
 
     "@hotwired/stimulus": ["@hotwired/stimulus@3.2.2", "", {}, "sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A=="],
 
