@@ -26,7 +26,11 @@ Rails.application.routes.draw do
       collection do
         get :enrolled
       end
+      member do
+        get :learn
+      end
       resources :enrollments, only: %i[create]
+      resources :lessons, only: %i[show]
     end
 
     # Teach routes

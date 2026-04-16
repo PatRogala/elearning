@@ -1,0 +1,121 @@
+.min-h-screen{class: "bg-white font-sans"}
+
+  .max-w-7xl.mx-auto.relative{class: "px-6 md:px-10 py-6 md:py-10"}
+
+    .flex.items-center.gap-2.mb-8.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8d969e]"}
+      = link_to t('.my_courses'), enrolled_courses_path, class: "hover:text-[#191c1f] transition-colors"
+      %span.opacity-40 /
+      %span.transition-colors{class: "cursor-default text-[#191c1f]"}= course.title
+
+    .grid.grid-cols-1.gap-6{class: "lg:grid-cols-12"}
+
+      .space-y-6{class: "lg:col-span-8"}
+
+        .overflow-hidden{class: "rounded-[1.25rem] bg-[#f4f4f4]"}
+
+          .relative.w-full.overflow-hidden.group{class: "aspect-video bg-[#f4f4f4]"}
+            = image_tag course.image_cover, class: "w-full h-full object-cover scale-105 transition-all duration-700"
+
+            .absolute.bottom-4.left-4.flex.items-center.gap-2
+              %span.px-3.py-1.rounded-full.text-xs.font-semibold.uppercase.tracking-widest{class: "bg-[#00a87e] text-white"}
+                = t('.enrolled_badge')
+
+          .p-8{class: "md:p-10"}
+            %h1.text-4xl.font-medium.tracking-tight.leading-tight.mb-4{class: "md:text-5xl text-[#191c1f]", style: "letter-spacing: -0.4px"}
+              = course.title
+
+            .flex.flex-wrap.items-center.gap-4
+              .flex.items-center.gap-1.5
+                = lucide_icon("layers", class: "w-4 h-4 stroke-[1.5] text-[#8d969e]")
+                %span.text-sm{class: "text-[#505a63]"}
+                  = t('.lessons_count', count: lessons.size)
+              .w-px.h-4{class: "bg-[#c9c9cd]"}
+              .flex.items-center.gap-1.5
+                = lucide_icon("clock", class: "w-4 h-4 stroke-[1.5] text-[#8d969e]")
+                %span.text-sm{class: "text-[#505a63]"}
+                  = k(course).formatted_total_time_to_complete
+              .w-px.h-4{class: "bg-[#c9c9cd]"}
+              .flex.items-center.gap-1.5
+                = lucide_icon("globe", class: "w-4 h-4 stroke-[1.5] text-[#8d969e]")
+                %span.text-sm{class: "text-[#505a63]"} Polski
+
+        .p-8{class: "md:p-10 rounded-[1.25rem] bg-[#f4f4f4]"}
+          %h2.text-xl.font-medium.tracking-tight.mb-6{class: "text-[#191c1f]"}
+            = t('.about_the_course')
+          .prose.prose-sm.max-w-none.leading-relaxed{class: "text-[#505a63]"}
+            = course.description
+
+        .p-8{class: "md:p-10 rounded-[1.25rem] bg-[#f4f4f4]"}
+          %h2.text-xl.font-medium.tracking-tight.mb-6{class: "text-[#191c1f]"}
+            = t('.what_you_will_learn')
+          .grid.grid-cols-1.gap-4{class: "sm:grid-cols-2"}
+            - [["Autoryzacja JWT", "Bezpieczne logowanie i odświeżanie tokenów bez ciężkich gemów.", "shield-check"], ["N+1 Queries", "Narzędzia i techniki eliminacji problemów z wydajnością PostgreSQL.", "zap"], ["REST API Design", "Konwencje i dobre praktyki projektowania czytelnych endpointów.", "layers"], ["Testy RSpec", "Pisanie testów integracyjnych i jednostkowych dla API.", "check-circle"]].each do |(title, desc, icon)|
+              .flex.items-start.gap-4.p-5.rounded-2xl{class: "bg-white"}
+                .w-9.h-9.rounded-xl.flex.items-center.justify-center.shrink-0{class: "bg-[#f4f4f4]"}
+                  = lucide_icon(icon, class: "w-5 h-5 stroke-[1.5] text-[#191c1f]")
+                .space-y-1
+                  %h3.text-sm.font-semibold{class: "text-[#191c1f]"}= title
+                  %p.text-xs.leading-relaxed{class: "text-[#505a63]"}= desc
+
+        .p-8{class: "md:p-10 rounded-[1.25rem] bg-[#f4f4f4]"}
+          %h2.text-xl.font-medium.tracking-tight.mb-6{class: "text-[#191c1f]"}
+            = t('.instructor')
+          .flex.flex-col.items-start.gap-6{class: "sm:flex-row"}
+            .w-20.h-20.rounded-2xl.overflow-hidden.shrink-0.border{class: "border-[#c9c9cd]"}
+              = image_tag instructor.avatar_preview, class: "w-full h-full object-cover"
+            %div
+              %h3.text-lg.font-medium{class: "text-[#191c1f]"}= instructor.full_name
+              %span.block.text-xs.font-semibold.uppercase.tracking-widest.mb-3{class: "text-[#8d969e]"} Senior Backend Developer
+              %p.text-sm.leading-relaxed{class: "text-[#505a63]"}= instructor.bio
+
+      .relative{class: "lg:col-span-4"}
+        .sticky{class: "top-8 space-y-4"}
+
+          .overflow-hidden{class: "rounded-[1.25rem] bg-[#f4f4f4]"}
+            .p-6.space-y-5{class: "md:p-8"}
+
+              -# Progress bar
+              .space-y-2
+                .flex.items-center.justify-between
+                  %p.text-xs.font-semibold.uppercase.tracking-widest{class: "text-[#8d969e]"}
+                    = t('.your_progress')
+                  %span.text-xs.font-semibold{class: "text-[#191c1f]"}
+                    = "#{progress_percent}%"
+                .w-full.rounded-full.h-2{class: "bg-white"}
+                  .h-2.rounded-full.transition-all.duration-500{class: "bg-[#494fdf]", style: "width: #{progress_percent}%"}
+
+              - if lessons.any?
+                = link_to course_lesson_path(course, lessons.first), class: "w-full flex items-center justify-between px-6 py-4 rounded-full text-sm font-semibold transition-all group bg-[#191c1f] hover:opacity-85 text-white" do
+                  %span= t('.start_learning')
+                  = lucide_icon("arrow-right", class: "w-5 h-5 stroke-[2] transition-transform group-hover:translate-x-1 shrink-0")
+
+              .space-y-1.pt-2.border-t{class: "border-[#c9c9cd]"}
+                %p.text-xs.font-semibold.uppercase.tracking-widest.mb-3{class: "text-[#8d969e]"}
+                  = t('.curriculum')
+                - lessons.each_with_index do |lesson, i|
+                  = link_to course_lesson_path(course, lesson), class: "flex items-start gap-3 px-3 py-2.5 rounded-xl transition-colors hover:bg-white group" do
+                    .flex.items-center.justify-center.w-6.h-6.rounded-full.shrink-0.text-xs.font-semibold.mt-0.5{class: "bg-white group-hover:bg-[#f4f4f4] text-[#8d969e]"}
+                      = i + 1
+                    %span.text-sm.font-medium.leading-snug{class: "text-[#505a63]"}
+                      = lesson.title
+
+          .p-6{class: "rounded-[1.25rem] bg-[#f4f4f4] space-y-4"}
+            .flex.items-center.justify-between
+              %span.text-xs.font-semibold.uppercase.tracking-widest{class: "text-[#8d969e]"}= t('.level')
+              %span.text-xs.font-medium{class: "text-[#191c1f]"} Średniozaawansowany
+            .h-px{class: "bg-[#c9c9cd]"}
+            .flex.items-center.justify-between
+              %span.text-xs.font-semibold.uppercase.tracking-widest{class: "text-[#8d969e]"}= t('.language')
+              %span.text-xs.font-medium{class: "text-[#191c1f]"} Polski
+            .h-px{class: "bg-[#c9c9cd]"}
+            .flex.items-center.justify-between
+              %span.text-xs.font-semibold.uppercase.tracking-widest{class: "text-[#8d969e]"}= t('.certificate')
+              .flex.items-center.gap-1.5
+                = lucide_icon("file-text", class: "w-4 h-4 stroke-[1.5] text-[#8d969e]")
+                %span.text-xs.font-medium{class: "text-[#191c1f]"} PDF
+
+          .p-6{class: "rounded-[1.25rem] bg-[#f4f4f4]"}
+            %p.text-xs.font-semibold.uppercase.tracking-widest.mb-3{class: "text-[#8d969e]"}= t('.technologies')
+            .flex.flex-wrap.gap-2
+              - ["Ruby 3.2", "Rails 8", "PostgreSQL", "RSpec", "JWT"].each do |tag|
+                %span.px-3.py-1.rounded-full.text-xs.font-medium{class: "bg-white text-[#191c1f]"}= tag

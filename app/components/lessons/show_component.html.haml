@@ -1,0 +1,78 @@
+.flex{class: "min-h-screen bg-white font-sans pt-20"}
+
+  -# Sticky left sidebar
+  .hidden.lg:flex.lg:flex-col.w-80.shrink-0.border-r{class: "border-[#c9c9cd]"}
+    .overflow-y-auto{class: "sticky top-20", style: "height: calc(100vh - 5rem)"}
+
+      .p-6.border-b{class: "border-[#c9c9cd]"}
+        = link_to learn_course_path(course), class: "block group" do
+          %span.block.text-xs.font-semibold.uppercase.tracking-widest.mb-1{class: "text-[#8d969e]"}
+            = t('.back_to_course')
+          %h2.text-sm.font-medium.leading-snug.transition-colors{class: "text-[#191c1f] group-hover:opacity-70"}
+            = course.title
+
+      .p-4
+        %p.text-xs.font-semibold.uppercase.tracking-widest.mb-3.px-2{class: "text-[#8d969e]"}
+          = t('.curriculum')
+        - course_lessons.each_with_index do |l, i|
+          - active = l.id == lesson.id
+          = link_to course_lesson_path(course, l), class: "flex items-start gap-3 px-3 py-3 rounded-xl mb-1 transition-colors #{active ? 'bg-[#191c1f]' : 'hover:bg-[#f4f4f4]'}" do
+            .flex.items-center.justify-center.w-6.h-6.rounded-full.shrink-0.text-xs.font-semibold.mt-0.5{class: active ? 'bg-white text-[#191c1f]' : 'bg-[#f4f4f4] text-[#8d969e]'}
+              = i + 1
+            %span.text-sm.font-medium.leading-snug{class: active ? 'text-white' : 'text-[#505a63]'}
+              = l.title
+
+  -# Mobile sidebar toggle — shown on smaller screens at top
+  .lg:hidden.border-b{class: "border-[#c9c9cd] bg-white fixed top-20 left-0 right-0 z-30 px-4 py-3 flex items-center justify-between"}
+    = link_to learn_course_path(course), class: "flex items-center gap-2 text-sm font-medium text-[#191c1f] hover:opacity-70 transition-opacity" do
+      = lucide_icon("arrow-left", class: "w-4 h-4 stroke-[2]")
+      = course.title
+    %span.text-xs.font-semibold{class: "text-[#8d969e]"}
+      = t('.lesson_counter', current: lesson_number, total: course_lessons.size)
+
+  -# Main content
+  .flex-1.min-w-0
+    .max-w-3xl.mx-auto{class: "px-6 py-12 md:px-10 lg:py-16"}
+
+      -# Breadcrumb
+      .hidden.lg:flex.items-center.gap-2.mb-10.font-semibold.uppercase.tracking-widest{class: "text-[10px] text-[#8d969e]"}
+        = link_to enrolled_courses_path, class: "hover:text-[#191c1f] transition-colors" do
+          = t('.my_courses')
+        %span.opacity-40 /
+        = link_to learn_course_path(course), class: "hover:text-[#191c1f] transition-colors" do
+          = course.title
+        %span.opacity-40 /
+        %span{class: "text-[#191c1f]"}
+          = lesson.title
+
+      -# Lesson meta
+      %p.text-xs.font-semibold.uppercase.tracking-widest.mb-3{class: "text-[#8d969e]"}
+        = t('.lesson_counter', current: lesson_number, total: course_lessons.size)
+
+      %h1.text-3xl.font-medium.tracking-tight.mb-10{class: "md:text-4xl text-[#191c1f]", style: "letter-spacing: -0.4px"}
+        = lesson.title
+
+      -# Rich text content
+      - if lesson.content.present?
+        .prose.prose-sm.max-w-none.leading-relaxed{class: "text-[#505a63]"}
+          = lesson.content
+      - else
+        .p-10.rounded-2xl.flex.flex-col.items-center.gap-4{class: "bg-[#f4f4f4]"}
+          = lucide_icon("file-text", class: "w-10 h-10 stroke-[1.5] text-[#c9c9cd]")
+          %p.text-sm.font-medium{class: "text-[#8d969e]"}
+            = t('.content_coming_soon')
+
+      -# Prev / Next navigation
+      .flex.items-center.justify-between.mt-16.pt-8.border-t{class: "border-[#c9c9cd]"}
+        - if prev_lesson
+          = link_to course_lesson_path(course, prev_lesson), class: "flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium border-2 transition-opacity hover:opacity-70 border-[#191c1f] text-[#191c1f]" do
+            = lucide_icon("arrow-left", class: "w-4 h-4 stroke-[2]")
+            = t('.previous_lesson')
+        - if next_lesson
+          = link_to course_lesson_path(course, next_lesson), class: "flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all bg-[#191c1f] text-white hover:opacity-85" do
+            = t('.next_lesson')
+            = lucide_icon("arrow-right", class: "w-4 h-4 stroke-[2]")
+        - else
+          = link_to learn_course_path(course), class: "flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all text-white hover:opacity-85", style: "background-color: #00a87e" do
+            = lucide_icon("check-circle", class: "w-4 h-4 stroke-[2]")
+            = t('.finish_course')

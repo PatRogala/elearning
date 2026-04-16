@@ -1,0 +1,17 @@
+---
+pl:
+  courses:
+    learn_page_component:
+      about_the_course: O tym kursie
+      certificate: Certyfikat
+      curriculum: Program kursu
+      enrolled_badge: Zapisany
+      instructor: Prowadzący
+      language: Język
+      lessons_count: "%{count} lekcji"
+      level: Poziom
+      my_courses: Moje kursy
+      start_learning: Zacznij naukę
+      technologies: 'Technologie:'
+      what_you_will_learn: Czego się nauczysz
+      your_progress: Twój postęp

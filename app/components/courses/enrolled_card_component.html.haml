@@ -1,4 +1,4 @@
-= link_to course_path(course), class: "group flex flex-col bg-white transition-shadow duration-300 p-3 rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(103,84,88,0.08)]", data: { turbo: false } do
+= link_to learn_course_path(course), class: "group flex flex-col bg-white transition-shadow duration-300 p-3 rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(103,84,88,0.08)]", data: { turbo: false } do
 
   .relative.w-full.overflow-hidden{class: "aspect-[16/9] rounded-[1.5rem] bg-[#f5e6e8]"}
     = image_tag course.image_cover, class: "w-full h-full object-cover transition-transform duration-700 scale-105"
