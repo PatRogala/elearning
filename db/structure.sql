@@ -293,6 +293,38 @@ ALTER SEQUENCE public.flipper_gates_id_seq OWNED BY public.flipper_gates.id;
 
 
 --
+-- Name: lesson_completions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.lesson_completions (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    lesson_id bigint NOT NULL,
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone NOT NULL
+);
+
+
+--
+-- Name: lesson_completions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.lesson_completions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: lesson_completions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.lesson_completions_id_seq OWNED BY public.lesson_completions.id;
+
+
+--
 -- Name: lessons; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -498,6 +530,13 @@ ALTER TABLE ONLY public.flipper_gates ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: lesson_completions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.lesson_completions ALTER COLUMN id SET DEFAULT nextval('public.lesson_completions_id_seq'::regclass);
+
+
+--
 -- Name: lessons id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -595,6 +634,14 @@ ALTER TABLE ONLY public.flipper_features
 
 ALTER TABLE ONLY public.flipper_gates
     ADD CONSTRAINT flipper_gates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: lesson_completions lesson_completions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.lesson_completions
+    ADD CONSTRAINT lesson_completions_pkey PRIMARY KEY (id);
 
 
 --
@@ -715,6 +762,20 @@ CREATE UNIQUE INDEX index_flipper_gates_on_feature_key_and_key_and_value ON publ
 
 
 --
+-- Name: index_lesson_completions_on_lesson_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_lesson_completions_on_lesson_id ON public.lesson_completions USING btree (lesson_id);
+
+
+--
+-- Name: index_lesson_completions_on_user_id_and_lesson_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_lesson_completions_on_user_id_and_lesson_id ON public.lesson_completions USING btree (user_id, lesson_id);
+
+
+--
 -- Name: index_lessons_on_course_id_and_position; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -761,6 +822,14 @@ CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
 --
 
 CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING btree (reset_password_token);
+
+
+--
+-- Name: lesson_completions fk_rails_182c3d87f7; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.lesson_completions
+    ADD CONSTRAINT fk_rails_182c3d87f7 FOREIGN KEY (user_id) REFERENCES public.users(id) ON DELETE CASCADE;
 
 
 --
@@ -812,6 +881,14 @@ ALTER TABLE ONLY public.active_storage_variant_records
 
 
 --
+-- Name: lesson_completions fk_rails_a283bcc300; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.lesson_completions
+    ADD CONSTRAINT fk_rails_a283bcc300 FOREIGN KEY (lesson_id) REFERENCES public.lessons(id) ON DELETE CASCADE;
+
+
+--
 -- Name: active_storage_attachments fk_rails_c3b3935057; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -834,6 +911,8 @@ ALTER TABLE ONLY public.enrollments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260416200001'),
+('20260416200000'),
 ('20260416131814'),
 ('20260416131411'),
 ('20260416120000'),

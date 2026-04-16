@@ -10,6 +10,7 @@ class Lesson < ApplicationRecord
   validates :slug, presence: true, db_uniqueness: true
   friendly_id :title, use: :slugged
   has_rich_text :content
+  has_many :lesson_completions, dependent: :delete_all
 
   scope :ordered, -> { order(position: :asc) }
 

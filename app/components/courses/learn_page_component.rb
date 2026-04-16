@@ -6,9 +6,8 @@ module Courses
 
     delegate :instructor, to: :course
 
-    # Stubbed until real progress tracking is implemented
     def progress_percent
-      0
+      k(course).completion_percentage_for_user(helpers.current_user)
     end
   end
 end

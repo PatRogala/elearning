@@ -4,6 +4,7 @@ module Lessons
     param :lesson, Types::Instance(Lesson)
     option :course, Types::Instance(Course)
     option :course_lessons, Types::Array.of(Types::Instance(Lesson))
+    option :completed_lesson_ids, default: -> { Set.new }
 
     def lesson_index
       course_lessons.index(lesson).to_i

@@ -22,3 +22,6 @@ application.register("user-menu", UserMenuController)
 import LessonListController from "./lesson_list_controller"
 application.register("lesson-list", LessonListController)
 
+import LessonCompleteController from "./lesson_complete_controller"
+application.register("lesson-complete", LessonCompleteController)
+

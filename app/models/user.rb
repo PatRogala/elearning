@@ -10,6 +10,7 @@ class User < ApplicationRecord
                              inverse_of: :instructor
   has_many :enrollments, dependent: :delete_all
   has_many :enrolled_courses, through: :enrollments, source: :course
+  has_many :lesson_completions, dependent: :delete_all
   has_one_attached :avatar do |attachable|
     attachable.variant :thumb, resize_to_limit: [128, 128], format: :webp
     attachable.variant :preview, resize_to_limit: [1000, 1000], format: :webp

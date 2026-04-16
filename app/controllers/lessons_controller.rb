@@ -9,5 +9,6 @@ class LessonsController < ApplicationController
     @lesson = @course.lessons.with_rich_text_content.friendly.find(params[:id])
     authorize(@lesson)
     @course_lessons = @course.lessons.ordered.to_a
+    @completed_lesson_ids = current_user.lesson_completions.where(lesson: @course_lessons).pluck(:lesson_id).to_set
   end
 end
