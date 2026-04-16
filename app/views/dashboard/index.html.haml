@@ -1,3 +1,4 @@
 = render Courses::FeaturedComponent.new
+= render Courses::MyCoursesComponent.new(current_user) if user_signed_in?
 = render Courses::TopCoursesComponent.new
 = render Ui::FooterComponent.new

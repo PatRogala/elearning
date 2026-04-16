@@ -1,0 +1,18 @@
+%section.w-full.px-6.py-20{class: "md:px-12 lg:py-32 bg-white"}
+  .max-w-7xl.mx-auto
+
+    .flex.flex-col.justify-between.gap-6.mb-16{class: "md:flex-row md:items-end"}
+      .max-w-2xl
+        %span.block.text-xs.font-medium.tracking-wide.mb-4{class: "text-[#8d969e]"}
+          = t('.my_courses')
+        %h2.font-medium.tracking-tight{class: "text-4xl md:text-5xl text-[#191c1f] leading-[1.05]"}
+          = t('.title')
+
+      %div
+        = link_to enrolled_courses_path, class: "flex items-center gap-2 text-sm font-medium pb-1 border-b transition-colors text-[#191c1f] border-[#c9c9cd] hover:border-[#191c1f]" do
+          = t('.browse_all_modules')
+          = lucide_icon('arrow-right', class: 'w-4 h-4')
+
+    .grid.grid-cols-1.gap-8{class: "md:grid-cols-2 lg:grid-cols-3"}
+      - courses.each do |course|
+        = render Courses::EnrolledCardComponent.new(course)

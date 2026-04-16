@@ -23,6 +23,9 @@ Rails.application.routes.draw do
 
     resources :users, only: %i[update]
     resources :courses, only: %i[index show] do
+      collection do
+        get :enrolled
+      end
       resources :enrollments, only: %i[create]
     end
 

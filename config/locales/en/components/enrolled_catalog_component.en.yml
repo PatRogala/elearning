@@ -1,0 +1,10 @@
+---
+en:
+  courses:
+    enrolled_catalog_component:
+      catalog_subtitle: My learning
+      title: My
+      subtitle: Courses
+      empty_title: No courses yet
+      empty_subtitle: Enroll in a course to start learning
+      browse_courses: Browse courses
