@@ -17,11 +17,14 @@
     .flex.items-center.gap-2.mb-3.font-semibold.uppercase.tracking-widest{class: "text-[9px] text-[#8a7b7e]"}
       .flex.items-center.gap-1
         = lucide_icon("clock", class: "w-3 h-3 stroke-[2]")
-        %span 4h 20m
+        %span
+          = course_duration
       %span.w-1.h-1.rounded-full{class: "bg-[#e9d5d8]"}
       .flex.items-center.gap-1
         = lucide_icon("layout-list", class: "w-3 h-3 stroke-[2]")
-        %span 12 lekcji
+        %span
+          = lessons_count
+          = t(".lessons")
 
     %h3.text-xl.font-medium.mb-3.line-clamp-2.group-hover:underline.underline-offset-4.decoration-2{class: "text-[#333333] decoration-[#e9d5d8]"}
       = course.title

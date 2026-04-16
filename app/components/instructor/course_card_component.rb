@@ -13,7 +13,11 @@ module Instructor
     end
 
     def course_duration
-      "50h" # TODO: implement
+      k(course).formatted_total_time_to_complete
+    end
+
+    def lessons_count
+      course.lessons.count
     end
   end
 end

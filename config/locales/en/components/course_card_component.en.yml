@@ -3,5 +3,6 @@ en:
   instructor:
     course_card_component:
       draft: Draft
+      lessons: Lessons
       manage: Manage
       published: Published
