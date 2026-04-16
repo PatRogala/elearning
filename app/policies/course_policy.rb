@@ -8,6 +8,10 @@ class CoursePolicy < ApplicationPolicy
     true
   end
 
+  def enrolled?
+    user.present?
+  end
+
   # We can show all courses to all users and guests
   class Scope < ApplicationPolicy::Scope
     def resolve

@@ -1,0 +1,33 @@
+= link_to course_path(course), class: "group flex flex-col bg-white transition-shadow duration-300 p-3 rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(103,84,88,0.08)]", data: { turbo: false } do
+
+  .relative.w-full.overflow-hidden{class: "aspect-[16/9] rounded-[1.5rem] bg-[#f5e6e8]"}
+    = image_tag course.image_cover, class: "w-full h-full object-cover transition-transform duration-700 scale-105"
+
+    .absolute.top-4.left-4.px-3.py-1.5.backdrop-blur-md.rounded-full{class: "bg-white/70 shadow-sm"}
+      %span.font-bold.uppercase.tracking-widest{class: "text-[9px] text-[#5a2e35]"}
+        Ruby on Rails
+
+  .p-5.flex.flex-col.flex-grow{class: "md:p-6"}
+
+    %h3.text-xl.font-medium.mb-3.line-clamp-2{class: "text-[#333333]"}
+      = title
+      %span.inline-block.ml-1.opacity-0.-translate-x-1.transition-all{class: "group-hover:opacity-100 group-hover:translate-x-0 text-[#bfa2a6]"}
+        &rarr;
+
+    %p.text-sm.leading-relaxed.line-clamp-2.mb-4.flex-grow{class: "text-[#8a7b7e]"}
+      = short_description
+
+    -# Progress bar
+    .mb-4
+      .flex.items-center.justify-between.mb-1.5
+        %span.text-xs.font-medium{class: "text-[#8a7b7e]"}
+          = t('.progress')
+        %span.text-xs.font-semibold{class: "text-[#191c1f]"}
+          = "#{progress_percent}%"
+      .w-full.rounded-full.h-1.5{class: "bg-[#f5e6e8]"}
+        .h-1.5.rounded-full.transition-all.duration-500{class: "bg-[#494fdf]", style: "width: #{progress_percent}%"}
+
+    .mt-auto.pt-5.border-t.flex.items-center.gap-3{class: "border-[#f5e6e8]"}
+      = image_tag instructor.avatar_preview, class: "w-8 h-8 rounded-full object-cover bg-[#f5e6e8]"
+      %span.font-medium{class: "text-[11px] text-[#333333]"}
+        = instructor.full_name

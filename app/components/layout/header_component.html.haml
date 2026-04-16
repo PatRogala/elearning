@@ -6,8 +6,8 @@
 
     %nav.hidden.lg:flex.items-center.gap-10
       = render Ui::NavLinkComponent.new(label: t(".courses"), href: courses_path)
-      = render Ui::NavLinkComponent.new(label: t(".projects"), href: page_path("projects"))
-      = render Ui::NavLinkComponent.new(label: t(".manifesto"), href: page_path("manifesto"))
+      - if user
+        = render Ui::NavLinkComponent.new(label: t(".enrolled_courses"), href: enrolled_courses_path)
       - if user&.teacher?
         = render Ui::NavLinkComponent.new(label: t(".instructor_dashboard"), href: teach_dashboard_path)
 

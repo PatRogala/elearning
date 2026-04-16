@@ -1,0 +1,27 @@
+.min-h-screen.py-20{class: "px-6 md:px-12 lg:py-32 bg-white font-sans"}
+
+  .max-w-7xl.mx-auto
+
+    .flex.flex-col.items-center.text-center.mb-16
+      %span.block.font-semibold.uppercase.tracking-widest.mb-4{class: "text-[10px] text-[#8d969e]"}
+        = t('.catalog_subtitle')
+
+      %h1.mb-10{class: "text-4xl md:text-6xl font-medium leading-none text-[#191c1f]", style: "letter-spacing: -0.48px"}
+        = t('.title')
+        %span.italic
+          = t('.subtitle')
+
+    - if courses.any?
+      .grid.grid-cols-1.gap-8{class: "md:grid-cols-2 lg:grid-cols-3"}
+        - courses.each do |course|
+          = render Courses::EnrolledCardComponent.new(course)
+
+    - else
+      .flex.flex-col.items-center.justify-center.py-32.gap-6
+        .w-20.h-20.rounded-full.flex.items-center.justify-center{class: "bg-[#f4f4f4]"}
+          = lucide_icon('book-open', class: 'w-8 h-8 text-[#8d969e]')
+        %p.text-xl.font-medium{class: "text-[#191c1f]"}
+          = t('.empty_title')
+        %p.text-sm{class: "text-[#8d969e]"}
+          = t('.empty_subtitle')
+        = link_to t('.browse_courses'), courses_path, class: "mt-2 inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium bg-[#191c1f] text-white transition-opacity hover:opacity-85"

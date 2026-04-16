@@ -1,0 +1,10 @@
+---
+pl:
+  courses:
+    enrolled_catalog_component:
+      browse_courses: Przeglądaj kursy
+      catalog_subtitle: Moja nauka
+      empty_subtitle: Zapisz się na kurs, aby rozpocząć naukę
+      empty_title: Brak kursów
+      subtitle: Kursy
+      title: Moje
