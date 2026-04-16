@@ -197,6 +197,38 @@ ALTER SEQUENCE public.courses_id_seq OWNED BY public.courses.id;
 
 
 --
+-- Name: enrollments; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.enrollments (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    course_id bigint NOT NULL,
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone NOT NULL
+);
+
+
+--
+-- Name: enrollments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.enrollments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: enrollments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.enrollments_id_seq OWNED BY public.enrollments.id;
+
+
+--
 -- Name: flipper_features; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -445,6 +477,13 @@ ALTER TABLE ONLY public.courses ALTER COLUMN id SET DEFAULT nextval('public.cour
 
 
 --
+-- Name: enrollments id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.enrollments ALTER COLUMN id SET DEFAULT nextval('public.enrollments_id_seq'::regclass);
+
+
+--
 -- Name: flipper_features id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -532,6 +571,14 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 ALTER TABLE ONLY public.courses
     ADD CONSTRAINT courses_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: enrollments enrollments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.enrollments
+    ADD CONSTRAINT enrollments_pkey PRIMARY KEY (id);
 
 
 --
@@ -640,6 +687,20 @@ CREATE UNIQUE INDEX index_courses_on_slug ON public.courses USING btree (slug);
 
 
 --
+-- Name: index_enrollments_on_course_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_enrollments_on_course_id ON public.enrollments USING btree (course_id);
+
+
+--
+-- Name: index_enrollments_on_user_id_and_course_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_enrollments_on_user_id_and_course_id ON public.enrollments USING btree (user_id, course_id);
+
+
+--
 -- Name: index_flipper_features_on_key; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -711,6 +772,14 @@ ALTER TABLE ONLY public.courses
 
 
 --
+-- Name: enrollments fk_rails_2e119501f4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.enrollments
+    ADD CONSTRAINT fk_rails_2e119501f4 FOREIGN KEY (course_id) REFERENCES public.courses(id) ON DELETE CASCADE;
+
+
+--
 -- Name: user_roles fk_rails_318345354e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -751,12 +820,23 @@ ALTER TABLE ONLY public.active_storage_attachments
 
 
 --
+-- Name: enrollments fk_rails_e860e0e46b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.enrollments
+    ADD CONSTRAINT fk_rails_e860e0e46b FOREIGN KEY (user_id) REFERENCES public.users(id) ON DELETE CASCADE;
+
+
+--
 -- PostgreSQL database dump complete
 --
 
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260416131814'),
+('20260416131411'),
+('20260416120000'),
 ('20260406074016'),
 ('20260308092741'),
 ('20260308092553'),

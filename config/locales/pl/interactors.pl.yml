@@ -8,3 +8,7 @@ pl:
         blank: Obraz kursu nie może być pusty
       short_description:
         blank: Krótki opis kursu nie może być pusty
+  enrollments:
+    validation:
+      already_enrolled: Jesteś już zapisany na ten kurs
+      not_free: Zapis jest dostępny tylko dla bezpłatnych kursów

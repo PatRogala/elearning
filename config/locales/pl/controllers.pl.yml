@@ -5,6 +5,8 @@ pl:
       created: Kurs został utworzony.
       published: Kurs został opublikowany.
       updated: Kurs został zaktualizowany.
+    enrollment:
+      created: Zostałeś zapisany na kurs!
     lesson:
       created: Lekcja została utworzona.
       destroyed: Lekcja została usunięta.

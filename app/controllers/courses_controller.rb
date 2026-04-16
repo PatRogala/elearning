@@ -8,5 +8,6 @@ class CoursesController < ApplicationController
   def show
     @course = policy_scope(Course).friendly.find(params[:id])
     authorize(@course)
+    @enrolled = current_user.present? && current_user.enrollments.exists?(course: @course)
   end
 end

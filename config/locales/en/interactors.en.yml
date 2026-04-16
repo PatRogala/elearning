@@ -8,3 +8,7 @@ en:
         blank: Cover image cannot be blank
       short_description:
         blank: Short description cannot be blank
+  enrollments:
+    validation:
+      already_enrolled: You are already enrolled in this course
+      not_free: Enrollment is only available for free courses

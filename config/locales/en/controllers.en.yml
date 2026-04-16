@@ -5,6 +5,8 @@ en:
       created: Course created successfully.
       published: The course has been published.
       updated: Course updated successfully.
+    enrollment:
+      created: You have been enrolled successfully!
     lesson:
       created: Lesson created successfully.
       destroyed: Lesson deleted.

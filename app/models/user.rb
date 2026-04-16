@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :roles, through: :user_roles
   has_many :created_courses, class_name: "Course", foreign_key: "instructor_id", dependent: :destroy,
                              inverse_of: :instructor
+  has_many :enrollments, dependent: :delete_all
+  has_many :enrolled_courses, through: :enrollments, source: :course
   has_one_attached :avatar do |attachable|
     attachable.variant :thumb, resize_to_limit: [128, 128], format: :webp
     attachable.variant :preview, resize_to_limit: [1000, 1000], format: :webp
