@@ -1,0 +1,17 @@
+---
+en:
+  courses:
+    learn_page_component:
+      about_the_course: About the course
+      certificate: Certificate
+      curriculum: Course curriculum
+      enrolled_badge: Enrolled
+      instructor: Instructor
+      language: Language
+      lessons_count: "%{count} lessons"
+      level: Level
+      my_courses: My Courses
+      start_learning: Start learning
+      technologies: 'Technologies:'
+      what_you_will_learn: What you will learn
+      your_progress: Your progress

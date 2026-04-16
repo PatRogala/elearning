@@ -1,0 +1,12 @@
+---
+en:
+  lessons:
+    show_component:
+      back_to_course: Back to course
+      content_coming_soon: Content coming soon
+      curriculum: Curriculum
+      finish_course: Finish course
+      lesson_counter: Lesson %{current} of %{total}
+      my_courses: My Courses
+      next_lesson: Next lesson
+      previous_lesson: Previous lesson
