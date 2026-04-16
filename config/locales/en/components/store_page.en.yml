@@ -15,9 +15,11 @@ en:
       instructor: Instructor
       investment: Investment in knowledge
       language: Language
+      lessons_count: "%{count} lessons"
       level: Level
       lifetime_access: Lifetime Access • Satisfaction Guarantee
       program: Course Program
+      show_all_lessons: Show all %{count} lessons
       sign_up_now_for_free: Sign up now — it's free
       technologies: 'Technologies in the course:'
       what_you_will_learn: What you will learn

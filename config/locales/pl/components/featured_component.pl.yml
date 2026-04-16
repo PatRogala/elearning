@@ -4,5 +4,5 @@ pl:
     featured_component:
       course_stats: Statystyki kursu
       cta: Zacznij naukę!
-      duration_info: "%{duration} godzin treści"
+      duration_info: "%{duration} treści"
       header: Najnowszy kurs

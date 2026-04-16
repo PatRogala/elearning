@@ -77,7 +77,8 @@
                   .space-y-0.5
                     %span.text-sm.font-medium{class: "text-[#191c1f]"}
                       = lesson.title
-                    %span.text-xs{class: "text-[#8d969e]"} 12:40
+                    %span.text-xs{class: "text-[#8d969e]"}
+                      = k(lesson).formatted_time_to_complete
                 .flex.items-center.gap-3.opacity-0.group-hover:opacity-100.transition-opacity
                   = link_to edit_teach_course_lesson_path(@form.model, lesson), class: "text-xs font-medium underline underline-offset-2 transition-colors text-[#505a63] hover:text-[#191c1f]" do
                     = t(".edit")
