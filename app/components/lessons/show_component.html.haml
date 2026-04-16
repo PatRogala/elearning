@@ -16,10 +16,14 @@
           = t('.curriculum')
         - course_lessons.each_with_index do |l, i|
           - active = l.id == lesson.id
+          - completed = !active && completed_lesson_ids.include?(l.id)
           = link_to course_lesson_path(course, l), class: "flex items-start gap-3 px-3 py-3 rounded-xl mb-1 transition-colors #{active ? 'bg-[#191c1f]' : 'hover:bg-[#f4f4f4]'}" do
-            .flex.items-center.justify-center.w-6.h-6.rounded-full.shrink-0.text-xs.font-semibold.mt-0.5{class: active ? 'bg-white text-[#191c1f]' : 'bg-[#f4f4f4] text-[#8d969e]'}
-              = i + 1
-            %span.text-sm.font-medium.leading-snug{class: active ? 'text-white' : 'text-[#505a63]'}
+            .flex.items-center.justify-center.w-6.h-6.rounded-full.shrink-0.text-xs.font-semibold.mt-0.5{class: active ? 'bg-white text-[#191c1f]' : (completed ? 'bg-[#00a87e] text-white' : 'bg-[#f4f4f4] text-[#8d969e]')}
+              - if completed
+                = lucide_icon("check", class: "w-3.5 h-3.5 stroke-[2.5]")
+              - else
+                = i + 1
+            %span.text-sm.font-medium.leading-snug{class: active ? 'text-white' : (completed ? 'text-[#191c1f]' : 'text-[#505a63]')}
               = l.title
 
   -# Mobile sidebar toggle — shown on smaller screens at top
@@ -61,6 +65,9 @@
           = lucide_icon("file-text", class: "w-10 h-10 stroke-[1.5] text-[#c9c9cd]")
           %p.text-sm.font-medium{class: "text-[#8d969e]"}
             = t('.content_coming_soon')
+
+      -# Scroll sentinel — triggers lesson completion when visible
+      %div{"data-controller": "lesson-complete", "data-lesson-complete-url-value": course_lesson_lesson_completions_path(course, lesson)}
 
       -# Prev / Next navigation
       .flex.items-center.justify-between.mt-16.pt-8.border-t{class: "border-[#c9c9cd]"}

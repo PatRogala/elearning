@@ -30,7 +30,9 @@ Rails.application.routes.draw do
         get :learn
       end
       resources :enrollments, only: %i[create]
-      resources :lessons, only: %i[show]
+      resources :lessons, only: %i[show] do
+        resources :lesson_completions, only: %i[create]
+      end
     end
 
     # Teach routes
