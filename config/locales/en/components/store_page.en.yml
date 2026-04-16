@@ -23,3 +23,5 @@ en:
       what_you_will_learn: What you will learn
       what_you_will_receive: What you will receive
       yes_pdf: Completion certificate (PDF)
+      lessons_count: "%{count} lessons"
+      show_all_lessons: Show all %{count} lessons

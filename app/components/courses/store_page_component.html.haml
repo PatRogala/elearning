@@ -36,7 +36,8 @@
               .w-px.h-4{class: "bg-[#c9c9cd]"}
               .flex.items-center.gap-1.5
                 = lucide_icon("clock", class: "w-4 h-4 stroke-[1.5] text-[#8d969e]")
-                %span.text-sm{class: "text-[#505a63]"} 8h 20min
+                %span.text-sm{class: "text-[#505a63]"}
+                  = k(course).formatted_total_time_to_complete
 
         .p-8{class: "md:p-10 rounded-[1.25rem] bg-[#f4f4f4]"}
           %h2.text-xl.font-medium.tracking-tight.mb-6{class: "text-[#191c1f]"}
@@ -61,33 +62,28 @@
             %div
               %h2.text-xl.font-medium.tracking-tight{class: "text-[#191c1f]"}
                 = t('.program')
-              %p.text-xs.font-semibold.uppercase.tracking-widest.mt-1{class: "text-[#8d969e]"} 4 Moduły • 24 Lekcje
+              %p.text-xs.font-semibold.uppercase.tracking-widest.mt-1{class: "text-[#8d969e]"}
+                = t('.lessons_count', count: course.lessons.count)
 
-          .px-8.py-3.border-y{class: "md:px-10 bg-white border-[#c9c9cd]"}
-            %h3.text-xs.font-semibold.uppercase.tracking-widest{class: "text-[#191c1f]"} Moduł 01: Fundamenty API
+          -# TODO: Add modules
+          -# .px-8.py-3.border-y{class: "md:px-10 bg-white border-[#c9c9cd]"}
+          -#   %h3.text-xs.font-semibold.uppercase.tracking-widest{class: "text-[#191c1f]"} Moduł 01: Fundamenty API
 
           .divide-y{class: "divide-[#c9c9cd]"}
-
-            %a.group.flex.items-center.justify-between.px-8.py-4.transition-colors{href: "#", class: "md:px-10 hover:bg-white"}
-              .flex.items-center.gap-4
-                .w-8.h-8.rounded-lg.flex.items-center.justify-center.shrink-0.transition-colors{class: "bg-white group-hover:bg-[#191c1f]"}
-                  = lucide_icon("play", class: "w-4 h-4 stroke-[2] transition-colors text-[#191c1f] group-hover:text-white translate-x-0.5")
-                .space-y-0.5
-                  %span.text-sm.font-medium{class: "text-[#191c1f]"} 1. Czym różni się API od standardowej aplikacji?
-                  %span.px-2.py-0.5.rounded-full.text-xs.font-semibold.uppercase.tracking-widest{class: "inline-block bg-[#191c1f] text-white"} Darmowy podgląd
-              %span.text-xs.font-semibold{class: "text-[#8d969e]"} 12:40
-
-            .flex.items-center.justify-between.px-8.py-4{class: "md:px-10"}
-              .flex.items-center.gap-4
-                .w-8.h-8.rounded-lg.flex.items-center.justify-center.shrink-0{class: "bg-white"}
-                  = lucide_icon("lock", class: "w-4 h-4 stroke-[1.5] text-[#c9c9cd]")
-                %span.text-sm{class: "text-[#505a63]"} 2. Konfiguracja projektu w trybie --api
-              %span.text-xs.font-semibold{class: "text-[#8d969e]"} 08:15
+            - course.lessons.each do |lesson|
+              .flex.items-center.justify-between.px-8.py-4{class: "md:px-10"}
+                .flex.items-center.gap-4
+                  .w-8.h-8.rounded-lg.flex.items-center.justify-center.shrink-0{class: "bg-white"}
+                    = lucide_icon("lock", class: "w-4 h-4 stroke-[1.5] text-[#c9c9cd]")
+                  %span.text-sm{class: "text-[#505a63]"}
+                    = lesson.title
+                %span.text-xs.font-semibold{class: "text-[#8d969e]"}
+                  = k(lesson).formatted_time_to_complete
 
           .px-8.py-5.border-t{class: "md:px-10 border-[#c9c9cd]"}
             %button.inline-flex.items-center.gap-2.text-sm.font-medium.transition-colors{type: "button", class: "text-[#191c1f] hover:opacity-70"}
               = lucide_icon("chevron-down", class: "w-4 h-4 stroke-[2]")
-              Pokaż wszystkie 24 lekcje
+              = t('.show_all_lessons', count: course.lessons.count)
 
         .p-8{class: "md:p-10 rounded-[1.25rem] bg-[#f4f4f4]"}
           %h2.text-xl.font-medium.tracking-tight.mb-6{class: "text-[#191c1f]"}

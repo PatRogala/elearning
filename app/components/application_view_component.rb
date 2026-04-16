@@ -9,4 +9,7 @@ class ApplicationViewComponent < ViewComponent::Base
 
   # Lucide Icons helper
   delegate :lucide_icon, to: :helpers
+
+  # Keynote presenter helper
+  delegate :k, to: :helpers
 end

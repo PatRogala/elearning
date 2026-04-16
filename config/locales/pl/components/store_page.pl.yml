@@ -23,3 +23,5 @@ pl:
       what_you_will_learn: Czego się nauczysz
       what_you_will_receive: Co otrzymujesz
       yes_pdf: Certyfikat ukończenia (PDF)
+      lessons_count: "%{count} lekcji"
+      show_all_lessons: Pokaż wszystkie %{count} lekcji
