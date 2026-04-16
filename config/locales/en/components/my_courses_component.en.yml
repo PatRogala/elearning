@@ -1,9 +1,9 @@
 ---
 en:
   courses:
-    my_courses_component:
-      my_courses: My learning
-      title: Continue where you left off
-      browse_all_modules: Browse all courses
     enrolled_card_component:
       progress: Progress
+    my_courses_component:
+      browse_all_modules: Browse all courses
+      my_courses: My learning
+      title: Continue where you left off

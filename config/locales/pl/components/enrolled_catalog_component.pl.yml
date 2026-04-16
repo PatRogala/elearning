@@ -2,9 +2,9 @@
 pl:
   courses:
     enrolled_catalog_component:
-      catalog_subtitle: Moja nauka
-      title: Moje
-      subtitle: Kursy
-      empty_title: Brak kursów
-      empty_subtitle: Zapisz się na kurs, aby rozpocząć naukę
       browse_courses: Przeglądaj kursy
+      catalog_subtitle: Moja nauka
+      empty_subtitle: Zapisz się na kurs, aby rozpocząć naukę
+      empty_title: Brak kursów
+      subtitle: Kursy
+      title: Moje

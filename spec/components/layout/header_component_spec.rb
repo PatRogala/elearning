@@ -9,9 +9,9 @@ RSpec.describe Layout::HeaderComponent, type: :component do
       expect(page).to have_link("Courses", href: "/en/courses")
     end
 
-    it "renders projects link" do
+    it "renders enrolled courses link" do
       render_inline(described_class.new(user: current_user))
-      expect(page).to have_link("Projects", href: "/en/pages/projects")
+      expect(page).to have_link("My courses", href: "/en/courses/enrolled")
     end
 
     it "renders sign out link" do

@@ -1,9 +1,9 @@
 ---
 pl:
   courses:
-    my_courses_component:
-      my_courses: Moja nauka
-      title: Kontynuuj naukę
-      browse_all_modules: Przeglądaj wszystkie kursy
     enrolled_card_component:
       progress: Postęp
+    my_courses_component:
+      browse_all_modules: Przeglądaj wszystkie kursy
+      my_courses: Moja nauka
+      title: Kontynuuj naukę

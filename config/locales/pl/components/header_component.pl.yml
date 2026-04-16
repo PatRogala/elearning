@@ -3,12 +3,10 @@ pl:
   layout:
     header_component:
       courses: Kursy
+      enrolled_courses: Moje kursy
       instructor_dashboard: Nauczaj
-      manifesto: Manifesto
       profile: Profil
-      projects: Projekty
       search_placeholder: Czego szukasz?
       sign_in: Zaloguj się
       sign_out: Wyloguj się
       sign_up: Zarejestruj się
-      enrolled_courses: Moje kursy
