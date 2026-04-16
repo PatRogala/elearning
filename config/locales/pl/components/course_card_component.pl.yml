@@ -3,5 +3,6 @@ pl:
   instructor:
     course_card_component:
       draft: Draft
+      lessons: Lekcji
       manage: Zarządzaj
       published: Opublikowany

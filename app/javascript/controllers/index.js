@@ -19,3 +19,6 @@ application.register("image-preview", ImagePreviewController)
 import UserMenuController from "./user_menu_controller"
 application.register("user-menu", UserMenuController)
 
+import LessonListController from "./lesson_list_controller"
+application.register("lesson-list", LessonListController)
+

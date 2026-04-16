@@ -11,6 +11,8 @@ class Lesson < ApplicationRecord
   friendly_id :title, use: :slugged
   has_rich_text :content
 
+  scope :ordered, -> { order(position: :asc) }
+
   private
 
   def should_generate_new_friendly_id?
