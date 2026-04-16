@@ -8,6 +8,8 @@ class Course < ApplicationRecord
 
   db_belongs_to :instructor, class_name: "User"
   has_many :lessons, dependent: :destroy
+  has_many :enrollments, dependent: :delete_all
+  has_many :enrolled_users, through: :enrollments, source: :user
 
   validates :title, presence: true
   validates :title, db_uniqueness: { scope: :instructor_id }

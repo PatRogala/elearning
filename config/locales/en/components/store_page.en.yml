@@ -20,6 +20,7 @@ en:
       lifetime_access: Lifetime Access • Satisfaction Guarantee
       program: Course Program
       show_all_lessons: Show all %{count} lessons
+      already_enrolled: Already enrolled
       sign_up_now_for_free: Sign up now — it's free
       technologies: 'Technologies in the course:'
       what_you_will_learn: What you will learn

@@ -1,5 +1,9 @@
 ---
 pl:
+  enrollments:
+    validation:
+      already_enrolled: Jesteś już zapisany na ten kurs
+      not_free: Zapis jest dostępny tylko dla bezpłatnych kursów
   courses:
     validation:
       description:

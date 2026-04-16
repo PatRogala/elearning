@@ -20,6 +20,7 @@ pl:
       lifetime_access: Dożywotni dostęp • Gwarancja satysfakcji
       program: Program Kursu
       show_all_lessons: Pokaż wszystkie %{count} lekcji
+      already_enrolled: Już zapisany
       sign_up_now_for_free: Zapisz się teraz — to nic nie kosztuje
       technologies: 'Technologie w kursie:'
       what_you_will_learn: Czego się nauczysz

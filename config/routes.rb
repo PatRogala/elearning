@@ -22,7 +22,9 @@ Rails.application.routes.draw do
     get "/pages/*id" => "pages#show", as: :page, format: false
 
     resources :users, only: %i[update]
-    resources :courses, only: %i[index show]
+    resources :courses, only: %i[index show] do
+      resources :enrollments, only: %i[create]
+    end
 
     # Teach routes
     namespace :teach do

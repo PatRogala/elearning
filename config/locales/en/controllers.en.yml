@@ -9,6 +9,8 @@ en:
       created: Lesson created successfully.
       destroyed: Lesson deleted.
       updated: Lesson updated successfully.
+    enrollment:
+      created: You have been enrolled successfully!
     unauthorized: You are not authorized to perform this action.
     user:
       updated: Your profile has been updated successfully.
