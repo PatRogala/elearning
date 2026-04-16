@@ -35,4 +35,4 @@
             = course.title
 
           %p.text-xs{class: "text-[#505a63] tracking-[0.16px]"}
-            = t('.duration_info', duration: 43)
+            = t('.duration_info', duration: k(course).formatted_total_time_to_complete)
