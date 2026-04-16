@@ -68,8 +68,8 @@
               = lucide_icon("plus", class: "w-4 h-4 stroke-[2]")
               = t(".new_lesson")
 
-          - @form.model.lessons.each do |lesson|
-            .space-y-2
+          - @form.model.lessons.ordered.each do |lesson|
+            .space-y-2.mb-2
               .group.flex.items-center.justify-between.p-4.rounded-xl.border.transition-colors{class: "border-[#c9c9cd] bg-white hover:border-[#505a63]"}
                 .flex.items-center.gap-4
                   %span.w-6.h-6.rounded-full.flex.items-center.justify-center.text-xs.font-bold.shrink-0{class: "bg-[#f4f4f4] text-[#505a63]"}
