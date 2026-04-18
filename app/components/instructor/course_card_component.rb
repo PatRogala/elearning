@@ -9,7 +9,7 @@ module Instructor
     delegate :short_description, to: :course
 
     def students_count
-      50 # TODO: implement
+      k(course).enrolled_users_count
     end
 
     def course_duration

@@ -12,11 +12,11 @@ module Instructor
     end
 
     def active_students_count
-      1240 # TODO: Get active students count
+      k(:instructor, user).enrolled_users_count
     end
 
     def total_revenue
-      8450 # TODO: Get total revenue
+      0 # TODO: Get total revenue
     end
 
     def courses

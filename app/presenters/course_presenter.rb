@@ -23,4 +23,8 @@ class CoursePresenter < ApplicationPresenter
       k(lesson).time_to_complete_in_minutes
     end
   end
+
+  def enrolled_users_count
+    course.enrolled_users.count
+  end
 end
