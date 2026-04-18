@@ -40,3 +40,19 @@ button {
     color: #f8f8f2 !important;
   }
 }
+
+.lexxy-editor__content {
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8d969e #131313;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #131313;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8d969e;
+  }
+}
