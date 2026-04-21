@@ -89,7 +89,7 @@ GEM
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.3)
-    avo (3.31.0)
+    avo (3.31.1)
       actionview (>= 6.1)
       active_link_to
       activerecord (>= 6.1)
@@ -257,7 +257,7 @@ GEM
       dry-schema (~> 1.14)
       zeitwerk (~> 2.6)
     ed25519 (1.4.0)
-    erb (6.0.3)
+    erb (6.0.4)
     erubi (1.13.1)
     erubis (2.7.0)
     et-orbi (1.4.0)
@@ -417,7 +417,7 @@ GEM
     mini_magick (5.3.1)
       logger
     mini_mime (1.1.5)
-    minitest (6.0.4)
+    minitest (6.0.5)
       drb (~> 2.0)
       prism (~> 1.5)
     mission_control-jobs (1.1.0)
