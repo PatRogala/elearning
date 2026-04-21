@@ -257,7 +257,7 @@ GEM
       dry-schema (~> 1.14)
       zeitwerk (~> 2.6)
     ed25519 (1.4.0)
-    erb (6.0.3)
+    erb (6.0.4)
     erubi (1.13.1)
     erubis (2.7.0)
     et-orbi (1.4.0)
