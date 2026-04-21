@@ -14,6 +14,7 @@
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
     = stylesheet_link_tag "lexxy", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+    = javascript_include_tag "activestorage"
   %body.bg-white.text-black
     = render Layout::HeaderComponent.new(user: current_user)
     .fixed.top-24.right-4.z-50.space-y-3.pointer-events-none

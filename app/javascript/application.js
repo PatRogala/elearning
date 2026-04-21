@@ -4,3 +4,6 @@ import "./controllers"
 
 import "@37signals/lexxy"
 import "@rails/actiontext"
+
+import * as ActiveStorage from "@rails/activestorage"
+ActiveStorage.start()
