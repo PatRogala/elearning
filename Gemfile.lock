@@ -469,7 +469,7 @@ GEM
     ostruct (0.6.3)
     paco (0.2.3)
     pagy (9.4.0)
-    parallel (2.0.1)
+    parallel (2.1.0)
     parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
