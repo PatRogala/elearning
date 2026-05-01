@@ -12,8 +12,8 @@ RSpec.describe Instructor::CourseFormComponent, type: :component do
   it "renders the form" do
     render_inline(described_class.new(form, user: user))
 
-    expect(page).to have_content("Give your new course a working title.")
-      .and have_content("Course Title")
-      .and have_content("Create & Continue")
+    expect(page).to have_text("Give your new course a working title.")
+      .and have_text("Course Title")
+      .and have_text("Create & Continue")
   end
 end

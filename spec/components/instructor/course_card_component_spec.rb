@@ -6,7 +6,7 @@ RSpec.describe Instructor::CourseCardComponent, type: :component do
   it "renders course card" do
     render_inline(described_class.new(course))
 
-    expect(page).to have_content(course.title)
-      .and have_content("Draft")
+    expect(page).to have_text(course.title)
+      .and have_text("Draft")
   end
 end

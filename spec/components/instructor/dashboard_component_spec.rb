@@ -10,6 +10,6 @@ RSpec.describe Instructor::DashboardComponent, type: :component do
   it "renders dashboard" do
     render_inline(described_class.new(user: user))
 
-    expect(page).to have_content("Your Courses")
+    expect(page).to have_text("Your Courses")
   end
 end
