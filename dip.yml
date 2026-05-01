@@ -1,83 +1,82 @@
-version: '7.1'
+version: "7.1"
 
 # Define default environment variables to pass
 # to Docker Compose
 environment:
- RAILS_ENV: development
+    RAILS_ENV: development
 
 compose:
-  files:
-    - .dockerdev/compose.yml
-  project_name: elearning
+    files:
+        - .dockerdev/compose.yml
+    project_name: elearning
 
 interaction:
-  # This command spins up a Rails container with the required dependencies (such as databases),
-  # and opens a terminal within it.
-  runner:
-    description: Open a Bash shell within a Rails container (with dependencies up)
-    service: rails
-    command: /bin/bash
-
-  # Run a Rails container without any dependent services (useful for non-Rails scripts)
-  bash:
-    description: Run an arbitrary script within a container (or open a shell without deps)
-    service: rails
-    command: /bin/bash
-    compose_run_options: [ no-deps ]
-
-  # A shortcut to run Bundler commands
-  bundle:
-    description: Run Bundler commands
-    service: rails
-    command: bundle
-    compose_run_options: [ no-deps ]
-
-  bun:
-    description: Run Bun commands
-    service: rails
-    command: bun
-    compose_run_options: [ no-deps ]
-
-  rails:
-    description: Run Rails commands
-    service: rails
-    command: bundle exec rails
-    subcommands:
-      s:
-        description: Run Rails server at http://localhost:3000
-        service: web
-        compose:
-          run_options: [ service-ports, use-aliases ]
-      test:
-        description: Run unit tests
+    # This command spins up a Rails container with the required dependencies (such as databases),
+    # and opens a terminal within it.
+    runner:
+        description: Open a Bash shell within a Rails container (with dependencies up)
         service: rails
-        command: bundle exec rspec
-        environment:
-          RAILS_ENV: test
-      ci:
-        description: Run CI commands
-        service: rails
-        command: bin/ci
-        environment:
-          RAILS_ENV: test
-  psql:
-    description: Run Postgres psql console
-    service: postgres
-    default_args: elearning_development
-    command: psql -h postgres -U postgres
+        command: /bin/bash
 
-  claude:
-    description: Run Claude CLI
-    service: rails
-    command: claude --dangerously-skip-permissions
+    # Run a Rails container without any dependent services (useful for non-Rails scripts)
+    bash:
+        description: Run an arbitrary script within a container (or open a shell without deps)
+        service: rails
+        command: /bin/bash
+        compose_run_options: [no-deps]
+
+    # A shortcut to run Bundler commands
+    bundle:
+        description: Run Bundler commands
+        service: rails
+        command: bundle
+        compose_run_options: [no-deps]
+
+    bun:
+        description: Run Bun commands
+        service: rails
+        command: bun
+        compose_run_options: [no-deps]
+
+    rails:
+        description: Run Rails commands
+        service: rails
+        command: bundle exec rails
+        subcommands:
+            s:
+                description: Run Rails server at http://localhost:3000
+                service: web
+                compose:
+                    run_options: [service-ports, use-aliases]
+            test:
+                description: Run unit tests
+                service: rails
+                command: bundle exec rspec
+                environment:
+                    RAILS_ENV: test
+            ci:
+                description: Run CI commands
+                service: rails
+                command: bin/ci
+                environment:
+                    RAILS_ENV: test
+    psql:
+        description: Run Postgres psql console
+        service: postgres
+        default_args: elearning_development
+        command: psql -h postgres -U postgres
+
+    claude:
+        description: Run Claude CLI
+        service: rails
+        command: claude --dangerously-skip-permissions
 
 provision:
-  - '[[ "$RESET_DOCKER" == "true" ]] && echo "Re-creating the Docker env from scratch..." && dip compose down --volumes || echo "Re-provisioning the Docker env..."'
-  - (test -f .dockerdev/.claude.json) || (cp .dockerdev/.claude.json.example .dockerdev/.claude.json)
-  - dip compose up -d postgres
-  - dip bundle check || dip bundle install
-  - dip bun install --frozen-lockfile
-  - dip rails db:prepare
-  - dip rails db:test:prepare
-  - echo "🚀 Ready to rock! Run 'dip rails s' to start a Rails web server or 'dip rails test' to run tests."
-
+    - 'true && echo "Re-creating the Docker env from scratch..." && dip compose down --volumes || echo "Re-provisioning the Docker env..."'
+    - (test -f .dockerdev/.claude.json) || (cp .dockerdev/.claude.json.example .dockerdev/.claude.json)
+    - dip compose up -d postgres
+    - dip bundle check || dip bundle install
+    - dip bun install --frozen-lockfile
+    - dip rails db:prepare
+    - dip rails db:test:prepare
+    - echo "🚀 Ready to rock! Run 'dip rails s' to start a Rails web server or 'dip rails test' to run tests."
