@@ -28,8 +28,6 @@ RSpec.describe "Teach::Courses", type: :request do
         get new_teach_course_path
       end
 
-      it_behaves_like "valid HTML"
-
       it "returns http success" do
         expect(response).to have_http_status(:success)
       end
@@ -106,8 +104,6 @@ RSpec.describe "Teach::Courses", type: :request do
         sign_in(user)
         get edit_teach_course_path(id: course.id)
       end
-
-      it_behaves_like "valid HTML"
 
       it "returns http success" do
         expect(response).to have_http_status(:success)

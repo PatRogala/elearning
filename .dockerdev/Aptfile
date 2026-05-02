@@ -10,3 +10,5 @@ unzip
 # Claude
 bubblewrap
 socat
+# Github CLI
+ssh

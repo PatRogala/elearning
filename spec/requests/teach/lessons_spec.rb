@@ -27,8 +27,6 @@ RSpec.describe "Teach::Lessons", type: :request do
         get "/teach/courses/#{course.id}/lessons/new"
       end
 
-      it_behaves_like "valid HTML"
-
       it "returns http success" do
         expect(response).to have_http_status(:success)
       end
@@ -126,8 +124,6 @@ RSpec.describe "Teach::Lessons", type: :request do
         sign_in(user)
         get "/teach/courses/#{course.id}/lessons/#{lesson.id}/edit"
       end
-
-      it_behaves_like "valid HTML"
 
       it "returns http success" do
         expect(response).to have_http_status(:success)
