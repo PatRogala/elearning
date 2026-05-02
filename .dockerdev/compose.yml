@@ -26,6 +26,8 @@ x-backend: &backend
         - bun_cache:/usr/local/bun/install
         - history:/usr/local/hist
         - claude:/root/.claude
+        - gh_config:/root/.config/gh
+        - git_config:/usr/local/git
         - ./.claude.json:/root/.claude.json
         - ./.psqlrc:/root/.psqlrc:ro
         - ./.bashrc:/root/.bashrc:ro
@@ -39,6 +41,7 @@ x-backend: &backend
         PSQL_HISTFILE: /usr/local/hist/.psql_history
         IRB_HISTFILE: /usr/local/hist/.irb_history
         EDITOR: vi
+        GIT_CONFIG_GLOBAL: /usr/local/git/.gitconfig
         CLAUDE_CODE_TMPDIR: /root/.claude/__tmp__
         DATABASE_URL: postgresql://postgres:postgres@postgres:5432
     depends_on:
@@ -119,3 +122,5 @@ volumes:
     assets:
     claude:
     minio_data:
+    gh_config:
+    git_config:
