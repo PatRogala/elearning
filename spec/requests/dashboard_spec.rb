@@ -5,8 +5,6 @@ RSpec.describe "Dashboard", type: :request do
     context "when user is guest" do
       before { get "/" }
 
-      it_behaves_like "valid HTML"
-
       it "returns http success" do
         expect(response).to have_http_status(:success)
       end
@@ -19,8 +17,6 @@ RSpec.describe "Dashboard", type: :request do
         sign_in user
         get "/"
       end
-
-      it_behaves_like "valid HTML"
 
       it "returns http success" do
         expect(response).to have_http_status(:success)

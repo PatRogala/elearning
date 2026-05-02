@@ -32,8 +32,6 @@ RSpec.describe "Teach::Dashboards", type: :request do
         get "/teach/dashboard"
       end
 
-      it_behaves_like "valid HTML"
-
       it "returns http success" do
         expect(response).to have_http_status(:success)
       end

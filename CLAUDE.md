@@ -112,3 +112,17 @@ For design see @DESIGN.md
 - N+1 detection: Prosopite (opt-in per spec)
 - Coverage: SimpleCov
 - Admin/teacher roles auto-created in test setup (`spec/rails_helper.rb`)
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues (`PatRogala/elearning`). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default label vocabulary — `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context repo — `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
