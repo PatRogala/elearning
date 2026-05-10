@@ -11,8 +11,8 @@
     "@hotwired/turbo-rails": "^8.0.23",
     "@rails/actiontext": "^8.1.300",
     "@rails/activestorage": "^8.1.300",
-    "@tailwindcss/cli": "^4.2.4",
-    "tailwindcss": "^4.2.4",
-    "trix": "^2.1.18"
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0",
+    "trix": "^2.1.19"
   }
 }
