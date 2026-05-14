@@ -5,8 +5,8 @@ class LessonsController < ApplicationController
   def show
     @course = Course.published
                     .includes(instructor: { avatar_attachment: :blob })
-                    .friendly.find(params[:course_id])
-    @lesson = @course.lessons.with_rich_text_content.friendly.find(params[:id])
+                    .friendly.find(params.expect(:course_id))
+    @lesson = @course.lessons.with_rich_text_content.friendly.find(params.expect(:id))
     authorize(@lesson)
     @course_lessons = @course.lessons.ordered.to_a
     @completed_lesson_ids = current_user.lesson_completions.where(lesson: @course_lessons).pluck(:lesson_id).to_set

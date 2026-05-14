@@ -3,7 +3,7 @@ class EnrollmentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @course = Course.friendly.find(params[:course_id])
+    @course = Course.friendly.find(params.expect(:course_id))
     authorize Enrollment
 
     result = Enrollments::Create.call(user: current_user, course: @course)

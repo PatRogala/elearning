@@ -3,8 +3,8 @@ class LessonCompletionsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @course = Course.published.friendly.find(params[:course_id])
-    @lesson = @course.lessons.friendly.find(params[:lesson_id])
+    @course = Course.published.friendly.find(params.expect(:course_id))
+    @lesson = @course.lessons.friendly.find(params.expect(:lesson_id))
     authorize(@lesson, :show?)
 
     current_user.lesson_completions.find_or_create_by!(lesson: @lesson)

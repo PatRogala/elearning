@@ -12,7 +12,7 @@ module Teach
 
     def edit
       course = find_course
-      lesson = course.lessons.friendly.find(params[:id])
+      lesson = course.lessons.friendly.find(params.expect(:id))
       @form = Teach::LessonForm.new(lesson)
       authorize([:instructor, lesson])
     end
@@ -34,7 +34,7 @@ module Teach
 
     def update
       course = find_course
-      lesson = course.lessons.friendly.find(params[:id])
+      lesson = course.lessons.friendly.find(params.expect(:id))
       @form = Teach::LessonForm.new(lesson)
       authorize([:instructor, lesson])
 
@@ -49,7 +49,7 @@ module Teach
 
     def destroy
       course = find_course
-      lesson = course.lessons.friendly.find(params[:id])
+      lesson = course.lessons.friendly.find(params.expect(:id))
       authorize([:instructor, lesson])
 
       lesson.destroy
@@ -59,7 +59,7 @@ module Teach
     private
 
     def find_course
-      policy_scope([:instructor, Course]).friendly.find(params[:course_id])
+      policy_scope([:instructor, Course]).friendly.find(params.expect(:course_id))
     end
 
     def lesson_params

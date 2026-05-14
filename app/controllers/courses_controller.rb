@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = policy_scope(Course).friendly.find(params[:id])
+    @course = policy_scope(Course).friendly.find(params.expect(:id))
     authorize(@course)
     @enrolled = current_user.present? && current_user.enrollments.exists?(course: @course)
     redirect_to learn_course_path(@course) if @enrolled
@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
                     .with_attached_image
                     .with_rich_text_description
                     .includes(lessons: [], instructor: { avatar_attachment: :blob })
-                    .friendly.find(params[:id])
+                    .friendly.find(params.expect(:id))
     authorize(@course)
     @lessons = @course.lessons.ordered
   end
