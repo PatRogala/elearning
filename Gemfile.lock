@@ -370,7 +370,7 @@ GEM
       actionview (>= 7.0.0)
       ruby-next (~> 1.0)
     language_server-protocol (3.17.0.5)
-    lexxy (0.9.15.alpha.4)
+    lexxy (0.9.18)
       rails (>= 8.0.2)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -441,7 +441,7 @@ GEM
     multi_test (1.1.0)
     multi_xml (0.9.1)
       bigdecimal (>= 3.1, < 5)
-    net-imap (0.6.4)
+    net-imap (0.6.4.1)
       date
       net-protocol
     net-pop (0.1.2)
