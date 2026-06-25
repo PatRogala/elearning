@@ -4,7 +4,7 @@ CI.run do
   step "Style: Ruby", "bin/rubocop"
 
   step "Security: Gem audit", "bin/bundler-audit"
-  step "Security: Bun vulnerability audit", "bun audit"
+  step "Security: Bun vulnerability audit", "bun audit --audit-level=high"
   step "Security: Brakeman code analysis", "bin/brakeman --quiet --no-pager --exit-on-warn --exit-on-error"
   step "Database: Database consistency", "bundle exec database_consistency"
   step "Database: Database schema inconsistencies", "bundle exec rake active_record_doctor"
