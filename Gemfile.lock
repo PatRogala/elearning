@@ -370,7 +370,7 @@ GEM
       actionview (>= 7.0.0)
       ruby-next (~> 1.0)
     language_server-protocol (3.17.0.5)
-    lexxy (0.9.18)
+    lexxy (0.9.20)
       rails (>= 8.0.2)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -477,7 +477,7 @@ GEM
       google-protobuf (>= 3.25.3)
     pghero (3.8.0)
       activerecord (>= 7.2)
-    pp (0.6.3)
+    pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
     prism (1.9.0)
