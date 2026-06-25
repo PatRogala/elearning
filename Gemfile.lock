@@ -477,7 +477,7 @@ GEM
       google-protobuf (>= 3.25.3)
     pghero (3.8.0)
       activerecord (>= 7.2)
-    pp (0.6.3)
+    pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
     prism (1.9.0)
