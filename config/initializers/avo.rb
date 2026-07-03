@@ -110,7 +110,7 @@ Avo.configure do |config|
   # config.model_generator_hook = true
 
   ## == Branding ==
-  config.branding = {
+  config.appearance = {
     colors: {
       background: "245 245 245",
       100 => "#e5e5e5",
