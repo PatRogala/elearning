@@ -465,7 +465,7 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.6.3)
     paco (0.2.3)
-    pagy (43.5.6)
+    pagy (43.6.0)
       json
       uri
       yaml
