@@ -160,7 +160,7 @@ GEM
       ssrf_filter (~> 1.5)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
-    csv (3.3.5)
+    csv (3.3.6)
     cucumber (11.1.1)
       base64 (~> 0.2)
       builder (~> 3.2)
@@ -566,7 +566,7 @@ GEM
       trailblazer-option (>= 0.1.1, < 0.2.0)
       uber (< 0.2.0)
     require-hooks (0.4.0)
-    resend (1.6.0)
+    resend (1.9.0)
       base64
       httparty (>= 0.22.0)
     responders (3.2.0)
