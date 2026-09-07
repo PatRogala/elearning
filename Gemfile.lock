@@ -294,7 +294,8 @@ GEM
     google-protobuf (4.35.1-x86_64-linux-gnu)
       bigdecimal
       rake (~> 13.3)
-    haml (7.2.0)
+    haml (7.5.1)
+      prism (>= 1.1.0)
       temple (>= 0.8.2)
       thor
       tilt
@@ -690,14 +691,14 @@ GEM
     sys-uname (1.5.1)
       ffi (~> 1.1)
       memoist3 (~> 1.0.0)
-    temple (0.10.4)
+    temple (0.10.7)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
     thor (1.5.0)
     thruster (0.1.22-aarch64-linux)
     thruster (0.1.22-arm64-darwin)
     thruster (0.1.22-x86_64-linux)
-    tilt (2.8.0)
+    tilt (2.9.0)
     timeout (0.6.1)
     trailblazer-option (0.1.2)
     tsort (0.2.0)
